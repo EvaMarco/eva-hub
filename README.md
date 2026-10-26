@@ -32,10 +32,11 @@ La Action `.github/workflows/hub.yml` sincroniza y publica en GitHub Pages:
 ## Probarlo en local
 
 ```
-python3 scripts/sync.py   # necesita gh con sesión iniciada
-python3 render.py         # necesita PyYAML
-xdg-open site/index.html
+scripts/serve.sh             # sincroniza, genera y sirve en http://localhost:8800
+scripts/serve.sh --no-sync   # solo regenera, con los últimos datos
 ```
+
+Necesita `gh` con sesión iniciada y PyYAML. Recarga la página tras volver a lanzarlo.
 
 ## Puesta en marcha (una vez)
 
