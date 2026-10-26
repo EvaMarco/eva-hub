@@ -1,0 +1,4 @@
+# Built by the workflow on every run
+site/
+data/cache/
+__pycache__/

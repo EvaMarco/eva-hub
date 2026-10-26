@@ -1,0 +1,56 @@
+# Tasks that are not a PR yet, or that span several PRs.
+#
+#   title:   what to do, in one line
+#   status:  todo | doing | waiting | done
+#   waiting: (when status is waiting) who on: review | design | other
+#   links:   optional list of URLs or "#1234" (penpot/penpot)
+#   note:    optional, one or two lines
+#   added:   date added (YYYY-MM-DD)
+#
+# Quick ideas go as issues in this repo instead; move them here when they
+# need notes. Done tasks can stay a while, then be deleted.
+
+- title: "Actualizar la fila de #12477 y su comentario de QA en #12376"
+  status: todo
+  links: ["#12376", "#12477"]
+  note: "La fila dice \"no visual change\"; ahora los nombres de capa suben 1px."
+  added: 2026-10-26
+
+- title: "Test del caso anidado del indicador de copias rotas"
+  status: waiting
+  waiting: design
+  links: ["#12134", "#12643"]
+  note: "Una copia rota dentro de un main aún ofrece \"Detach instance\"."
+  added: 2026-10-26
+
+- title: "Rebases de #12554, #12558, #12559, #12561 y #12562"
+  status: waiting
+  waiting: review
+  links: ["#12554", "#12558", "#12559", "#12561", "#12562"]
+  note: "Después de la revisión de Luis."
+  added: 2026-10-26
+
+- title: "Subir las skills refactor-scss y migrate-ds-area al repo"
+  status: todo
+  note: "Quitar las líneas de .git/info/exclude y hacer el commit."
+  added: 2026-10-22
+
+- title: "Refactors SCSS pendientes (layout_item, exports, svg_attrs, grid_cell, nudge, right_header…)"
+  status: todo
+  note: "Cada uno en su PR con la skill refactor-scss."
+  added: 2026-10-14
+
+- title: "Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info)"
+  status: todo
+  added: 2026-10-20
+
+- title: "#12580 (React #185): seguir con los sospechosos pendientes"
+  status: doing
+  links: ["#12580", "#12610"]
+  added: 2026-10-23
+
+- title: "#11993: decidir si registrar los namespaces que faltan en el runner JS de common"
+  status: todo
+  links: ["https://github.com/penpot/penpot/pull/11993"]
+  note: "Más la prueba manual del editor con datos válidos y limpiar los stash temporales."
+  added: 2026-10-02

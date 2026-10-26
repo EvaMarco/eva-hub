@@ -1,0 +1,47 @@
+name: Hub
+
+on:
+  # Every 30 minutes, Monday to Friday, 07:00–20:00 Madrid (05–18 UTC in summer time).
+  schedule:
+    - cron: "*/30 5-18 * * 1-5"
+  push:
+    branches: [main]
+  # A new, edited or closed idea shows up within a couple of minutes.
+  issues:
+    types: [opened, edited, closed, reopened, labeled]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pyyaml
+      - name: Sync from GitHub
+        run: python3 scripts/sync.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - run: python3 render.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

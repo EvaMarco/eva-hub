@@ -1,0 +1,56 @@
+# Next step for each open PR, keyed by PR number in penpot/penpot.
+#
+#   next:    what has to happen next, in one line
+#   waiting: who it waits on: me | review | design | ci
+#
+# A PR with no entry shows only what GitHub says. Entries for merged or
+# closed PRs are ignored; delete them whenever.
+
+12643:
+  next: "Diseño: icono nuevo, copia rota anidada en un main y selección mixta (#12134)"
+  waiting: design
+12624:
+  next: "Esperando revisión (#12581)"
+  waiting: review
+12610:
+  next: "Esperando revisión (#12580)"
+  waiting: review
+12562:
+  next: "Rebase después de la revisión de Luis"
+  waiting: review
+12561:
+  next: "Rebase después de la revisión de Luis"
+  waiting: review
+12559:
+  next: "Rebase después de la revisión de Luis"
+  waiting: review
+12558:
+  next: "Rebase después de la revisión de Luis"
+  waiting: review
+12554:
+  next: "Rebase después de la revisión de Luis"
+  waiting: review
+12536:
+  next: "Arreglo del build ($sz-8) subido; esperando CI y revisión"
+  waiting: review
+12531:
+  next: "Arreglo del test de roles subido; esperando CI y revisión"
+  waiting: review
+12528:
+  next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
+  waiting: review
+12521:
+  next: "Si se mergea después de #12520, conflicto en visual-viewer.spec.js"
+  waiting: me
+12520:
+  next: "Si se mergea después de #12521, conflicto en visual-viewer.spec.js"
+  waiting: me
+12508:
+  next: "Diseño decide sobre el botón History en Inspect"
+  waiting: design
+12477:
+  next: "Actualizar su fila y el comentario de QA en #12376 (los nombres suben 1px)"
+  waiting: me
+12232:
+  next: "Aprobada por pabloalba: mergear (#10806)"
+  waiting: me
