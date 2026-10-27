@@ -34,7 +34,7 @@
   status: waiting
   waiting: design
   links: ["#12654", "#12376"]
-  note: "Pedidos el 2026-10-15; ninguno ha llegado. Issue con las imágenes para pasar a diseño: #12654."
+  note: "Pedidos el 2026-10-15. Issue con imágenes: #12654. Los 4 del path solo necesitan que diseño confirme el dibujo (los SVG ya valen para el DS, se añade una línea en icon.cljs); share necesita un SVG nuevo."
   items:
     - "share: botón Compartir del header derecho del workspace (right_header)."
     - "handlers-equal: barra de edición de paths, tipo de manejador «alineado»."
