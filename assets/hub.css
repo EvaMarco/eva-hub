@@ -43,7 +43,7 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .muted { color: var(--muted); margin: 0; }
 
 .top { position: sticky; top: 0; z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line); }
-.top-in, main { max-width: 1200px; margin: 0 auto; padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
+.top-in, main { max-width: 1680px; margin: 0 auto; padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
 .top-in { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; padding-block: 14px 0; }
 h1 { font-size: 22px; font-weight: 600; margin: 0 0 2px; letter-spacing: -0.01em; }
 h1::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: var(--accent); margin-right: 8px; vertical-align: 2px; }
@@ -150,7 +150,7 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 }
 
 /* Board */
-.board { display: grid; grid-template-columns: repeat(5, minmax(220px, 1fr)); gap: 12px; align-items: start; overflow-x: auto; padding-bottom: 8px; }
+.board { display: grid; grid-template-columns: repeat(6, minmax(190px, 1fr)); gap: 12px; align-items: start; overflow-x: auto; padding-bottom: 8px; }
 .bcol { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 12px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .bcol h2 { font-size: 13px; font-weight: 600; margin: 0; display: flex; justify-content: space-between; align-items: center; }
 .bcol h2 b { font-family: var(--mono); font-weight: 500; font-size: 12px; padding: 1px 6px; border-radius: 99px; background: var(--bg); }
@@ -165,3 +165,7 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 .bcard-meta a { font-family: var(--mono); font-size: 12px; }
 .bcard .task-items { font-size: 12px; }
 @media (max-width: 720px) { .board { grid-template-columns: 1fr; } }
+.bcard.k-idea { border-style: dashed; }
+.bcard .hint { color: var(--muted); }
+.bcard .hint code { font-family: var(--mono); font-size: 11px; }
+.col-hint { font-size: 12px; }

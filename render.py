@@ -64,8 +64,12 @@ def link_ref(ref, repo):
     ref = str(ref)
     if ref.startswith("#"):
         return f'<a href="https://github.com/{repo}/issues/{ref[1:]}">{e(ref)}</a>'
-    m = re.search(r"/(pull|issues)/(\d+)", ref)
-    label = f"#{m[2]}" if m else ref
+    m = re.search(r"github\.com/([^/]+)/([^/]+)/(pull|issues)/(\d+)", ref)
+    if m:
+        # Issues of another repo (an idea of the hub) carry the repo name.
+        label = f"#{m[4]}" if f"{m[1]}/{m[2]}" == repo else f"{m[2]}#{m[4]}"
+    else:
+        label = ref
     return f'<a href="{e(ref)}">{e(label)}</a>'
 
 
@@ -108,9 +112,10 @@ def pr_table(prs, repo, table_id):
 </table></div>"""
 
 
-BOARD = [("todo", "Por empezar"), ("doing", "En curso"), ("waiting", "Esperando"),
+BOARD = [("ideas", "Ideas"), ("todo", "Por empezar"), ("doing", "En curso"), ("waiting", "Esperando"),
          ("review", "En revisión"), ("done", "Listo")]
 DONE_DAYS = 7
+IDEAS_HINT = '<p class="muted col-hint">Issues abiertas del repo del hub: cosas que no queremos olvidar.</p>'
 
 
 def pr_column(p):
@@ -157,6 +162,19 @@ def merged_card(p):
 </li>"""
 
 
+def idea_card(i):
+    body = " ".join((i["body"] or "").split())
+    body = body[:160] + "…" if len(body) > 160 else body
+    return f"""
+<li class="bcard k-idea">
+  <div class="bcard-head"><a class="ref" href="{e(i['url'])}">#{i['number']}</a> <span class="tag">Idea</span></div>
+  <div class="bcard-title">{e(i['title'])}</div>
+  {f'<p class="muted">{e(body)}</p>' if body else ""}
+  <div class="bcard-meta"><span class="muted" data-date="{e(i['created'])}"></span>
+    <span class="hint" title="Crea la tarea en data/tasks.yml y cierra la issue">Para pasarla a tarea: <code>scripts/promote.py {i['number']}</code></span></div>
+</li>"""
+
+
 def task_card(t, repo):
     links = " ".join(link_ref(l, repo) for l in t.get("links") or [])
     items = "".join(f"<li>{e(i)}</li>" for i in t.get("items") or [])
@@ -196,8 +214,11 @@ def build():
     for p in gh["merged_prs"]:
         if recent(p["mergedAt"]):
             columns["done"].append(merged_card(p))
+    for i in open_ideas:
+        columns["ideas"].append(idea_card(i))
     board_body = '<div class="board">' + "".join(
         f'<section class="bcol c-{k}"><h2>{label} <b>{len(columns[k])}</b></h2>'
+        f'{IDEAS_HINT if k == "ideas" else ""}'
         f'<ul class="bcards">{"".join(columns[k]) or "<li class=empty>—</li>"}</ul></section>'
         for k, label in BOARD) + "</div>"
 
@@ -298,16 +319,7 @@ def build():
     group_views = "".join(group_view(g) for g in ep["groups"])
     merged_total = all_count.get("merged", 0)
 
-    # Ideas tab
-    idea_items = "".join(
-        f'<li><a href="{e(i["url"])}">#{i["number"]}</a> {e(i["title"])} '
-        f'<span class="muted" data-date="{e(i["created"])}"></span></li>' for i in open_ideas)
     new_idea = f"https://github.com/{hub}/issues/new"
-    ideas_body = f"""
-<section class="card"><div class="card-top"><h2>Ideas ({len(open_ideas)})</h2>
-  <a class="button" href="{e(new_idea)}">Nueva idea</a></div>
-  <p class="muted">Issues abiertas de <a href="https://github.com/{e(hub)}/issues">{e(hub)}</a>. Ciérralas al terminar; cuando una necesite notas, pásala a <code>data/tasks.yml</code>.</p>
-  <ul class="plain">{idea_items or '<li class="muted">Aún no hay ideas.</li>'}</ul></section>"""
 
     n_doing = len(columns["doing"])
     refresh = f"https://github.com/{hub}/actions/workflows/hub.yml"
@@ -328,7 +340,6 @@ def build():
       <a role="tab" href="#tablero">Tablero <b>{n_doing}</b></a>
       <a role="tab" href="#prs">PRs <b>{len(prs)}</b></a>
       <a role="tab" href="#epica">Épica DS <b>{merged_total}</b></a>
-      <a role="tab" href="#ideas">Ideas <b>{len(open_ideas)}</b></a>
     </nav>
   </div>
 </header>
@@ -337,7 +348,6 @@ def build():
   <div class="view" id="v-prs">{prs_body}</div>
   <div class="view" id="v-epica">{epic_body}</div>
   {group_views}
-  <div class="view" id="v-ideas">{ideas_body}</div>
 </main>
 <script>{JS}</script>
 </body></html>"""
