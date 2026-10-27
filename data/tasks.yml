@@ -17,9 +17,10 @@
   added: 2026-10-27
 
 - title: "Pedir a diseño/DS lo que falta para los selects"
-  status: todo
+  status: waiting
+  waiting: design
   links: ["#12377"]
-  note: "Preview al pasar el ratón (blend mode); si combobox* sirve como select con búsqueda (destino de interacciones); y para #12544 opciones agrupadas con búsqueda (presets). Publicar solo tras aprobarlo."
+  note: "Eva lo comenta en diseño (2026-10-27). Blend mode: seguimos con un hover callback en select* (puede cambiar). Destino: modo de combobox* que filtre y solo acepte opciones."
   added: 2026-10-27
 
 - title: "Actualizar la fila de #12477 y su comentario de QA en #12376"
