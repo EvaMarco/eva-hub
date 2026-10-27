@@ -55,10 +55,7 @@
   next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
   waiting: me
 12537:
-  next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
-  waiting: me
-12538:
-  next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
+  next: "Aprobado; conflicto resuelto y force-push hecho, falta que pase el CI y merge"
   waiting: me
 12650:
   next: "Draft; se libera con el próximo lote de revisión"
