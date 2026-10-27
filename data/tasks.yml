@@ -10,10 +10,22 @@
 # Quick ideas go as issues in this repo instead; move them here when they
 # need notes. Done tasks can stay a while, then be deleted.
 
-- title: "Actualizar la fila de #12477 y su comentario de QA en #12376"
+- title: "Grupo 2 de la épica DS: selects (#12377)"
+  status: doing
+  links: ["#12377", "#12375"]
+  note: "Plan en .agents/plans/2026-10-27-ds-selects.md (en revisión). 31 usos en 17 archivos + fm/select (8 formularios, en este grupo). Piloto: formato de color en Inspect."
+  added: 2026-10-27
+
+- title: "Pedir a diseño/DS lo que falta para los selects"
   status: todo
+  links: ["#12377"]
+  note: "Preview al pasar el ratón (blend mode), select con búsqueda (destino de interacciones), opciones agrupadas con búsqueda (presets de board). Publicar solo tras aprobarlo."
+  added: 2026-10-27
+
+- title: "Actualizar la fila de #12477 y su comentario de QA en #12376"
+  status: done
   links: ["#12376", "#12477"]
-  note: "La fila dice \"no visual change\"; ahora los nombres de capa suben 1px."
+  note: "Fila actualizada el 2026-10-27; el comentario de QA se queda como está."
   added: 2026-10-26
 
 - title: "Test del caso anidado del indicador de copias rotas"
@@ -23,10 +35,10 @@
   note: "Una copia rota dentro de un main aún ofrece \"Detach instance\"."
   added: 2026-10-26
 
-- title: "Rebases de #12554, #12558, #12559, #12561 y #12562"
+- title: "Rebases de #12558, #12559, #12561 y #12562"
   status: waiting
   waiting: review
-  links: ["#12554", "#12558", "#12559", "#12561", "#12562"]
+  links: ["#12558", "#12559", "#12561", "#12562"]
   note: "Después de la revisión de Luis."
   added: 2026-10-26
 
@@ -40,7 +52,7 @@
   note: "Cada uno en su PR con la skill refactor-scss."
   added: 2026-10-14
 
-- title: "Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info)"
+- title: "Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info, settings/profile)"
   status: todo
   added: 2026-10-20
 
