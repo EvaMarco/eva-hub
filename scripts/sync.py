@@ -94,6 +94,54 @@ def merged_prs():
     return sorted(prs, key=lambda p: p["mergedAt"], reverse=True)
 
 
+REVIEW_QUERY = """query($owner: String!, $name: String!, $after: String) {
+  repository(owner: $owner, name: $name) {
+    pullRequests(states: OPEN, first: 100, after: $after) {
+      pageInfo { hasNextPage endCursor }
+      nodes {
+        number title url isDraft updatedAt mergeable
+        author { login }
+        assignees(first: 10) { nodes { login } }
+        reviewRequests(first: 10) { nodes { requestedReviewer { ... on User { login } } } }
+        commits(last: 1) { nodes { commit { statusCheckRollup { state } } } }
+      }
+    }
+  }
+}"""
+
+
+def review_prs():
+    """Open PRs by someone else where the user is an assignee or a requested reviewer.
+
+    Walks the repo's open PRs through GraphQL instead of searching: the Actions
+    token cannot search penpot/penpot.
+    """
+    owner, name = CONFIG["repo"].split("/")
+    user, after, rows = CONFIG["user"], None, []
+    while True:
+        args = ["api", "graphql", "-f", f"query={REVIEW_QUERY}", "-F", f"owner={owner}", "-F", f"name={name}"]
+        if after:
+            args += ["-F", f"after={after}"]
+        page = gh(*args)["data"]["repository"]["pullRequests"]
+        for p in page["nodes"]:
+            author = (p["author"] or {}).get("login")
+            assignees = [a["login"] for a in p["assignees"]["nodes"]]
+            requested = [(r["requestedReviewer"] or {}).get("login") for r in p["reviewRequests"]["nodes"]]
+            if author == user or (user not in assignees and user not in requested):
+                continue
+            rollup = p["commits"]["nodes"][0]["commit"]["statusCheckRollup"] if p["commits"]["nodes"] else None
+            rows.append({
+                "number": p["number"], "title": p["title"], "url": p["url"], "author": author,
+                "draft": p["isDraft"], "conflict": p["mergeable"] == "CONFLICTING",
+                "requested": user in requested, "updated": p["updatedAt"],
+                "ci": CI_STATES.get((rollup or {}).get("state"), "none"),
+            })
+        if not page["pageInfo"]["hasNextPage"]:
+            break
+        after = page["pageInfo"]["endCursor"]
+    return sorted(rows, key=lambda r: r["number"], reverse=True)
+
+
 def assigned_issues():
     issues = gh("issue", "list", "--repo", CONFIG["repo"], "--assignee", CONFIG["user"],
                 "--state", "open", "--limit", "100",
@@ -182,6 +230,7 @@ def main():
         "open_prs": open_prs(),
         "merged_prs": merged_prs(),
         "issues": assigned_issues(),
+        "reviews": review_prs(),
         "epic": epic(),
         "ideas": ideas(),
     }
@@ -189,7 +238,7 @@ def main():
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1))
     print(f"wrote {out.relative_to(ROOT)}: {len(data['open_prs'])} open PRs, "
-          f"{len(data['issues'])} issues, "
+          f"{len(data['issues'])} issues, {len(data['reviews'])} to review, "
           f"{sum(len(g['prs']) for g in data['epic']['groups'])} epic PRs, "
           f"{len(data['ideas'])} ideas")
 

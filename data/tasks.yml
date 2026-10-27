@@ -20,9 +20,10 @@
   added: 2026-10-27
 
 - title: "Preguntar si #12059 (export previews) se va a revisar pronto"
-  status: todo
+  status: done
+  done: 2026-10-27
   links: ["#12059", "#12376", "#12377"]
-  note: "Bloquea menus/exports e inspect/exports (botones y selects). Externo, sin revisor ni milestone, parado desde el 2026-10-09. Si no, migramos y el autor hace rebase."
+  note: "Resuelto: la reviso yo (asignada), está en el tablero como «Revisar». Bloquea menus/exports e inspect/exports."
   added: 2026-10-27
 
 - title: "Preguntar si #12198 (hide viewer chrome) se va a revisar pronto"

@@ -16,6 +16,8 @@
   --k-task: #7a4fd0;
   --k-pr: #0b8794;
   --k-merged: #1d8a4e;
+  --k-issue: #c0397a;
+  --k-review: #c4561a;
   --font: "Work Sans", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
   --r: 8px;
@@ -38,6 +40,8 @@
     --k-task: #b79cff;
     --k-pr: #5fd0db;
     --k-merged: #4cd38a;
+    --k-issue: #ff8cc6;
+    --k-review: #ff9a5c;
     color-scheme: dark;
   }
 }
@@ -178,6 +182,8 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 .k-task { --k: var(--k-task); }
 .k-pr { --k: var(--k-pr); }
 .k-merged { --k: var(--k-merged); }
+.k-issue { --k: var(--k-issue); }
+.k-review { --k: var(--k-review); }
 .bcard { border-left: 4px solid var(--k, var(--line)); }
 .bcard.k-idea { border-style: dashed dashed dashed solid; }
 .kind { display: inline-block; font-size: 11px; font-weight: 500; padding: 0 7px; border-radius: 99px; color: var(--k); border: 1px solid var(--k); background: color-mix(in srgb, var(--k) 14%, transparent); white-space: nowrap; }

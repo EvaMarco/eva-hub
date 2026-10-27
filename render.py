@@ -134,6 +134,15 @@ def task_column(t):
     return {"todo": "todo", "doing": "doing", "waiting": "waiting", "done": "done"}.get(t.get("status"), "todo")
 
 
+NOTE_COLUMNS = {"todo", "doing", "waiting", "review", "done", "hidden"}
+
+
+def note_column(note, default="todo"):
+    """Column of an issue or a PR to review: the note's status, or the default."""
+    status = (note or {}).get("status", default)
+    return status if status in NOTE_COLUMNS else default
+
+
 def recent(date, days=DONE_DAYS):
     if not date:
         return True
@@ -175,6 +184,33 @@ def idea_card(i):
 </li>"""
 
 
+def issue_card(i, note):
+    note = note or {}
+    meta = " ".join(f'<span class="tag">{e(l)}</span>' for l in i["labels"] if l != "needs triage")
+    if i.get("milestone"):
+        meta += f' <span class="tag">{e(i["milestone"])}</span>'
+    return f"""
+<li class="bcard k-issue">
+  <div class="bcard-head"><span class="kind">Issue</span> <a class="ref" href="{e(i['url'])}">#{i['number']}</a> {wait_tag(note.get("waiting"))}</div>
+  <div class="bcard-title">{e(i['title'])}</div>
+  {f'<p class="muted">{e(note["next"])}</p>' if note.get("next") else ""}
+  {f'<div class="bcard-meta">{meta}</div>' if meta else ""}
+</li>"""
+
+
+def review_card(r, note):
+    note = note or {}
+    state = "Draft" if r["draft"] else ("Con conflictos" if r["conflict"] else "Abierta")
+    why = "Te piden revisión" if r["requested"] else "Asignada a ti"
+    return f"""
+<li class="bcard k-review">
+  <div class="bcard-head"><span class="kind">Revisar</span> <a class="ref" href="{e(r['url'])}">#{r['number']}</a> <span class="muted">de {e(r['author'] or '?')}</span></div>
+  <div class="bcard-title">{e(strip_emoji(r['title']))}</div>
+  {f'<p class="muted">{e(note["next"])}</p>' if note.get("next") else ""}
+  <div class="bcard-meta"><span class="tag">{why}</span> <span class="tag">{state}</span> {ci_tag(r['ci']) if r['ci'] != 'none' else ''}</div>
+</li>"""
+
+
 def task_card(t, repo):
     links = " ".join(link_ref(l, repo) for l in t.get("links") or [])
     items = "".join(f"<li>{e(i)}</li>" for i in t.get("items") or [])
@@ -205,6 +241,15 @@ def build():
     # Board: tasks and PRs in columns
     open_ideas = [i for i in gh["ideas"] if i["open"]]
     columns = {k: [] for k, _ in BOARD}
+    # Within a column: PRs to review, issues, my PRs, tasks, then merged PRs.
+    for r in gh.get("reviews", []):
+        col = note_column(notes.get(r["number"]))
+        if col != "hidden":
+            columns[col].append(review_card(r, notes.get(r["number"])))
+    for i in gh["issues"]:
+        col = note_column(notes.get(i["number"]))
+        if col != "hidden":
+            columns[col].append(issue_card(i, notes.get(i["number"])))
     for p in prs:
         columns[pr_column(p)].append(pr_card(p))
     for t in tasks:
@@ -217,7 +262,8 @@ def build():
     for i in open_ideas:
         columns["ideas"].append(idea_card(i))
     legend = "".join(f'<span class="k-{k}"><i></i>{label}</span>'
-                     for k, label in (("idea", "Idea"), ("task", "Tarea"), ("pr", "PR"), ("merged", "Mergeada")))
+                     for k, label in (("idea", "Idea"), ("task", "Tarea"), ("issue", "Issue"), ("pr", "PR"),
+                                      ("review", "Revisar"), ("merged", "Mergeada")))
     board_body = f'<div class="board-legend">{legend}</div><div class="board">' + "".join(
         f'<section class="bcol c-{k}"><h2>{label} <b>{len(columns[k])}</b></h2>'
         f'{IDEAS_HINT if k == "ideas" else ""}'

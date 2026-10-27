@@ -72,3 +72,22 @@
 12550:
   next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
   waiting: review
+# Issues assigned to me and PRs to review: "status" picks the board column
+# (todo, doing, waiting, review, done, hidden); "next" is the next step.
+12641:
+  status: todo
+  next: "Atajos del viewer (Next/Previous board) se solapan en el panel de atajos (PRE)"
+12576:
+  status: doing
+  next: "En curso en otro workspace"
+12580:
+  status: review
+  next: "PR #12610 en revisión"
+12134:
+  status: waiting
+  waiting: design
+  next: "PR #12643 (draft): diseño decide icono, anidadas y selección mixta"
+12059:
+  status: todo
+  next: "Revisar (contributor). Desbloquea exports en Design e Inspect (botones y selects)"
+
