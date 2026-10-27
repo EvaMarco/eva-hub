@@ -8,6 +8,7 @@
 #   added:   date added (YYYY-MM-DD)
 #
 #   items:   optional list of short lines, shown as a bulleted list
+#   done:    date it was finished (YYYY-MM-DD); the board shows done tasks for 7 days
 #
 # Quick ideas go as issues in this repo instead; move them here when they
 # need notes. Done tasks can stay a while, then be deleted.
@@ -85,6 +86,7 @@
 
 - title: "Actualizar la fila de #12477 y su comentario de QA en #12376"
   status: done
+  done: 2026-10-27
   links: ["#12376", "#12477"]
   note: "Fila actualizada el 2026-10-27; el comentario de QA se queda como está."
   added: 2026-10-26

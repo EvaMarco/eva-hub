@@ -30,7 +30,6 @@ STATES = [
 STATE_LABEL = dict(STATES)
 STATE_ORDER = {k: i for i, (k, _) in enumerate(STATES)}
 WAITING = {"me": "Yo", "review": "Revisión", "design": "Diseño", "ci": "CI", "other": "Otros"}
-TASK_STATUS = [("doing", "En curso"), ("todo", "Por hacer"), ("waiting", "Esperando"), ("done", "Hecho")]
 
 e = html.escape
 
@@ -109,23 +108,67 @@ def pr_table(prs, repo, table_id):
 </table></div>"""
 
 
-def task_item(t, repo):
-    links = " ".join(link_ref(l, repo) for l in t.get("links") or [])
-    note = f'<p class="muted">{e(t["note"])}</p>' if t.get("note") else ""
-    items = "".join(f"<li>{e(i)}</li>" for i in t.get("items") or [])
-    note += f'<ul class="task-items">{items}</ul>' if items else ""
-    waiting = wait_tag(t.get("waiting")) if t.get("status") == "waiting" else ""
+BOARD = [("todo", "Por empezar"), ("doing", "En curso"), ("waiting", "Esperando"),
+         ("review", "En revisión"), ("done", "Listo")]
+DONE_DAYS = 7
+
+
+def pr_column(p):
+    """Board column of an open PR, from its state and its note."""
+    waiting = (p["note"] or {}).get("waiting")
+    if p["state"] in ("merge", "fail", "changes") or waiting == "me":
+        return "doing"
+    if waiting in ("design", "other"):
+        return "waiting"
+    if p["state"] == "draft":
+        return "doing"
+    return "review"
+
+
+def task_column(t):
+    return {"todo": "todo", "doing": "doing", "waiting": "waiting", "done": "done"}.get(t.get("status"), "todo")
+
+
+def recent(date, days=DONE_DAYS):
+    if not date:
+        return True
+    date = date if isinstance(date, dt.date) else dt.date.fromisoformat(str(date)[:10])
+    return (dt.date.today() - date).days <= days
+
+
+def pr_card(p):
+    note = p["note"] or {}
+    meta = " ".join(x for x in (wait_tag(note.get("waiting")), ci_tag(p["ci"]) if p["ci"] != "none" else "") if x)
     return f"""
-<li class="task t-{e(t.get('status', 'todo'))}">
-  <div class="task-head"><span class="task-title">{e(t['title'])}</span> {waiting}</div>
-  {note}
-  <div class="task-meta">{links}<span class="muted">{e(str(t.get('added', '')))}</span></div>
+<li class="bcard k-pr">
+  <div class="bcard-head"><a class="ref" href="{e(p['url'])}">#{p['number']}</a> {pill(p['state'])}</div>
+  <div class="bcard-title">{e(strip_emoji(p['title']))}</div>
+  {f'<p class="muted">{e(note["next"])}</p>' if note.get("next") else ""}
+  {f'<div class="bcard-meta">{meta}</div>' if meta else ""}
 </li>"""
 
 
-def section(title, body, note=""):
-    note = f'<p class="muted">{note}</p>' if note else ""
-    return f'<section class="card"><h2>{title}</h2>{note}{body}</section>'
+def merged_card(p):
+    return f"""
+<li class="bcard k-pr">
+  <div class="bcard-head"><a class="ref" href="{e(p['url'])}">#{p['number']}</a> <span class="tag">Mergeada</span></div>
+  <div class="bcard-title">{e(strip_emoji(p['title']))}</div>
+  <div class="bcard-meta"><span class="muted" data-date="{e(p['mergedAt'])}"></span></div>
+</li>"""
+
+
+def task_card(t, repo):
+    links = " ".join(link_ref(l, repo) for l in t.get("links") or [])
+    items = "".join(f"<li>{e(i)}</li>" for i in t.get("items") or [])
+    waiting = wait_tag(t.get("waiting")) if t.get("status") == "waiting" else ""
+    return f"""
+<li class="bcard k-task">
+  <div class="bcard-head"><span class="tag">Tarea</span> {waiting}</div>
+  <div class="bcard-title">{e(t['title'])}</div>
+  {f'<p class="muted">{e(t["note"])}</p>' if t.get("note") else ""}
+  {f'<ul class="task-items">{items}</ul>' if items else ""}
+  <div class="bcard-meta">{links}</div>
+</li>"""
 
 
 def build():
@@ -140,51 +183,50 @@ def build():
         p = dict(p, state=pr_state(p), note=notes.get(p["number"]))
         prs.append(p)
     prs.sort(key=lambda p: (STATE_ORDER[p["state"]], -p["number"]))
-    counts = Counter(p["state"] for p in prs)
 
-    # Now: what is mine to do
-    mine = [p for p in prs if p["state"] in ("merge", "fail", "changes")
-            or (p["note"] or {}).get("waiting") == "me"]
-    my_tasks = [t for t in tasks if t.get("status") in ("doing", "todo")]
-    waiting_on = Counter((p["note"] or {}).get("waiting") for p in prs
-                         if (p["note"] or {}).get("waiting") not in (None, "me"))
-    waiting_on += Counter(t.get("waiting") for t in tasks if t.get("status") == "waiting")
+    # Board: tasks and PRs in columns
     open_ideas = [i for i in gh["ideas"] if i["open"]]
+    columns = {k: [] for k, _ in BOARD}
+    for p in prs:
+        columns[pr_column(p)].append(pr_card(p))
+    for t in tasks:
+        col = task_column(t)
+        if col != "done" or recent(t.get("done")):
+            columns[col].append(task_card(t, repo))
+    for p in gh["merged_prs"]:
+        if recent(p["mergedAt"]):
+            columns["done"].append(merged_card(p))
+    board_body = '<div class="board">' + "".join(
+        f'<section class="bcol c-{k}"><h2>{label} <b>{len(columns[k])}</b></h2>'
+        f'<ul class="bcards">{"".join(columns[k]) or "<li class=empty>—</li>"}</ul></section>'
+        for k, label in BOARD) + "</div>"
 
+    merged = "".join(
+        f'<li><a href="{e(p["url"])}">#{p["number"]}</a> {e(strip_emoji(p["title"]))} '
+        f'<span class="muted" data-date="{e(p["mergedAt"])}"></span></li>' for p in gh["merged_prs"])
+    issues = "".join(
+        f'<li><a href="{e(i["url"])}">#{i["number"]}</a> {e(i["title"])}'
+        f'{" · " + e(i["milestone"]) if i["milestone"] else ""}</li>' for i in gh["issues"])
+
+    # PRs tab
+    counts = Counter(p["state"] for p in prs)
     tiles = "".join(
         f'<button class="tile st-{k}" data-filter="{k}" aria-pressed="false">'
         f'<span class="tile-label"><i></i>{e(label)}</span><span class="tile-n">{counts.get(k, 0)}</span></button>'
         for k, label in STATES)
-
-    now_body = ""
-    now_body += section(
-        "Te toca",
-        (pr_table(mine, repo, "t-mine") if mine else '<p class="empty">Ninguna PR necesita nada de ti ahora.</p>')
-        + (f'<ul class="tasks">{"".join(task_item(t, repo) for t in my_tasks)}</ul>' if my_tasks else ""),
-        "PRs que se pueden mergear, con el CI roto, con cambios pedidos o con una nota que dice que te toca; y tus tareas en curso o por hacer.")
-    wait_chips = "".join(f'<span class="chip">{wait_tag(k)} <b>{n}</b></span>'
-                         for k, n in waiting_on.most_common() if k)
-    now_body += section("Esperando a otros", f'<div class="chips">{wait_chips or "—"}</div>',
-                        "PRs y tareas que dependen de otra persona, según las notas.")
-    merged = "".join(
-        f'<li><a href="{e(p["url"])}">#{p["number"]}</a> {e(strip_emoji(p["title"]))} '
-        f'<span class="muted" data-date="{e(p["mergedAt"])}"></span></li>' for p in gh["merged_prs"])
-    now_body += section(f'Mergeadas en los últimos {cfg["merged_days"]} días ({len(gh["merged_prs"])})',
-                        f'<ul class="plain">{merged or "<li>—</li>"}</ul>')
-
-    issues = "".join(
-        f'<li><a href="{e(i["url"])}">#{i["number"]}</a> {e(i["title"])}'
-        f'{" · " + e(i["milestone"]) if i["milestone"] else ""}</li>' for i in gh["issues"])
-    now_body += section(f'Issues asignadas ({len(gh["issues"])})', f'<ul class="plain">{issues or "<li>—</li>"}</ul>')
-
-    # PRs tab
     prs_body = f"""
 <div class="tiles" id="tiles">{tiles}</div>
 <section class="card">
   <div class="card-top"><h2 id="prs-title">Todas las PRs abiertas ({len(prs)})</h2>
   <input type="search" id="search" placeholder="Buscar PR, título o nota" aria-label="Buscar"></div>
   {pr_table(prs, repo, "t-all")}
-</section>"""
+</section>
+<div class="grid2">
+  <section class="card"><h2>Mergeadas en los últimos {cfg["merged_days"]} días ({len(gh["merged_prs"])})</h2>
+    <ul class="plain">{merged or "<li>—</li>"}</ul></section>
+  <section class="card"><h2>Issues asignadas ({len(gh["issues"])})</h2>
+    <ul class="plain">{issues or "<li>—</li>"}</ul></section>
+</div>"""
 
     # Epic tab: an overview of every group, and one view per group
     ep = gh["epic"]
@@ -256,25 +298,18 @@ def build():
     group_views = "".join(group_view(g) for g in ep["groups"])
     merged_total = all_count.get("merged", 0)
 
-    # Tasks and ideas tab
-    by_status = "".join(
-        f'<h3>{label} ({sum(1 for t in tasks if t.get("status") == k)})</h3>'
-        f'<ul class="tasks">{"".join(task_item(t, repo) for t in tasks if t.get("status") == k) or "<li class=muted>—</li>"}</ul>'
-        for k, label in TASK_STATUS)
+    # Ideas tab
     idea_items = "".join(
         f'<li><a href="{e(i["url"])}">#{i["number"]}</a> {e(i["title"])} '
         f'<span class="muted" data-date="{e(i["created"])}"></span></li>' for i in open_ideas)
     new_idea = f"https://github.com/{hub}/issues/new"
-    tasks_body = f"""
-<div class="grid2">
-  <section class="card"><div class="card-top"><h2>Ideas ({len(open_ideas)})</h2>
-    <a class="button" href="{e(new_idea)}">Nueva idea</a></div>
-    <p class="muted">Issues abiertas de <a href="https://github.com/{e(hub)}/issues">{e(hub)}</a>. Ciérralas al terminar.</p>
-    <ul class="plain">{idea_items or '<li class="muted">Aún no hay ideas.</li>'}</ul></section>
-  <section class="card"><h2>Tareas</h2><p class="muted">De <code>data/tasks.yml</code>.</p>{by_status}</section>
-</div>"""
+    ideas_body = f"""
+<section class="card"><div class="card-top"><h2>Ideas ({len(open_ideas)})</h2>
+  <a class="button" href="{e(new_idea)}">Nueva idea</a></div>
+  <p class="muted">Issues abiertas de <a href="https://github.com/{e(hub)}/issues">{e(hub)}</a>. Ciérralas al terminar; cuando una necesite notas, pásala a <code>data/tasks.yml</code>.</p>
+  <ul class="plain">{idea_items or '<li class="muted">Aún no hay ideas.</li>'}</ul></section>"""
 
-    n_mine = len(mine) + len(my_tasks)
+    n_doing = len(columns["doing"])
     refresh = f"https://github.com/{hub}/actions/workflows/hub.yml"
     page = f"""<!doctype html>
 <html lang="es"><head><meta charset="utf-8">
@@ -290,19 +325,19 @@ def build():
       <p class="muted">Datos de GitHub <span data-date="{e(gh['generated_at'])}"></span> ·
       <a href="{e(refresh)}">Actualizar ahora</a> · <a href="{e(new_idea)}">Nueva idea</a></p></div>
     <nav role="tablist">
-      <a role="tab" href="#ahora">Ahora <b>{n_mine}</b></a>
+      <a role="tab" href="#tablero">Tablero <b>{n_doing}</b></a>
       <a role="tab" href="#prs">PRs <b>{len(prs)}</b></a>
       <a role="tab" href="#epica">Épica DS <b>{merged_total}</b></a>
-      <a role="tab" href="#tareas">Tareas e ideas <b>{len(open_ideas) + sum(1 for t in tasks if t.get('status') != 'done')}</b></a>
+      <a role="tab" href="#ideas">Ideas <b>{len(open_ideas)}</b></a>
     </nav>
   </div>
 </header>
 <main>
-  <div class="view" id="v-ahora">{now_body}</div>
+  <div class="view" id="v-tablero">{board_body}</div>
   <div class="view" id="v-prs">{prs_body}</div>
   <div class="view" id="v-epica">{epic_body}</div>
   {group_views}
-  <div class="view" id="v-tareas">{tasks_body}</div>
+  <div class="view" id="v-ideas">{ideas_body}</div>
 </main>
 <script>{JS}</script>
 </body></html>"""
