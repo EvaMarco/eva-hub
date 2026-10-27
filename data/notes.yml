@@ -28,14 +28,14 @@
   next: "Rebase después de la revisión de Luis"
   waiting: review
 12554:
-  next: "Rebase después de la revisión de Luis"
-  waiting: review
+  next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
+  waiting: me
 12536:
   next: "Arreglo del build ($sz-8) subido; esperando CI y revisión"
   waiting: review
 12531:
-  next: "Arreglo del test de roles subido; esperando CI y revisión"
-  waiting: review
+  next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
+  waiting: me
 12528:
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
   waiting: review
@@ -50,4 +50,13 @@
   waiting: me
 12232:
   next: "Aprobada por pabloalba: mergear (#10806)"
+  waiting: me
+12534:
+  next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
+  waiting: me
+12537:
+  next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
+  waiting: me
+12538:
+  next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
   waiting: me
