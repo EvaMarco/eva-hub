@@ -12,6 +12,10 @@
   --bad: #c4332b;
   --info: #3d63c9;
   --neutral: #8a9792;
+  --k-idea: #a87400;
+  --k-task: #7a4fd0;
+  --k-pr: #0b8794;
+  --k-merged: #1d8a4e;
   --font: "Work Sans", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
   --r: 8px;
@@ -30,6 +34,10 @@
     --bad: #ff6b61;
     --info: #8aa7ff;
     --neutral: #6f7d78;
+    --k-idea: #f2c94c;
+    --k-task: #b79cff;
+    --k-pr: #5fd0db;
+    --k-merged: #4cd38a;
     color-scheme: dark;
   }
 }
@@ -165,7 +173,17 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 .bcard-meta a { font-family: var(--mono); font-size: 12px; }
 .bcard .task-items { font-size: 12px; }
 @media (max-width: 720px) { .board { grid-template-columns: 1fr; } }
-.bcard.k-idea { border-style: dashed; }
+/* Card kinds: a colored left edge and a tinted label */
+.k-idea { --k: var(--k-idea); }
+.k-task { --k: var(--k-task); }
+.k-pr { --k: var(--k-pr); }
+.k-merged { --k: var(--k-merged); }
+.bcard { border-left: 4px solid var(--k, var(--line)); }
+.bcard.k-idea { border-style: dashed dashed dashed solid; }
+.kind { display: inline-block; font-size: 11px; font-weight: 500; padding: 0 7px; border-radius: 99px; color: var(--k); border: 1px solid var(--k); background: color-mix(in srgb, var(--k) 14%, transparent); white-space: nowrap; }
+.board-legend { display: flex; flex-wrap: wrap; gap: 14px; margin: 0 0 10px; font-size: 12px; color: var(--muted); }
+.board-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.board-legend i { width: 10px; height: 10px; border-radius: 3px; background: var(--k); }
 .bcard .hint { color: var(--muted); }
 .bcard .hint code { font-family: var(--mono); font-size: 11px; }
 .col-hint { font-size: 12px; }

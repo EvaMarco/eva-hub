@@ -146,7 +146,7 @@ def pr_card(p):
     meta = " ".join(x for x in (wait_tag(note.get("waiting")), ci_tag(p["ci"]) if p["ci"] != "none" else "") if x)
     return f"""
 <li class="bcard k-pr">
-  <div class="bcard-head"><a class="ref" href="{e(p['url'])}">#{p['number']}</a> {pill(p['state'])}</div>
+  <div class="bcard-head"><span class="kind">PR</span> <a class="ref" href="{e(p['url'])}">#{p['number']}</a> {pill(p['state'])}</div>
   <div class="bcard-title">{e(strip_emoji(p['title']))}</div>
   {f'<p class="muted">{e(note["next"])}</p>' if note.get("next") else ""}
   {f'<div class="bcard-meta">{meta}</div>' if meta else ""}
@@ -155,8 +155,8 @@ def pr_card(p):
 
 def merged_card(p):
     return f"""
-<li class="bcard k-pr">
-  <div class="bcard-head"><a class="ref" href="{e(p['url'])}">#{p['number']}</a> <span class="tag">Mergeada</span></div>
+<li class="bcard k-merged">
+  <div class="bcard-head"><span class="kind">Mergeada</span> <a class="ref" href="{e(p['url'])}">#{p['number']}</a></div>
   <div class="bcard-title">{e(strip_emoji(p['title']))}</div>
   <div class="bcard-meta"><span class="muted" data-date="{e(p['mergedAt'])}"></span></div>
 </li>"""
@@ -167,7 +167,7 @@ def idea_card(i):
     body = body[:160] + "…" if len(body) > 160 else body
     return f"""
 <li class="bcard k-idea">
-  <div class="bcard-head"><a class="ref" href="{e(i['url'])}">#{i['number']}</a> <span class="tag">Idea</span></div>
+  <div class="bcard-head"><span class="kind">Idea</span> <a class="ref" href="{e(i['url'])}">#{i['number']}</a></div>
   <div class="bcard-title">{e(i['title'])}</div>
   {f'<p class="muted">{e(body)}</p>' if body else ""}
   <div class="bcard-meta"><span class="muted" data-date="{e(i['created'])}"></span>
@@ -181,7 +181,7 @@ def task_card(t, repo):
     waiting = wait_tag(t.get("waiting")) if t.get("status") == "waiting" else ""
     return f"""
 <li class="bcard k-task">
-  <div class="bcard-head"><span class="tag">Tarea</span> {waiting}</div>
+  <div class="bcard-head"><span class="kind">Tarea</span> {waiting}</div>
   <div class="bcard-title">{e(t['title'])}</div>
   {f'<p class="muted">{e(t["note"])}</p>' if t.get("note") else ""}
   {f'<ul class="task-items">{items}</ul>' if items else ""}
@@ -216,7 +216,9 @@ def build():
             columns["done"].append(merged_card(p))
     for i in open_ideas:
         columns["ideas"].append(idea_card(i))
-    board_body = '<div class="board">' + "".join(
+    legend = "".join(f'<span class="k-{k}"><i></i>{label}</span>'
+                     for k, label in (("idea", "Idea"), ("task", "Tarea"), ("pr", "PR"), ("merged", "Mergeada")))
+    board_body = f'<div class="board-legend">{legend}</div><div class="board">' + "".join(
         f'<section class="bcol c-{k}"><h2>{label} <b>{len(columns[k])}</b></h2>'
         f'{IDEAS_HINT if k == "ideas" else ""}'
         f'<ul class="bcards">{"".join(columns[k]) or "<li class=empty>—</li>"}</ul></section>'
