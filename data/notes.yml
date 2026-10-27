@@ -13,11 +13,11 @@
   next: "Responder a los 3 comentarios de pabloalba (#12581)"
   waiting: me
 12610:
-  next: "Responder al comentario de pabloalba (#12580)"
-  waiting: me
+  next: "Comentario de Pablo resuelto (4816293bff: unhandled-exception) y respondido; esperando su revisión (#12580)"
+  waiting: review
 12562:
-  next: "Copy button → icon-button* (9536f4cd42) y rebase hechos; falta force-push y responder a Luis"
-  waiting: me
+  next: "Copy button → icon-button* (9536f4cd42) subido y respondido a Luis; esperando su revisión"
+  waiting: review
 12561:
   next: "Aprobada. Esperar a que se mergee #12477; luego rebase y merge (grupo B)"
   waiting: me
