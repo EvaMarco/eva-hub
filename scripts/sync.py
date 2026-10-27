@@ -29,22 +29,45 @@ def gh(*args):
     return json.loads(out.stdout) if out.stdout.strip() else None
 
 
-def ci_state(checks):
-    checks = checks or []
-    if any(c.get("conclusion") in ("FAILURE", "TIMED_OUT", "CANCELLED") for c in checks):
-        return "fail"
-    if any(c.get("status") not in (None, "COMPLETED") for c in checks):
-        return "running"
-    return "ok" if checks else "none"
+# CI rollup state of a PR's last commit → ok | fail | running | none
+CI_STATES = {"SUCCESS": "ok", "FAILURE": "fail", "ERROR": "fail",
+             "PENDING": "running", "EXPECTED": "running"}
+
+PR_FIELDS = """
+  number title url isDraft baseRefName mergeable updatedAt mergedAt
+  repository { nameWithOwner }
+  reviews(last: 50) { nodes { state author { login } } }
+  assignees(first: 10) { nodes { login } }
+  labels(first: 20) { nodes { name } }
+  commits(last: 1) { nodes { commit { statusCheckRollup { state } } } }
+"""
+
+
+def user_prs(state, limit):
+    """The user's PRs in the repo, newest first.
+
+    Reads user.pullRequests instead of `gh pr list --author`, which goes
+    through the search API: with the Actions token, search only finds repos
+    the token can reach, so penpot/penpot came back empty.
+    """
+    query = f"""query($login: String!) {{
+      user(login: $login) {{
+        pullRequests(states: {state}, first: {limit},
+                     orderBy: {{field: UPDATED_AT, direction: DESC}}) {{
+          nodes {{ {PR_FIELDS} }}
+        }}
+      }}
+    }}"""
+    data = gh("api", "graphql", "-f", f"query={query}", "-F", f"login={CONFIG['user']}")
+    return [p for p in data["data"]["user"]["pullRequests"]["nodes"]
+            if p["repository"]["nameWithOwner"] == CONFIG["repo"]]
 
 
 def open_prs():
-    prs = gh("pr", "list", "--repo", CONFIG["repo"], "--author", CONFIG["user"],
-             "--state", "open", "--limit", "100", "--json",
-             "number,title,url,isDraft,baseRefName,mergeable,reviews,"
-             "assignees,statusCheckRollup,updatedAt,labels")
     rows = []
-    for p in prs:
+    for p in user_prs("OPEN", 100):
+        reviews = p["reviews"]["nodes"]
+        rollup = p["commits"]["nodes"][0]["commit"]["statusCheckRollup"] if p["commits"]["nodes"] else None
         rows.append({
             "number": p["number"],
             "title": p["title"],
@@ -52,22 +75,23 @@ def open_prs():
             "draft": p["isDraft"],
             "base": p["baseRefName"],
             "conflict": p["mergeable"] == "CONFLICTING",
-            "approved_by": sorted({r["author"]["login"] for r in p["reviews"]
-                                   if r["state"] == "APPROVED"}),
-            "changes_requested": any(r["state"] == "CHANGES_REQUESTED" for r in p["reviews"]),
-            "assignees": [a["login"] for a in p["assignees"]],
-            "ci": ci_state(p["statusCheckRollup"]),
+            "approved_by": sorted({r["author"]["login"] for r in reviews
+                                   if r["state"] == "APPROVED" and r["author"]}),
+            "changes_requested": any(r["state"] == "CHANGES_REQUESTED" for r in reviews),
+            "assignees": [a["login"] for a in p["assignees"]["nodes"]],
+            "ci": CI_STATES.get((rollup or {}).get("state"), "none"),
             "updated": p["updatedAt"],
-            "labels": [l["name"] for l in p["labels"]],
+            "labels": [l["name"] for l in p["labels"]["nodes"]],
         })
-    return rows
+    return sorted(rows, key=lambda r: r["number"], reverse=True)
 
 
 def merged_prs():
-    since = (dt.date.today() - dt.timedelta(days=CONFIG["merged_days"])).isoformat()
-    prs = gh("pr", "list", "--repo", CONFIG["repo"], "--author", CONFIG["user"],
-             "--state", "merged", "--search", f"merged:>={since}", "--limit", "100",
-             "--json", "number,title,url,mergedAt")
+    since = (dt.datetime.now(dt.timezone.utc)
+             - dt.timedelta(days=CONFIG["merged_days"])).isoformat()
+    prs = [{"number": p["number"], "title": p["title"], "url": p["url"],
+            "mergedAt": p["mergedAt"]}
+           for p in user_prs("MERGED", 100) if p["mergedAt"] >= since[:19]]
     return sorted(prs, key=lambda p: p["mergedAt"], reverse=True)
 
 
