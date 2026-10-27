@@ -7,6 +7,8 @@
 #   note:    optional, one or two lines
 #   added:   date added (YYYY-MM-DD)
 #
+#   items:   optional list of short lines, shown as a bulleted list
+#
 # Quick ideas go as issues in this repo instead; move them here when they
 # need notes. Done tasks can stay a while, then be deleted.
 
@@ -32,7 +34,13 @@
   status: waiting
   waiting: design
   links: ["#12376"]
-  note: "share (botón compartir del right_header), handlers-equal/mirror/independent y snap (path_actions; snap-nodes es otro icono). Pedidos el 2026-10-15; ninguno ha llegado."
+  note: "Pedidos el 2026-10-15; ninguno ha llegado. Sin ellos esos botones se quedan con el icono viejo."
+  items:
+    - "share: botón Compartir del header derecho del workspace (right_header)."
+    - "handlers-equal: barra de edición de paths, tipo de manejador «alineado»."
+    - "handlers-mirror: barra de edición de paths, tipo de manejador «espejo»."
+    - "handlers-independent: barra de edición de paths, tipo de manejador «independiente»."
+    - "snap: barra de edición de paths, botón «Snap nodes». Preguntar si vale el snap-nodes que ya existe en el DS (otro imán, sin usar): si vale, no hace falta icono nuevo."
   added: 2026-10-27
 
 - title: "Variante en minúsculas para el botón Reset del zoom"

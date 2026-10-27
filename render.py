@@ -112,6 +112,8 @@ def pr_table(prs, repo, table_id):
 def task_item(t, repo):
     links = " ".join(link_ref(l, repo) for l in t.get("links") or [])
     note = f'<p class="muted">{e(t["note"])}</p>' if t.get("note") else ""
+    items = "".join(f"<li>{e(i)}</li>" for i in t.get("items") or [])
+    note += f'<ul class="task-items">{items}</ul>' if items else ""
     waiting = wait_tag(t.get("waiting")) if t.get("status") == "waiting" else ""
     return f"""
 <li class="task t-{e(t.get('status', 'todo'))}">
