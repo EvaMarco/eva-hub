@@ -13,13 +13,13 @@
 - title: "Grupo 2 de la épica DS: selects (#12377)"
   status: doing
   links: ["#12377", "#12375"]
-  note: "Plan en .agents/plans/2026-10-27-ds-selects.md (en revisión). 31 usos en 17 archivos + fm/select (8 formularios, en este grupo). Piloto: formato de color en Inspect."
+  note: "Plan en .agents/plans/2026-10-27-ds-selects.md (revisado). 30 usos en 17 archivos, fm/select incluido (8 formularios). Piloto: tipo de degradado del colorpicker."
   added: 2026-10-27
 
 - title: "Pedir a diseño/DS lo que falta para los selects"
   status: todo
   links: ["#12377"]
-  note: "Preview al pasar el ratón (blend mode), select con búsqueda (destino de interacciones), opciones agrupadas con búsqueda (presets de board). Publicar solo tras aprobarlo."
+  note: "Preview al pasar el ratón (blend mode), select con búsqueda (destino de interacciones), iconos de easing; y para #12544 opciones agrupadas con búsqueda (presets). Publicar solo tras aprobarlo."
   added: 2026-10-27
 
 - title: "Actualizar la fila de #12477 y su comentario de QA en #12376"
