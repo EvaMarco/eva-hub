@@ -60,3 +60,6 @@
 12538:
   next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
   waiting: me
+12650:
+  next: "Draft; se libera con el próximo lote de revisión"
+  waiting: me
