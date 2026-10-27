@@ -19,7 +19,6 @@ CONFIG = {
     "repo": "penpot/penpot",
     "hub_repo": os.environ.get("GITHUB_REPOSITORY", "EvaMarco/eva-hub"),
     "epic": 12375,
-    "group": 12376,
     "merged_days": 14,
 }
 
@@ -126,31 +125,34 @@ def pr_states(numbers):
     return out
 
 
+# The PR table in a group issue: "| #123 | Area | State |"
+PR_ROW = re.compile(r"^\|\s*#(\d+)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*$")
+
+
+def table_rows(body):
+    rows = []
+    for line in (body or "").splitlines():
+        m = PR_ROW.match(line)
+        if m:
+            rows.append({"number": int(m[1]), "area": m[2], "table_state": m[3]})
+    return rows
+
+
 def epic():
     repo = CONFIG["repo"]
     meta = gh("issue", "view", str(CONFIG["epic"]), "--repo", repo, "--json", "title,url,state")
-    groups = gh("api", f"repos/{repo}/issues/{CONFIG['epic']}/sub_issues")
-    group = gh("issue", "view", str(CONFIG["group"]), "--repo", repo, "--json", "title,url,body")
+    # Sub-issues come with their body, where each group keeps its PR table.
+    subs = gh("api", f"repos/{repo}/issues/{CONFIG['epic']}/sub_issues")
 
-    # The PR table in the group issue: "| #123 | Area | State |"
-    rows = []
-    for line in group["body"].splitlines():
-        m = re.match(r"^\|\s*#(\d+)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*$", line)
-        if m:
-            rows.append({"number": int(m[1]), "area": m[2], "table_state": m[3]})
-    states = pr_states([r["number"] for r in rows])
-    for r in rows:
-        r.update(states.get(r["number"], {"state": "unknown"}))
+    groups = [{"number": g["number"], "title": g["title"], "url": g["html_url"],
+               "state": g["state"], "prs": table_rows(g.get("body"))} for g in subs]
+    states = pr_states([r["number"] for g in groups for r in g["prs"]])
+    for g in groups:
+        for r in g["prs"]:
+            r.update(states.get(r["number"], {"state": "unknown"}))
 
-    return {
-        "title": meta["title"],
-        "url": meta["url"],
-        "state": meta["state"],
-        "groups": [{"number": g["number"], "title": g["title"], "url": g["html_url"],
-                    "state": g["state"]} for g in groups],
-        "group": {"number": CONFIG["group"], "title": group["title"], "url": group["url"],
-                  "prs": rows},
-    }
+    return {"title": meta["title"], "url": meta["url"], "state": meta["state"],
+            "groups": groups}
 
 
 def ideas():
@@ -187,7 +189,8 @@ def main():
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1))
     print(f"wrote {out.relative_to(ROOT)}: {len(data['open_prs'])} open PRs, "
-          f"{len(data['issues'])} issues, {len(data['epic']['group']['prs'])} epic PRs, "
+          f"{len(data['issues'])} issues, "
+          f"{sum(len(g['prs']) for g in data['epic']['groups'])} epic PRs, "
           f"{len(data['ideas'])} ideas")
 
 

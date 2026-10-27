@@ -7,7 +7,11 @@
     const id = location.hash.slice(1);
     const current = views.find((v) => v.id === "v-" + id) || views[0];
     views.forEach((v) => (v.hidden = v !== current));
-    tabs.forEach((t) => t.setAttribute("aria-selected", String("v-" + t.hash.slice(1) === current.id)));
+    // A group view ("#epica-12377") keeps its parent tab ("#epica") selected.
+    tabs.forEach((t) => {
+      const base = "v-" + t.hash.slice(1);
+      t.setAttribute("aria-selected", String(current.id === base || current.id.startsWith(base + "-")));
+    });
     window.scrollTo(0, 0);
   }
   window.addEventListener("hashchange", show);

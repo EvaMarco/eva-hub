@@ -186,46 +186,75 @@ def build():
   {pr_table(prs, repo, "t-all")}
 </section>"""
 
-    # Epic tab
+    # Epic tab: an overview of every group, and one view per group
     ep = gh["epic"]
-    gprs = ep["group"]["prs"]
-    gcount = Counter(p["state"] for p in gprs)
-    total = len(gprs) or 1
-    bar = "".join(
-        f'<span class="seg s-{k}" style="flex:{gcount.get(k, 0)}" title="{label}: {gcount.get(k, 0)}"></span>'
-        for k, label in (("merged", "Mergeadas"), ("open", "En revisión"), ("draft", "Draft"), ("closed", "Cerradas")))
-    legend = "".join(
-        f'<span class="legend"><i class="s-{k}"></i>{label} <b>{gcount.get(k, 0)}</b></span>'
-        for k, label in (("merged", "Mergeadas"), ("open", "En revisión"), ("draft", "Draft"), ("closed", "Cerradas")))
-    drift = [p for p in gprs
-             if (p["state"] == "merged" and p["table_state"] != "Merged")
-             or (p["state"] == "open" and p["table_state"] == "Draft")]
-    drift_html = (
-        f'<details class="warn"><summary>La tabla de <a href="{e(ep["group"]["url"])}">#{ep["group"]["number"]}</a> '
-        f'tiene {len(drift)} filas con el estado desactualizado</summary><p>'
-        + ", ".join(f'<a href="{e(p.get("url", ""))}">#{p["number"]}</a> '
-                    f'({e(p["table_state"])} → {e(p["state"])})' for p in drift)
-        + "</p></details>") if drift else ""
+    states = (("merged", "Mergeadas"), ("open", "En revisión"), ("draft", "Draft"), ("closed", "Cerradas"))
     gstate = {"merged": "Mergeada", "open": "En revisión", "draft": "Draft", "closed": "Cerrada", "unknown": "?"}
-    grows = "".join(
-        f'<tr><td class="num"><a href="{e(p.get("url", ""))}">#{p["number"]}</a></td>'
-        f'<td class="title">{e(p["area"])}</td><td><span class="gst s-{p["state"]}">{gstate.get(p["state"], p["state"])}</span></td></tr>'
-        for p in sorted(gprs, key=lambda p: ({"open": 0, "draft": 1, "merged": 2}.get(p["state"], 3), -p["number"])))
-    groups = "".join(
-        f'<li class="g-{g["state"]}"><a href="{e(g["url"])}">#{g["number"]}</a> {e(g["title"])}'
-        f'{" <b>(en curso)</b>" if g["number"] == ep["group"]["number"] else ""}</li>' for g in ep["groups"])
+
+    def group_bar(prs):
+        count = Counter(p["state"] for p in prs)
+        bar = "".join(
+            f'<span class="seg s-{k}" style="flex:{count.get(k, 0)}" title="{label}: {count.get(k, 0)}"></span>'
+            for k, label in states)
+        legend = "".join(
+            f'<span class="legend"><i class="s-{k}"></i>{label} <b>{count.get(k, 0)}</b></span>'
+            for k, label in states if count.get(k, 0))
+        return count, f'<div class="bar">{bar}</div><div class="legends">{legend}</div>'
+
+    def group_summary(g):
+        count = Counter(p["state"] for p in g["prs"])
+        if not g["prs"]:
+            return "Sin empezar"
+        done = round(100 * count.get("merged", 0) / len(g["prs"]))
+        n = len(g["prs"])
+        return f'{done}% mergeadas · {n} {"PR" if n == 1 else "PRs"}'
+
+    def group_view(g):
+        prs = g["prs"]
+        _, bar = group_bar(prs)
+        drift = [p for p in prs
+                 if (p["state"] == "merged" and p["table_state"] != "Merged")
+                 or (p["state"] == "open" and p["table_state"] == "Draft")]
+        drift_html = (
+            f'<details class="warn"><summary>La tabla de <a href="{e(g["url"])}">#{g["number"]}</a> '
+            f'tiene {len(drift)} filas con el estado desactualizado</summary><p>'
+            + ", ".join(f'<a href="{e(p.get("url", ""))}">#{p["number"]}</a> '
+                        f'({e(p["table_state"])} → {e(p["state"])})' for p in drift)
+            + "</p></details>") if drift else ""
+        rows = "".join(
+            f'<tr><td class="num"><a href="{e(p.get("url", ""))}">#{p["number"]}</a></td>'
+            f'<td class="title">{e(p["area"])}</td><td><span class="gst s-{p["state"]}">{gstate.get(p["state"], p["state"])}</span></td></tr>'
+            for p in sorted(prs, key=lambda p: ({"open": 0, "draft": 1, "merged": 2}.get(p["state"], 3), -p["number"])))
+        table = (f'<div class="tablebox"><table><thead><tr><th>PR</th><th>Área</th><th>Estado</th></tr></thead>'
+                 f'<tbody>{rows}</tbody></table></div>') if prs else '<p class="muted">Todavía no tiene PRs.</p>'
+        return f"""
+<div class="view" id="v-epica-{g['number']}">
+<p class="back"><a href="#epica">← Todos los grupos</a></p>
+<section class="card">
+  <h2><a href="{e(g['url'])}">#{g['number']}</a> {e(g['title'])}</h2>
+  <p class="muted">{group_summary(g)}</p>
+  {bar if prs else ''}
+  {drift_html}
+</section>
+<section class="card"><h2>PRs del grupo ({len(prs)})</h2>{table}</section>
+</div>"""
+
+    group_rows = "".join(
+        f'<li class="g-{g["state"]}"><a class="gname" href="#epica-{g["number"]}">'
+        f'<span class="num">#{g["number"]}</span> {e(g["title"])}</a>'
+        f'<span class="muted">{group_summary(g)}</span>{group_bar(g["prs"])[1] if g["prs"] else ""}</li>'
+        for g in ep["groups"])
+    all_prs = [p for g in ep["groups"] for p in g["prs"]]
+    all_count = Counter(p["state"] for p in all_prs)
+    started = sum(1 for g in ep["groups"] if g["prs"])
     epic_body = f"""
 <section class="card">
   <h2><a href="{e(ep['url'])}">#{e(str(cfg['epic']))}</a> {e(ep['title'])}</h2>
-  <p class="muted">Grupo en curso: <a href="{e(ep['group']['url'])}">#{ep['group']['number']}</a> {e(ep['group']['title'])}. {round(100 * gcount.get('merged', 0) / total)}% de sus PRs mergeadas.</p>
-  <div class="bar">{bar}</div><div class="legends">{legend}</div>
-  {drift_html}
+  <p class="muted">{len(ep['groups'])} grupos, {started} empezados. {all_count.get('merged', 0)} de {len(all_prs)} PRs mergeadas en total.</p>
 </section>
-<div class="grid2">
-  <section class="card"><h2>PRs del grupo ({len(gprs)})</h2>
-    <div class="tablebox"><table><thead><tr><th>PR</th><th>Área</th><th>Estado</th></tr></thead><tbody>{grows}</tbody></table></div></section>
-  <section class="card"><h2>Grupos de la épica ({len(ep['groups'])})</h2><ol class="groups">{groups}</ol></section>
-</div>"""
+<section class="card"><h2>Grupos</h2><ol class="groups">{group_rows}</ol></section>"""
+    group_views = "".join(group_view(g) for g in ep["groups"])
+    merged_total = all_count.get("merged", 0)
 
     # Tasks and ideas tab
     by_status = "".join(
@@ -263,7 +292,7 @@ def build():
     <nav role="tablist">
       <a role="tab" href="#ahora">Ahora <b>{n_mine}</b></a>
       <a role="tab" href="#prs">PRs <b>{len(prs)}</b></a>
-      <a role="tab" href="#epica">Épica DS <b>{round(100 * gcount.get('merged', 0) / total)}%</b></a>
+      <a role="tab" href="#epica">Épica DS <b>{merged_total}</b></a>
       <a role="tab" href="#tareas">Tareas e ideas <b>{len(open_ideas) + sum(1 for t in tasks if t.get('status') != 'done')}</b></a>
     </nav>
   </div>
@@ -272,6 +301,7 @@ def build():
   <div class="view" id="v-ahora">{now_body}</div>
   <div class="view" id="v-prs">{prs_body}</div>
   <div class="view" id="v-epica">{epic_body}</div>
+  {group_views}
   <div class="view" id="v-tareas">{tasks_body}</div>
 </main>
 <script>{JS}</script>
