@@ -83,6 +83,7 @@ input[type="search"] { font: inherit; padding: 6px 10px; border: 1px solid var(-
 .st-merge { --c: var(--ok); }
 .st-fail { --c: var(--bad); }
 .st-changes { --c: var(--bad); }
+.st-comments { --c: var(--k-review); }
 .st-approved { --c: var(--ok); }
 .st-review { --c: var(--info); }
 .st-rebase { --c: var(--warn); }
@@ -206,3 +207,4 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 @media (max-width: 720px) { .board.done-collapsed { grid-template-columns: 1fr; } .board.done-collapsed .c-done h2 { writing-mode: horizontal-tb; } }
 .w-author { border-color: var(--k-review); color: var(--k-review); }
 .turn-me { border-color: var(--k-review); color: var(--k-review); }
+.tag.fb { border-color: var(--k-review); color: var(--k-review); background: color-mix(in srgb, var(--k-review) 12%, transparent); font-weight: 500; }

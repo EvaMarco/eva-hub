@@ -38,7 +38,10 @@ PR_FIELDS = """
   reviews(last: 50) { nodes { state author { login } } }
   assignees(first: 10) { nodes { login } }
   labels(first: 20) { nodes { name } }
-  commits(last: 1) { nodes { commit { statusCheckRollup { state } } } }
+  commits(last: 1) { nodes { commit { committedDate statusCheckRollup { state } } } }
+  comments(last: 20) { nodes { author { login __typename } createdAt } }
+  latestReviews: reviews(last: 20) { nodes { author { login __typename } submittedAt state body } }
+  reviewThreads(first: 50) { nodes { isResolved comments(last: 1) { nodes { author { login } } } } }
 """
 
 
@@ -62,6 +65,34 @@ def user_prs(state, limit):
             if p["repository"]["nameWithOwner"] == CONFIG["repo"]]
 
 
+def is_person(author):
+    return bool(author) and author.get("__typename") != "Bot" and not author["login"].endswith("[bot]")
+
+
+def feedback(p, user):
+    """Comments on my PR that I have not handled yet.
+
+    Counts unresolved review threads whose last comment is not mine, and says
+    whether someone else commented or reviewed after my last commit or comment.
+    """
+    threads = sum(1 for t in p["reviewThreads"]["nodes"]
+                  if not t["isResolved"] and t["comments"]["nodes"]
+                  and (t["comments"]["nodes"][0]["author"] or {}).get("login") != user)
+    mine, others = [], []
+    if p["commits"]["nodes"]:
+        mine.append(p["commits"]["nodes"][0]["commit"]["committedDate"])
+    events = [(c["author"], c["createdAt"]) for c in p["comments"]["nodes"]]
+    # An approval with no text needs no answer.
+    events += [(r["author"], r["submittedAt"]) for r in p["latestReviews"]["nodes"]
+               if r["submittedAt"] and not (r["state"] == "APPROVED" and not (r["body"] or "").strip())]
+    for author, date in events:
+        if not is_person(author):
+            continue
+        (mine if author["login"] == user else others).append(date)
+    new = bool(others) and max(others) > max(mine, default="")
+    return {"open_threads": threads, "new_comments": new}
+
+
 def open_prs():
     rows = []
     for p in user_prs("OPEN", 100):
@@ -81,6 +112,7 @@ def open_prs():
             "ci": CI_STATES.get((rollup or {}).get("state"), "none"),
             "updated": p["updatedAt"],
             "labels": [l["name"] for l in p["labels"]["nodes"]],
+            **feedback(p, CONFIG["user"]),
         })
     return sorted(rows, key=lambda r: r["number"], reverse=True)
 

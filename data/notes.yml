@@ -10,14 +10,14 @@
   next: "Diseño: icono, copia rota anidada y selección mixta. Mergear después de #12533 (comparten en.po/es.po)"
   waiting: design
 12624:
-  next: "Esperando revisión (#12581)"
-  waiting: review
+  next: "Responder a los 3 comentarios de pabloalba (#12581)"
+  waiting: me
 12610:
-  next: "Esperando revisión (#12580)"
-  waiting: review
+  next: "Responder al comentario de pabloalba (#12580)"
+  waiting: me
 12562:
-  next: "Sin solapes: un rebase cuando Luis la apruebe, en cualquier orden"
-  waiting: review
+  next: "Responder a los 2 comentarios de Luis (icon-button* en share_link)"
+  waiting: me
 12561:
   next: "Aprobada. Esperar a que se mergee #12477; luego rebase y merge (grupo B)"
   waiting: me
@@ -64,14 +64,14 @@
   next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
   waiting: review
 12541:
-  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
-  waiting: review
+  next: "Responder al comentario de Luis"
+  waiting: me
 12542:
-  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
-  waiting: review
+  next: "Responder al comentario de Luis (stroke-width por defecto)"
+  waiting: me
 12550:
-  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
-  waiting: review
+  next: "Aprobada por Luis: siguiente del grupo A. Rebase justo antes de mergear"
+  waiting: me
 # Issues assigned to me and PRs to review: "status" picks the board column
 # (todo, doing, waiting, review, done, hidden); "next" is the next step.
 # PRs to review without a status go to "Esperando" when the author has not

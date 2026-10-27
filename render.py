@@ -22,6 +22,7 @@ STATES = [
     ("merge", "Lista para mergear"),
     ("fail", "CI falla"),
     ("changes", "Cambios pedidos"),
+    ("comments", "Comentarios por revisar"),
     ("approved", "Aprobada, CI en curso"),
     ("review", "En revisión"),
     ("rebase", "Necesita rebase"),
@@ -43,6 +44,8 @@ def load_yaml(name, default):
 def pr_state(p):
     if p["draft"]:
         return "draft"
+    if p.get("open_threads") or p.get("new_comments"):
+        return "comments"
     if p["conflict"]:
         return "rebase"
     if p["ci"] == "fail":
@@ -96,7 +99,7 @@ def pr_row(p, repo):
   <td class="num"><a href="{e(p['url'])}">#{p['number']}</a></td>
   <td class="title">{e(strip_emoji(p['title']))}</td>
   <td>{pill(p['state'])}</td>
-  <td class="next">{e(note.get('next', '—'))} {wait_tag(note.get('waiting'))}</td>
+  <td class="next">{feedback_tag(p)} {e(note.get('next', '—'))} {wait_tag(note.get('waiting'))}</td>
   <td>{ci_tag(p['ci'])}</td>
   <td class="narrow">{e(p['base'])}</td>
   <td class="narrow">{e(who)}</td>
@@ -122,7 +125,7 @@ IDEAS_HINT = '<p class="muted col-hint">Issues abiertas del repo del hub: cosas 
 def pr_column(p):
     """Board column of an open PR, from its state and its note."""
     waiting = (p["note"] or {}).get("waiting")
-    if p["state"] in ("merge", "fail", "changes") or waiting == "me":
+    if p["state"] in ("merge", "fail", "changes", "comments") or waiting == "me":
         return "doing"
     if waiting in ("design", "other"):
         return "waiting"
@@ -151,9 +154,17 @@ def recent(date, days=DONE_DAYS):
     return (dt.date.today() - date).days <= days
 
 
+def feedback_tag(p):
+    n = p.get("open_threads") or 0
+    if n:
+        return f'<span class="tag fb">{n} {"hilo" if n == 1 else "hilos"} sin resolver</span>'
+    return '<span class="tag fb">Comentarios nuevos</span>' if p.get("new_comments") else ""
+
+
 def pr_card(p):
     note = p["note"] or {}
-    meta = " ".join(x for x in (wait_tag(note.get("waiting")), ci_tag(p["ci"]) if p["ci"] != "none" else "") if x)
+    meta = " ".join(x for x in (feedback_tag(p), wait_tag(note.get("waiting")),
+                                ci_tag(p["ci"]) if p["ci"] != "none" else "") if x)
     return f"""
 <li class="bcard k-pr">
   <div class="bcard-head"><span class="kind">PR</span> <a class="ref" href="{e(p['url'])}">#{p['number']}</a> {pill(p['state'])}</div>
