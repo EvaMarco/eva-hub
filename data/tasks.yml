@@ -33,16 +33,22 @@
   added: 2026-10-27
 
 - title: "Recordar a diseño los iconos que faltan en el DS"
-  status: waiting
-  waiting: design
-  links: ["#12654", "#12376"]
-  note: "Pedidos el 2026-10-15. Issue con imágenes: #12654. Los 4 del path solo necesitan que diseño confirme el dibujo (los SVG ya valen para el DS, se añade una línea en icon.cljs); share necesita un SVG nuevo."
-  items:
-    - "share: botón Compartir del header derecho del workspace (right_header)."
-    - "handlers-equal: barra de edición de paths, tipo de manejador «alineado»."
-    - "handlers-mirror: barra de edición de paths, tipo de manejador «espejo»."
-    - "handlers-independent: barra de edición de paths, tipo de manejador «independiente»."
-    - "snap: barra de edición de paths, botón «Snap nodes». Preguntar si vale el snap-nodes que ya existe en el DS (otro imán, sin usar): si vale, no hace falta icono nuevo."
+  status: done
+  done: 2026-10-27
+  links: ["#12654", "#12659", "#12376"]
+  note: "Diseño decidió: share redibujado en formato DS (un path, 16×16, sin color); handlers y snap tal cual; snap-nodes borrado. Draft #12659 (cierra #12654)."
+  added: 2026-10-27
+
+- title: "Migrar el botón Compartir del header derecho a icon-button* con i/share"
+  status: todo
+  links: ["#12659", "#12376"]
+  note: "Desbloqueado por #12659: esperar a que se mergee. Hoy es un [:a] con el icono legacy share (right_header.cljs, .share-btn); el SCSS ya lo marca como pendiente del icono."
+  added: 2026-10-27
+
+- title: "Migrar la barra de edición de paths (path_actions) a botones e iconos DS"
+  status: todo
+  links: ["#12659", "#12376"]
+  note: "Desbloqueado por #12659: esperar a que se mergee. Usa icon-xref :snap y :handlers-*; pasan a icon-button* con i/snap e i/handlers-*."
   added: 2026-10-27
 
 - title: "Variante en minúsculas para el botón Reset del zoom"
