@@ -63,3 +63,6 @@
 12650:
   next: "Draft; se libera con el próximo lote de revisión"
   waiting: me
+12651:
+  next: "Draft; adjuntar compare.png; se libera con el próximo lote"
+  waiting: me
