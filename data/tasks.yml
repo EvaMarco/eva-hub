@@ -10,10 +10,56 @@
 # Quick ideas go as issues in this repo instead; move them here when they
 # need notes. Done tasks can stay a while, then be deleted.
 
+- title: "Preguntar al equipo si migramos measures sin esperar a #9139 (squircle)"
+  status: todo
+  links: ["#9139", "#12376"]
+  note: "Bloquea menus/measures (botones/iconos). Draft desde abril; diseño dijo en junio que necesita definición. Propuesta: migrar y que quien retome el squircle haga rebase."
+  added: 2026-10-27
+
+- title: "Preguntar si #12059 (export previews) se va a revisar pronto"
+  status: todo
+  links: ["#12059", "#12376", "#12377"]
+  note: "Bloquea menus/exports e inspect/exports (botones y selects). Externo, sin revisor ni milestone, parado desde el 2026-10-09. Si no, migramos y el autor hace rebase."
+  added: 2026-10-27
+
+- title: "Preguntar si #12198 (hide viewer chrome) se va a revisar pronto"
+  status: todo
+  links: ["#12198", "#12376"]
+  note: "Bloquea el header del viewer y viewer.cljs. Externo, sin revisor, parado desde el 2026-10-09. Si no, migramos y el autor hace rebase."
+  added: 2026-10-27
+
+- title: "Recordar a diseño los iconos que faltan en el DS"
+  status: waiting
+  waiting: design
+  links: ["#12376"]
+  note: "share (botón compartir del right_header), handlers-equal/mirror/independent y snap (path_actions; snap-nodes es otro icono). Pedidos el 2026-10-15; ninguno ha llegado."
+  added: 2026-10-27
+
+- title: "Variante en minúsculas para el botón Reset del zoom"
+  status: waiting
+  waiting: design
+  links: ["#12454", "#12523"]
+  note: "Diseño la está haciendo desde el 2026-10-20; button* sigue con primary/secondary/ghost/destructive. Cuando llegue, follow-up en los dos menús de zoom."
+  added: 2026-10-27
+
+- title: "common-dashboard.scss al DS"
+  status: waiting
+  waiting: review
+  links: ["#12376"]
+  note: "Lo comparten diez módulos del dashboard; mejor cuando se mergee el lote del dashboard (#12531–#12541)."
+  added: 2026-10-27
+
+- title: "Task 9 de botones/iconos: limpieza final"
+  status: waiting
+  waiting: review
+  links: ["#12376"]
+  note: "Borrar %button-* y los iconos viejos sin uso, y revisar los componentes compartidos. Espera a que se mergeen los PRs abiertos y las áreas bloqueadas."
+  added: 2026-10-27
+
 - title: "Grupo 2 de la épica DS: selects (#12377)"
   status: doing
   links: ["#12377", "#12375"]
-  note: "Plan en .agents/plans/2026-10-27-ds-selects.md (revisado). 30 usos en 17 archivos, fm/select incluido (8 formularios). Piloto: tipo de degradado del colorpicker."
+  note: "Plan en .agents/plans/2026-10-27-ds-selects.md (revisado). 30 usos en 17 archivos, fm/select incluido (8 formularios). Task 0 hecha. Solo el piloto (tipo de degradado) hasta que se mergee el lote de botones."
   added: 2026-10-27
 
 - title: "Pedir a diseño/DS lo que falta para los selects"
