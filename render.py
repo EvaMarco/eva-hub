@@ -264,8 +264,11 @@ def build():
     legend = "".join(f'<span class="k-{k}"><i></i>{label}</span>'
                      for k, label in (("idea", "Idea"), ("task", "Tarea"), ("issue", "Issue"), ("pr", "PR"),
                                       ("review", "Revisar"), ("merged", "Mergeada")))
-    board_body = f'<div class="board-legend">{legend}</div><div class="board">' + "".join(
-        f'<section class="bcol c-{k}"><h2>{label} <b>{len(columns[k])}</b></h2>'
+    board_body = f'<div class="board-legend">{legend}</div><div class="board done-collapsed">' + "".join(
+        f'<section class="bcol c-{k}" id="col-{k}"><h2>{label} <b>{len(columns[k])}</b>'
+        + (f'<button type="button" class="col-toggle" aria-expanded="false" aria-controls="col-{k}" '
+           f'title="Mostrar u ocultar lo terminado">Mostrar</button>' if k == "done" else "")
+        + '</h2>'
         f'{IDEAS_HINT if k == "ideas" else ""}'
         f'<ul class="bcards">{"".join(columns[k]) or "<li class=empty>—</li>"}</ul></section>'
         for k, label in BOARD) + "</div>"

@@ -193,3 +193,14 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 .bcard .hint { color: var(--muted); }
 .bcard .hint code { font-family: var(--mono); font-size: 11px; }
 .col-hint { font-size: 12px; }
+
+/* "Listo" can collapse to a narrow strip */
+.col-toggle { font: inherit; font-size: 11px; color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 99px; padding: 0 8px; cursor: pointer; margin-left: 6px; }
+.col-toggle:hover { color: var(--fg); border-color: var(--muted); }
+.board.done-collapsed { grid-template-columns: repeat(5, minmax(190px, 1fr)) 44px; }
+.board.done-collapsed .c-done { padding: 12px 6px; align-items: center; }
+.board.done-collapsed .c-done .bcards { display: none; }
+.board.done-collapsed .c-done h2 { writing-mode: vertical-rl; flex-direction: row; gap: 10px; justify-content: flex-start; }
+.board.done-collapsed .c-done h2 b { writing-mode: horizontal-tb; }
+.board.done-collapsed .col-toggle { margin: 0; padding: 8px 0; }
+@media (max-width: 720px) { .board.done-collapsed { grid-template-columns: 1fr; } .board.done-collapsed .c-done h2 { writing-mode: horizontal-tb; } }

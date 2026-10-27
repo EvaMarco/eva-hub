@@ -42,6 +42,26 @@
   }));
   search.addEventListener("input", filter);
 
+  // "Listo" column: collapsed by default; the choice is remembered in this browser.
+  const board = document.querySelector(".board");
+  const toggle = document.querySelector(".col-toggle");
+  if (board && toggle) {
+    const KEY = "hub.done-open";
+    const setOpen = (open) => {
+      board.classList.toggle("done-collapsed", !open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.textContent = open ? "Ocultar" : "Mostrar";
+    };
+    let open = false;
+    try { open = localStorage.getItem(KEY) === "1"; } catch (_) {}
+    setOpen(open);
+    toggle.addEventListener("click", () => {
+      open = !open;
+      setOpen(open);
+      try { localStorage.setItem(KEY, open ? "1" : "0"); } catch (_) {}
+    });
+  }
+
   // "hace 3 h" style dates.
   const rtf = new Intl.RelativeTimeFormat("es", { numeric: "auto" });
   const units = [["day", 86400], ["hour", 3600], ["minute", 60]];
