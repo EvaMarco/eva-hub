@@ -39,11 +39,8 @@
 12528:
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
   waiting: review
-12521:
-  next: "Si se mergea después de #12520, conflicto en visual-viewer.spec.js"
-  waiting: me
 12520:
-  next: "Si se mergea después de #12521, conflicto en visual-viewer.spec.js"
+  next: "Rebase hecho sobre develop (conflicto resuelto); force-push y luego merge"
   waiting: me
 12508:
   next: "Diseño decide sobre el botón History en Inspect"
