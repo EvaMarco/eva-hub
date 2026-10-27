@@ -16,7 +16,7 @@
   next: "Responder al comentario de pabloalba (#12580)"
   waiting: me
 12562:
-  next: "Responder a los 2 comentarios de Luis (icon-button* en share_link)"
+  next: "Copy button → icon-button* (9536f4cd42) y rebase hechos; falta force-push y responder a Luis"
   waiting: me
 12561:
   next: "Aprobada. Esperar a que se mergee #12477; luego rebase y merge (grupo B)"
