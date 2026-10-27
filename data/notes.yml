@@ -7,7 +7,7 @@
 # closed PRs are ignored; delete them whenever.
 
 12643:
-  next: "Diseño: icono nuevo, copia rota anidada en un main y selección mixta (#12134)"
+  next: "Diseño: icono, copia rota anidada y selección mixta. Mergear después de #12533 (comparten en.po/es.po)"
   waiting: design
 12624:
   next: "Esperando revisión (#12581)"
@@ -16,11 +16,11 @@
   next: "Esperando revisión (#12580)"
   waiting: review
 12562:
-  next: "Rebase después de la revisión de Luis"
+  next: "Sin solapes: un rebase cuando Luis la apruebe, en cualquier orden"
   waiting: review
 12561:
-  next: "Rebase después de la revisión de Luis"
-  waiting: review
+  next: "Aprobada. Esperar a que se mergee #12477; luego rebase y merge (grupo B)"
+  waiting: me
 12559:
   next: "Aprobado; rebase y force-push hechos, falta que pase el CI y merge"
   waiting: ci
@@ -28,10 +28,10 @@
   next: "Aprobado; rebase y force-push hechos, falta que pase el CI y merge"
   waiting: ci
 12536:
-  next: "Arreglo del build ($sz-8) subido; esperando CI y revisión"
+  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
   waiting: review
 12531:
-  next: "Aprobado; rebase cuando se mergee #12534 (chocan en visual-dashboard.spec.js)"
+  next: "Rebase hecho 2026-10-27; force-push, CI y merge. Primera del grupo A"
   waiting: me
 12528:
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
@@ -40,17 +40,35 @@
   next: "Diseño decide sobre el botón History en Inspect"
   waiting: design
 12477:
-  next: "Actualizar su fila y el comentario de QA en #12376 (los nombres suben 1px)"
-  waiting: me
+  next: "Mergear antes que #12561: hoy no tiene conflicto y así no necesita rebase (grupo B)"
+  waiting: review
 12534:
   next: "Aprobado; rebase y force-push hechos, falta que pase el CI y merge"
   waiting: ci
 12650:
-  next: "Draft; se libera con el próximo lote de revisión"
+  next: "Draft sin conflictos: se mergea tal cual (0 CI)"
   waiting: me
 12651:
-  next: "Draft; adjuntar compare.png; se libera con el próximo lote"
+  next: "Draft. Última del grupo A (visual-dashboard.spec.js); rebase justo antes de mergear"
   waiting: me
 12653:
-  next: "Piloto de selects; draft. Adjuntar compare.png; el resto de selects espera al lote de botones"
+  next: "Piloto de selects (draft). Última del grupo B (workspace.spec.js); rebase justo antes de mergear"
   waiting: me
+12533:
+  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
+  waiting: review
+12535:
+  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
+  waiting: review
+12539:
+  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
+  waiting: review
+12541:
+  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
+  waiting: review
+12542:
+  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
+  waiting: review
+12550:
+  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
+  waiting: review

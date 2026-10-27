@@ -67,7 +67,13 @@
 - title: "Grupo 2 de la épica DS: selects (#12377)"
   status: doing
   links: ["#12377", "#12375"]
-  note: "Plan en .agents/plans/2026-10-27-ds-selects.md (revisado). 30 usos en 17 archivos, fm/select incluido (8 formularios). Task 0 hecha. Solo el piloto (tipo de degradado) hasta que se mergee el lote de botones."
+  note: "Plan en .agents/plans/2026-10-27-ds-selects.md (revisado dos veces). 30 usos en 17 archivos, fm/select incluido (8 formularios). El resto de áreas espera a que se mergee el lote de botones."
+  items:
+    - "Task 0 hecha: #12377 con plan, cambios para QA y tabla de PRs."
+    - "Piloto (Task 1) hecho: draft #12653, tipo de degradado del colorpicker."
+    - "Lección: el select* no tiene nombre accesible; en los tests, getByRole(\"combobox\").filter({ hasText })."
+    - "Blend mode: seguimos con un hover callback en select* (provisional, Task 5b)."
+    - "Destino de interacciones: espera un modo de combobox* que filtre y solo acepte opciones."
   added: 2026-10-27
 
 - title: "Pedir a diseño/DS lo que falta para los selects"
@@ -90,12 +96,16 @@
   note: "Una copia rota dentro de un main aún ofrece \"Detach instance\"."
   added: 2026-10-26
 
-- title: "Rebases de #12558, #12559, #12561 y #12562"
-  status: waiting
-  waiting: review
-  links: ["#12558", "#12559", "#12561", "#12562"]
-  note: "Después de la revisión de Luis."
-  added: 2026-10-26
+- title: "Orden de rebase y merge de los PRs de botones (un CI por PR)"
+  status: doing
+  links: ["#12376"]
+  note: "Regla: rebase solo justo antes de mergear. Solo chocan los specs visuales, así que cada PR con conflicto cuesta un CI; lo que importa es el orden."
+  items:
+    - "Grupo A, visual-dashboard.spec.js (todas con conflicto): #12531 (rebase hecho, falta push y merge) → luego #12533, #12535, #12536, #12539, #12541, #12542, #12550 según apruebe Luis → #12651 la última."
+    - "Grupo B, workspace.spec.js: #12477 (sin conflicto, 0 CI) → #12561 (aprobada, 1 rebase) → #12653 (draft, 1 rebase)."
+    - "Sueltas: #12562 (un rebase cuando se apruebe), #12650 (sin conflicto), #12643 (después de #12533 por en.po/es.po)."
+    - "Staging: #12508 y #12610 comparten refs.cljs; #12610 y #12624 comparten errors.cljs. Si se mergea una, mirar la otra."
+  added: 2026-10-27
 
 - title: "Subir las skills refactor-scss y migrate-ds-area al repo"
   status: todo
