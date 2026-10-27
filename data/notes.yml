@@ -51,3 +51,6 @@
 12651:
   next: "Draft; adjuntar compare.png; se libera con el próximo lote"
   waiting: me
+12653:
+  next: "Piloto de selects; draft. Adjuntar compare.png; el resto de selects espera al lote de botones"
+  waiting: me
