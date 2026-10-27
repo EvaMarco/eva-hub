@@ -22,41 +22,29 @@
   next: "Rebase después de la revisión de Luis"
   waiting: review
 12559:
-  next: "Rebase después de la revisión de Luis"
-  waiting: review
+  next: "Aprobado; rebase y force-push hechos, falta que pase el CI y merge"
+  waiting: ci
 12558:
-  next: "Rebase después de la revisión de Luis"
-  waiting: review
-12554:
-  next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
-  waiting: me
+  next: "Aprobado; rebase y force-push hechos, falta que pase el CI y merge"
+  waiting: ci
 12536:
   next: "Arreglo del build ($sz-8) subido; esperando CI y revisión"
   waiting: review
 12531:
-  next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
+  next: "Aprobado; rebase cuando se mergee #12534 (chocan en visual-dashboard.spec.js)"
   waiting: me
 12528:
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
   waiting: review
-12520:
-  next: "Rebase hecho sobre develop (conflicto resuelto); force-push y luego merge"
-  waiting: me
 12508:
   next: "Diseño decide sobre el botón History en Inspect"
   waiting: design
 12477:
   next: "Actualizar su fila y el comentario de QA en #12376 (los nombres suben 1px)"
   waiting: me
-12232:
-  next: "Aprobada por pabloalba: mergear (#10806)"
-  waiting: me
 12534:
-  next: "Aprobado; rebase sobre develop hecho, falta force-push y merge"
-  waiting: me
-12537:
-  next: "Aprobado; conflicto resuelto y force-push hecho, falta que pase el CI y merge"
-  waiting: me
+  next: "Aprobado; rebase y force-push hechos, falta que pase el CI y merge"
+  waiting: ci
 12650:
   next: "Draft; se libera con el próximo lote de revisión"
   waiting: me
