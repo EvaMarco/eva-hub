@@ -19,7 +19,7 @@
 - title: "Pedir a diseño/DS lo que falta para los selects"
   status: todo
   links: ["#12377"]
-  note: "Preview al pasar el ratón (blend mode), select con búsqueda (destino de interacciones), iconos de easing; y para #12544 opciones agrupadas con búsqueda (presets). Publicar solo tras aprobarlo."
+  note: "Preview al pasar el ratón (blend mode); si combobox* sirve como select con búsqueda (destino de interacciones); y para #12544 opciones agrupadas con búsqueda (presets). Publicar solo tras aprobarlo."
   added: 2026-10-27
 
 - title: "Actualizar la fila de #12477 y su comentario de QA en #12376"
