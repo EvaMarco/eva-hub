@@ -40,13 +40,15 @@
   added: 2026-10-27
 
 - title: "Migrar el botón Compartir del header derecho a icon-button* con i/share"
-  status: todo
+  status: waiting
+  waiting: review
   links: ["#12659", "#12376"]
   note: "Desbloqueado por #12659: esperar a que se mergee. Hoy es un [:a] con el icono legacy share (right_header.cljs, .share-btn); el SCSS ya lo marca como pendiente del icono."
   added: 2026-10-27
 
 - title: "Migrar la barra de edición de paths (path_actions) a botones e iconos DS"
-  status: todo
+  status: waiting
+  waiting: review
   links: ["#12659", "#12376"]
   note: "Desbloqueado por #12659: esperar a que se mergee. Usa icon-xref :snap y :handlers-*; pasan a icon-button* con i/snap e i/handlers-*."
   added: 2026-10-27
