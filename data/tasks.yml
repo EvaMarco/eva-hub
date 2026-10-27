@@ -33,8 +33,8 @@
 - title: "Recordar a diseño los iconos que faltan en el DS"
   status: waiting
   waiting: design
-  links: ["#12376"]
-  note: "Pedidos el 2026-10-15; ninguno ha llegado. Sin ellos esos botones se quedan con el icono viejo."
+  links: ["#12654", "#12376"]
+  note: "Pedidos el 2026-10-15; ninguno ha llegado. Issue con las imágenes para pasar a diseño: #12654."
   items:
     - "share: botón Compartir del header derecho del workspace (right_header)."
     - "handlers-equal: barra de edición de paths, tipo de manejador «alineado»."
