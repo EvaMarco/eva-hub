@@ -29,7 +29,8 @@ STATES = [
 ]
 STATE_LABEL = dict(STATES)
 STATE_ORDER = {k: i for i, (k, _) in enumerate(STATES)}
-WAITING = {"me": "Yo", "review": "Revisión", "design": "Diseño", "ci": "CI", "other": "Otros"}
+WAITING = {"me": "Yo", "review": "Revisión", "design": "Diseño", "ci": "CI", "author": "Autor", "other": "Otros"}
+REVIEW_TURN = {"first": "Por revisar", "me": "Te toca revisar de nuevo", "author": "Esperando al autor"}
 
 e = html.escape
 
@@ -202,12 +203,13 @@ def review_card(r, note):
     note = note or {}
     state = "Draft" if r["draft"] else ("Con conflictos" if r["conflict"] else "Abierta")
     why = "Te piden revisión" if r["requested"] else "Asignada a ti"
+    turn = r.get("turn", "first")
     return f"""
 <li class="bcard k-review">
-  <div class="bcard-head"><span class="kind">Revisar</span> <a class="ref" href="{e(r['url'])}">#{r['number']}</a> <span class="muted">de {e(r['author'] or '?')}</span></div>
+  <div class="bcard-head"><span class="kind">Revisar</span> <a class="ref" href="{e(r['url'])}">#{r['number']}</a> <span class="muted">de {e(r['author'] or '?')}</span> {wait_tag("author") if turn == "author" else ""}</div>
   <div class="bcard-title">{e(strip_emoji(r['title']))}</div>
   {f'<p class="muted">{e(note["next"])}</p>' if note.get("next") else ""}
-  <div class="bcard-meta"><span class="tag">{why}</span> <span class="tag">{state}</span> {ci_tag(r['ci']) if r['ci'] != 'none' else ''}</div>
+  <div class="bcard-meta"><span class="tag turn-{turn}">{REVIEW_TURN[turn]}</span> <span class="tag">{why}</span> <span class="tag">{state}</span> {ci_tag(r['ci']) if r['ci'] != 'none' else ''}</div>
 </li>"""
 
 
@@ -243,7 +245,8 @@ def build():
     columns = {k: [] for k, _ in BOARD}
     # Within a column: PRs to review, issues, my PRs, tasks, then merged PRs.
     for r in gh.get("reviews", []):
-        col = note_column(notes.get(r["number"]))
+        # Waiting on the author goes to "Esperando" unless a note says otherwise.
+        col = note_column(notes.get(r["number"]), "waiting" if r.get("turn") == "author" else "todo")
         if col != "hidden":
             columns[col].append(review_card(r, notes.get(r["number"])))
     for i in gh["issues"]:

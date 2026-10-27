@@ -74,6 +74,8 @@
   waiting: review
 # Issues assigned to me and PRs to review: "status" picks the board column
 # (todo, doing, waiting, review, done, hidden); "next" is the next step.
+# PRs to review without a status go to "Esperando" when the author has not
+# answered my last comment or review, and to "Por empezar" otherwise.
 12641:
   status: todo
   next: "Atajos del viewer (Next/Previous board) se solapan en el panel de atajos (PRE)"
@@ -88,6 +90,5 @@
   waiting: design
   next: "PR #12643 (draft): diseño decide icono, anidadas y selección mixta"
 12059:
-  status: todo
   next: "Revisar (contributor). Desbloquea exports en Design e Inspect (botones y selects)"
 

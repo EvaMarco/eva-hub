@@ -103,11 +103,34 @@ REVIEW_QUERY = """query($owner: String!, $name: String!, $after: String) {
         author { login }
         assignees(first: 10) { nodes { login } }
         reviewRequests(first: 10) { nodes { requestedReviewer { ... on User { login } } } }
-        commits(last: 1) { nodes { commit { statusCheckRollup { state } } } }
+        commits(last: 1) { nodes { commit { committedDate statusCheckRollup { state } } } }
+        comments(last: 20) { nodes { author { login } createdAt } }
+        reviews(last: 20) { nodes { author { login } submittedAt } }
       }
     }
   }
 }"""
+
+
+def review_turn(p, user, author):
+    """Whose turn it is on a PR the user reviews: "first", "me" or "author".
+
+    "author" when the user's last comment or review is newer than the
+    author's last commit or comment; "me" when the author answered after it.
+    """
+    mine, theirs = [], []
+    for c in p["comments"]["nodes"]:
+        who = (c["author"] or {}).get("login")
+        (mine if who == user else theirs if who == author else []).append(c["createdAt"])
+    for r in p["reviews"]["nodes"]:
+        who = (r["author"] or {}).get("login")
+        if r["submittedAt"]:
+            (mine if who == user else theirs if who == author else []).append(r["submittedAt"])
+    if p["commits"]["nodes"]:
+        theirs.append(p["commits"]["nodes"][0]["commit"]["committedDate"])
+    if not mine:
+        return "first"
+    return "author" if max(mine) > max(theirs, default="") else "me"
 
 
 def review_prs():
@@ -134,6 +157,7 @@ def review_prs():
                 "number": p["number"], "title": p["title"], "url": p["url"], "author": author,
                 "draft": p["isDraft"], "conflict": p["mergeable"] == "CONFLICTING",
                 "requested": user in requested, "updated": p["updatedAt"],
+                "turn": review_turn(p, user, author),
                 "ci": CI_STATES.get((rollup or {}).get("state"), "none"),
             })
         if not page["pageInfo"]["hasNextPage"]:
