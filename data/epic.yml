@@ -1,0 +1,18 @@
+# Estimated total number of PRs per epic group, keyed by the group issue
+# number. The board shows "to do (estimated)" = estimate - PRs that exist
+# today, so that part shrinks by itself as PRs open. Not exact: if a group
+# ends with more PRs, the estimate just stops counting. Groups without an
+# entry show only their PRs.
+#
+#   estimate: total PRs expected for the whole group (done + to do)
+#   note:     where the number comes from, one line
+#   updated:  date of the estimate (YYYY-MM-DD)
+
+12376:
+  estimate: 65
+  note: "54 PRs en la tabla + ~11 del plan: path_actions, Share, menus/exports, measures, Reset del zoom, common-dashboard, stroke-width, ~2 anchors, ~2 de limpieza final"
+  updated: 2026-10-28
+12377:
+  estimate: 19
+  note: "Una PR por tarea del plan: piloto, colorpicker, 6 menús (T3), 2 con flag (T4), interacciones, blend mode, fm/select, 5 en espera (T7), limpieza"
+  updated: 2026-10-28

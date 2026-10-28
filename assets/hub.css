@@ -139,6 +139,8 @@ ul.task-items { margin: 4px 0 0; padding-left: 18px; color: var(--muted); displa
 .s-open { background: var(--info); }
 .s-draft { background: var(--neutral); }
 .s-closed { background: var(--bad); }
+.s-todo { background: repeating-linear-gradient(135deg, var(--neutral) 0 3px, transparent 3px 6px); box-shadow: inset 0 0 0 1px var(--neutral); }
+.est { margin: 8px 0 0; font-size: 12px; }
 .legends { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--muted); }
 .legend { display: inline-flex; align-items: center; gap: 6px; }
 .legend i { width: 10px; height: 10px; border-radius: 3px; }

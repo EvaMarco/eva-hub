@@ -242,6 +242,7 @@ def build():
     gh = json.loads((ROOT / "data" / "cache" / "github.json").read_text())
     notes = load_yaml("notes.yml", {})
     tasks = load_yaml("tasks.yml", [])
+    estimates = load_yaml("epic.yml", {})
     cfg = gh["config"]
     repo, hub = cfg["repo"], cfg["hub_repo"]
 
@@ -319,27 +320,40 @@ def build():
     states = (("merged", "Mergeadas"), ("open", "En revisión"), ("draft", "Draft"), ("closed", "Cerradas"))
     gstate = {"merged": "Mergeada", "open": "En revisión", "draft": "Draft", "closed": "Cerrada", "unknown": "?"}
 
-    def group_bar(prs):
+    def todo(g):
+        # Estimated PRs not opened yet (data/epic.yml), never negative.
+        est = (estimates.get(g["number"]) or {}).get("estimate")
+        return max(0, est - len(g["prs"])) if est else 0
+
+    def group_bar(g):
+        prs = g["prs"]
         count = Counter(p["state"] for p in prs)
+        count["todo"] = todo(g)
+        all_states = states + (("todo", "Por hacer (estimado)"),)
         bar = "".join(
             f'<span class="seg s-{k}" style="flex:{count.get(k, 0)}" title="{label}: {count.get(k, 0)}"></span>'
-            for k, label in states)
+            for k, label in all_states)
         legend = "".join(
-            f'<span class="legend"><i class="s-{k}"></i>{label} <b>{count.get(k, 0)}</b></span>'
-            for k, label in states if count.get(k, 0))
+            f'<span class="legend"><i class="s-{k}"></i>{label} <b>{"~" if k == "todo" else ""}{count.get(k, 0)}</b></span>'
+            for k, label in all_states if count.get(k, 0))
         return count, f'<div class="bar">{bar}</div><div class="legends">{legend}</div>'
 
     def group_summary(g):
         count = Counter(p["state"] for p in g["prs"])
-        if not g["prs"]:
+        n, left = len(g["prs"]), todo(g)
+        if not n and not left:
             return "Sin empezar"
-        done = round(100 * count.get("merged", 0) / len(g["prs"]))
-        n = len(g["prs"])
-        return f'{done}% mergeadas · {n} {"PR" if n == 1 else "PRs"}'
+        done = round(100 * count.get("merged", 0) / (n + left))
+        prs_txt = f'{n} {"PR" if n == 1 else "PRs"}'
+        return (f'{done}% mergeadas · {prs_txt} + ~{left} por hacer' if left
+                else f'{done}% mergeadas · {prs_txt}')
 
     def group_view(g):
         prs = g["prs"]
-        _, bar = group_bar(prs)
+        _, bar = group_bar(g)
+        est = estimates.get(g["number"]) or {}
+        est_html = (f'<p class="muted est">Estimación: ~{est["estimate"]} PRs en total '
+                    f'({e(str(est.get("updated", "")))}). {e(est.get("note", ""))}</p>') if est.get("estimate") else ""
         drift = [p for p in prs
                  if (p["state"] == "merged" and p["table_state"] != "Merged")
                  or (p["state"] == "open" and p["table_state"] == "Draft")]
@@ -361,7 +375,8 @@ def build():
 <section class="card">
   <h2><a href="{e(g['url'])}">#{g['number']}</a> {e(g['title'])}</h2>
   <p class="muted">{group_summary(g)}</p>
-  {bar if prs else ''}
+  {bar if prs or todo(g) else ''}
+  {est_html}
   {drift_html}
 </section>
 <section class="card"><h2>PRs del grupo ({len(prs)})</h2>{table}</section>
@@ -370,15 +385,16 @@ def build():
     group_rows = "".join(
         f'<li class="g-{g["state"]}"><a class="gname" href="#epica-{g["number"]}">'
         f'<span class="num">#{g["number"]}</span> {e(g["title"])}</a>'
-        f'<span class="muted">{group_summary(g)}</span>{group_bar(g["prs"])[1] if g["prs"] else ""}</li>'
+        f'<span class="muted">{group_summary(g)}</span>{group_bar(g)[1] if g["prs"] or todo(g) else ""}</li>'
         for g in ep["groups"])
     all_prs = [p for g in ep["groups"] for p in g["prs"]]
     all_count = Counter(p["state"] for p in all_prs)
     started = sum(1 for g in ep["groups"] if g["prs"])
+    all_todo = sum(todo(g) for g in ep["groups"])
     epic_body = f"""
 <section class="card">
   <h2><a href="{e(ep['url'])}">#{e(str(cfg['epic']))}</a> {e(ep['title'])}</h2>
-  <p class="muted">{len(ep['groups'])} grupos, {started} empezados. {all_count.get('merged', 0)} de {len(all_prs)} PRs mergeadas en total.</p>
+  <p class="muted">{len(ep['groups'])} grupos, {started} empezados. {all_count.get('merged', 0)} de {len(all_prs)} PRs mergeadas en total{f", y ~{all_todo} más por hacer en los grupos con plan" if all_todo else ""}.</p>
 </section>
 <section class="card"><h2>Grupos</h2><ol class="groups">{group_rows}</ol></section>"""
     group_views = "".join(group_view(g) for g in ep["groups"])
