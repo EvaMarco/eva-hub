@@ -33,6 +33,9 @@
 12533:
   next: "Aprobada por Luis. Integration Tests (4) cayó al instalar canvas (infra); job relanzado: mergear cuando pase"
   waiting: ci
+12676:
+  next: "Draft. Cuando entre #12533: rebase, fonts al header nuevo, borrar common-dashboard.scss, ready + Luis"
+  waiting: me
 12673:
   next: "Ready y asignada a Luis (2026-10-28). Fila y comentario de QA en #12376"
   waiting: review
