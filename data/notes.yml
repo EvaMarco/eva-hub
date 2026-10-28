@@ -28,7 +28,7 @@
   next: "Draft sin conflictos: se mergea tal cual (0 CI)"
   waiting: me
 12651:
-  next: "Draft. Falta la limpieza (a {}, h2 → heading*, img {}) y el rebase"
+  next: "Draft rebasado y con limpieza (ada96f8e9d), sin cambio visual. Falta push; luego pasarla a ready para Luis"
   waiting: me
 12653:
   next: "Piloto de selects (draft). Rebase cuando toque (workspace.spec.js)"
