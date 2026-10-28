@@ -16,8 +16,8 @@
   next: "Comentario de Pablo resuelto (4816293bff: unhandled-exception) y respondido; esperando su revisión (#12580)"
   waiting: review
 12536:
-  next: "Rebasada y con limpieza (1359fe5bd6), pusheada 2026-10-28; QA actualizado. Esperando que Luis vuelva a revisar; no necesita otro rebase"
-  waiting: review
+  next: "Aprobada por Luis (2026-10-28), sin conflictos con develop: mergear cuando pase el CI"
+  waiting: ci
 12528:
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
   waiting: review
@@ -34,17 +34,11 @@
   next: "Piloto de selects (draft). Rebase cuando toque (workspace.spec.js)"
   waiting: me
 12533:
-  next: "Rebasada y con limpieza (title-large en el hero, color de la T), pusheada 2026-10-28; QA actualizado. Esperando que Luis vuelva a revisar; no necesita otro rebase"
-  waiting: review
+  next: "Aprobada por Luis (2026-10-28), sin conflictos con develop: mergear cuando pase el CI"
+  waiting: ci
 12539:
-  next: "Rebasada, sin 2.25px (Luis tenía razón), pusheada 2026-10-28; QA actualizado. Esperando que Luis vuelva a revisar; no necesita otro rebase"
-  waiting: review
-12541:
-  next: "Aprobada; rebase + --z-index-panels + clase del submit (efd8a014cb). CI en verde: mergear"
-  waiting: me
-12542:
-  next: "Aprobada; rebasada (c5d9731289), CI en verde: mergear"
-  waiting: me
+  next: "Aprobada por Luis (2026-10-28), sin conflictos con develop: mergear cuando pase el CI"
+  waiting: ci
 12659:
   next: "Ready y asignada a Luis (2026-10-28). Al mergear: botón Share y path_actions"
   waiting: review
