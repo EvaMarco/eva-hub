@@ -45,9 +45,6 @@
 12673:
   next: "Ready y asignada a Luis (2026-10-28). Fila y comentario de QA en #12376"
   waiting: review
-12659:
-  next: "Ready y asignada a Luis (2026-10-28). Al mergear: botón Share y path_actions"
-  waiting: review
 # Issues assigned to me and PRs to review: "status" picks the board column
 # (todo, doing, waiting, review, done, hidden); "next" is the next step.
 # PRs to review without a status go to "Esperando" when the author has not
