@@ -42,6 +42,9 @@
 12676:
   next: "Draft. Cuando entre #12533: rebase, fonts al header nuevo, borrar common-dashboard.scss, ready + Luis"
   waiting: me
+12681:
+  next: "Draft (Share del header → icon-button; arregla Share invisible tras #12659). Fila y QA en #12376; ready en el próximo lote"
+  waiting: me
 12673:
   next: "Ready y asignada a Luis (2026-10-28). Fila y comentario de QA en #12376"
   waiting: review
