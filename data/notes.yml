@@ -6,8 +6,14 @@
 # A PR with no entry shows only what GitHub says. Entries for merged or
 # closed PRs are ignored; delete them whenever.
 
+12678:
+  next: "Draft (#12677, bullets â€¢ en el modal de librerías de design-alt): @charset al principio de main.css. Pasar a ready cuando toque"
+  waiting: me
+12680:
+  next: "Draft (#12679, cursor ew-resize en el desplegable de tokens del numeric-input): cursor default en options-dropdown. Pasar a ready cuando toque"
+  waiting: me
 12643:
-  next: "Icono orphan del diseño añadido al DS (32d47c3b14, falta push). Diseño: copia rota anidada y selección mixta. Mergear después de #12533 (en.po/es.po)"
+  next: "Icono orphan del diseño añadido al DS (32d47c3b14). Diseño: copia rota anidada y selección mixta. Mergear después de #12533 (en.po/es.po)"
   waiting: design
 12624:
   next: "Responder a los 3 comentarios de pabloalba (#12581)"
