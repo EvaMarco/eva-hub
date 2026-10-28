@@ -36,11 +36,8 @@
 12653:
   next: "Piloto de selects (draft). Rebase cuando toque (workspace.spec.js)"
   waiting: me
-12533:
-  next: "Aprobada por Luis. Integration Tests (4) cayó al instalar canvas (infra); job relanzado: mergear cuando pase"
-  waiting: ci
 12676:
-  next: "Draft. Cuando entre #12533: rebase, fonts al header nuevo, borrar common-dashboard.scss, ready + Luis"
+  next: "Rebase + fonts + borrado de common-dashboard hechos (1caf5e6b55); falta force-push, luego ready + Luis"
   waiting: me
 12681:
   next: "Draft (Share del header → icon-button; arregla Share invisible tras #12659). Fila y QA en #12376; ready en el próximo lote"
