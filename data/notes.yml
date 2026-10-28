@@ -25,11 +25,11 @@
   next: "Diseño decide sobre el botón History en Inspect"
   waiting: design
 12650:
-  next: "Draft sin conflictos: se mergea tal cual (0 CI)"
-  waiting: me
+  next: "Ready y asignada a Luis (2026-10-28). Sin conflictos"
+  waiting: review
 12651:
-  next: "Draft rebasado y con limpieza (ada96f8e9d), sin cambio visual. Falta push; luego pasarla a ready para Luis"
-  waiting: me
+  next: "Ready y asignada a Luis (2026-10-28); rebasada y con limpieza, no necesita otro rebase"
+  waiting: review
 12653:
   next: "Piloto de selects (draft). Rebase cuando toque (workspace.spec.js)"
   waiting: me
@@ -45,6 +45,9 @@
 12542:
   next: "Aprobada; rebasada (c5d9731289), CI en verde: mergear"
   waiting: me
+12659:
+  next: "Ready y asignada a Luis (2026-10-28). Al mergear: botón Share y path_actions"
+  waiting: review
 # Issues assigned to me and PRs to review: "status" picks the board column
 # (todo, doing, waiting, review, done, hidden); "next" is the next step.
 # PRs to review without a status go to "Esperando" when the author has not
