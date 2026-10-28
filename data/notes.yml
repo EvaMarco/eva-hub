@@ -15,62 +15,35 @@
 12610:
   next: "Comentario de Pablo resuelto (4816293bff: unhandled-exception) y respondido; esperando su revisión (#12580)"
   waiting: review
-12562:
-  next: "Copy button → icon-button* (9536f4cd42) subido y respondido a Luis; esperando su revisión"
-  waiting: review
-12561:
-  next: "Aprobada. Esperar a que se mergee #12477; luego rebase y merge (grupo B)"
-  waiting: me
-12559:
-  next: "Aprobado; rebase y force-push hechos, falta que pase el CI y merge"
-  waiting: ci
-12558:
-  next: "Aprobado; rebase y force-push hechos, falta que pase el CI y merge"
-  waiting: ci
 12536:
-  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
+  next: "Rebasada y con limpieza (1359fe5bd6), pusheada 2026-10-28; QA actualizado. Esperando que Luis vuelva a revisar; no necesita otro rebase"
   waiting: review
-12531:
-  next: "Rebase hecho 2026-10-27; force-push, CI y merge. Primera del grupo A"
-  waiting: me
 12528:
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
   waiting: review
 12508:
   next: "Diseño decide sobre el botón History en Inspect"
   waiting: design
-12477:
-  next: "Mergear antes que #12561: hoy no tiene conflicto y así no necesita rebase (grupo B)"
-  waiting: review
-12534:
-  next: "Aprobado; rebase y force-push hechos, falta que pase el CI y merge"
-  waiting: ci
 12650:
   next: "Draft sin conflictos: se mergea tal cual (0 CI)"
   waiting: me
 12651:
-  next: "Draft. Última del grupo A (visual-dashboard.spec.js); rebase justo antes de mergear"
+  next: "Draft. Falta la limpieza (a {}, h2 → heading*, img {}) y el rebase"
   waiting: me
 12653:
-  next: "Piloto de selects (draft). Última del grupo B (workspace.spec.js); rebase justo antes de mergear"
+  next: "Piloto de selects (draft). Rebase cuando toque (workspace.spec.js)"
   waiting: me
 12533:
-  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
-  waiting: review
-12535:
-  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
+  next: "Rebasada y con limpieza (title-large en el hero, color de la T), pusheada 2026-10-28; QA actualizado. Esperando que Luis vuelva a revisar; no necesita otro rebase"
   waiting: review
 12539:
-  next: "Grupo A (visual-dashboard.spec.js): rebase solo justo antes de mergear, en el orden en que Luis apruebe"
+  next: "Rebasada, sin 2.25px (Luis tenía razón), pusheada 2026-10-28; QA actualizado. Esperando que Luis vuelva a revisar; no necesita otro rebase"
   waiting: review
 12541:
-  next: "Responder al comentario de Luis"
+  next: "Aprobada; rebase + --z-index-panels + clase del submit (efd8a014cb). CI en verde: mergear"
   waiting: me
 12542:
-  next: "Responder al comentario de Luis (stroke-width por defecto)"
-  waiting: me
-12550:
-  next: "Aprobada por Luis: siguiente del grupo A. Rebase justo antes de mergear"
+  next: "Aprobada; rebasada (c5d9731289), CI en verde: mergear"
   waiting: me
 # Issues assigned to me and PRs to review: "status" picks the board column
 # (todo, doing, waiting, review, done, hidden); "next" is the next step.

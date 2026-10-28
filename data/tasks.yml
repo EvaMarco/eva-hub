@@ -110,14 +110,25 @@
 - title: "Orden de rebase y merge de los PRs de botones (un CI por PR)"
   status: doing
   links: ["#12376"]
-  note: "Regla: rebase solo justo antes de mergear. Solo chocan los specs visuales, así que cada PR con conflicto cuesta un CI; lo que importa es el orden."
+  note: "Truco desde el 2026-10-28: cada PR pone su bloque en un sitio distinto de visual-dashboard.spec.js, así no chocan entre sí y no hace falta un rebase por merge."
   items:
-    - "Grupo A, visual-dashboard.spec.js (todas con conflicto): #12531 mergeada (2026-10-27) → #12533, #12535, #12536, #12539, #12541, #12542, #12550 según apruebe Luis → #12651 la última."
-    - "Grupo B, workspace.spec.js: #12477 (sin conflicto, 0 CI) → #12561 (aprobada, 1 rebase; espera a #12477) → #12653 (draft, 1 rebase)."
-    - "Ahora: esperando revisiones de Luis; no hay nada que rebasar hasta que apruebe alguna."
-    - "Sueltas: #12562 (un rebase cuando se apruebe), #12650 (sin conflicto), #12643 (después de #12533 por en.po/es.po)."
+    - "Mergeadas el 2026-10-28: #12561, #12562, #12535."
+    - "Listas para mergear (aprobadas, CI en verde): #12541 y #12542, en cualquier orden."
+    - "Rebasadas y pusheadas, esperando que Luis vuelva a revisar: #12533, #12536, #12539."
+    - "Después: #12651 (draft, limpieza + rebase) y #12653 (draft, workspace.spec.js)."
+    - "Sueltas: #12650 (sin conflicto), #12643 (después de #12533 por en.po/es.po)."
     - "Staging: #12508 y #12610 comparten refs.cljs; #12610 y #12624 comparten errors.cljs. Si se mergea una, mirar la otra."
   added: 2026-10-27
+
+- title: "Follow-up: quitar stroke-width de iconos DS ya mergeados"
+  status: todo
+  links: ["#12376"]
+  note: "Regla desde el 2026-10-28: los iconos DS usan el grosor del DS. Sin imagen ni revisión aparte."
+  items:
+    - "layer_item.scss (2 × 1.33px), dashboard/sidebar.scss (1.33px)."
+    - "workspace/comments.scss (#12561): .arrow-svg y .tick-icon 1.33px."
+    - "viewer/share_link.scss (#12562): stroke-width 1px y los selectores li {}, span.checked, svg {} del tick legacy."
+  added: 2026-10-28
 
 - title: "Subir las skills refactor-scss y migrate-ds-area al repo"
   status: todo
