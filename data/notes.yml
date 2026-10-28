@@ -37,8 +37,8 @@
   next: "Piloto de selects (draft). Rebase cuando toque (workspace.spec.js)"
   waiting: me
 12676:
-  next: "Rebase + fonts + borrado de common-dashboard hechos (1caf5e6b55); falta force-push, luego ready + Luis"
-  waiting: me
+  next: "Ready y asignada a Luis (2026-10-28): rebase + fonts + common-dashboard borrado"
+  waiting: review
 12681:
   next: "Draft (Share del header → icon-button; arregla Share invisible tras #12659). Fila y QA en #12376; ready en el próximo lote"
   waiting: me
