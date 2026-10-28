@@ -243,6 +243,9 @@ def build():
     notes = load_yaml("notes.yml", {})
     tasks = load_yaml("tasks.yml", [])
     estimates = load_yaml("epic.yml", {})
+    # Zones of each group and their issue estimate (scripts/zones.py).
+    zones_data = load_yaml("zones.yml", {})
+    zones = {z["issue"]: z for z in zones_data.get("groups", [])}
     cfg = gh["config"]
     repo, hub = cfg["repo"], cfg["hub_repo"]
 
@@ -369,6 +372,19 @@ def build():
             for p in sorted(prs, key=lambda p: ({"open": 0, "draft": 1, "merged": 2}.get(p["state"], 3), -p["number"])))
         table = (f'<div class="tablebox"><table><thead><tr><th>PR</th><th>Área</th><th>Estado</th></tr></thead>'
                  f'<tbody>{rows}</tbody></table></div>') if prs else '<p class="muted">Todavía no tiene PRs.</p>'
+        zg = zones.get(g["number"])
+        zone_rows = "".join(
+            f'<tr><td class="title"><code>{e(z["zone"])}</code></td>'
+            f'<td class="muted">{"<br>".join(e(f) for f in z["files"])}</td>'
+            f'<td class="num">{z["uses"]}</td><td class="num">~{z["issues"]}</td></tr>'
+            for z in sorted(zg["zones"], key=lambda z: -z["uses"])) if zg else ""
+        zones_html = (
+            f'<section class="card"><h2>Zonas ({len(zg["zones"])}) · ~{zg["issues"]} issues</h2>'
+            f'<p class="muted est">Inventario de develop ({e(str(zones_data.get("generated", "")))}): '
+            f'una zona es una carpeta, o un archivo si la carpeta tiene muchos. '
+            f'Estimación: una issue por cada {zg["per_issue"]} usos de la zona. Orientativo.</p>'
+            f'<div class="tablebox"><table><thead><tr><th>Zona</th><th>Archivos</th><th>Usos</th><th>Issues</th></tr></thead>'
+            f'<tbody>{zone_rows}</tbody></table></div></section>') if zg and zg["zones"] else ""
         return f"""
 <div class="view" id="v-epica-{g['number']}">
 <p class="back"><a href="#epica">← Todos los grupos</a></p>
@@ -380,12 +396,14 @@ def build():
   {drift_html}
 </section>
 <section class="card"><h2>PRs del grupo ({len(prs)})</h2>{table}</section>
+{zones_html}
 </div>"""
 
     group_rows = "".join(
         f'<li class="g-{g["state"]}"><a class="gname" href="#epica-{g["number"]}">'
         f'<span class="num">#{g["number"]}</span> {e(g["title"])}</a>'
-        f'<span class="muted">{group_summary(g)}</span>{group_bar(g)[1] if g["prs"] or todo(g) else ""}</li>'
+        f'<span class="muted">{group_summary(g)}'
+        f'{f" · {len(zones[g['number']]['zones'])} zonas, ~{zones[g['number']]['issues']} issues" if zones.get(g["number"]) else ""}</span>{group_bar(g)[1] if g["prs"] or todo(g) else ""}</li>'
         for g in ep["groups"])
     all_prs = [p for g in ep["groups"] for p in g["prs"]]
     all_count = Counter(p["state"] for p in all_prs)
@@ -394,7 +412,7 @@ def build():
     epic_body = f"""
 <section class="card">
   <h2><a href="{e(ep['url'])}">#{e(str(cfg['epic']))}</a> {e(ep['title'])}</h2>
-  <p class="muted">{len(ep['groups'])} grupos, {started} empezados. {all_count.get('merged', 0)} de {len(all_prs)} PRs mergeadas en total{f", y ~{all_todo} más por hacer en los grupos con plan" if all_todo else ""}.</p>
+  <p class="muted">{len(ep['groups'])} grupos, {started} empezados. {all_count.get('merged', 0)} de {len(all_prs)} PRs mergeadas en total{f", y ~{all_todo} más por hacer en los grupos con plan" if all_todo else ""}.{f" Inventario por zonas: ~{sum(z['issues'] for z in zones.values())} issues en los grupos que quedan." if zones else ""}</p>
 </section>
 <section class="card"><h2>Grupos</h2><ol class="groups">{group_rows}</ol></section>"""
     group_views = "".join(group_view(g) for g in ep["groups"])
