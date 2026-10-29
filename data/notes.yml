@@ -78,3 +78,6 @@
 12710:
   next: "Draft (fila 8 del doc: tarjetas de plantillas → button, ahora usables con teclado). Fila y QA en #12376"
   waiting: me
+12712:
+  next: "Draft (filas 9 y 10 del doc: Change email y Want to remove → buttons con aspecto de enlace). Fila y QA en #12376"
+  waiting: me
