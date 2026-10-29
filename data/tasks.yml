@@ -13,6 +13,12 @@
 # Quick ideas go as issues in this repo instead; move them here when they
 # need notes. Done tasks can stay a while, then be deleted.
 
+- title: "Revisar nueva candidatura"
+  status: done
+  done: 2026-10-29
+  links: ["https://github.com/EvaMarco/eva-hub/issues/2"]
+  added: 2026-10-29
+
 - title: "Documentar el proceso de refactor"
   status: todo
   links: ["https://github.com/EvaMarco/eva-hub/issues/3", "#12375"]
