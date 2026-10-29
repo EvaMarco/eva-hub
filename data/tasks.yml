@@ -80,10 +80,9 @@
   added: 2026-10-27
 
 - title: "Task 9 de botones/iconos: limpieza final"
-  status: waiting
-  waiting: review
+  status: todo
   links: ["#12376"]
-  note: "Borrar %button-* y los iconos viejos sin uso, y revisar los componentes compartidos. Espera a que se mergeen los PRs abiertos y las áreas bloqueadas."
+  note: "Último paso: borrar %button-* y los iconos viejos sin uso, y revisar los componentes compartidos. Antes: mergear los PRs abiertos, las áreas bloqueadas (measures #9139, exports #12059, viewer header #12198) y los grupos de checkboxes, inputs y selects (2026-10-29: 21 SCSS con %button-*, 25 cljs con iconos legacy)."
   added: 2026-10-27
 
 - title: "Grupo 2 de la épica DS: selects (#12377)"
