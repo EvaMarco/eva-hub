@@ -117,7 +117,9 @@ def pr_table(prs, repo, table_id):
 
 
 BOARD = [("ideas", "Ideas"), ("todo", "Por empezar"), ("doing", "En curso"), ("waiting", "Esperando"),
-         ("review", "En revisión"), ("done", "Listo")]
+         ("ds-drafts", "Drafts DS"), ("review", "En revisión"), ("done", "Listo")]
+# Provisional: DS migration drafts wait here for the next ready batch.
+DS_DRAFT_LABELS = {"WG adoption", "no issue required"}
 DONE_DAYS = 7
 IDEAS_HINT = '<p class="muted col-hint">Issues abiertas del repo del hub: cosas que no queremos olvidar.</p>'
 
@@ -125,6 +127,8 @@ IDEAS_HINT = '<p class="muted col-hint">Issues abiertas del repo del hub: cosas 
 def pr_column(p):
     """Board column of an open PR, from its state and its note."""
     waiting = (p["note"] or {}).get("waiting")
+    if p["state"] == "draft" and DS_DRAFT_LABELS <= set(p["labels"]):
+        return "ds-drafts"
     if p["state"] in ("merge", "fail", "changes", "comments") or waiting == "me":
         return "doing"
     if waiting in ("design", "other"):

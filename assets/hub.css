@@ -165,7 +165,7 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 }
 
 /* Board */
-.board { display: grid; grid-template-columns: repeat(6, minmax(190px, 1fr)); gap: 12px; align-items: start; overflow-x: auto; padding-bottom: 8px; }
+.board { display: grid; grid-template-columns: repeat(7, minmax(190px, 1fr)); gap: 12px; align-items: start; overflow-x: auto; padding-bottom: 8px; }
 .bcol { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 12px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .bcol h2 { font-size: 13px; font-weight: 600; margin: 0; display: flex; justify-content: space-between; align-items: center; }
 .bcol h2 b { font-family: var(--mono); font-weight: 500; font-size: 12px; padding: 1px 6px; border-radius: 99px; background: var(--bg); }
@@ -200,7 +200,7 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 /* "Listo" can collapse to a narrow strip */
 .col-toggle { font: inherit; font-size: 11px; color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 99px; padding: 0 8px; cursor: pointer; margin-left: 6px; }
 .col-toggle:hover { color: var(--fg); border-color: var(--muted); }
-.board.done-collapsed { grid-template-columns: repeat(5, minmax(190px, 1fr)) 44px; }
+.board.done-collapsed { grid-template-columns: repeat(6, minmax(190px, 1fr)) 44px; }
 .board.done-collapsed .c-done { padding: 12px 6px; align-items: center; }
 .board.done-collapsed .c-done .bcards { display: none; }
 .board.done-collapsed .c-done h2 { writing-mode: vertical-rl; flex-direction: row; gap: 10px; justify-content: flex-start; }
