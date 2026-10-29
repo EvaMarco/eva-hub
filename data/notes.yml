@@ -63,3 +63,6 @@
 12699:
   next: "Draft (logo del workspace: href real + raw-svg DS; fila 1 del doc de enlaces). Fila y QA en #12376; ready en el próximo lote"
   waiting: me
+12702:
+  next: "Draft (logo del viewer: href real para el equipo + raw-svg DS; fila 3 del doc de enlaces). Fila y QA en #12376"
+  waiting: me
