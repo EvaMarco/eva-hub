@@ -72,3 +72,6 @@
 12708:
   next: "Draft (filas 5 y 6). Diseño: ¿Go to login (y los Go back de login/registro) con button* del DS y :to, en vez de su aspecto de botón propio? Eva lo pregunta (2026-10-29). Idea en estudio, sin confirmar: componente link* del DS con variante default/button y variantes de botón en otra prop"
   waiting: design
+12709:
+  next: "Ready y asignada a Luis: button* con :to sin type + docs y story As Link. Después: usarlo en Go to login (#12708) si diseño confirma"
+  waiting: review
