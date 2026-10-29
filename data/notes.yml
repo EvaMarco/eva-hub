@@ -6,30 +6,15 @@
 # A PR with no entry shows only what GitHub says. Entries for merged or
 # closed PRs are ignored; delete them whenever.
 
-12678:
-  next: "Draft (#12677, bullets â€¢ en el modal de librerías de design-alt): @charset al principio de main.css. Pasar a ready cuando toque"
-  waiting: me
-12680:
-  next: "Draft (#12679, cursor ew-resize en el desplegable de tokens del numeric-input): cursor default en options-dropdown. Pasar a ready cuando toque"
-  waiting: me
 12643:
   next: "Icono orphan del diseño añadido al DS (32d47c3b14). Diseño: copia rota anidada y selección mixta. Mergear después de #12533 (en.po/es.po)"
   waiting: design
-12624:
-  next: "Responder a los 3 comentarios de pabloalba (#12581)"
-  waiting: me
-12610:
-  next: "Comentario de Pablo resuelto (4816293bff: unhandled-exception) y respondido; esperando su revisión (#12580)"
-  waiting: review
 12528:
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
   waiting: review
 12508:
   next: "Diseño decide sobre el botón History en Inspect"
   waiting: design
-12650:
-  next: "Ready y asignada a Luis (2026-10-28). Sin conflictos"
-  waiting: review
 12651:
   next: "Ready y asignada a Luis (2026-10-28); rebasada y con limpieza, no necesita otro rebase"
   waiting: review
@@ -37,7 +22,7 @@
   next: "Piloto de selects (draft). Rebase cuando toque (workspace.spec.js)"
   waiting: me
 12676:
-  next: "Ready y asignada a Luis (2026-10-28): rebase + fonts + common-dashboard borrado. Fix de Prettier (114dddaf54) pendiente de push"
+  next: "Ready y asignada a Luis (2026-10-28): rebase + fonts + common-dashboard borrado. Fixes de lint: Prettier (114dddaf54) y stylelint (8261521c96)"
   waiting: review
 12681:
   next: "Draft (Share del header → icon-button; arregla Share invisible tras #12659). Fila y QA en #12376; ready en el próximo lote"
@@ -45,9 +30,6 @@
 12682:
   next: "Draft (barra de edición de trazados → icon-buttons; arregla iconos de snap y handlers invisibles tras #12659). Fila y QA en #12376"
   waiting: me
-12673:
-  next: "Ready y asignada a Luis (2026-10-28). Fila y comentario de QA en #12376"
-  waiting: review
 # Issues assigned to me and PRs to review: "status" picks the board column
 # (todo, doing, waiting, review, done, hidden); "next" is the next step.
 # PRs to review without a status go to "Esperando" when the author has not

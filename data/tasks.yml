@@ -44,12 +44,6 @@
   note: "Resuelto: la reviso yo (asignada), está en el tablero como «Revisar». Bloquea menus/exports e inspect/exports."
   added: 2026-10-27
 
-- title: "Preguntar si #12198 (hide viewer chrome) se va a revisar pronto"
-  status: todo
-  links: ["#12198", "#12376"]
-  note: "Bloquea el header del viewer y viewer.cljs. Externo, sin revisor, parado desde el 2026-10-09. Si no, migramos y el autor hace rebase."
-  added: 2026-10-27
-
 - title: "Recordar a diseño los iconos que faltan en el DS"
   status: done
   done: 2026-10-27
@@ -58,15 +52,15 @@
   added: 2026-10-27
 
 - title: "Migrar el botón Compartir del header derecho a icon-button* con i/share"
-  status: waiting
-  waiting: review
+  status: done
+  done: 2026-10-29
   links: ["#12659", "#12376"]
   note: "Desbloqueado por #12659: esperar a que se mergee. Hoy es un [:a] con el icono legacy share (right_header.cljs, .share-btn); el SCSS ya lo marca como pendiente del icono."
   added: 2026-10-27
 
 - title: "Migrar la barra de edición de paths (path_actions) a botones e iconos DS"
-  status: waiting
-  waiting: review
+  status: done
+  done: 2026-10-29
   links: ["#12659", "#12376"]
   note: "Desbloqueado por #12659: esperar a que se mergee. Usa icon-xref :snap y :handlers-*; pasan a icon-button* con i/snap e i/handlers-*."
   added: 2026-10-27
@@ -79,8 +73,8 @@
   added: 2026-10-27
 
 - title: "common-dashboard.scss al DS"
-  status: waiting
-  waiting: review
+  status: done
+  done: 2026-10-29
   links: ["#12376"]
   note: "Lo comparten diez módulos del dashboard; mejor cuando se mergee el lote del dashboard (#12531–#12541)."
   added: 2026-10-27
@@ -118,13 +112,6 @@
   note: "Fila actualizada el 2026-10-27; el comentario de QA se queda como está."
   added: 2026-10-26
 
-- title: "Test del caso anidado del indicador de copias rotas"
-  status: waiting
-  waiting: design
-  links: ["#12134", "#12643"]
-  note: "Una copia rota dentro de un main aún ofrece \"Detach instance\"."
-  added: 2026-10-26
-
 - title: "Orden de rebase y merge de los PRs de botones (un CI por PR)"
   status: done
   done: 2026-10-29
@@ -137,7 +124,8 @@
   added: 2026-10-27
 
 - title: "Follow-up: quitar stroke-width de iconos DS ya mergeados"
-  status: review
+  status: done
+  done: 2026-10-29
   links: ["#12376", "#12673"]
   note: "Regla desde el 2026-10-28: los iconos DS usan el grosor del DS. Sin imagen ni revisión aparte."
   items:
@@ -146,27 +134,13 @@
     - "viewer/share_link.scss (#12562): stroke-width 1px y los selectores li {}, span.checked, svg {} del tick legacy."
   added: 2026-10-28
 
-- title: "Subir las skills refactor-scss y migrate-ds-area al repo"
-  status: todo
-  note: "Quitar las líneas de .git/info/exclude y hacer el commit."
-  added: 2026-10-22
-
-- title: "Refactors SCSS pendientes (layout_item, exports, svg_attrs, grid_cell, nudge, right_header…)"
-  status: todo
-  note: "Cada uno en su PR con la skill refactor-scss."
-  added: 2026-10-14
-
 - title: "Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info, settings/profile)"
-  status: todo
+  status: waiting
+  waiting: design
   added: 2026-10-20
 
 - title: "#12580 (React #185): seguir con los sospechosos pendientes"
-  status: doing
+  status: waiting
+  waiting: other
   links: ["#12580", "#12610"]
   added: 2026-10-23
-
-- title: "#11993: decidir si registrar los namespaces que faltan en el runner JS de common"
-  status: todo
-  links: ["https://github.com/penpot/penpot/pull/11993"]
-  note: "Más la prueba manual del editor con datos válidos y limpiar los stash temporales."
-  added: 2026-10-02
