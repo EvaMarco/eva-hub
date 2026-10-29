@@ -75,3 +75,6 @@
 12709:
   next: "Ready y asignada a Luis: button* con :to sin type + docs y story As Link. Después: usarlo en Go to login (#12708) si diseño confirma"
   waiting: review
+12710:
+  next: "Draft (fila 8 del doc: tarjetas de plantillas → button, ahora usables con teclado). Fila y QA en #12376"
+  waiting: me
