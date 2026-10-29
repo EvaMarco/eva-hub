@@ -16,7 +16,7 @@
   next: "Para 2.20.0 (diseño: esperamos). Pendiente: rebase a develop (conflicto en shortcuts.cljs: nuestra condición + dwh/initialize-history de develop), force-push y cambiar base"
   waiting: design
 12651:
-  next: "Luis: enlaces en --color-accent-primary. Diseño dice verde (2026-10-29): falta el commit que lo cambia"
+  next: "Enlaces en body-medium + accent-primary (f22917284a, falta push). Después: cuerpo, QA en #12376, respuesta a Luis e imagen"
   waiting: me
 12653:
   next: "Piloto de selects (draft). Rebase cuando toque (workspace.spec.js)"
