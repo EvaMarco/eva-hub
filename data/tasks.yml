@@ -101,7 +101,7 @@
   status: waiting
   waiting: design
   links: ["#12377"]
-  note: "Eva lo comenta en diseño (2026-10-27). Blend mode: seguimos con un hover callback en select* (puede cambiar). Destino: modo de combobox* que filtre y solo acepte opciones."
+  note: "Blend mode: diseño acepta el hover callback en select* (2026-10-29), Task 5b sigue. Destino: proponer al DS un :strict en combobox* (filtra y solo acepta opciones); si no, apaño en interactions con :key."
   added: 2026-10-27
 
 - title: "Actualizar la fila de #12477 y su comentario de QA en #12376"
