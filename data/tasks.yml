@@ -19,10 +19,20 @@
   links: ["https://github.com/EvaMarco/eva-hub/issues/2"]
   added: 2026-10-29
 
+- title: "Sesión con Luis: preparar las skills para que coja PRs del DS"
+  status: todo
+  links: ["#12375", "#12376"]
+  note: "Lunes 2026-11-02. Objetivo: Luis coge zonas y resuelve PRs, Eva revisa; así avanzamos más rápido."
+  items:
+    - "Repasar con él migrate-ds-area y refactor-scss (y subirlas al repo si toca)"
+    - "Usar la guía del proceso (tarea de documentar) como base"
+    - "Acordar cómo coge zonas: columna Owner en la tabla de cada grupo"
+  added: 2026-10-29
+
 - title: "Documentar el proceso de refactor"
   status: todo
   links: ["https://github.com/EvaMarco/eva-hub/issues/3", "#12375"]
-  note: "Para que otras personas puedan coger zonas de la épica (inventario ya en Épica DS). No va en el hub."
+  note: "Mañana (2026-10-30), después de #12641. Para que otras personas puedan coger zonas de la épica (inventario ya en Épica DS). No va en el hub. Base para la sesión con Luis del lunes."
   items:
     - "Decidir dónde vive la guía (guía técnica del repo, épica o wiki)"
     - "Hecho: una zona se coge con una columna de responsable en la tabla de cada issue de grupo"

@@ -27,7 +27,7 @@
 # answered my last comment or review, and to "Por empezar" otherwise.
 12641:
   status: todo
-  next: "Atajos del viewer (Next/Previous board) se solapan en el panel de atajos (PRE)"
+  next: "Mañana (2026-10-30): atajos del viewer (Next/Previous board) se solapan en el panel de atajos (PRE)"
 12580:
   status: hidden
   next: "Se sigue en la tarea de #12580"
@@ -46,11 +46,11 @@
   status: hidden
   next: "Se sigue en la tarea del Grupo 2"
 12699:
-  next: "Draft (logo y nombre de proyecto del workspace: href reales + raw-svg DS; filas 1 y 2 del doc de enlaces). Fila y QA en #12376; ready en el próximo lote"
-  waiting: me
+  next: "Ready y asignada a Luis 2026-10-29 (logo y nombre de proyecto del workspace: href reales + raw-svg DS; filas 1 y 2 del doc de enlaces). Fila y QA en #12376"
+  waiting: review
 12702:
-  next: "Draft (logo del viewer: href real para el equipo + raw-svg DS; fila 3 del doc de enlaces). Fila y QA en #12376"
-  waiting: me
+  next: "Ready y asignada a Luis 2026-10-29 (logo del viewer: href real para el equipo + raw-svg DS; fila 3 del doc de enlaces). Fila y QA en #12376"
+  waiting: review
 12705:
   next: "Draft (pestañas del equipo → links con href; fila 4 del doc de enlaces). Encima de #12676 (base su rama). Fila y QA en #12376"
   waiting: me
@@ -58,17 +58,17 @@
   next: "Draft (filas 5 y 6). Diseño: ¿Go to login (y los Go back de login/registro) con button* del DS y :to, en vez de su aspecto de botón propio? Eva lo pregunta (2026-10-29). Idea en estudio, sin confirmar: componente link* del DS con variante default/button y variantes de botón en otra prop. #12709 mergeada: button* con :to ya sale sin type, listo para usarlo si diseño confirma"
   waiting: design
 12710:
-  next: "Draft (fila 8 del doc: tarjetas de plantillas → button, ahora usables con teclado). Fila y QA en #12376"
-  waiting: me
+  next: "Ready y asignada a Luis 2026-10-29 (fila 8 del doc: tarjetas de plantillas → button, ahora usables con teclado). Fila y QA en #12376"
+  waiting: review
 12712:
-  next: "Draft (filas 9 y 10 del doc: Change email y Want to remove → buttons con aspecto de enlace). Fila y QA en #12376"
-  waiting: me
+  next: "Ready y asignada a Luis 2026-10-29 (filas 9 y 10 del doc: Change email y Want to remove → buttons con aspecto de enlace). Fila y QA en #12376"
+  waiting: review
 12722:
-  next: "Draft (fila 11 del doc: Add to an organization → button con aspecto de enlace). Fila y QA en #12376"
-  waiting: me
+  next: "Ready y asignada a Luis 2026-10-29 (fila 11 del doc: Add to an organization → button con aspecto de enlace). Fila y QA en #12376"
+  waiting: review
 12723:
-  next: "Draft (fila 12 del doc: Download report.txt en error y feedback → button con el mismo aspecto). Fila y QA en #12376"
-  waiting: me
+  next: "Ready y asignada a Luis 2026-10-29 (fila 12 del doc: Download report.txt en error y feedback → button con el mismo aspecto). Fila y QA en #12376"
+  waiting: review
 12724:
-  next: "Draft (filas 13 y 14 del doc: enlaces de los diálogos de login → buttons con el mismo aspecto). Fila y QA en #12376"
-  waiting: me
+  next: "Ready y asignada a Luis 2026-10-29 (filas 13 y 14 del doc: enlaces de los diálogos de login → buttons con el mismo aspecto). Fila y QA en #12376"
+  waiting: review
