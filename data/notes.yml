@@ -13,7 +13,7 @@
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
   waiting: review
 12508:
-  next: "Diseño decide sobre el botón History en Inspect"
+  next: "Para 2.20.0 (diseño: esperamos). Pendiente: rebase a develop (conflicto en shortcuts.cljs: nuestra condición + dwh/initialize-history de develop), force-push y cambiar base"
   waiting: design
 12651:
   next: "Ready y asignada a Luis (2026-10-28); rebasada y con limpieza, no necesita otro rebase"
