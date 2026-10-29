@@ -55,3 +55,6 @@
 11951:
   next: "Esperando respuesta a mi comentario de la cursiva (2026-10-15); niwinz de vacaciones"
   waiting: review
+10998:
+  next: "Recordatorio enviado a wi-fa (2026-10-29): issue, test y rebase; si no puede, la retomamos"
+  waiting: review
