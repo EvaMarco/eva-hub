@@ -10,14 +10,14 @@
   next: "Relates #12134. Anidadas resuelto (2026-10-29): en un main ofrece Detach, en una copia no; la PR ya lo hace, diseño corrige la demo 2 de la issue. Falta: test e2e de anidadas y que diseño decida la selección mixta"
   waiting: design
 12528:
-  next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
+  next: "Respuestas a niwinz enviadas; esperando su revisión (#12343). niwinz de vacaciones"
   waiting: review
 12508:
   next: "Para 2.20.0 (diseño: esperamos). Pendiente: rebase a develop (conflicto en shortcuts.cljs: nuestra condición + dwh/initialize-history de develop), force-push y cambiar base"
   waiting: design
 12651:
-  next: "Ready y asignada a Luis (2026-10-28); rebasada y con limpieza, no necesita otro rebase"
-  waiting: review
+  next: "Luis: enlaces en --color-accent-primary. Diseño dice verde (2026-10-29): falta el commit que lo cambia"
+  waiting: me
 12653:
   next: "Piloto de selects (draft). Rebase cuando toque (workspace.spec.js)"
   waiting: me
@@ -44,8 +44,8 @@
   next: "Arregla #12576. Esperando revisión (sin revisor asignado)"
   waiting: review
 12580:
-  status: review
-  next: "PR #12610 en revisión"
+  status: hidden
+  next: "Se sigue en la tarea de #12580"
 12134:
   status: hidden
   next: "Se sigue en la PR #12643"
@@ -57,3 +57,6 @@
 10998:
   next: "Recordatorio enviado a wi-fa (2026-10-29): issue, test y rebase; si no puede, la retomamos"
   waiting: review
+12377:
+  status: hidden
+  next: "Se sigue en la tarea del Grupo 2"
