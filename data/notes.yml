@@ -70,5 +70,5 @@
   next: "Ready y asignada a Luis: tests visuales del DS en tema oscuro (por #12480)"
   waiting: review
 12708:
-  next: "Draft (filas 5 y 6 del doc de enlaces: Team management del aviso y Go to login → links con href). Fila y QA en #12376"
-  waiting: me
+  next: "Draft (filas 5 y 6). Diseño: ¿Go to login (y los Go back de login/registro) con button* del DS y :to, en vez de su aspecto de botón propio? Eva lo pregunta (2026-10-29)"
+  waiting: design
