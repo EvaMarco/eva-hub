@@ -140,7 +140,12 @@
   added: 2026-10-20
 
 - title: "#12580 (React #185): seguir con los sospechosos pendientes"
-  status: waiting
-  waiting: other
+  status: doing
   links: ["#12580", "#12610"]
+  note: "#12610 en 2.19.0 (sale hoy 2026-10-29; PRE ya la tiene). Plan: datos primero, luego sospechosos."
+  items:
+    - "Paso 0: reportes «update loop throttled» en PRE y, tras la salida, en SaaS (/dbg/error?source=4): agrupar por eventos en vuelo"
+    - "Sospechoso 2: setup-viewport-size (viewport/hooks.cljs:86), zoom 110/125/90 %, sidebars y resize; contar commits por tarea"
+    - "Sospechoso 1: text-modifiers-renderer (~l.215), renderer SVG, textos auto-height y en flex; espera a los datos"
+    - "Abrir issue: texto creado en un board flex se queda en 40×12"
   added: 2026-10-23
