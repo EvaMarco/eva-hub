@@ -67,9 +67,9 @@
 
 - title: "Variante en minúsculas para el botón Reset del zoom"
   status: waiting
-  waiting: design
+  waiting: other
   links: ["#12454", "#12523"]
-  note: "Diseño la está haciendo desde el 2026-10-20; button* sigue con primary/secondary/ghost/destructive. Cuando llegue, follow-up en los dos menús de zoom."
+  note: "Diseño ya la tiene avanzada (2026-10-29). Se implementa en button* cuando termine la migración de botones; luego follow-up en los dos menús de zoom."
   added: 2026-10-27
 
 - title: "common-dashboard.scss al DS"
