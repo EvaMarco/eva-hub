@@ -61,7 +61,7 @@
   status: hidden
   next: "Se sigue en la tarea del Grupo 2"
 12699:
-  next: "Draft (logo del workspace: href real + raw-svg DS; fila 1 del doc de enlaces). Fila y QA en #12376; ready en el próximo lote"
+  next: "Draft (logo y nombre de proyecto del workspace: href reales + raw-svg DS; filas 1 y 2 del doc de enlaces). Fila y QA en #12376; ready en el próximo lote"
   waiting: me
 12702:
   next: "Draft (logo del viewer: href real para el equipo + raw-svg DS; fila 3 del doc de enlaces). Fila y QA en #12376"
