@@ -16,8 +16,8 @@
   next: "Para 2.20.0 (diseño: esperamos). Pendiente: rebase a develop (conflicto en shortcuts.cljs: nuestra condición + dwh/initialize-history de develop), force-push y cambiar base"
   waiting: design
 12651:
-  next: "Enlaces en body-medium + accent-primary (f22917284a) subido; cuerpo y QA actualizados. Falta responder a Luis"
-  waiting: me
+  next: "Enlaces arreglados (f22917284a), cuerpo y QA al día. Eva avisa a Luis para que la revise"
+  waiting: review
 12653:
   next: "Piloto de selects (draft). Rebase cuando toque (workspace.spec.js)"
   waiting: me
