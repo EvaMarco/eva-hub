@@ -7,7 +7,7 @@
 # closed PRs are ignored; delete them whenever.
 
 12643:
-  next: "Relates #12134. Diseño: Eva pregunta por la copia rota anidada en un main (2026-10-29); la selección mixta sigue sin decidir"
+  next: "Relates #12134. Anidadas resuelto (2026-10-29): en un main ofrece Detach, en una copia no; la PR ya lo hace, diseño corrige la demo 2 de la issue. Falta: test e2e de anidadas y que diseño decida la selección mixta"
   waiting: design
 12528:
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
