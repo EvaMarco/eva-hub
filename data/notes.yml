@@ -87,3 +87,6 @@
 12723:
   next: "Draft (fila 12 del doc: Download report.txt en error y feedback → button con el mismo aspecto). Fila y QA en #12376"
   waiting: me
+12724:
+  next: "Draft (filas 13 y 14 del doc: enlaces de los diálogos de login → buttons con el mismo aspecto). Fila y QA en #12376"
+  waiting: me
