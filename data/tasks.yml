@@ -126,16 +126,14 @@
   added: 2026-10-26
 
 - title: "Orden de rebase y merge de los PRs de botones (un CI por PR)"
-  status: doing
+  status: done
+  done: 2026-10-29
   links: ["#12376"]
   note: "Truco desde el 2026-10-28: cada PR pone su bloque en un sitio distinto de visual-dashboard.spec.js, así no chocan entre sí y no hace falta un rebase por merge."
   items:
-    - "Mergeadas el 2026-10-28: #12561, #12562, #12535, #12541, #12542, #12536, #12539."
-    - "Aprobada, esperando CI relanzado: #12533."
-    - "En revisión de Luis: #12650, #12651 (rebasada), #12659, #12673."
-    - "Después: #12653 (draft de selects, workspace.spec.js)."
-    - "Sueltas: #12650 (sin conflicto), #12643 (después de #12533 por en.po/es.po)."
-    - "Staging: #12508 y #12610 comparten refs.cljs; #12610 y #12624 comparten errors.cljs. Si se mergea una, mirar la otra."
+    - "Mergeadas el 2026-10-28: #12561, #12562, #12535, #12541, #12542, #12536, #12539, #12533, #12650, #12659, #12673."
+    - "Mergeadas el 2026-10-29 (staging): #12610, #12624."
+    - "Quedan sueltas, sin orden: #12651 (Luis), #12653 (draft)."
   added: 2026-10-27
 
 - title: "Follow-up: quitar stroke-width de iconos DS ya mergeados"
