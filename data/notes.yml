@@ -13,8 +13,8 @@
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343). niwinz de vacaciones"
   waiting: review
 12508:
-  next: "Para 2.20.0 (diseño: esperamos). Rebase a develop hecho (822781e37f, conflicto de shortcuts.cljs resuelto): falta force-push y cambiar la base a develop"
-  waiting: me
+  next: "Para 2.20.0, base develop (rebase subido 2026-10-29). Diseño: esperamos"
+  waiting: design
 12653:
   next: "Ready y asignada a Luis. Rebase sobre develop subido (2026-10-29), sin conflictos"
   waiting: review
