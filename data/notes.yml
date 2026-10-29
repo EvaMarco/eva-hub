@@ -7,7 +7,7 @@
 # closed PRs are ignored; delete them whenever.
 
 12643:
-  next: "Icono orphan del diseño añadido al DS (32d47c3b14). Diseño: copia rota anidada y selección mixta. Mergear después de #12533 (en.po/es.po)"
+  next: "Relates #12134. Diseño: Eva pregunta por la copia rota anidada en un main (2026-10-29); la selección mixta sigue sin decidir"
   waiting: design
 12528:
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343)"
@@ -47,9 +47,8 @@
   status: review
   next: "PR #12610 en revisión"
 12134:
-  status: waiting
-  waiting: design
-  next: "PR #12643 (draft): icono ya puesto; diseño decide anidadas y selección mixta"
+  status: hidden
+  next: "Se sigue en la PR #12643"
 12059:
   next: "Revisar (contributor). Desbloquea exports en Design e Inspect (botones y selects)"
 11951:
