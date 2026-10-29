@@ -136,7 +136,7 @@
 - title: "Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info, settings/profile)"
   status: doing
   links: ["https://claude.ai/artifact/Hz8Qgf38VPon8YeP4cTLs7"]
-  note: "Eva revisa las filas del doc hoy (2026-10-29). Decidida 1 de 14: Share = B (#12681)."
+  note: "Eva revisa las filas del doc hoy (2026-10-29). Hechas: 1 y 2 (#12699), 3 (#12702), 7 Share (#12681). Fila 4 (pestañas del equipo): preguntado a diseño si tab* del DS, una variante nueva u otra cosa."
   added: 2026-10-20
 
 - title: "#12580 (React #185): seguir con los sospechosos pendientes"
