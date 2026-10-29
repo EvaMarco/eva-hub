@@ -66,3 +66,6 @@
 12702:
   next: "Draft (logo del viewer: href real para el equipo + raw-svg DS; fila 3 del doc de enlaces). Fila y QA en #12376"
   waiting: me
+12705:
+  next: "Draft (pestañas del equipo → links con href; fila 4 del doc de enlaces). Encima de #12676 (base su rama). Fila y QA en #12376"
+  waiting: me
