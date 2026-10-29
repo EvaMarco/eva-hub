@@ -16,8 +16,8 @@
   next: "Para 2.20.0 (diseño: esperamos). Pendiente: rebase a develop (conflicto en shortcuts.cljs: nuestra condición + dwh/initialize-history de develop), force-push y cambiar base"
   waiting: design
 12653:
-  next: "Ready y asignada a Luis. Rebase sobre develop hecho (22e27cacf5 + d160e146eb, conflicto de workspace.spec.js resuelto): falta force-push"
-  waiting: me
+  next: "Ready y asignada a Luis. Rebase sobre develop subido (2026-10-29), sin conflictos"
+  waiting: review
 12676:
   next: "Ready y asignada a Luis (2026-10-28): rebase + fonts + common-dashboard borrado. Fixes de lint: Prettier (114dddaf54) y stylelint (8261521c96)"
   waiting: review
@@ -25,8 +25,8 @@
   next: "Ready y asignada a Luis (2026-10-29)"
   waiting: review
 12682:
-  next: "Ready y asignada a Luis. Arreglo de stylelint (fb22c11105): falta push"
-  waiting: me
+  next: "Ready y asignada a Luis. Arreglo de stylelint subido (fb22c11105)"
+  waiting: review
 # Issues assigned to me and PRs to review: "status" picks the board column
 # (todo, doing, waiting, review, done, hidden); "next" is the next step.
 # PRs to review without a status go to "Esperando" when the author has not
