@@ -134,8 +134,9 @@
   added: 2026-10-28
 
 - title: "Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info, settings/profile)"
-  status: waiting
-  waiting: design
+  status: doing
+  links: ["https://claude.ai/artifact/Hz8Qgf38VPon8YeP4cTLs7"]
+  note: "Eva revisa las filas del doc hoy (2026-10-29). Decidida 1 de 14: Share = B (#12681)."
   added: 2026-10-20
 
 - title: "#12580 (React #185): seguir con los sospechosos pendientes"
