@@ -152,9 +152,9 @@
 - title: "#12580 (React #185): seguir con los sospechosos pendientes"
   status: doing
   links: ["#12580", "#12610"]
-  note: "#12610 en 2.19.0 (sale hoy 2026-10-29; PRE ya la tiene). Plan: datos primero, luego sospechosos."
+  note: "2.19.0 con #12610 (el aviso «update loop throttled») salió a producción el 2026-10-29. Siguiente: revisar los logs de error de SaaS y seguir con los sospechosos pendientes."
   items:
-    - "Paso 0: reportes «update loop throttled» en PRE y, tras la salida, en SaaS (/dbg/error?source=4): agrupar por eventos en vuelo"
+    - "Paso 0 (ya se puede): revisar los logs de error de producción, reportes «update loop throttled» (/dbg/error?source=4), y agrupar por eventos en vuelo"
     - "Sospechoso 2 descartado (2026-10-29): 1 evento por cambio de tamaño y vuelve a reposo con zoom 0.9/1.1/1.25, píxeles impares, resize de 1 px y paneles (renderer SVG)"
     - "Sospechoso 1: text-modifiers-renderer (~l.215), renderer SVG, textos auto-height y en flex; espera a los datos"
     - "Abrir issue: texto creado en un board flex se queda en 40×12"
