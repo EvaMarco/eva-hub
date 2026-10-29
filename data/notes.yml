@@ -38,8 +38,11 @@
   status: todo
   next: "Atajos del viewer (Next/Previous board) se solapan en el panel de atajos (PRE)"
 12576:
-  status: doing
-  next: "En curso en otro workspace"
+  status: review
+  next: "La arregla #12661, esperando revisión"
+12661:
+  next: "Arregla #12576. Esperando revisión (sin revisor asignado)"
+  waiting: review
 12580:
   status: review
   next: "PR #12610 en revisión"
