@@ -66,3 +66,6 @@
 12705:
   next: "Draft (pestañas del equipo → links con href; fila 4 del doc de enlaces). Encima de #12676 (base su rama). Fila y QA en #12376"
   waiting: me
+12707:
+  next: "Ready y asignada a Luis: tests visuales del DS en tema oscuro (por #12480)"
+  waiting: review
