@@ -229,8 +229,9 @@ def pr_states(numbers):
     return out
 
 
-# The PR table in a group issue: "| #123 | Area | State |"
-PR_ROW = re.compile(r"^\|\s*#(\d+)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*$")
+# The PR table in a group issue: "| #123 | Area | @owner | State |" (older
+# tables have no Owner column). Rows of claimed areas with no PR yet are skipped.
+PR_ROW = re.compile(r"^\|\s*#(\d+)\s*\|")
 
 
 def table_rows(body):
@@ -238,7 +239,10 @@ def table_rows(body):
     for line in (body or "").splitlines():
         m = PR_ROW.match(line)
         if m:
-            rows.append({"number": int(m[1]), "area": m[2], "table_state": m[3]})
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            owner = cells[2].lstrip("@") if len(cells) > 3 else None
+            rows.append({"number": int(m[1]), "area": cells[1], "owner": owner,
+                         "table_state": cells[-1]})
     return rows
 
 
