@@ -22,7 +22,7 @@
   next: "Ready y asignada a Luis. Arreglo de stylelint subido (fb22c11105)"
   waiting: review
 12735:
-  next: "Draft (base staging, Closes #12641) para que revise el código; falta adjuntar la imagen antes/después y marcar ready"
+  next: "Draft (base staging, Closes #12641), imagen puesta; falta revisar el código y marcarla ready"
   waiting: me
 12739:
   next: "Skills migrate-ds-area y refactor-scss (+ reglas de reserva). Ready sin asignar"
