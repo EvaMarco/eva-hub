@@ -21,9 +21,6 @@
 12682:
   next: "Ready y asignada a Luis. Arreglo de stylelint subido (fb22c11105)"
   waiting: review
-12735:
-  next: "Draft (base staging, Closes #12641), imagen puesta; falta revisar el código y marcarla ready"
-  waiting: me
 12739:
   next: "Skills migrate-ds-area y refactor-scss (+ reglas de reserva). Ready sin asignar"
   waiting: review
@@ -32,8 +29,8 @@
 # PRs to review without a status go to "Esperando" when the author has not
 # answered my last comment or review, and to "Por empezar" otherwise.
 12641:
-  status: hidden
-  next: "Se sigue en la PR #12735"
+  status: waiting
+  next: "Arreglada en #12735 (mergeada 2026-10-30); en Product Review, se cierra tras la revisión"
 12580:
   status: hidden
   next: "Se sigue en la tarea de #12580"
