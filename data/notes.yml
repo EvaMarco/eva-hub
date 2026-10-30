@@ -21,13 +21,19 @@
 12682:
   next: "Ready y asignada a Luis. Arreglo de stylelint subido (fb22c11105)"
   waiting: review
+12735:
+  next: "Draft (base staging, Closes #12641) para que revise el código; falta adjuntar la imagen antes/después y marcar ready"
+  waiting: me
+12739:
+  next: "Skills migrate-ds-area y refactor-scss (+ reglas de reserva). Ready sin asignar"
+  waiting: review
 # Issues assigned to me and PRs to review: "status" picks the board column
 # (todo, doing, waiting, review, done, hidden); "next" is the next step.
 # PRs to review without a status go to "Esperando" when the author has not
 # answered my last comment or review, and to "Por empezar" otherwise.
 12641:
-  status: todo
-  next: "Mañana (2026-10-30): atajos del viewer (Next/Previous board) se solapan en el panel de atajos (PRE)"
+  status: hidden
+  next: "Se sigue en la PR #12735"
 12580:
   status: hidden
   next: "Se sigue en la tarea de #12580"
@@ -72,3 +78,6 @@
 12724:
   next: "Ready y asignada a Luis 2026-10-29 (filas 13 y 14 del doc: enlaces de los diálogos de login → buttons con el mismo aspecto). Fila y QA en #12376"
   waiting: review
+12749:
+  status: done
+  next: "Revisión hecha; M1 (Ctrl+M con selección mixta) confirmado a mano y avisado al compañero directamente, sin comentario en la PR"

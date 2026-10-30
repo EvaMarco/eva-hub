@@ -13,6 +13,30 @@
 # Quick ideas go as issues in this repo instead; move them here when they
 # need notes. Done tasks can stay a while, then be deleted.
 
+- title: "Revisar los 6 posibles bugs encontrados con el MCP y abrir issues"
+  status: todo
+  links: ["https://claude.ai/artifact/N8JDtiwnr5WdNQWs5GFPu6"]
+  note: "Modal con formulario montado con el MCP en ws1 (librerías App y Foundations). Registro en ws1 tmp/mcp-modal-form-findings.md"
+  items:
+    - "Grid recoloca celdas al añadir hijos a una columna"
+    - "library.components da un componente por grupo de variantes"
+    - "openPage() no espera al cambio de página"
+    - "waitForLayoutUpdate caduca tras muchos cambios en un grid"
+    - "export_shape de página entera sale en blanco"
+    - "Swap Text → Hint pierde los overrides de texto (¿a propósito?)"
+  added: 2026-10-30
+
+- title: "Seguir buscando bugs con el MCP (librerías y componentes) y probar otras técnicas"
+  status: todo
+  note: "MCP de Penpot montado a mano en ws1 (ventana tmux mcp, enable-mcp, menú > MCP > Connect). Validador del backend desde el REPL tras cada paso"
+  added: 2026-10-30
+
+- title: "Cuando se fusione #12739: actualizar guía y gist (skills en .agents/skills/)"
+  status: waiting
+  waiting: review
+  links: ["#12739", "https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6"]
+  added: 2026-10-30
+
 - title: "Revisar nueva candidatura"
   status: done
   done: 2026-10-29
@@ -24,20 +48,21 @@
   links: ["#12375", "#12376"]
   note: "Lunes 2026-11-02. Objetivo: Luis coge zonas y resuelve PRs, Eva revisa; así avanzamos más rápido."
   items:
-    - "Repasar con él migrate-ds-area y refactor-scss (y subirlas al repo si toca)"
-    - "Usar la guía del proceso (tarea de documentar) como base"
+    - "Repasar con él migrate-ds-area y refactor-scss (en revisión: #12739)"
+    - "Usar la guía del proceso como base: https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6"
     - "Acordar cómo coge zonas: columna Owner en la tabla de cada grupo"
   added: 2026-10-29
 
 - title: "Documentar el proceso de refactor"
-  status: todo
-  links: ["https://github.com/EvaMarco/eva-hub/issues/3", "#12375"]
-  note: "Mañana (2026-10-30), después de #12641. Para que otras personas puedan coger zonas de la épica (inventario ya en Épica DS). No va en el hub. Base para la sesión con Luis del lunes."
+  status: doing
+  links: ["https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6", "#12375", "#12739"]
+  note: "Guía publicada en un gist público y enlazada en las reglas de la épica (2026-10-30). El doc de Claude es el borrador: https://claude.ai/artifact/SD32AuvBJ1FQ3W3sgdnSBk"
   items:
-    - "Decidir dónde vive la guía (guía técnica del repo, épica o wiki)"
-    - "Hecho: una zona se coge con una columna de responsable en la tabla de cada issue de grupo"
-    - "Escribir la guía: zona, test visual a tolerancia cero, imagen antes/después, commit de SCSS, comentario de QA"
-    - "Subir al repo las skills migrate-ds-area y refactor-scss"
+    - "Hecho: guía escrita, corta, con set-up del agente y tabla de skills"
+    - "Hecho: gist público + enlace en #12375; reglas de reserva en #12375, #12376 y #12377"
+    - "Hecho: no changelog en #12376 y #12377; ningún revisor nombrado"
+    - "Skills migrate-ds-area y refactor-scss en revisión (#12739)"
+    - "Más adelante: pasar la guía a docs del repo cuando deje de cambiar"
   added: 2026-10-28
 
 - title: "Preguntar al equipo si migramos measures sin esperar a #9139 (squircle)"
