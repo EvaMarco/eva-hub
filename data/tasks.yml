@@ -20,9 +20,10 @@
   added: 2026-11-10
 
 - title: "#12929: arrastrar al final de un flex invertido guarda el hijo una posición antes"
-  status: todo
+  status: waiting
+  waiting: other
   links: ["#12929"]
-  note: "Solo con row-reverse (en row va bien). El canvas pinta el sitio correcto pero el orden de capas queda una antes; la flecha solo lo destapa. Sospecha: drop_area.cljc:64-72. Falta adjuntar el vídeo."
+  note: "Bug del renderer wasm (apply_structure en render-wasm/src/shapes.rs interpreta el índice distinto que insert-at-index). Lo adopta el equipo de render (2026-11-10). Arreglo + 3 tests guardados en local: rama eva-fix-reverse-flex-drop-12929, commit af024f8d83, sin subir."
   added: 2026-11-10
 
 - title: "#11648: importar un archivo deja elegir dependencias de librería que no coinciden"
