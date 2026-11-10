@@ -16,7 +16,7 @@
 - title: "Revisiones pendientes"
   status: doing
   links: ["#12059", "#12062", "#11951", "#10998"]
-  note: "Empezando por #12059 (export previews), que bloquea menus/exports e inspect/exports."
+  note: "#12059: cambios pedidos el 2026-11-10 (sacar el arreglo de Show in exports, F2-F4); bloquea menus/exports e inspect/exports. Siguen #12062, #11951, #10998."
   added: 2026-11-10
 
 - title: "#11648: importar un archivo deja elegir dependencias de librería que no coinciden"
