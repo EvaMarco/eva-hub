@@ -67,7 +67,8 @@
   added: 2026-10-30
 
 - title: "Actualizar guía y gist: #12739 ya está fusionada (skills en .agents/skills/)"
-  status: todo
+  status: done
+  done: 2026-11-10
   links: ["#12739", "https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6"]
   added: 2026-10-30
 
@@ -96,7 +97,7 @@
     - "Hecho: guía escrita, corta, con set-up del agente y tabla de skills"
     - "Hecho: gist público + enlace en #12375; reglas de reserva en #12375, #12376 y #12377"
     - "Hecho: no changelog en #12376 y #12377; ningún revisor nombrado"
-    - "Skills migrate-ds-area y refactor-scss en revisión (#12739)"
+    - "Hecho: skills migrate-ds-area y refactor-scss en el repo (#12739, 2026-11-04); guía y gist apuntan a .agents/skills/ (2026-11-10)"
     - "Más adelante: pasar la guía a docs del repo cuando deje de cambiar"
   added: 2026-10-28
 
