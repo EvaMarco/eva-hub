@@ -26,6 +26,13 @@
   note: "Bug del renderer wasm (apply_structure en render-wasm/src/shapes.rs interpreta el índice distinto que insert-at-index). Lo adopta el equipo de render (2026-11-10). Arreglo + 3 tests guardados en local: rama eva-fix-reverse-flex-drop-12929, commit af024f8d83, subida a GitHub sin PR."
   added: 2026-11-10
 
+- title: "#12847 (visor en directo, PR externa): esperando a diseño"
+  status: waiting
+  waiting: design
+  links: ["#12847", "#12837"]
+  note: "Preguntado a diseño: ¿opcional o siempre activo? ¿el visor aparece como colaborador en el workspace? Comentario preparado (scratchpad review-12847.md): con el visor wasm no se actualiza (render_viewer_wasm.cljs:171), revn, CHANGES.md."
+  added: 2026-11-10
+
 - title: "#11648: importar un archivo deja elegir dependencias de librería que no coinciden"
   status: waiting
   waiting: other
