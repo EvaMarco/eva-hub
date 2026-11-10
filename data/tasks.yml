@@ -26,6 +26,13 @@
   note: "Bug del renderer wasm (apply_structure en render-wasm/src/shapes.rs interpreta el índice distinto que insert-at-index). Lo adopta el equipo de render (2026-11-10). Arreglo + 3 tests guardados en local: rama eva-fix-reverse-flex-drop-12929, commit af024f8d83, subida a GitHub sin PR."
   added: 2026-11-10
 
+- title: "#12528: review de niwinz atendida (migración 0036)"
+  status: waiting
+  waiting: review
+  links: ["#12528", "#12343"]
+  note: "2026-11-10: R1 (0036-fix-shape-children-ids), M1, M3, M4, M5, S1 en e017db0eee; rebase sobre staging, push, descripción actualizada y respuesta publicada. Fuera: M2 (notas mem) y S2 (savepoint por archivo, previo)."
+  added: 2026-11-10
+
 - title: "#12847 (visor en directo, PR externa): esperando a diseño"
   status: waiting
   waiting: design
