@@ -19,9 +19,10 @@
   note: "#12059: cambios pedidos el 2026-11-10 (sacar el arreglo de Show in exports, F2-F4); bloquea menus/exports e inspect/exports. #10998: cambios pedidos el 2026-11-10 (clic perdido tras nudge, test Playwright). Siguen #12062 (relacionada con #11648) y #11951."
   added: 2026-11-10
 
-- title: "Bug: en un flex, la flecha tras un arrastre deshace el reordenado"
+- title: "#12929: arrastrar al final de un flex invertido guarda el hijo una posición antes"
   status: todo
-  note: "Board flex con 4 hijos (azul, rosa, gris, verde): arrastrar rosa al final, seleccionar gris, flecha derecha → vuelve el orden de antes del arrastre en vez de azul, verde, gris, rosa. Pasa en develop de ws1 (72575e5c05), no en hourly. Hay vídeo. Investigar y abrir issue."
+  links: ["#12929"]
+  note: "Solo con row-reverse (en row va bien). El canvas pinta el sitio correcto pero el orden de capas queda una antes; la flecha solo lo destapa. Sospecha: drop_area.cljc:64-72. Falta adjuntar el vídeo."
   added: 2026-11-10
 
 - title: "#11648: importar un archivo deja elegir dependencias de librería que no coinciden"
