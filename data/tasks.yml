@@ -33,11 +33,11 @@
   note: "2026-11-10: R1 (0036-fix-shape-children-ids), M1, M3, M4, M5, S1 en e017db0eee; rebase sobre staging, push, descripción actualizada y respuesta publicada. Fuera: M2 (notas mem) y S2 (savepoint por archivo, previo)."
   added: 2026-11-10
 
-- title: "#12847 (visor en directo, PR externa): esperando a diseño"
+- title: "#12847 (visor en directo, PR externa): cambios pedidos"
   status: waiting
-  waiting: design
+  waiting: other
   links: ["#12847", "#12837"]
-  note: "Preguntado a diseño: ¿opcional o siempre activo? ¿el visor aparece como colaborador en el workspace? Comentario preparado (scratchpad review-12847.md): con el visor wasm no se actualiza (render_viewer_wasm.cljs:171), revn, CHANGES.md."
+  note: "Diseño (2026-11-10): activado por defecto si no penaliza el rendimiento; los avatares de los visores en el workspace están bien. Request changes publicado el 2026-11-10: visor wasm no se actualiza, rendimiento (recalcula todas las páginas), revn, CHANGES.md."
   added: 2026-11-10
 
 - title: "#11648: importar un archivo deja elegir dependencias de librería que no coinciden"
