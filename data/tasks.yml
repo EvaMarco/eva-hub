@@ -13,6 +13,18 @@
 # Quick ideas go as issues in this repo instead; move them here when they
 # need notes. Done tasks can stay a while, then be deleted.
 
+- title: "Revisiones pendientes"
+  status: doing
+  links: ["#12059", "#12062", "#11951", "#10998"]
+  note: "Empezando por #12059 (export previews), que bloquea menus/exports e inspect/exports."
+  added: 2026-11-10
+
+- title: "#11648: importar un archivo deja elegir dependencias de librería que no coinciden"
+  status: todo
+  links: ["#11648"]
+  note: "Asignada, milestone 2.21.0."
+  added: 2026-11-10
+
 - title: "Revisar los 6 posibles bugs encontrados con el MCP y abrir issues"
   status: todo
   links: ["https://claude.ai/artifact/N8JDtiwnr5WdNQWs5GFPu6"]
@@ -31,9 +43,8 @@
   note: "MCP de Penpot montado a mano en ws1 (ventana tmux mcp, enable-mcp, menú > MCP > Connect). Validador del backend desde el REPL tras cada paso"
   added: 2026-10-30
 
-- title: "Cuando se fusione #12739: actualizar guía y gist (skills en .agents/skills/)"
-  status: waiting
-  waiting: review
+- title: "Actualizar guía y gist: #12739 ya está fusionada (skills en .agents/skills/)"
+  status: todo
   links: ["#12739", "https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6"]
   added: 2026-10-30
 
@@ -171,7 +182,10 @@
 - title: "Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info, settings/profile)"
   status: doing
   links: ["https://claude.ai/artifact/Hz8Qgf38VPon8YeP4cTLs7"]
-  note: "Todas las filas del doc tienen PR (2026-10-29): 1-2 #12699, 3 #12702, 4 #12705, 5-6 #12708, 7 #12681 (mergeada), 8 #12710, 9-10 #12712, 11 #12722, 12 #12723, 13-14 #12724. Lo que queda fuera está en \"Left for later\" de #12376. Pendiente de diseño: fila 4 (tab* o no) y #12708 (Go to login / Go back, idea link*)."
+  note: "Mergeadas: #12681, #12699, #12702, #12710, #12712, #12722, #12723, #12724. Lo que queda fuera está en \"Left for later\" de #12376."
+  items:
+    - "#12705 (fila 4): decidido A, no tab* (2026-11-10). Rebase hecho; falta force-push y pasarla a ready"
+    - "#12708 (filas 5-6): esperando a diseño. Fila 6 Go to login: A, B o link* como el Go back de recovery_request; fila 5 Team management: confirmar A"
   added: 2026-10-20
 
 - title: "#12580 (React #185): seguir con los sospechosos pendientes"
