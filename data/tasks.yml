@@ -13,6 +13,17 @@
 # Quick ideas go as issues in this repo instead; move them here when they
 # need notes. Done tasks can stay a while, then be deleted.
 
+- title: "Revisar PRs de frontend (lista del 2026-11-10)"
+  status: todo
+  note: "48 PRs abiertas tocan frontend (sin borradores ni las mías). Prioridad: las asignadas a mí, luego fixes del equipo para probar en local, luego fixes externos pequeños. Duplicados a cerrar juntos: HSL (#12765/#12629) y portapapeles (#12658/#12848)."
+  items:
+    - "Asignadas a mí: #12671 (luisddm, colapsar grupos de sets tras reordenar, +4/-1) y #12836 (externa, menús contextuales sin salto de línea, +8/-2)"
+    - "Fixes del equipo para probar en local: #12872 (nombres de boards al recargar, +2/-1), #12794 (staging, nombre de componente = raíz, hirunatan), #12928 (staging-2.19.x, copiar variantes entre archivos, pabloalba)"
+    - "Externas pequeñas: #12899 (renombrar grupo de tokens), #12873 (búsqueda del swap), #12765 o #12629 (HSL, duplicadas), #12658 o #12848 (portapapeles, duplicadas)"
+    - "Externas con decisión de producto: #12764 (seleccionar siguiente capa), #12621 (modo compacto), #12198 (ocultar chrome del viewer, bloquea header del viewer en la épica DS), #12166 (atajo de exportar), #10170 (deep link a boards), #12921 (por qué no se puede desconectar una librería)"
+    - "Grandes o de otros equipos, solo si sobra tiempo: #12720 (listas en texto v3), #12453 (panel de escala, luisddm), #12481/#12437 (tokenscript), #11959 (token-source al reimportar)"
+  added: 2026-11-10
+
 - title: "Revisiones pendientes"
   status: waiting
   waiting: other
