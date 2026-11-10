@@ -23,7 +23,7 @@
   status: waiting
   waiting: other
   links: ["#12929"]
-  note: "Bug del renderer wasm (apply_structure en render-wasm/src/shapes.rs interpreta el índice distinto que insert-at-index). Lo adopta el equipo de render (2026-11-10). Arreglo + 3 tests guardados en local: rama eva-fix-reverse-flex-drop-12929, commit af024f8d83, sin subir."
+  note: "Bug del renderer wasm (apply_structure en render-wasm/src/shapes.rs interpreta el índice distinto que insert-at-index). Lo adopta el equipo de render (2026-11-10). Arreglo + 3 tests guardados en local: rama eva-fix-reverse-flex-drop-12929, commit af024f8d83, subida a GitHub sin PR."
   added: 2026-11-10
 
 - title: "#11648: importar un archivo deja elegir dependencias de librería que no coinciden"
