@@ -36,7 +36,7 @@
   items:
     - "Asignadas a mí: #12671 (hecha 2026-11-11, cambios pedidos) y #12836 (hecha 2026-11-11, cambios pedidos). #12865 (MCP, Alotor) aprobada 2026-11-11 y mergeada"
     - "Fixes del equipo: #12872 probada en local 2026-11-11 (OK, Eva comenta con el test); #12794 espera al autor (comentarios de pabloalba); #12928 ya mergeada"
-    - "Externas pequeñas: #12899 (renombrar grupo de tokens), #12873 (búsqueda del swap), #12765 o #12629 (HSL, duplicadas), #12658 y #12848 (portapapeles, se solapan)"
+    - "Externas pequeñas: #12899 cerrada; #12873 (búsqueda del swap) probada 2026-11-11, OK, CI lanzado a mano; HSL: #12629 probada 2026-11-11 (e2e temporal + unit + prueba manual), OK, aprobar y cerrar #12765 como duplicada; siguiente: #12658 y #12848 (portapapeles, se solapan)"
     - "Externas con decisión de producto: #12764 (seleccionar siguiente capa), #12621 (modo compacto), #12198 (ocultar chrome del viewer, bloquea header del viewer en la épica DS), #12166 (atajo de exportar), #10170 (deep link a boards), #12921 (por qué no se puede desconectar una librería)"
     - "Grandes o de otros equipos, solo si sobra tiempo: #12720 (listas en texto v3), #12453 (panel de escala, luisddm), #12481/#12437 (tokenscript), #11959 (token-source al reimportar)"
   added: 2026-11-10
