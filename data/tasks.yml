@@ -35,7 +35,7 @@
   note: "48 PRs abiertas tocan frontend (sin borradores ni las mías). Prioridad: las asignadas a mí, luego fixes del equipo para probar en local, luego fixes externos pequeños. Duplicadas: HSL (#12765 y #12629). Se solapan: portapapeles (#12658 y #12848)."
   items:
     - "Asignadas a mí: #12671 (hecha 2026-11-11, cambios pedidos) y #12836 (hecha 2026-11-11, cambios pedidos). #12865 (MCP, Alotor) aprobada 2026-11-11 y mergeada"
-    - "Fixes del equipo para probar en local: #12872 (nombres de boards al recargar, +2/-1), #12794 (staging, nombre de componente = raíz, hirunatan), #12928 (staging-2.19.x, copiar variantes entre archivos, pabloalba)"
+    - "Fixes del equipo: #12872 probada en local 2026-11-11 (OK, Eva comenta con el test); #12794 espera al autor (comentarios de pabloalba); #12928 ya mergeada"
     - "Externas pequeñas: #12899 (renombrar grupo de tokens), #12873 (búsqueda del swap), #12765 o #12629 (HSL, duplicadas), #12658 y #12848 (portapapeles, se solapan)"
     - "Externas con decisión de producto: #12764 (seleccionar siguiente capa), #12621 (modo compacto), #12198 (ocultar chrome del viewer, bloquea header del viewer en la épica DS), #12166 (atajo de exportar), #10170 (deep link a boards), #12921 (por qué no se puede desconectar una librería)"
     - "Grandes o de otros equipos, solo si sobra tiempo: #12720 (listas en texto v3), #12453 (panel de escala, luisddm), #12481/#12437 (tokenscript), #11959 (token-source al reimportar)"
@@ -44,8 +44,8 @@
 - title: "Revisiones pendientes"
   status: waiting
   waiting: other
-  links: ["#12059", "#12062", "#11951", "#10998", "#12671", "#12836"]
-  note: "#12836: cambios pedidos el 2026-11-11 (submenú se sale por la derecha: delta-x fijo en 250; formato del commit; capturas, el issue #12320 espera a diseño). #12671: cambios pedidos el 2026-11-11 (test Playwright + deps de on-double-click en sets). #12059: cambios pedidos el 2026-11-10 (sacar el arreglo de Show in exports, F2-F4); bloquea menus/exports e inspect/exports. #10998: cambios pedidos el 2026-11-10 (clic perdido tras nudge, test Playwright). #12062: aprobada el 2026-11-10; los 2 commits posteriores de niwinz (guarda v1, entradas repetidas, orden de permisos) revisados el 2026-11-11: bien, la aprobación vale. #11951: sin cambios desde la revisión del 15-10 (regresión BoldItalic); #12315 ya arregló el crash en develop. Comentario publicado en la PR (2026-11-10) para que niwinz decida: mantenerla (rebase + arreglar la itálica) o cerrarla junto con #10436."
+  links: ["#12059", "#11951", "#10998", "#12671", "#12836"]
+  note: "#12836: cambios pedidos el 2026-11-11 (submenú se sale por la derecha: delta-x fijo en 250; formato del commit; capturas, el issue #12320 espera a diseño). #12671: cambios pedidos el 2026-11-11 (test Playwright + deps de on-double-click en sets). #12059: cambios pedidos el 2026-11-10 (sacar el arreglo de Show in exports, F2-F4); bloquea menus/exports e inspect/exports. #10998: cambios pedidos el 2026-11-10 (clic perdido tras nudge, test Playwright). #11951: sin cambios desde la revisión del 15-10 (regresión BoldItalic); #12315 ya arregló el crash en develop. Comentario publicado en la PR (2026-11-10) para que niwinz decida: mantenerla (rebase + arreglar la itálica) o cerrarla junto con #10436."
   added: 2026-11-10
 
 - title: "#12929: arrastrar al final de un flex invertido guarda el hijo una posición antes"
