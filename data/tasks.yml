@@ -13,6 +13,15 @@
 # Quick ideas go as issues in this repo instead; move them here when they
 # need notes. Done tasks can stay a while, then be deleted.
 
+- title: "Hiring: revisar CV pendiente"
+  status: todo
+  added: 2026-11-11
+
+- title: "Hiring: revisar 2 CVs"
+  status: done
+  done: 2026-11-11
+  added: 2026-11-11
+
 - title: "Playwright: tema oscuro por defecto en los navegadores"
   status: todo
   note: "Ver si Playwright puede fijar el tema oscuro por defecto (p. ej. colorScheme en la config) para no cambiarlo en cada test."
