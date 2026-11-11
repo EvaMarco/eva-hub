@@ -13,6 +13,14 @@
 # Quick ideas go as issues in this repo instead; move them here when they
 # need notes. Done tasks can stay a while, then be deleted.
 
+- title: "Playwright: tema oscuro por defecto en los navegadores"
+  status: todo
+  note: "Ver si Playwright puede fijar el tema oscuro por defecto (p. ej. colorScheme en la config) para no cambiarlo en cada test."
+  items:
+    - "Buscar la opción en la config de Playwright"
+    - "Revisar los tests que ya hemos hecho y quitar el cambio de tema de cada uno"
+  added: 2026-11-11
+
 - title: "Revisar PRs de frontend (lista del 2026-11-10)"
   status: todo
   note: "48 PRs abiertas tocan frontend (sin borradores ni las mías). Prioridad: las asignadas a mí, luego fixes del equipo para probar en local, luego fixes externos pequeños. Duplicadas: HSL (#12765 y #12629). Se solapan: portapapeles (#12658 y #12848)."
