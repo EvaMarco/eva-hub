@@ -23,11 +23,11 @@
   added: 2026-11-11
 
 - title: "Playwright: tema oscuro por defecto en los navegadores"
-  status: todo
-  note: "Ver si Playwright puede fijar el tema oscuro por defecto (p. ej. colorScheme en la config) para no cambiarlo en cada test."
+  status: doing
+  note: "Desde #12480 (28-10) un perfil sin tema sigue al sistema y Chrome headless da claro, así que los e2e corrían con la UI clara. Rama eva-playwright-dark-theme (develop), commit f37c6e3dc6: colorScheme dark en playwright.config.js. Suite default completa: 436 pasan, 3 del editor de texto fallan también sin el cambio (inestables). Falta push + PR."
   items:
-    - "Buscar la opción en la config de Playwright"
-    - "Revisar los tests que ya hemos hecho y quitar el cambio de tema de cada uno"
+    - "Hecho: colorScheme dark en la config; ningún spec del repo cambiaba el tema (email-verification lo fija con emulateMedia y se queda)"
+    - "Siguiente: push (Eva) y abrir PR"
   added: 2026-11-11
 
 - title: "Revisar PRs de frontend (lista del 2026-11-10)"
@@ -45,7 +45,7 @@
   status: waiting
   waiting: other
   links: ["#12059", "#12062", "#11951", "#10998", "#12671", "#12836"]
-  note: "#12836: cambios pedidos el 2026-11-11 (submenú se sale por la derecha: delta-x fijo en 250; formato del commit; capturas, el issue #12320 espera a diseño). #12671: cambios pedidos el 2026-11-11 (test Playwright + deps de on-double-click en sets). #12059: cambios pedidos el 2026-11-10 (sacar el arreglo de Show in exports, F2-F4); bloquea menus/exports e inspect/exports. #10998: cambios pedidos el 2026-11-10 (clic perdido tras nudge, test Playwright). #12062: F1-F4 resueltos; Eva le ha contestado (rebase sobre #12862 y orden de permisos en files.clj), el rebase lo hace niwinz. #11951: sin cambios desde la revisión del 15-10 (regresión BoldItalic); #12315 ya arregló el crash en develop. Comentario publicado en la PR (2026-11-10) para que niwinz decida: mantenerla (rebase + arreglar la itálica) o cerrarla junto con #10436."
+  note: "#12836: cambios pedidos el 2026-11-11 (submenú se sale por la derecha: delta-x fijo en 250; formato del commit; capturas, el issue #12320 espera a diseño). #12671: cambios pedidos el 2026-11-11 (test Playwright + deps de on-double-click en sets). #12059: cambios pedidos el 2026-11-10 (sacar el arreglo de Show in exports, F2-F4); bloquea menus/exports e inspect/exports. #10998: cambios pedidos el 2026-11-10 (clic perdido tras nudge, test Playwright). #12062: aprobada el 2026-11-10; los 2 commits posteriores de niwinz (guarda v1, entradas repetidas, orden de permisos) revisados el 2026-11-11: bien, la aprobación vale. #11951: sin cambios desde la revisión del 15-10 (regresión BoldItalic); #12315 ya arregló el crash en develop. Comentario publicado en la PR (2026-11-10) para que niwinz decida: mantenerla (rebase + arreglar la itálica) o cerrarla junto con #10436."
   added: 2026-11-10
 
 - title: "#12929: arrastrar al final de un flex invertido guarda el hijo una posición antes"
@@ -248,7 +248,7 @@
   note: "2.19.0 con #12610 (el aviso «update loop throttled») salió a producción el 2026-10-29. Siguiente: revisar los logs de error de SaaS y seguir con los sospechosos pendientes."
   items:
     - "Hecho 2026-11-10: producción, 38 «update loop throttled» en ~21 h (23 usuarios, RC7). 35/38 sin eventos en vuelo. Stack: 12× palette.cljs (ancho al montar), 9× embed.cljs use-data-uris, 3× initialize/finalize-page, 3× layer_item. El stack es la actualización que coincidió con el corte, no necesariamente la causa"
-    - "PR #12941 (staging): el reporte espera 5 s y cuenta los cortes (:trips), más :last-trip-stack y :page-objects. Cuando salga, ver si los bucles siguen o paran"
+    - "PR #12941 (staging): el reporte espera 5 s y cuenta los cortes (:trips), más :last-trip-stack y :page-objects. Cuando salga, ver si los bucles siguen o paran. 2026-11-11: CI falla en dashboard «Bug 9927» (también al relanzar); no es nuestro cambio (no hay aviso de update loop en las trazas, en local pasa 3/3). Propuesto: rebase sobre staging + push"
     - "Repro local sin éxito (máx. 2 rondas de 25): 1221 formas en flex, abrir archivo, 1536×830 al 125 %, 300 imágenes. Pista pendiente: plugins que ejecutan set-flag al abrir (13/38 reportes)"
     - "Sospechoso 2 descartado (2026-10-29): 1 evento por cambio de tamaño y vuelve a reposo con zoom 0.9/1.1/1.25, píxeles impares, resize de 1 px y paneles (renderer SVG)"
     - "Sospechoso 1: text-modifiers-renderer (~l.215), renderer SVG, textos auto-height y en flex; espera a los datos"
