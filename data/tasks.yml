@@ -48,10 +48,16 @@
   note: "Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde."
   added: 2026-11-12
 
+- title: "Volver a revisar #12671 y #12059 (los autores subieron cambios)"
+  status: todo
+  links: ["#12671", "#12059"]
+  note: "#12671 (luisddm): commits el 2026-11-12 10:40 tras los cambios pedidos el 11-11. #12059: commit el 2026-11-10 09:00, justo después de la revisión, sin comentario."
+  added: 2026-11-12
+
 - title: "Revisiones pendientes"
   status: waiting
   waiting: other
-  links: ["#12059", "#10998", "#12671", "#12836"]
+  links: ["#10998", "#12836"]
   note: "#12836: cambios pedidos el 2026-11-11 (submenú se sale por la derecha: delta-x fijo en 250; formato del commit; capturas, el issue #12320 espera a diseño). #12671: cambios pedidos el 2026-11-11 (test Playwright + deps de on-double-click en sets). #12059: cambios pedidos el 2026-11-10 (sacar el arreglo de Show in exports, F2-F4); bloquea menus/exports e inspect/exports. #10998: cambios pedidos el 2026-11-10 (clic perdido tras nudge, test Playwright). #11951: aprobada 2026-11-12 (niwinz arregló la itálica y la mantiene; probada en local); pendiente que actualice título/descripción (Relates #10436) y quite el test duplicado en runner.cljs."
   added: 2026-11-10
 
