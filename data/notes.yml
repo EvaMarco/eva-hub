@@ -16,7 +16,7 @@
   next: "Respuestas a niwinz enviadas; esperando su revisión (#12343). niwinz de vacaciones"
   waiting: review
 12508:
-  next: "Para 2.20.0, base develop (rebase subido 2026-10-29). Diseño: esperamos"
+  next: "Base staging, milestone 2.20.0 (movida desde develop 2026-11-12). Diseño: esperamos"
   waiting: design
 # Issues assigned to me and PRs to review: "status" picks the board column
 # (todo, doing, waiting, review, done, hidden); "next" is the next step.
