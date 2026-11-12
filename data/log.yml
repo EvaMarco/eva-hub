@@ -6,6 +6,13 @@
 # When a done task leaves the board, move it here instead of deleting it.
 
 
+
+- title: '#12528: atender la review de niwinz (migración 0036)'
+  done: 2026-11-12
+  links:
+  - '#12528'
+  - '#12343'
+  note: R1 (0036-fix-shape-children-ids), M1, M3-M5, S1 en e017db0eee. niwinz aprobó la PR el 2026-11-12.
 - title: 'Playwright: tema oscuro por defecto en los navegadores'
   done: &id001 2026-11-12
   links:
