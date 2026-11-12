@@ -261,7 +261,8 @@ def log_view(prs, tasks, repo):
     for entry in entries:
         months.setdefault(entry[0][:7], []).append(entry)
     cards = []
-    for month, items in months.items():
+    # Only the latest month starts open; <details> needs no script.
+    for i, (month, items) in enumerate(months.items()):
         year, num = month.split("-")
         n_prs = sum(1 for _, kind, _ in items if kind == "merged")
         n_tasks = len(items) - n_prs
@@ -271,9 +272,10 @@ def log_view(prs, tasks, repo):
             f'<span class="log-text">{text}</span></li>'
             for date, kind, text in items)
         cards.append(
-            f'<section class="card"><h2>{MONTHS[int(num) - 1].capitalize()} {year} '
-            f'<span class="muted">· {n_prs} PRs mergeadas, {n_tasks} tareas</span></h2>'
-            f'<ul class="log">{rows}</ul></section>')
+            f'<details class="card log-month"{" open" if i == 0 else ""}><summary><h2>'
+            f'{MONTHS[int(num) - 1].capitalize()} {year} '
+            f'<span class="muted">· {n_prs} PRs mergeadas, {n_tasks} tareas</span></h2></summary>'
+            f'<ul class="log">{rows}</ul></details>')
     total = sum(1 for e_ in entries if e_[1] == "merged")
     return total, "".join(cards) or '<section class="card"><p class="muted">—</p></section>'
 

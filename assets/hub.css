@@ -222,3 +222,13 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 .log-merged .kind { color: var(--k-merged); }
 .log-task .kind { color: var(--k-task); }
 .log-text { min-width: 0; overflow-wrap: anywhere; }
+.log-month { display: block; }
+.log-month > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.log-month > summary::-webkit-details-marker { display: none; }
+.log-month > summary::before { content: ""; width: 0.5em; height: 0.5em; flex: none;
+  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+  transform: rotate(-45deg); transition: transform 0.15s; }
+.log-month[open] > summary::before { transform: rotate(45deg); }
+.log-month > summary h2 { margin: 0; }
+.log-month[open] > summary { margin-bottom: 8px; }
+.log-month > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
