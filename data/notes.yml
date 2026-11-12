@@ -13,6 +13,7 @@
 
 
 
+
 13004:
   next: 'Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde.'
   waiting: review
@@ -67,4 +68,7 @@
   status: waiting
 11648:
   next: Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10).
+  status: waiting
+12993:
+  next: 'Cambios pedidos 2026-11-12: sin width/height todos los cursores del canvas desaparecen (probado en Ubuntu con varios tamaños de cursor); no sigue el tamaño del sistema. Asignada a Eva y niwinz'
   status: waiting
