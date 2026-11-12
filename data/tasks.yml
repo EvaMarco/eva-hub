@@ -107,12 +107,6 @@
   links: ["#12739", "https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6"]
   added: 2026-10-30
 
-- title: "Revisar nueva candidatura"
-  status: done
-  done: 2026-10-29
-  links: ["https://github.com/EvaMarco/eva-hub/issues/2"]
-  added: 2026-10-29
-
 - title: "Sesión con Luis: preparar las skills para que coja PRs del DS"
   status: waiting
   waiting: other
@@ -136,53 +130,11 @@
     - "Más adelante: pasar la guía a docs del repo cuando deje de cambiar"
   added: 2026-10-28
 
-- title: "Preguntar al equipo si migramos measures sin esperar a #9139 (squircle)"
-  status: done
-  done: 2026-10-28
-  links: ["#9139", "#12376"]
-  note: "Bloquea menus/measures (botones/iconos). Draft desde abril; diseño dijo en junio que necesita definición. Propuesta: migrar y que quien retome el squircle haga rebase."
-  added: 2026-10-27
-
-- title: "Preguntar si #12059 (export previews) se va a revisar pronto"
-  status: done
-  done: 2026-10-27
-  links: ["#12059", "#12376", "#12377"]
-  note: "Resuelto: la reviso yo (asignada), está en el tablero como «Revisar». Bloquea menus/exports e inspect/exports."
-  added: 2026-10-27
-
-- title: "Recordar a diseño los iconos que faltan en el DS"
-  status: done
-  done: 2026-10-27
-  links: ["#12654", "#12659", "#12376"]
-  note: "Diseño decidió: share redibujado en formato DS (un path, 16×16, sin color); handlers y snap tal cual; snap-nodes borrado. Draft #12659 (cierra #12654)."
-  added: 2026-10-27
-
-- title: "Migrar el botón Compartir del header derecho a icon-button* con i/share"
-  status: done
-  done: 2026-10-29
-  links: ["#12659", "#12376"]
-  note: "Desbloqueado por #12659: esperar a que se mergee. Hoy es un [:a] con el icono legacy share (right_header.cljs, .share-btn); el SCSS ya lo marca como pendiente del icono."
-  added: 2026-10-27
-
-- title: "Migrar la barra de edición de paths (path_actions) a botones e iconos DS"
-  status: done
-  done: 2026-10-29
-  links: ["#12659", "#12376"]
-  note: "Desbloqueado por #12659: esperar a que se mergee. Usa icon-xref :snap y :handlers-*; pasan a icon-button* con i/snap e i/handlers-*."
-  added: 2026-10-27
-
 - title: "Variante en minúsculas para el botón Reset del zoom"
   status: waiting
   waiting: other
   links: ["#12454", "#12523"]
   note: "Diseño ya la tiene avanzada (2026-10-29). Se implementa en button* cuando termine la migración de botones; luego follow-up en los dos menús de zoom."
-  added: 2026-10-27
-
-- title: "common-dashboard.scss al DS"
-  status: done
-  done: 2026-10-29
-  links: ["#12376"]
-  note: "Lo comparten diez módulos del dashboard; mejor cuando se mergee el lote del dashboard (#12531–#12541)."
   added: 2026-10-27
 
 - title: "Task 9 de botones/iconos: limpieza final"
@@ -209,35 +161,6 @@
   links: ["#12377"]
   note: "Blend mode: diseño acepta el hover callback en select* (2026-10-29), Task 5b sigue. Destino: propuesta de :strict en combobox* enviada al equipo del DS (2026-10-29), esperando respuesta; si no, apaño en interactions con :key."
   added: 2026-10-27
-
-- title: "Actualizar la fila de #12477 y su comentario de QA en #12376"
-  status: done
-  done: 2026-10-27
-  links: ["#12376", "#12477"]
-  note: "Fila actualizada el 2026-10-27; el comentario de QA se queda como está."
-  added: 2026-10-26
-
-- title: "Orden de rebase y merge de los PRs de botones (un CI por PR)"
-  status: done
-  done: 2026-10-29
-  links: ["#12376"]
-  note: "Truco desde el 2026-10-28: cada PR pone su bloque en un sitio distinto de visual-dashboard.spec.js, así no chocan entre sí y no hace falta un rebase por merge."
-  items:
-    - "Mergeadas el 2026-10-28: #12561, #12562, #12535, #12541, #12542, #12536, #12539, #12533, #12650, #12659, #12673."
-    - "Mergeadas el 2026-10-29 (staging): #12610, #12624."
-    - "Mergeadas el 2026-10-29: #12651, #12653, #12661, #12681, #12707, #12709."
-  added: 2026-10-27
-
-- title: "Follow-up: quitar stroke-width de iconos DS ya mergeados"
-  status: done
-  done: 2026-10-29
-  links: ["#12376", "#12673"]
-  note: "Regla desde el 2026-10-28: los iconos DS usan el grosor del DS. Sin imagen ni revisión aparte."
-  items:
-    - "layer_item.scss (2 × 1.33px), dashboard/sidebar.scss (1.33px)."
-    - "workspace/comments.scss (#12561): .arrow-svg y .tick-icon 1.33px."
-    - "viewer/share_link.scss (#12562): stroke-width 1px y los selectores li {}, span.checked, svg {} del tick legacy."
-  added: 2026-10-28
 
 - title: "Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info, settings/profile)"
   status: doing
