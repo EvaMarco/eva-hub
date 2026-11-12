@@ -49,6 +49,12 @@
   note: "Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde."
   added: 2026-11-12
 
+- title: "#12059: añadir las 4 traducciones nuevas a es.po"
+  status: todo
+  links: ["#12059"]
+  note: "La PR (export previews, autor externo) solo añade las claves en en.po (en.po:7603-7617). No se pide al contributor: lo hago yo cuando se mergee, o con un commit en su rama si deja editar."
+  added: 2026-11-12
+
 - title: "Volver a revisar #12671 y #12059 (los autores subieron cambios)"
   status: todo
   links: ["#12671", "#12059"]
