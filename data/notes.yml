@@ -9,6 +9,7 @@
 
 
 
+
 13004:
   next: 'Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde.'
   waiting: review
@@ -41,8 +42,8 @@
   status: hidden
   next: Se sigue en la tarea del Grupo 2
 12705:
-  next: 'Draft (pestañas del equipo → links con href; fila 4 del doc de enlaces). Encima de #12676 (base su rama). Fila y QA en #12376'
-  waiting: me
+  next: 'Ready, asignada a Luis, 2.21.0. Rebase sobre develop subido 2026-11-12 (conflicto con #12892: Invitations solo para admins)'
+  waiting: review
 12708:
   next: Rebase sobre develop (conflictos en specs visuales) y ready + asignada a Luis (2026-11-12)
   waiting: review
