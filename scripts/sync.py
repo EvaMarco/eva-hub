@@ -171,11 +171,27 @@ REVIEWED_QUERY = """query($q: String!, $after: String, $login: String!) {
   search(query: $q, type: ISSUE, first: 100, after: $after) {
     pageInfo { hasNextPage endCursor }
     nodes { ... on PullRequest {
-      number title url mergedBy { login }
+      number title url state mergedBy { login }
       reviews(author: $login, first: 50) { nodes { state submittedAt } }
     } }
   }
 }"""
+
+
+def review_outcome(reviews, pr_state):
+    """approved | rejected | pending | commented, from my last decision.
+
+    Approved after asking for changes counts as approved. Changes asked and
+    the PR closed or merged without my approval counts as rejected; still
+    open, it is pending (waiting on the author).
+    """
+    decisions = [r for r in sorted(reviews, key=lambda r: r["submittedAt"])
+                 if r["state"] in ("APPROVED", "CHANGES_REQUESTED")]
+    if decisions and decisions[-1]["state"] == "APPROVED":
+        return "approved"
+    if decisions:
+        return "pending" if pr_state == "OPEN" else "rejected"
+    return "pending" if pr_state == "OPEN" else "commented"
 
 
 def reviewed_prs():
@@ -197,11 +213,9 @@ def reviewed_prs():
             reviews = [r for r in p["reviews"]["nodes"] if r["submittedAt"]]
             if not reviews:
                 continue
-            states = {r["state"] for r in reviews}
             prs.append({"number": p["number"], "title": p["title"], "url": p["url"],
                         "first_review": min(r["submittedAt"] for r in reviews),
-                        "approved": "APPROVED" in states,
-                        "changes": "CHANGES_REQUESTED" in states,
+                        "outcome": review_outcome(reviews, p["state"]),
                         "merged_by_me": (p["mergedBy"] or {}).get("login") == CONFIG["user"]})
         if not page["pageInfo"]["hasNextPage"]:
             break

@@ -4,8 +4,7 @@
   "title": ":books: Document how to order variant properties and values",
   "url": "https://github.com/penpot/penpot/pull/12996",
   "first_review": "2026-11-12T12:01:14Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": true
  },
  {
@@ -13,8 +12,7 @@
   "title": ":bug: Fix font upload crash and preserve font metadata",
   "url": "https://github.com/penpot/penpot/pull/11951",
   "first_review": "2026-11-12T10:37:11Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -22,8 +20,7 @@
   "title": ":bug: Show copied state only after a successful clipboard write",
   "url": "https://github.com/penpot/penpot/pull/12658",
   "first_review": "2026-11-12T10:08:51Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "pending",
   "merged_by_me": false
  },
  {
@@ -31,8 +28,7 @@
   "title": ":bug: Fix sitemap minimum height to prevent hiding pages",
   "url": "https://github.com/penpot/penpot/pull/12999",
   "first_review": "2026-11-12T09:16:56Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "pending",
   "merged_by_me": false
  },
  {
@@ -40,8 +36,7 @@
   "title": ":bug: Prevent multiline wrapping in context menu items (#12320)",
   "url": "https://github.com/penpot/penpot/pull/12836",
   "first_review": "2026-11-11T11:42:50Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "pending",
   "merged_by_me": false
  },
  {
@@ -49,8 +44,7 @@
   "title": ":bug: Fix collapsing token set groups after reordering",
   "url": "https://github.com/penpot/penpot/pull/12671",
   "first_review": "2026-11-11T11:07:38Z",
-  "approved": true,
-  "changes": true,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -58,8 +52,7 @@
   "title": ":bug: Fix MCP session discovery for plugins connected from the dashboard",
   "url": "https://github.com/penpot/penpot/pull/12865",
   "first_review": "2026-11-11T10:22:29Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -67,8 +60,7 @@
   "title": ":bug: Fix view mode not live (#12837)",
   "url": "https://github.com/penpot/penpot/pull/12847",
   "first_review": "2026-11-10T13:34:04Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "pending",
   "merged_by_me": false
  },
  {
@@ -76,8 +68,7 @@
   "title": ":bug: Skip circular library links on binfile import",
   "url": "https://github.com/penpot/penpot/pull/12062",
   "first_review": "2026-11-10T10:55:49Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -85,8 +76,7 @@
   "title": ":bug: Fix selection stolen by trailing click after a move drag",
   "url": "https://github.com/penpot/penpot/pull/10998",
   "first_review": "2026-11-10T09:20:51Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "pending",
   "merged_by_me": false
  },
  {
@@ -94,8 +84,7 @@
   "title": ":sparkles: Add export previews to Design and Inspect",
   "url": "https://github.com/penpot/penpot/pull/12059",
   "first_review": "2026-11-10T08:26:25Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "pending",
   "merged_by_me": false
  },
  {
@@ -103,8 +92,7 @@
   "title": ":bug: Restrict per-side stroke width tokens to boards and rects in plugin API",
   "url": "https://github.com/penpot/penpot/pull/12332",
   "first_review": "2026-10-23T11:26:31Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -112,8 +100,7 @@
   "title": ":bug: Fix issue with compononent not sync on move",
   "url": "https://github.com/penpot/penpot/pull/11981",
   "first_review": "2026-10-21T07:34:52Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -121,8 +108,7 @@
   "title": ":sparkles: Make keyboard shortcuts layout-independent",
   "url": "https://github.com/penpot/penpot/pull/12326",
   "first_review": "2026-10-16T08:45:49Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": true
  },
  {
@@ -130,8 +116,7 @@
   "title": ":bug: Refresh clip content button state after toggling it",
   "url": "https://github.com/penpot/penpot/pull/12353",
   "first_review": "2026-10-15T10:36:52Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -139,8 +124,7 @@
   "title": ":bug: Fix resize cursor when selection has mixed values",
   "url": "https://github.com/penpot/penpot/pull/12229",
   "first_review": "2026-10-13T08:55:13Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -148,8 +132,7 @@
   "title": ":bug: Fix missing text style in verification email screen",
   "url": "https://github.com/penpot/penpot/pull/12242",
   "first_review": "2026-10-13T08:37:55Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -157,8 +140,7 @@
   "title": ":bug: Fix path editor crash on shortcut",
   "url": "https://github.com/penpot/penpot/pull/11996",
   "first_review": "2026-10-07T11:06:20Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -166,8 +148,7 @@
   "title": ":bug: Fix crash when drawing",
   "url": "https://github.com/penpot/penpot/pull/12101",
   "first_review": "2026-10-07T10:20:47Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -175,8 +156,7 @@
   "title": ":sparkles: Enable stroke-per-side flag",
   "url": "https://github.com/penpot/penpot/pull/11942",
   "first_review": "2026-09-28T11:08:01Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -184,8 +164,7 @@
   "title": ":bug: Fix delete on curve handlers",
   "url": "https://github.com/penpot/penpot/pull/11896",
   "first_review": "2026-09-25T11:24:04Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -193,8 +172,7 @@
   "title": ":bug: Fix loop with context menu",
   "url": "https://github.com/penpot/penpot/pull/11891",
   "first_review": "2026-09-25T11:01:02Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -202,8 +180,7 @@
   "title": ":sparkles: Apply tokens to stroke per side",
   "url": "https://github.com/penpot/penpot/pull/10913",
   "first_review": "2026-09-25T10:42:45Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -211,8 +188,7 @@
   "title": ":bug: Fix bend curve sharp edges",
   "url": "https://github.com/penpot/penpot/pull/11715",
   "first_review": "2026-09-17T14:37:06Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -220,8 +196,7 @@
   "title": ":bug: Fix register flow from workspace url",
   "url": "https://github.com/penpot/penpot/pull/11756",
   "first_review": "2026-09-17T10:07:13Z",
-  "approved": true,
-  "changes": true,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -229,8 +204,7 @@
   "title": ":bug: Fix handler change to equal",
   "url": "https://github.com/penpot/penpot/pull/11612",
   "first_review": "2026-09-11T11:18:27Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -238,8 +212,7 @@
   "title": ":bug: Fix avoid empty space at the bottom when there are many layers",
   "url": "https://github.com/penpot/penpot/pull/11427",
   "first_review": "2026-08-31T10:36:46Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -247,8 +220,7 @@
   "title": ":bug: Fix comments not close main menu",
   "url": "https://github.com/penpot/penpot/pull/11347",
   "first_review": "2026-08-31T09:37:11Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -256,8 +228,7 @@
   "title": ":bug: Fix disabled numeric input with token applied is broken",
   "url": "https://github.com/penpot/penpot/pull/11324",
   "first_review": "2026-08-31T09:24:02Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -265,8 +236,7 @@
   "title": ":bug: Fix viewer login modal lacks spacing between SSO buttons and work email field",
   "url": "https://github.com/penpot/penpot/pull/11312",
   "first_review": "2026-08-31T09:13:04Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -274,8 +244,7 @@
   "title": ":bug: Fix crash when a nil shape id reaches WASM modifiers",
   "url": "https://github.com/penpot/penpot/pull/10896",
   "first_review": "2026-08-12T12:28:12Z",
-  "approved": false,
-  "changes": false,
+  "outcome": "commented",
   "merged_by_me": false
  },
  {
@@ -283,8 +252,7 @@
   "title": ":bug: Fix font family typography asset persist across files in new created text layers",
   "url": "https://github.com/penpot/penpot/pull/11134",
   "first_review": "2026-08-10T09:25:40Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -292,8 +260,7 @@
   "title": ":bug: Fix workspace crash on rapid sidebar measures input changes (#10793)",
   "url": "https://github.com/penpot/penpot/pull/10794",
   "first_review": "2026-08-10T07:59:19Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -301,8 +268,7 @@
   "title": ":bug: Fix crash when editing tokens with group nodes",
   "url": "https://github.com/penpot/penpot/pull/11144",
   "first_review": "2026-08-10T07:49:40Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -310,8 +276,7 @@
   "title": ":bug: Add concurrency limit to import-binfile RPC handler",
   "url": "https://github.com/penpot/penpot/pull/11024",
   "first_review": "2026-08-07T09:14:31Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -319,8 +284,7 @@
   "title": ":bug: Use random UUIDs for share link IDs",
   "url": "https://github.com/penpot/penpot/pull/11117",
   "first_review": "2026-08-07T08:33:22Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -328,8 +292,7 @@
   "title": ":bug: Invalidate all sessions on profile deletion",
   "url": "https://github.com/penpot/penpot/pull/11115",
   "first_review": "2026-08-07T08:26:55Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -337,8 +300,7 @@
   "title": ":bug: Add timeout to plugin manifest fetch",
   "url": "https://github.com/penpot/penpot/pull/11120",
   "first_review": "2026-08-07T08:15:51Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -346,8 +308,7 @@
   "title": ":bug: Use constant-time comparison for shared key authentication",
   "url": "https://github.com/penpot/penpot/pull/11122",
   "first_review": "2026-08-07T08:12:40Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -355,8 +316,7 @@
   "title": ":bug: Guard plugin \"Try out\" flow against unloaded projects",
   "url": "https://github.com/penpot/penpot/pull/10859",
   "first_review": "2026-08-07T08:10:14Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -364,8 +324,7 @@
   "title": ":bug: Add bounding box dimension limit to prevent export DoS",
   "url": "https://github.com/penpot/penpot/pull/11042",
   "first_review": "2026-08-05T11:39:31Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -373,8 +332,7 @@
   "title": ":bug: Enable SSRF check for organization SSO provider",
   "url": "https://github.com/penpot/penpot/pull/11065",
   "first_review": "2026-08-05T10:51:42Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -382,8 +340,7 @@
   "title": ":bug: Escape markdown in Mattermost error notifications",
   "url": "https://github.com/penpot/penpot/pull/11034",
   "first_review": "2026-08-05T10:38:09Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -391,8 +348,7 @@
   "title": ":bug: Add recursion depth limit to Fressian reader",
   "url": "https://github.com/penpot/penpot/pull/11020",
   "first_review": "2026-08-05T10:33:03Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -400,8 +356,7 @@
   "title": ":bug: Add max-object-size guard to read-obj! in v1 parser",
   "url": "https://github.com/penpot/penpot/pull/11018",
   "first_review": "2026-08-05T08:17:32Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -409,8 +364,7 @@
   "title": ":bug: Fix overrides lost after switch",
   "url": "https://github.com/penpot/penpot/pull/10619",
   "first_review": "2026-08-03T09:37:05Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -418,8 +372,7 @@
   "title": ":bug: Fix crash on drag-and-drop of selected text in Draft.js editor",
   "url": "https://github.com/penpot/penpot/pull/10959",
   "first_review": "2026-08-03T08:38:53Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -427,8 +380,7 @@
   "title": ":bug: Fix shape size badge is displayed twice when user with viewer permissions selects a shape",
   "url": "https://github.com/penpot/penpot/pull/10985",
   "first_review": "2026-08-03T08:07:48Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -436,8 +388,7 @@
   "title": ":bug: Fix main menu does not keep alignment when left sidebar is expanded",
   "url": "https://github.com/penpot/penpot/pull/10986",
   "first_review": "2026-08-03T07:05:06Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -445,8 +396,7 @@
   "title": ":bug: Fix draw a line/arrow with a single click",
   "url": "https://github.com/penpot/penpot/pull/10974",
   "first_review": "2026-07-31T09:22:06Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -454,8 +404,7 @@
   "title": ":bug: Fix image swatches displays a wrong format in list view",
   "url": "https://github.com/penpot/penpot/pull/10975",
   "first_review": "2026-07-31T09:18:13Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -463,8 +412,7 @@
   "title": ":bug: Fix toolbar keyboard navigation",
   "url": "https://github.com/penpot/penpot/pull/10939",
   "first_review": "2026-07-30T08:11:56Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -472,8 +420,7 @@
   "title": ":bug: Fix main menu is covered by the toolbar",
   "url": "https://github.com/penpot/penpot/pull/10926",
   "first_review": "2026-07-30T07:52:06Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -481,8 +428,7 @@
   "title": ":bug: Guard typography tokens against circular references",
   "url": "https://github.com/penpot/penpot/pull/10662",
   "first_review": "2026-07-30T07:32:02Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "rejected",
   "merged_by_me": false
  },
  {
@@ -490,8 +436,7 @@
   "title": ":bug: Fix inputs broken when there are tokens on them",
   "url": "https://github.com/penpot/penpot/pull/10905",
   "first_review": "2026-07-29T12:24:53Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -499,8 +444,7 @@
   "title": ":bug: Fix area selection aborted by select-shapes interrupt",
   "url": "https://github.com/penpot/penpot/pull/10870",
   "first_review": "2026-07-28T06:49:18Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -508,8 +452,7 @@
   "title": ":bug: Fix change defective onboarding image",
   "url": "https://github.com/penpot/penpot/pull/10783",
   "first_review": "2026-07-27T07:01:47Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -517,8 +460,7 @@
   "title": ":wrench: Revert stroke to path flag deletion and enable it by default",
   "url": "https://github.com/penpot/penpot/pull/10827",
   "first_review": "2026-07-24T10:40:46Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -526,8 +468,7 @@
   "title": ":bug: Fix margin input order is inconsistent with padding input order",
   "url": "https://github.com/penpot/penpot/pull/10797",
   "first_review": "2026-07-24T09:51:44Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -535,8 +476,7 @@
   "title": ":bug: Fix tabindex error",
   "url": "https://github.com/penpot/penpot/pull/10780",
   "first_review": "2026-07-22T12:33:50Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -544,8 +484,7 @@
   "title": ":sparkles: Add new debugger tool components-debugger",
   "url": "https://github.com/penpot/penpot/pull/10757",
   "first_review": "2026-07-21T07:59:55Z",
-  "approved": false,
-  "changes": false,
+  "outcome": "commented",
   "merged_by_me": false
  },
  {
@@ -553,8 +492,7 @@
   "title": ":books: Add .penpot format docs and inspector tool",
   "url": "https://github.com/penpot/penpot/pull/10674",
   "first_review": "2026-07-20T12:02:02Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -562,8 +500,7 @@
   "title": ":bug: Ensure text position-data always includes :fills key",
   "url": "https://github.com/penpot/penpot/pull/10650",
   "first_review": "2026-07-20T11:30:04Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -571,8 +508,7 @@
   "title": ":lipstick: Add fade effect to templates carousel near navigation arrows",
   "url": "https://github.com/penpot/penpot/pull/10439",
   "first_review": "2026-07-20T10:32:01Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "rejected",
   "merged_by_me": false
  },
  {
@@ -580,8 +516,7 @@
   "title": ":bug: Fix problems with comments clusters",
   "url": "https://github.com/penpot/penpot/pull/10543",
   "first_review": "2026-07-09T07:55:34Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -589,8 +524,7 @@
   "title": ":bug: Fix glitch when using drawing tool in toolbar",
   "url": "https://github.com/penpot/penpot/pull/10447",
   "first_review": "2026-07-08T07:41:38Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -598,8 +532,7 @@
   "title": ":bug: Fix problem with rotations crashing",
   "url": "https://github.com/penpot/penpot/pull/10560",
   "first_review": "2026-07-06T09:07:40Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -607,8 +540,7 @@
   "title": ":sparkles: Manage rotation and color of selection size badge",
   "url": "https://github.com/penpot/penpot/pull/10393",
   "first_review": "2026-07-02T06:56:39Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -616,8 +548,7 @@
   "title": ":bug: Fix inspect in workspace displays shape size twice when selecting a shape",
   "url": "https://github.com/penpot/penpot/pull/10507",
   "first_review": "2026-07-01T10:04:08Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -625,8 +556,7 @@
   "title": "fix: enable left sidebar resizing with hover affordance, reduce right sidebar default width for premium figma feel.",
   "url": "https://github.com/penpot/penpot/pull/10395",
   "first_review": "2026-07-01T07:54:09Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "rejected",
   "merged_by_me": false
  },
  {
@@ -634,8 +564,7 @@
   "title": ":bug: Invitations to a team can be sent to existing members without displaying any error",
   "url": "https://github.com/penpot/penpot/pull/10489",
   "first_review": "2026-06-30T11:28:11Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -643,8 +572,7 @@
   "title": ":bug: Fix problems when dragging frame with comments",
   "url": "https://github.com/penpot/penpot/pull/10460",
   "first_review": "2026-06-30T11:25:30Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -652,8 +580,7 @@
   "title": ":sparkles: Improve dashboard invitations modal ",
   "url": "https://github.com/penpot/penpot/pull/10459",
   "first_review": "2026-06-29T14:12:03Z",
-  "approved": false,
-  "changes": false,
+  "outcome": "commented",
   "merged_by_me": false
  },
  {
@@ -661,8 +588,7 @@
   "title": ":bug: Fix problem with measures menu",
   "url": "https://github.com/penpot/penpot/pull/10445",
   "first_review": "2026-06-29T06:45:16Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -670,8 +596,7 @@
   "title": ":bug: Fix long typography token name in tooltip in design tab",
   "url": "https://github.com/penpot/penpot/pull/10387",
   "first_review": "2026-06-26T08:47:50Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -679,8 +604,7 @@
   "title": ":bug: Fix assets typography container is longer than others",
   "url": "https://github.com/penpot/penpot/pull/10406",
   "first_review": "2026-06-25T14:07:58Z",
-  "approved": false,
-  "changes": false,
+  "outcome": "commented",
   "merged_by_me": false
  },
  {
@@ -688,8 +612,7 @@
   "title": ":wrench: Update design-tab tests for default background-blur flag",
   "url": "https://github.com/penpot/penpot/pull/10377",
   "first_review": "2026-06-23T07:27:18Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -697,8 +620,7 @@
   "title": ":bug: Fix issue with padding and margin tokens in plugins",
   "url": "https://github.com/penpot/penpot/pull/10087",
   "first_review": "2026-06-18T14:17:12Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -706,8 +628,7 @@
   "title": ":bug: Allow pasting comma-separated emails in multi-input",
   "url": "https://github.com/penpot/penpot/pull/10186",
   "first_review": "2026-06-15T12:18:19Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -715,8 +636,7 @@
   "title": ":bug: Fix path export crop when stroke has arrow/marker caps",
   "url": "https://github.com/penpot/penpot/pull/9996",
   "first_review": "2026-06-04T15:23:40Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -724,8 +644,7 @@
   "title": ":bug: Fix cropped outer stroke of rotated board in view mode",
   "url": "https://github.com/penpot/penpot/pull/9979",
   "first_review": "2026-06-03T07:00:06Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -733,8 +652,7 @@
   "title": ":bug: Fix stroke caps misplaced when adding node in middle of path",
   "url": "https://github.com/penpot/penpot/pull/9989",
   "first_review": "2026-06-03T06:51:35Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -742,8 +660,7 @@
   "title": ":bug: Fix typo in icon name elipse to ellipse",
   "url": "https://github.com/penpot/penpot/pull/9948",
   "first_review": "2026-06-01T10:13:50Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -751,8 +668,7 @@
   "title": ":bug: Handle collisions between token names and group names",
   "url": "https://github.com/penpot/penpot/pull/9799",
   "first_review": "2026-05-29T08:06:42Z",
-  "approved": false,
-  "changes": false,
+  "outcome": "commented",
   "merged_by_me": false
  },
  {
@@ -760,8 +676,7 @@
   "title": ":bug: Fix locked flex and grid elements cannot be selected in viewer role",
   "url": "https://github.com/penpot/penpot/pull/9865",
   "first_review": "2026-05-29T07:28:39Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -769,8 +684,7 @@
   "title": ":bug: Fix problem with undo rename tokens",
   "url": "https://github.com/penpot/penpot/pull/9846",
   "first_review": "2026-05-26T06:58:01Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -778,8 +692,7 @@
   "title": ":bug: Scroll to newly created tokens on the token tree",
   "url": "https://github.com/penpot/penpot/pull/9803",
   "first_review": "2026-05-22T08:29:09Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -787,8 +700,7 @@
   "title": ":bug: Toggle token path on token rename",
   "url": "https://github.com/penpot/penpot/pull/9718",
   "first_review": "2026-05-19T09:11:08Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -796,8 +708,7 @@
   "title": ":recycle: Migrate shape container and primitive components to modern Rumext props",
   "url": "https://github.com/penpot/penpot/pull/9399",
   "first_review": "2026-05-08T07:40:16Z",
-  "approved": false,
-  "changes": false,
+  "outcome": "commented",
   "merged_by_me": false
  },
  {
@@ -805,8 +716,7 @@
   "title": ":recycle: Migrate viewer shell components to modern syntax",
   "url": "https://github.com/penpot/penpot/pull/9403",
   "first_review": "2026-05-07T09:13:44Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "rejected",
   "merged_by_me": false
  },
  {
@@ -814,8 +724,7 @@
   "title": ":recycle: Migrate workspace surface components to modern syntax",
   "url": "https://github.com/penpot/penpot/pull/9405",
   "first_review": "2026-05-07T09:00:58Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "rejected",
   "merged_by_me": false
  },
  {
@@ -823,8 +732,7 @@
   "title": "♻ Migrate shared ancillary components to modern syntax",
   "url": "https://github.com/penpot/penpot/pull/9406",
   "first_review": "2026-05-07T08:43:00Z",
-  "approved": false,
-  "changes": true,
+  "outcome": "rejected",
   "merged_by_me": false
  },
  {
@@ -832,8 +740,7 @@
   "title": ":tada: Add selection size badge below bounding box",
   "url": "https://github.com/penpot/penpot/pull/9210",
   "first_review": "2026-05-06T09:32:34Z",
-  "approved": false,
-  "changes": false,
+  "outcome": "commented",
   "merged_by_me": false
  },
  {
@@ -841,8 +748,7 @@
   "title": ":tada: Display autocomplete combobox on token creation",
   "url": "https://github.com/penpot/penpot/pull/9109",
   "first_review": "2026-05-05T11:37:36Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -850,8 +756,7 @@
   "title": ":bug: Fix text.cljs error from staging merge",
   "url": "https://github.com/penpot/penpot/pull/9140",
   "first_review": "2026-04-24T08:56:48Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -859,8 +764,7 @@
   "title": ":bug: Fix layer hierarchy to match old and new SCSS",
   "url": "https://github.com/penpot/penpot/pull/9126",
   "first_review": "2026-04-23T15:48:21Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -868,8 +772,7 @@
   "title": ":bug: Fix duplicate modal title",
   "url": "https://github.com/penpot/penpot/pull/9064",
   "first_review": "2026-04-21T07:15:20Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -877,8 +780,7 @@
   "title": ":recycle: Fix linter errors under legacy resources scss",
   "url": "https://github.com/penpot/penpot/pull/9035",
   "first_review": "2026-04-20T10:21:03Z",
-  "approved": false,
-  "changes": false,
+  "outcome": "commented",
   "merged_by_me": false
  },
  {
@@ -886,8 +788,7 @@
   "title": ":tada: Save tokens tree state in local storage",
   "url": "https://github.com/penpot/penpot/pull/8922",
   "first_review": "2026-04-15T07:54:21Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -895,8 +796,7 @@
   "title": ":sparkles: Force current set as active when resolving tokens in sidebar",
   "url": "https://github.com/penpot/penpot/pull/8589",
   "first_review": "2026-04-10T11:22:23Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -904,8 +804,7 @@
   "title": ":tada: Duplicate token group",
   "url": "https://github.com/penpot/penpot/pull/8886",
   "first_review": "2026-04-10T08:40:31Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -913,8 +812,7 @@
   "title": ":bug: Fix vector index out of bounds in viewer zoom-to-fit/fill",
   "url": "https://github.com/penpot/penpot/pull/8834",
   "first_review": "2026-04-01T09:53:37Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -922,8 +820,7 @@
   "title": ":bug: Guard delete undo against missing sibling order",
   "url": "https://github.com/penpot/penpot/pull/8858",
   "first_review": "2026-04-01T09:29:30Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -931,8 +828,7 @@
   "title": ":bug: Fix error on path and review UI",
   "url": "https://github.com/penpot/penpot/pull/8844",
   "first_review": "2026-03-31T10:20:13Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -940,8 +836,7 @@
   "title": ":bug: Fix ICounted error on numeric-input token dropdown keyboard nav",
   "url": "https://github.com/penpot/penpot/pull/8803",
   "first_review": "2026-03-30T07:53:07Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -949,8 +844,7 @@
   "title": ":bug: Fix incorrect attrs references on generate-sync-shape",
   "url": "https://github.com/penpot/penpot/pull/8776",
   "first_review": "2026-03-30T07:50:54Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -958,8 +852,7 @@
   "title": ":sparkles: Add comprehensive tests for shape layout namespace",
   "url": "https://github.com/penpot/penpot/pull/8759",
   "first_review": "2026-03-30T07:42:37Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -967,8 +860,7 @@
   "title": ":wrench: Add SCSS linter (stylelint)",
   "url": "https://github.com/penpot/penpot/pull/8592",
   "first_review": "2026-03-25T16:25:30Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -976,8 +868,7 @@
   "title": ":lipstick: Fix focus radio button",
   "url": "https://github.com/penpot/penpot/pull/8774",
   "first_review": "2026-03-25T15:52:42Z",
-  "approved": true,
-  "changes": true,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -985,8 +876,7 @@
   "title": ":bug: Update visual regression tests",
   "url": "https://github.com/penpot/penpot/pull/8730",
   "first_review": "2026-03-25T08:23:12Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -994,8 +884,7 @@
   "title": ":tada: Rename token group",
   "url": "https://github.com/penpot/penpot/pull/8275",
   "first_review": "2026-03-17T15:37:29Z",
-  "approved": true,
-  "changes": true,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1003,8 +892,7 @@
   "title": ":sparkles: Copy token name from contextual menu",
   "url": "https://github.com/penpot/penpot/pull/8566",
   "first_review": "2026-03-17T15:27:25Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1012,8 +900,7 @@
   "title": ":bug: Add export menu to inspect styles tab",
   "url": "https://github.com/penpot/penpot/pull/8645",
   "first_review": "2026-03-17T14:56:45Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1021,8 +908,7 @@
   "title": ":bug: Fix crash in select* when options vector is empty",
   "url": "https://github.com/penpot/penpot/pull/8578",
   "first_review": "2026-03-12T11:23:40Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": true
  },
  {
@@ -1030,8 +916,7 @@
   "title": ":sparkles: Add regression test for token highlight bug (13302)",
   "url": "https://github.com/penpot/penpot/pull/8573",
   "first_review": "2026-03-11T13:16:03Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1039,8 +924,7 @@
   "title": ":bug: Sort tokens by name",
   "url": "https://github.com/penpot/penpot/pull/8488",
   "first_review": "2026-03-03T08:17:51Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1048,8 +932,7 @@
   "title": ":bug: Several tokens bugfix",
   "url": "https://github.com/penpot/penpot/pull/8412",
   "first_review": "2026-02-24T11:10:20Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1057,8 +940,7 @@
   "title": ":bug: Fix token not being highlighted (wasm)",
   "url": "https://github.com/penpot/penpot/pull/8323",
   "first_review": "2026-02-11T09:54:47Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1066,8 +948,7 @@
   "title": ":bug: Fix token not being highlight when applied in wasm",
   "url": "https://github.com/penpot/penpot/pull/8311",
   "first_review": "2026-02-10T16:12:20Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1075,8 +956,7 @@
   "title": ":bug: Remove path from state when removing tokens",
   "url": "https://github.com/penpot/penpot/pull/8252",
   "first_review": "2026-02-02T15:04:00Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1084,8 +964,7 @@
   "title": ":bug: Update switch checked state on change prop",
   "url": "https://github.com/penpot/penpot/pull/8235",
   "first_review": "2026-01-29T11:59:38Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1093,8 +972,7 @@
   "title": ":bug: Fix import of shadow tokens",
   "url": "https://github.com/penpot/penpot/pull/8232",
   "first_review": "2026-01-28T15:26:55Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1102,8 +980,7 @@
   "title": ":recycle: Review remap interface and interaction",
   "url": "https://github.com/penpot/penpot/pull/8168",
   "first_review": "2026-01-26T15:13:35Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1111,8 +988,7 @@
   "title": ":sparkles: Replace login illustration svg with a correct bitmap",
   "url": "https://github.com/penpot/penpot/pull/8170",
   "first_review": "2026-01-23T08:49:15Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1120,8 +996,7 @@
   "title": ":lipstick: Replace current themes switch with DS switch",
   "url": "https://github.com/penpot/penpot/pull/8131",
   "first_review": "2026-01-20T13:16:17Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1129,8 +1004,7 @@
   "title": ":sparkles: Remove tokens tree node",
   "url": "https://github.com/penpot/penpot/pull/8042",
   "first_review": "2026-01-20T09:32:15Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1138,8 +1012,7 @@
   "title": ":bug: Fix wrong image in the onboarding invitation block",
   "url": "https://github.com/penpot/penpot/pull/8073",
   "first_review": "2026-01-15T09:44:48Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -1147,8 +1020,7 @@
   "title": ":recycle: Divide token integrations tests into multiple files",
   "url": "https://github.com/penpot/penpot/pull/8076",
   "first_review": "2026-01-14T14:36:06Z",
-  "approved": true,
-  "changes": false,
+  "outcome": "approved",
   "merged_by_me": false
  }
 ]
