@@ -246,6 +246,35 @@ MONTHS = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
           "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
 
+def load_json(name, default):
+    path = ROOT / "data" / name
+    return json.loads(path.read_text()) if path.exists() else default
+
+
+def reviewed_table(prs):
+    """Other people's PRs I reviewed, per month of my first review."""
+    if not prs:
+        return ""
+    months = {}
+    for p in prs:
+        months.setdefault(p["first_review"][:7], []).append(p)
+
+    def row(label, items, cls=""):
+        n = lambda key: sum(1 for p in items if p[key])
+        return (f'<tr{cls}><th scope="row">{label}</th><td>{len(items)}</td><td>{n("approved")}</td>'
+                f'<td>{n("changes")}</td><td>{n("merged_by_me")}</td></tr>')
+
+    rows = "".join(row(f'{MONTHS[int(m[5:]) - 1].capitalize()} {m[:4]}', items)
+                   for m, items in sorted(months.items(), reverse=True))
+    return f"""<section class="card"><h2>PRs de otras personas que he revisado</h2>
+<div class="tablebox"><table class="reviewed">
+  <thead><tr><th>Mes</th><th>Revisadas</th><th>Aprobadas</th><th>Cambios pedidos</th><th>Mergeadas por mí</th></tr></thead>
+  <tbody>{rows}</tbody>
+  <tfoot>{row("Total", prs)}</tfoot>
+</table></div>
+<p class="muted">Cada PR cuenta en el mes de mi primera revisión. Se actualiza al lanzar <code>scripts/sync.py</code> en local.</p></section>"""
+
+
 def log_view(prs, tasks, repo):
     """The "Registro" tab: merged PRs and finished tasks, one card per month."""
     entries = [(p["mergedAt"][:10], "merged",
@@ -463,6 +492,8 @@ def build():
 
     log_total, log_body = log_view(gh.get("log_prs", gh["merged_prs"]),
                                    log + [t for t in tasks if t.get("status") == "done"], repo)
+    reviewed = load_json("reviewed.json", [])
+    log_body = reviewed_table(reviewed) + log_body
     log_body = (f'<p class="muted log-intro">Lo hecho desde el {e(cfg.get("log_since", ""))}: '
                 f'PRs mergeadas y tareas terminadas, por meses.</p>' + log_body)
 

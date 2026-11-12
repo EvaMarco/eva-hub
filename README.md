@@ -16,6 +16,7 @@ Una página con el estado de mi trabajo en Penpot: lo que me toca hacer, mis PRs
 |---|---|
 | `data/notes.yml` | El siguiente paso de cada PR. Lo edito yo o Claude Code. |
 | `data/tasks.yml` | Tareas que no son una PR o que abarcan varias. |
+| `data/reviewed.json` | `scripts/sync.py` en local: PRs de otras personas que he revisado (la búsqueda no funciona con el token de la Action, que conserva el último fichero). |
 | `data/log.yml` | Tareas terminadas que ya salieron del tablero: al quitarlas de `tasks.yml` se mueven aquí. |
 | Issues de este repo | Ideas rápidas: se crean desde GitHub (también desde el móvil). |
 | `data/zones.yml` | `scripts/zones.py <penpot>/frontend`, a mano: inventario de zonas de cada grupo de la épica y estimación de issues. |

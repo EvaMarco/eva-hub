@@ -167,6 +167,60 @@ def log_prs():
     return sorted(prs, key=lambda p: p["mergedAt"], reverse=True)
 
 
+REVIEWED_QUERY = """query($q: String!, $after: String, $login: String!) {
+  search(query: $q, type: ISSUE, first: 100, after: $after) {
+    pageInfo { hasNextPage endCursor }
+    nodes { ... on PullRequest {
+      number title url mergedBy { login }
+      reviews(author: $login, first: 50) { nodes { state submittedAt } }
+    } }
+  }
+}"""
+
+
+def reviewed_prs():
+    """Other people's PRs the user reviewed since log_since.
+
+    Uses the search API, which comes back empty for penpot/penpot with the
+    Actions token: the caller keeps the last saved file in that case.
+    """
+    q = (f"repo:{CONFIG['repo']} is:pr reviewed-by:{CONFIG['user']} "
+         f"-author:{CONFIG['user']} created:>={CONFIG['log_since']}")
+    prs, after = [], None
+    while True:
+        args = ["api", "graphql", "-f", f"query={REVIEWED_QUERY}", "-f", f"q={q}",
+                "-F", f"login={CONFIG['user']}"]
+        if after:
+            args += ["-f", f"after={after}"]
+        page = gh(*args)["data"]["search"]
+        for p in page["nodes"]:
+            reviews = [r for r in p["reviews"]["nodes"] if r["submittedAt"]]
+            if not reviews:
+                continue
+            states = {r["state"] for r in reviews}
+            prs.append({"number": p["number"], "title": p["title"], "url": p["url"],
+                        "first_review": min(r["submittedAt"] for r in reviews),
+                        "approved": "APPROVED" in states,
+                        "changes": "CHANGES_REQUESTED" in states,
+                        "merged_by_me": (p["mergedBy"] or {}).get("login") == CONFIG["user"]})
+        if not page["pageInfo"]["hasNextPage"]:
+            break
+        after = page["pageInfo"]["endCursor"]
+    return sorted(prs, key=lambda p: p["first_review"], reverse=True)
+
+
+def save_reviewed():
+    """Writes data/reviewed.json, unless the search came back empty."""
+    out = ROOT / "data" / "reviewed.json"
+    try:
+        prs = reviewed_prs()
+    except subprocess.CalledProcessError:
+        prs = []
+    if prs:
+        out.write_text(json.dumps(prs, ensure_ascii=False, indent=1) + "\n")
+    return len(prs)
+
+
 REVIEW_QUERY = """query($owner: String!, $name: String!, $after: String) {
   repository(owner: $owner, name: $name) {
     pullRequests(states: OPEN, first: 100, after: $after) {
@@ -336,13 +390,15 @@ def main():
         "epic": epic(),
         "ideas": ideas(),
     }
+    n_reviewed = save_reviewed()
     out = ROOT / "data" / "cache" / "github.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1))
     print(f"wrote {out.relative_to(ROOT)}: {len(data['open_prs'])} open PRs, "
           f"{len(data['issues'])} issues, {len(data['reviews'])} to review, "
           f"{sum(len(g['prs']) for g in data['epic']['groups'])} epic PRs, "
-          f"{len(data['ideas'])} ideas, {len(data['log_prs'])} PRs in the log")
+          f"{len(data['ideas'])} ideas, {len(data['log_prs'])} PRs in the log, "
+          f"{n_reviewed or 'kept saved'} reviewed PRs")
 
 
 if __name__ == "__main__":

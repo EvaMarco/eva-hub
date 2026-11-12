@@ -232,3 +232,6 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 .log-month > summary h2 { margin: 0; }
 .log-month[open] > summary { margin-bottom: 8px; }
 .log-month > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+.reviewed td, .reviewed tfoot th { text-align: right; font-variant-numeric: tabular-nums; }
+.reviewed thead th:not(:first-child) { text-align: right; }
+.reviewed tfoot th, .reviewed tfoot td { font-weight: 600; border-top: 2px solid var(--line); }
