@@ -51,8 +51,8 @@
 - title: "Revisiones pendientes"
   status: waiting
   waiting: other
-  links: ["#12059", "#11951", "#10998", "#12671", "#12836"]
-  note: "#12836: cambios pedidos el 2026-11-11 (submenú se sale por la derecha: delta-x fijo en 250; formato del commit; capturas, el issue #12320 espera a diseño). #12671: cambios pedidos el 2026-11-11 (test Playwright + deps de on-double-click en sets). #12059: cambios pedidos el 2026-11-10 (sacar el arreglo de Show in exports, F2-F4); bloquea menus/exports e inspect/exports. #10998: cambios pedidos el 2026-11-10 (clic perdido tras nudge, test Playwright). #11951: sin cambios desde la revisión del 15-10 (regresión BoldItalic); #12315 ya arregló el crash en develop. Comentario publicado en la PR (2026-11-10) para que niwinz decida: mantenerla (rebase + arreglar la itálica) o cerrarla junto con #10436."
+  links: ["#12059", "#10998", "#12671", "#12836"]
+  note: "#12836: cambios pedidos el 2026-11-11 (submenú se sale por la derecha: delta-x fijo en 250; formato del commit; capturas, el issue #12320 espera a diseño). #12671: cambios pedidos el 2026-11-11 (test Playwright + deps de on-double-click en sets). #12059: cambios pedidos el 2026-11-10 (sacar el arreglo de Show in exports, F2-F4); bloquea menus/exports e inspect/exports. #10998: cambios pedidos el 2026-11-10 (clic perdido tras nudge, test Playwright). #11951: aprobada 2026-11-12 (niwinz arregló la itálica y la mantiene; probada en local); pendiente que actualice título/descripción (Relates #10436) y quite el test duplicado en runner.cljs."
   added: 2026-11-10
 
 - title: "#12929: arrastrar al final de un flex invertido guarda el hijo una posición antes"
