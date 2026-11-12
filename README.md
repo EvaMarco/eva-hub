@@ -8,7 +8,7 @@ Una página con el estado de mi trabajo en Penpot: lo que me toca hacer, mis PRs
 - **PRs:** todas mis PRs abiertas en penpot/penpot con su estado, CI y siguiente paso. Filtra por estado o busca.
 - **Épica DS:** el progreso de #12375 y del grupo en curso (#12376), con el estado real de cada PR y las filas de la tabla del grupo que se han quedado desactualizadas. Cada grupo muestra también sus zonas (carpetas o archivos que aún usan el control antiguo) y cuántas issues harían falta, aproximadamente.
 - **Tareas e ideas:** las issues de este repo (ideas rápidas) y `data/tasks.yml`.
-- **Registro:** todo lo hecho desde `log_since` (2026-09-01, en `scripts/sync.py`), por meses: mis PRs mergeadas y las tareas terminadas (`data/tasks.yml` + `data/log.yml`).
+- **Registro:** todo lo hecho desde `log_since` (2026-01-01, en `scripts/sync.py`), por meses: mis PRs mergeadas y las tareas terminadas (`data/tasks.yml` + `data/log.yml`).
 
 ## De dónde salen los datos
 

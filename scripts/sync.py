@@ -21,7 +21,7 @@ CONFIG = {
     "epic": 12375,
     "merged_days": 14,
     # The "Registro" tab lists every PR merged since this date.
-    "log_since": "2026-09-01",
+    "log_since": "2026-01-01",
 }
 
 
