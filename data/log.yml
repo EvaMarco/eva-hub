@@ -7,6 +7,13 @@
 
 
 
+
+- title: Pasar a botón o enlace real los [:a] que hacían de botón (filas de navegación y acciones del doc para diseño)
+  done: 2026-11-12
+  links:
+  - '#12376'
+  - https://claude.ai/artifact/Hz8Qgf38VPon8YeP4cTLs7
+  note: 'Mergeadas: #12681, #12699, #12702, #12710, #12712, #12722, #12723, #12724. #12705 y #12708 en revisión (tarjetas propias). Lo demás, en "Left for later" de #12376.'
 - title: '#12528: atender la review de niwinz (migración 0036)'
   done: 2026-11-12
   links:

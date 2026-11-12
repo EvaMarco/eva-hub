@@ -15,6 +15,7 @@
 
 
 
+
 - title: PRs externas que esperan decisión de producto
   status: waiting
   waiting: other
@@ -36,17 +37,6 @@
   - '#12437'
   note: '#12453 (panel de escala, luisddm), #12481 y #12437 (tokenscript).'
   added: *id001
-
-- title: Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info, settings/profile)
-  status: waiting
-  links:
-  - https://claude.ai/artifact/Hz8Qgf38VPon8YeP4cTLs7
-  note: 'Mergeadas: #12681, #12699, #12702, #12710, #12712, #12722, #12723, #12724. Lo que queda fuera está en "Left for later" de #12376.'
-  items:
-  - '#12705 (fila 4): ready, asignada a luisddm; rebase sobre develop subido 2026-11-12'
-  - '#12708 (filas 5-6): ready, asignada a luisddm, 2.21.0 (2026-11-12)'
-  added: 2026-10-20
-  waiting: review
 
 - title: Pasar la guía del refactor a docs del repo cuando deje de cambiar
   status: todo
