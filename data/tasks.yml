@@ -59,7 +59,14 @@
 - title: "Volver a revisar #12671 y #12059 (los autores subieron cambios)"
   status: doing
   links: ["#12671", "#12059"]
-  note: "#12671 aprobada y mergeada por Luis (2026-11-12). #12059: rebase + traducciones es subidos a su rama (2026-11-12; etiquetas: desplegable «Exportación mostrada», imagen «Resultado de la exportación»); CI aprobado, esperando resultado; luego mergear. El fallo E2E anterior (dashboard.spec.js:139) no era de la PR."
+  note: "#12671 aprobada y mergeada por Luis (2026-11-12). #12059: rebase + traducciones es subidos a su rama (2026-11-12; etiquetas: desplegable «Exportación mostrada», imagen «Resultado de la exportación»); CI verde (11/11), lista para mergear. El fallo E2E anterior (dashboard.spec.js:139) no era de la PR."
+  added: 2026-11-12
+
+- title: "#12965 (share link al DS, luisddm): revisión hecha, falta publicar"
+  status: waiting
+  waiting: other
+  links: ["#12965", "#12966"]
+  note: "Eva pregunta a Luis por privado si los cambios visuales son intencionados (sin separadores entre páginas, columna de etiquetas más ancha). Luego publicar: R1 foco del diálogo y Escape en la confirmación de borrado, más los menores (aria-expanded + aria-pressed, z-index: 1, restos de SCSS, nombre accesible del campo de URL)."
   added: 2026-11-12
 
 - title: "Revisiones pendientes"
