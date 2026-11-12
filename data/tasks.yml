@@ -13,195 +13,263 @@
 # Quick ideas go as issues in this repo instead; move them here when they
 # need notes. Done tasks can stay a while, then be deleted.
 
-- title: "Hiring: revisar CV pendiente"
+
+- title: '#12658 (portapapeles, diip3sh): cambios pedidos'
+  status: waiting
+  waiting: other
+  links:
+  - '#12658'
+  - '#12848'
+  - '#12648'
+  note: 'Revisada y probada 2026-11-12: rebase de los .po, test de on-copied que falla, bloquear doble clic. Cuando se mergee, pedir a kirintea que #12848 haga rebase y use copy-text.'
+  added: &id001 2026-11-12
+
+- title: '#12999 (altura mínima del panel de páginas, olivia-cruz): cambios pedidos'
+  status: waiting
+  waiting: other
+  links:
+  - '#12999'
+  - '#12992'
+  note: 'Revisada y probada 2026-11-12: mínimo 76 en una constante (título 44 + fila 32) y un test.'
+  added: *id001
+
+- title: '#12836 (menú contextual en varias líneas, Ankit-cs): cambios pedidos'
+  status: waiting
+  waiting: other
+  links:
+  - '#12836'
+  - '#12320'
+  note: '2026-11-11: el submenú se sale por la derecha (delta-x fijo en 250), formato del commit, capturas. El issue #12320 espera a diseño.'
+  added: *id001
+
+- title: '#10998 (selección robada tras mover, wi-fa): cambios pedidos'
+  status: waiting
+  waiting: other
+  links:
+  - '#10998'
+  note: '2026-11-10: clic perdido tras nudge y test Playwright. Sin cambios desde entonces.'
+  added: *id001
+
+- title: PRs externas que esperan decisión de producto
+  status: waiting
+  waiting: other
+  links:
+  - '#12764'
+  - '#12621'
+  - '#12198'
+  - '#12166'
+  - '#10170'
+  - '#12921'
+  note: 'No las cerramos nosotras. #12198 bloquea el header del viewer en la épica DS.'
+  added: *id001
+
+- title: 'Si sobra tiempo: revisar PRs grandes de otros equipos'
+  status: todo
+  links:
+  - '#12453'
+  - '#12481'
+  - '#12437'
+  note: '#12453 (panel de escala, luisddm), #12481 y #12437 (tokenscript).'
+  added: *id001
+
+- title: '#12059 (export previews): mergear con squash cuando pase el CI'
+  status: doing
+  links:
+  - '#12059'
+  note: Rebase sobre develop y traducciones es subidos (2ec4ad6005); CI aprobado, en marcha.
+  added: *id001
+
+- title: Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info, settings/profile)
+  status: waiting
+  links:
+  - https://claude.ai/artifact/Hz8Qgf38VPon8YeP4cTLs7
+  note: 'Mergeadas: #12681, #12699, #12702, #12710, #12712, #12722, #12723, #12724. Lo que queda fuera está en "Left for later" de #12376.'
+  items:
+  - '#12705 (fila 4): ready, asignada a luisddm; rebase sobre develop subido 2026-11-12'
+  - '#12708 (filas 5-6): ready, asignada a luisddm, 2.21.0 (2026-11-12)'
+  added: 2026-10-20
+  waiting: review
+
+- title: Pasar la guía del refactor a docs del repo cuando deje de cambiar
+  status: todo
+  links:
+  - https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6
+  added: *id001
+
+- title: '#12941 (contar los cortes del bucle de render): esperando revisión'
+  status: waiting
+  waiting: review
+  links:
+  - '#12941'
+  - '#12580'
+  note: Base staging, 2.20.0. El fallo de CI «Bug 9927» no era nuestro. Cuando salga a producción, ver si los bucles siguen.
+  added: *id001
+
+- title: '#12580: probar la pista de los plugins que ejecutan set-flag al abrir'
+  status: todo
+  links:
+  - '#12580'
+  note: 13 de los 38 reportes de producción. Repro local anterior sin éxito.
+  added: *id001
+
+- title: '#12580: sospechoso 1, text-modifiers-renderer (renderer SVG, textos auto-height en flex)'
+  status: waiting
+  waiting: other
+  links:
+  - '#12580'
+  note: 'Espera a los datos de #12941 en producción.'
+  added: *id001
+
+- title: 'Abrir issue: un texto creado en un board flex se queda en 40×12'
+  status: todo
+  links:
+  - '#12580'
+  note: 'Visto al intentar reproducir #12580.'
+  added: *id001
+
+- title: 'Hiring: revisar CV pendiente'
   status: todo
   added: 2026-11-11
 
-- title: "Hiring: revisar 2 CVs"
+- title: 'Hiring: revisar 2 CVs'
   status: done
   done: 2026-11-11
   added: 2026-11-11
 
-- title: "Playwright: tema oscuro por defecto en los navegadores"
+- title: '#13002: el panel de páginas salta al pinchar una página oculta por el scroll'
   status: waiting
   waiting: review
-  note: "Desde #12480 (28-10) un perfil sin tema sigue al sistema y Chrome headless da claro, así que los e2e corrían con la UI clara. Rama eva-playwright-dark-theme (develop), commit f37c6e3dc6: colorScheme dark en playwright.config.js. Suite default completa: 436 pasan, 3 del editor de texto fallan también sin el cambio (inestables). PR #12989 abierta 2026-11-11 (develop)."
-  items:
-    - "Hecho: colorScheme dark en la config; ningún spec del repo cambiaba el tema (email-verification lo fija con emulateMedia y se queda)"
-    - "PR #12989 (develop, 2.21.0) abierta, CI verde; sin asignar, la cogerá el equipo"
-  added: 2026-11-11
-
-- title: "Revisar PRs de frontend (lista del 2026-11-10)"
-  status: todo
-  note: "48 PRs abiertas tocan frontend (sin borradores ni las mías). Prioridad: las asignadas a mí, luego fixes del equipo para probar en local, luego fixes externos pequeños. Duplicadas: HSL (#12765 y #12629). Se solapan: portapapeles (#12658 y #12848)."
-  items:
-    - "Asignadas a mí: #12671 (hecha 2026-11-11, cambios pedidos) y #12836 (hecha 2026-11-11, cambios pedidos). #12865 (MCP, Alotor) aprobada 2026-11-11 y mergeada"
-    - "Fixes del equipo: #12872 probada en local 2026-11-11 (OK, Eva comenta con el test); #12794 espera al autor (comentarios de pabloalba); #12928 ya mergeada"
-    - "Externas pequeñas: #12899 cerrada; #12873 (búsqueda del swap) mergeada 2026-11-12 (2.21.0); #12996 (docs de variantes) aprobada 2026-11-12 (2.20.0); HSL: #12629 mergeada 2026-11-12; #12765 cerrada como duplicada; #12658 (portapapeles) revisada y probada 2026-11-12, cambios pedidos (rebase de los .po, test de on-copied que falla, bloquear doble clic); cuando entre, pedir a kirintea que #12848 haga rebase y use copy-text; #12999 (altura mínima del panel de páginas, #12992) revisada y probada 2026-11-12, cambios pedidos (mínimo 76 en una constante + test)"
-    - "Externas con decisión de producto: #12764 (seleccionar siguiente capa), #12621 (modo compacto), #12198 (ocultar chrome del viewer, bloquea header del viewer en la épica DS), #12166 (atajo de exportar), #10170 (deep link a boards), #12921 (por qué no se puede desconectar una librería)"
-    - "Grandes o de otros equipos, solo si sobra tiempo: #12720 (listas en texto v3, ya mergeada), #12453 (panel de escala, luisddm), #12481/#12437 (tokenscript). #11959 (token-source al reimportar) fuera: toca el almacenamiento del backend, que la coja otra persona (2026-11-12)"
-  added: 2026-11-10
-
-- title: "#13002: el panel de páginas salta al pinchar una página oculta por el scroll"
-  status: waiting
-  waiting: review
-  links: ["#13002", "#13004"]
-  note: "Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde."
+  links:
+  - '#13002'
+  - '#13004'
+  note: 'Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde.'
   added: 2026-11-12
 
-- title: "#12059: añadir las 4 traducciones nuevas a es.po"
+- title: '#12059: añadir las 4 traducciones nuevas a es.po'
   status: done
-  links: ["#12059"]
-  note: "La PR (export previews, autor externo) solo añade las claves en en.po (en.po:7603-7617). No se pide al contributor. Plan (2026-11-12): CI aprobado y milestone 2.21.0; cuando el CI termine, rebase + commit con las traducciones es en su rama y mergear."
+  links:
+  - '#12059'
+  note: 'La PR (export previews, autor externo) solo añade las claves en en.po (en.po:7603-7617). No se pide al contributor. Plan (2026-11-12): CI aprobado y milestone 2.21.0; cuando el CI termine, rebase + commit con las traducciones es en su rama y mergear.'
   added: 2026-11-12
   done: 2026-11-12
 
-- title: "Volver a revisar #12671 y #12059 (los autores subieron cambios)"
-  status: doing
-  links: ["#12671", "#12059"]
-  note: "#12671 aprobada y mergeada por Luis (2026-11-12). #12059: traducciones es (desplegable «Exportación mostrada», imagen «Resultado de la exportación»), CI verde y último rebase sobre develop subido (2ec4ad6005); CI aprobado, en marcha. Mergear con squash cuando pase."
-  added: 2026-11-12
-
-- title: "#12965 (share link al DS, luisddm): cambios pedidos"
+- title: '#12965 (share link al DS, luisddm): cambios pedidos'
   status: waiting
   waiting: other
-  links: ["#12965", "#12966"]
-  note: "2026-11-12: los cambios visuales son intencionados (confirmado por Luis). Comentario publicado: R1 foco de los diálogos y Escape en la confirmación de borrado, más los menores (aria-expanded + aria-pressed, z-index: 1, restos de SCSS, opciones sin memo, aria-controls, nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog* con Popover + Dialog de react-aria)."
+  links:
+  - '#12965'
+  - '#12966'
+  note: '2026-11-12: los cambios visuales son intencionados (confirmado por Luis). Comentario publicado: R1 foco de los diálogos y Escape en la confirmación de borrado, más los menores (aria-expanded + aria-pressed, z-index: 1, restos de SCSS, opciones sin memo, aria-controls, nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog* con Popover + Dialog de react-aria).'
   added: 2026-11-12
 
-- title: "Revisiones pendientes"
-  status: waiting
-  waiting: other
-  links: ["#10998", "#12836"]
-  note: "#12836: cambios pedidos el 2026-11-11 (submenú se sale por la derecha: delta-x fijo en 250; formato del commit; capturas, el issue #12320 espera a diseño). #12671: cambios pedidos el 2026-11-11 (test Playwright + deps de on-double-click en sets). #12059: cambios pedidos el 2026-11-10 (sacar el arreglo de Show in exports, F2-F4); bloquea menus/exports e inspect/exports. #10998: cambios pedidos el 2026-11-10 (clic perdido tras nudge, test Playwright). #11951: aprobada 2026-11-12 (niwinz arregló la itálica y la mantiene; probada en local); pendiente que actualice título/descripción (Relates #10436) y quite el test duplicado en runner.cljs."
-  added: 2026-11-10
-
-- title: "#12929: arrastrar al final de un flex invertido guarda el hijo una posición antes"
+- title: '#12929: arrastrar al final de un flex invertido guarda el hijo una posición antes'
   status: done
-  links: ["#12929"]
-  note: "Bug del renderer wasm (apply_structure en render-wasm/src/shapes.rs interpreta el índice distinto que insert-at-index). Lo adopta el equipo de render (2026-11-10); nuestra parte está hecha (2026-11-12). Arreglo + 3 tests guardados en local: rama eva-fix-reverse-flex-drop-12929, commit af024f8d83, subida a GitHub sin PR."
+  links:
+  - '#12929'
+  note: 'Bug del renderer wasm (apply_structure en render-wasm/src/shapes.rs interpreta el índice distinto que insert-at-index). Lo adopta el equipo de render (2026-11-10); nuestra parte está hecha (2026-11-12). Arreglo + 3 tests guardados en local: rama eva-fix-reverse-flex-drop-12929, commit af024f8d83, subida a GitHub sin PR.'
   added: 2026-11-10
   done: 2026-11-12
 
-- title: "#12528: review de niwinz atendida (migración 0036)"
+- title: '#12528: review de niwinz atendida (migración 0036)'
   status: waiting
   waiting: review
-  links: ["#12528", "#12343"]
-  note: "2026-11-10: R1 (0036-fix-shape-children-ids), M1, M3, M4, M5, S1 en e017db0eee; rebase sobre staging, push, descripción actualizada y respuesta publicada. Fuera: M2 (notas mem) y S2 (savepoint por archivo, previo)."
+  links:
+  - '#12528'
+  - '#12343'
+  note: '2026-11-10: R1 (0036-fix-shape-children-ids), M1, M3, M4, M5, S1 en e017db0eee; rebase sobre staging, push, descripción actualizada y respuesta publicada. Fuera: M2 (notas mem) y S2 (savepoint por archivo, previo).'
   added: 2026-11-10
 
-- title: "#12847 (visor en directo, PR externa): cambios pedidos"
+- title: '#12847 (visor en directo, PR externa): cambios pedidos'
   status: waiting
   waiting: other
-  links: ["#12847", "#12837"]
-  note: "Diseño (2026-11-10): activado por defecto si no penaliza el rendimiento; los avatares de los visores en el workspace están bien. Request changes publicado el 2026-11-10: visor wasm no se actualiza, rendimiento (recalcula todas las páginas), revn, CHANGES.md. 2026-11-11: el autor subió cambios (8e998f4ad6) pero dice que aún no los ha revisado él; segunda revisión hecha y guardada sin publicar en ws1 tmp/review-12847-round2.md (R1: 2 tests nuevos fallan; M1-M4). 2026-11-12: segunda revisión publicada por la tarde, en tono suave (R1 tests que fallan, M1 cambios perdidos mientras carga, M2 tests de la suscripción, descripción). Esperamos al autor."
+  links:
+  - '#12847'
+  - '#12837'
+  note: 'Diseño (2026-11-10): activado por defecto si no penaliza el rendimiento; los avatares de los visores en el workspace están bien. Request changes publicado el 2026-11-10: visor wasm no se actualiza, rendimiento (recalcula todas las páginas), revn, CHANGES.md. 2026-11-11: el autor subió cambios (8e998f4ad6) pero dice que aún no los ha revisado él; segunda revisión hecha y guardada sin publicar en ws1 tmp/review-12847-round2.md (R1: 2 tests nuevos fallan; M1-M4). 2026-11-12: segunda revisión publicada por la tarde, en tono suave (R1 tests que fallan, M1 cambios perdidos mientras carga, M2 tests de la suscripción, descripción). Esperamos al autor.'
   added: 2026-11-10
 
-- title: "#11648: importar un archivo deja elegir dependencias de librería que no coinciden"
+- title: '#11648: importar un archivo deja elegir dependencias de librería que no coinciden'
   status: waiting
   waiting: other
-  links: ["#11648"]
-  note: "Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10)."
+  links:
+  - '#11648'
+  note: Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10).
   added: 2026-11-10
 
-- title: "Revisar los 6 posibles bugs encontrados con el MCP y abrir issues"
+- title: Revisar los 6 posibles bugs encontrados con el MCP y abrir issues
   status: todo
-  links: ["https://claude.ai/artifact/N8JDtiwnr5WdNQWs5GFPu6"]
-  note: "Modal con formulario montado con el MCP en ws1 (librerías App y Foundations). Registro en ws1 tmp/mcp-modal-form-findings.md"
+  links:
+  - https://claude.ai/artifact/N8JDtiwnr5WdNQWs5GFPu6
+  note: Modal con formulario montado con el MCP en ws1 (librerías App y Foundations). Registro en ws1 tmp/mcp-modal-form-findings.md
   items:
-    - "Grid recoloca celdas al añadir hijos a una columna"
-    - "library.components da un componente por grupo de variantes"
-    - "openPage() no espera al cambio de página"
-    - "waitForLayoutUpdate caduca tras muchos cambios en un grid"
-    - "export_shape de página entera sale en blanco"
-    - "Swap Text → Hint pierde los overrides de texto (¿a propósito?)"
+  - Grid recoloca celdas al añadir hijos a una columna
+  - library.components da un componente por grupo de variantes
+  - openPage() no espera al cambio de página
+  - waitForLayoutUpdate caduca tras muchos cambios en un grid
+  - export_shape de página entera sale en blanco
+  - Swap Text → Hint pierde los overrides de texto (¿a propósito?)
   added: 2026-10-30
 
-- title: "Seguir buscando bugs con el MCP (librerías y componentes) y probar otras técnicas"
+- title: Seguir buscando bugs con el MCP (librerías y componentes) y probar otras técnicas
   status: todo
-  note: "MCP de Penpot montado a mano en ws1 (ventana tmux mcp, enable-mcp, menú > MCP > Connect). Validador del backend desde el REPL tras cada paso"
+  note: MCP de Penpot montado a mano en ws1 (ventana tmux mcp, enable-mcp, menú > MCP > Connect). Validador del backend desde el REPL tras cada paso
   added: 2026-10-30
 
-- title: "Actualizar guía y gist: #12739 ya está fusionada (skills en .agents/skills/)"
+- title: 'Actualizar guía y gist: #12739 ya está fusionada (skills en .agents/skills/)'
   status: done
   done: 2026-11-10
-  links: ["#12739", "https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6"]
+  links:
+  - '#12739'
+  - https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6
   added: 2026-10-30
 
-- title: "Sesión con Luis: preparar las skills para que coja PRs del DS"
+- title: 'Sesión con Luis: preparar las skills para que coja PRs del DS'
   status: waiting
   waiting: other
-  links: ["#12375", "#12376"]
-  note: "No se hizo el 2026-11-02; Luis está liado estos días, se retoma cuando pueda. Objetivo: Luis coge zonas y resuelve PRs, Eva revisa; así avanzamos más rápido."
+  links:
+  - '#12375'
+  - '#12376'
+  note: 'No se hizo el 2026-11-02; Luis está liado estos días, se retoma cuando pueda. Objetivo: Luis coge zonas y resuelve PRs, Eva revisa; así avanzamos más rápido.'
   items:
-    - "Repasar con él migrate-ds-area y refactor-scss (en revisión: #12739)"
-    - "Usar la guía del proceso como base: https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6"
-    - "Acordar cómo coge zonas: columna Owner en la tabla de cada grupo"
+  - 'Repasar con él migrate-ds-area y refactor-scss (en revisión: #12739)'
+  - 'Usar la guía del proceso como base: https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6'
+  - 'Acordar cómo coge zonas: columna Owner en la tabla de cada grupo'
   added: 2026-10-29
 
-- title: "Documentar el proceso de refactor"
-  status: doing
-  links: ["https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6", "#12375", "#12739"]
-  note: "Guía publicada en un gist público y enlazada en las reglas de la épica (2026-10-30). El doc de Claude es el borrador: https://claude.ai/artifact/SD32AuvBJ1FQ3W3sgdnSBk"
-  items:
-    - "Hecho: guía escrita, corta, con set-up del agente y tabla de skills"
-    - "Hecho: gist público + enlace en #12375; reglas de reserva en #12375, #12376 y #12377"
-    - "Hecho: no changelog en #12376 y #12377; ningún revisor nombrado"
-    - "Hecho: skills migrate-ds-area y refactor-scss en el repo (#12739, 2026-11-04); guía y gist apuntan a .agents/skills/ (2026-11-10)"
-    - "Más adelante: pasar la guía a docs del repo cuando deje de cambiar"
-  added: 2026-10-28
-
-- title: "Variante en minúsculas para el botón Reset del zoom"
+- title: Variante en minúsculas para el botón Reset del zoom
   status: waiting
   waiting: other
-  links: ["#12454", "#12523"]
-  note: "Diseño ya la tiene avanzada (2026-10-29). Se implementa en button* cuando termine la migración de botones; luego follow-up en los dos menús de zoom."
+  links:
+  - '#12454'
+  - '#12523'
+  note: Diseño ya la tiene avanzada (2026-10-29). Se implementa en button* cuando termine la migración de botones; luego follow-up en los dos menús de zoom.
   added: 2026-10-27
 
-- title: "Task 9 de botones/iconos: limpieza final"
+- title: 'Task 9 de botones/iconos: limpieza final'
   status: todo
-  links: ["#12376"]
-  note: "Último paso: borrar %button-* y los iconos viejos sin uso, y revisar los componentes compartidos. Antes: mergear los PRs abiertos, las áreas bloqueadas (measures #9139, exports #12059, viewer header #12198) y los grupos de checkboxes, inputs y selects (2026-10-29: 21 SCSS con %button-*, 25 cljs con iconos legacy)."
+  links:
+  - '#12376'
+  note: 'Último paso: borrar %button-* y los iconos viejos sin uso, y revisar los componentes compartidos. Antes: mergear los PRs abiertos, las áreas bloqueadas (measures #9139, exports #12059, viewer header #12198) y los grupos de checkboxes, inputs y selects (2026-10-29: 21 SCSS con %button-*, 25 cljs con iconos legacy).'
   added: 2026-10-27
 
-- title: "Grupo 2 de la épica DS: selects (#12377)"
+- title: 'Grupo 2 de la épica DS: selects (#12377)'
   status: doing
-  links: ["#12377", "#12375"]
-  note: "Plan en .agents/plans/2026-10-27-ds-selects.md (revisado dos veces). 30 usos en 17 archivos, fm/select incluido (8 formularios). El resto de áreas espera a que se mergee el lote de botones."
+  links:
+  - '#12377'
+  - '#12375'
+  note: Plan en .agents/plans/2026-10-27-ds-selects.md (revisado dos veces). 30 usos en 17 archivos, fm/select incluido (8 formularios). El resto de áreas espera a que se mergee el lote de botones.
   items:
-    - "Task 0 hecha: #12377 con plan, cambios para QA y tabla de PRs."
-    - "Piloto (Task 1) hecho y mergeado (2026-10-29): #12653, tipo de degradado del colorpicker."
-    - "Lección: el select* no tiene nombre accesible; en los tests, getByRole(\"combobox\").filter({ hasText })."
-    - "Blend mode: seguimos con un hover callback en select* (provisional, Task 5b)."
-    - "Destino de interacciones: espera un modo de combobox* que filtre y solo acepte opciones."
+  - 'Task 0 hecha: #12377 con plan, cambios para QA y tabla de PRs.'
+  - 'Piloto (Task 1) hecho y mergeado (2026-10-29): #12653, tipo de degradado del colorpicker.'
+  - 'Lección: el select* no tiene nombre accesible; en los tests, getByRole("combobox").filter({ hasText }).'
+  - 'Blend mode: seguimos con un hover callback en select* (provisional, Task 5b).'
+  - 'Destino de interacciones: espera un modo de combobox* que filtre y solo acepte opciones.'
   added: 2026-10-27
 
-- title: "Pedir a diseño/DS lo que falta para los selects"
+- title: Pedir a diseño/DS lo que falta para los selects
   status: waiting
   waiting: design
-  links: ["#12377"]
-  note: "Blend mode: diseño acepta el hover callback en select* (2026-10-29), Task 5b sigue. Destino: propuesta de :strict en combobox* enviada al equipo del DS (2026-10-29), esperando respuesta; si no, apaño en interactions con :key."
+  links:
+  - '#12377'
+  note: 'Blend mode: diseño acepta el hover callback en select* (2026-10-29), Task 5b sigue. Destino: propuesta de :strict en combobox* enviada al equipo del DS (2026-10-29), esperando respuesta; si no, apaño en interactions con :key.'
   added: 2026-10-27
-
-- title: "Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info, settings/profile)"
-  status: doing
-  links: ["https://claude.ai/artifact/Hz8Qgf38VPon8YeP4cTLs7"]
-  note: "Mergeadas: #12681, #12699, #12702, #12710, #12712, #12722, #12723, #12724. Lo que queda fuera está en \"Left for later\" de #12376."
-  items:
-    - "#12705 (fila 4): decidido A, no tab* (2026-11-10). Ready, rebase sobre develop con el arreglo de CI #12922 y CI en verde; asignada a luisddm (2026-11-10)"
-    - "#12708 (filas 5-6): esperando a diseño. Fila 6 Go to login: A, B o link* como el Go back de recovery_request; fila 5 Team management: confirmar A"
-  added: 2026-10-20
-
-- title: "#12580 (React #185): seguir con los sospechosos pendientes"
-  status: waiting
-  waiting: review
-  links: ["#12580", "#12610", "#12941"]
-  note: "2.19.0 con #12610 (el aviso «update loop throttled») salió a producción el 2026-10-29. Siguiente: revisar los logs de error de SaaS y seguir con los sospechosos pendientes."
-  items:
-    - "Hecho 2026-11-10: producción, 38 «update loop throttled» en ~21 h (23 usuarios, RC7). 35/38 sin eventos en vuelo. Stack: 12× palette.cljs (ancho al montar), 9× embed.cljs use-data-uris, 3× initialize/finalize-page, 3× layer_item. El stack es la actualización que coincidió con el corte, no necesariamente la causa"
-    - "PR #12941 (staging): el reporte espera 5 s y cuenta los cortes (:trips), más :last-trip-stack y :page-objects. Cuando salga, ver si los bucles siguen o paran. 2026-11-11: CI falla en dashboard «Bug 9927» (también al relanzar); no es nuestro cambio (no hay aviso de update loop en las trazas, en local pasa 3/3). Rebase sobre staging subido (4e9cef180b); esperando el CI"
-    - "Repro local sin éxito (máx. 2 rondas de 25): 1221 formas en flex, abrir archivo, 1536×830 al 125 %, 300 imágenes. Pista pendiente: plugins que ejecutan set-flag al abrir (13/38 reportes)"
-    - "Sospechoso 2 descartado (2026-10-29): 1 evento por cambio de tamaño y vuelve a reposo con zoom 0.9/1.1/1.25, píxeles impares, resize de 1 px y paneles (renderer SVG)"
-    - "Sospechoso 1: text-modifiers-renderer (~l.215), renderer SVG, textos auto-height y en flex; espera a los datos"
-    - "Abrir issue: texto creado en un board flex se queda en 40×12"
-  added: 2026-10-23

@@ -5,6 +5,35 @@
 #
 # When a done task leaves the board, move it here instead of deleting it.
 
+
+- title: 'Playwright: tema oscuro por defecto en los navegadores'
+  done: &id001 2026-11-12
+  links:
+  - '#12989'
+  note: 'PR #12989 mergeada (2026-11-12): los e2e corren con el tema oscuro.'
+- title: 'Revisar PRs de frontend de la lista del 2026-11-10: asignadas y fixes pequeños'
+  done: *id001
+  links:
+  - '#12671'
+  - '#12865'
+  - '#12872'
+  - '#12873'
+  - '#12996'
+  - '#12629'
+  - '#11951'
+  note: 'Aprobadas o mergeadas: #12671, #12865, #12872, #12873, #12996, #12629 (HSL; #12765 cerrada como duplicada), #11951. #12899 cerrada. #11959 fuera: que la coja backend.'
+- title: Documentar el proceso de refactor (guía, gist, skills en el repo)
+  done: 2026-11-10
+  links:
+  - https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6
+  - '#12375'
+  - '#12739'
+  note: 'Guía en gist público enlazada en #12375; skills migrate-ds-area y refactor-scss en el repo (#12739).'
+- title: '#12580: descartar el sospechoso 2 (setup-viewport-size)'
+  done: 2026-10-29
+  links:
+  - '#12580'
+  note: Un evento por cambio de tamaño, vuelve a reposo (renderer SVG).
 - title: Revisar nueva candidatura
   done: 2026-10-29
   links:
