@@ -1,5 +1,13 @@
 [
  {
+  "number": 12965,
+  "title": ":recycle: Refactor the share link dialog to the design system",
+  "url": "https://github.com/penpot/penpot/pull/12965",
+  "first_review": "2026-11-12T16:28:53Z",
+  "outcome": "approved",
+  "merged_by_me": false
+ },
+ {
   "number": 12996,
   "title": ":books: Document how to order variant properties and values",
   "url": "https://github.com/penpot/penpot/pull/12996",
@@ -85,7 +93,7 @@
   "url": "https://github.com/penpot/penpot/pull/12059",
   "first_review": "2026-11-10T08:26:25Z",
   "outcome": "approved",
-  "merged_by_me": false
+  "merged_by_me": true
  },
  {
   "number": 12332,
