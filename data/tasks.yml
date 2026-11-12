@@ -56,11 +56,11 @@
   added: 2026-11-10
 
 - title: "#12929: arrastrar al final de un flex invertido guarda el hijo una posición antes"
-  status: waiting
-  waiting: other
+  status: done
   links: ["#12929"]
-  note: "Bug del renderer wasm (apply_structure en render-wasm/src/shapes.rs interpreta el índice distinto que insert-at-index). Lo adopta el equipo de render (2026-11-10). Arreglo + 3 tests guardados en local: rama eva-fix-reverse-flex-drop-12929, commit af024f8d83, subida a GitHub sin PR."
+  note: "Bug del renderer wasm (apply_structure en render-wasm/src/shapes.rs interpreta el índice distinto que insert-at-index). Lo adopta el equipo de render (2026-11-10); nuestra parte está hecha (2026-11-12). Arreglo + 3 tests guardados en local: rama eva-fix-reverse-flex-drop-12929, commit af024f8d83, subida a GitHub sin PR."
   added: 2026-11-10
+  done: 2026-11-12
 
 - title: "#12528: review de niwinz atendida (migración 0036)"
   status: waiting
