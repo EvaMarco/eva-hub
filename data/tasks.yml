@@ -59,7 +59,7 @@
 - title: "Volver a revisar #12671 y #12059 (los autores subieron cambios)"
   status: doing
   links: ["#12671", "#12059"]
-  note: "#12671 aprobada y mergeada por Luis (2026-11-12). #12059: rebase + traducciones es subidos a su rama (2026-11-12; etiquetas: desplegable «Exportación mostrada», imagen «Resultado de la exportación»); CI verde (11/11), lista para mergear. El fallo E2E anterior (dashboard.spec.js:139) no era de la PR."
+  note: "#12671 aprobada y mergeada por Luis (2026-11-12). #12059: traducciones es (desplegable «Exportación mostrada», imagen «Resultado de la exportación»), CI verde y último rebase sobre develop subido (2ec4ad6005); CI aprobado, en marcha. Mergear con squash cuando pase."
   added: 2026-11-12
 
 - title: "#12965 (share link al DS, luisddm): cambios pedidos"
