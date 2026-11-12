@@ -12,6 +12,7 @@
 
 
 
+
 13004:
   next: 'Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde.'
   waiting: review
@@ -30,9 +31,6 @@
 12134:
   status: hidden
   next: 'Se sigue en la PR #12643'
-12059:
-  next: Rebase sobre develop y traducciones es subidos (2ec4ad6005); CI aprobado, en marcha.
-  status: doing
 11951:
   next: Esperando respuesta a mi comentario de la cursiva (2026-10-15); niwinz de vacaciones
   waiting: review
@@ -62,8 +60,8 @@
   next: Base staging, 2.20.0. El fallo de CI «Bug 9927» no era nuestro. Cuando salga a producción, ver si los bucles siguen.
   waiting: review
 12965:
-  next: '2026-11-12: los cambios visuales son intencionados (confirmado por Luis). Comentario publicado: R1 foco de los diálogos y Escape en la confirmación de borrado, más los menores (aria-expanded + aria-pressed, z-index: 1, restos de SCSS, opciones sin memo, aria-controls, nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog* con Popover + Dialog de react-aria).'
-  status: waiting
+  next: 'Aprobada 2026-11-12 (foco, Escape y menores resueltos; sugerencia: nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog*)'
+  status: done
 12847:
   next: 'La llevamos nosotras (2026-11-12). Fixes subidos a su fork (3aef008988), probado con SVG y wasm, comentario publicado; Eva avisó al equipo para revisarla. Antes de mergear: retocar la descripción (rendimiento, enlaces anónimos)'
   status: waiting
