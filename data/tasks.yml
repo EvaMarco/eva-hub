@@ -37,7 +37,7 @@
   items:
     - "Asignadas a mí: #12671 (hecha 2026-11-11, cambios pedidos) y #12836 (hecha 2026-11-11, cambios pedidos). #12865 (MCP, Alotor) aprobada 2026-11-11 y mergeada"
     - "Fixes del equipo: #12872 probada en local 2026-11-11 (OK, Eva comenta con el test); #12794 espera al autor (comentarios de pabloalba); #12928 ya mergeada"
-    - "Externas pequeñas: #12899 cerrada; #12873 (búsqueda del swap) probada 2026-11-11, OK, CI lanzado a mano; HSL: #12629 mergeada 2026-11-12; #12765 cerrada como duplicada; #12658 (portapapeles) revisada y probada 2026-11-12, cambios pedidos (rebase de los .po, test de on-copied que falla, bloquear doble clic); cuando entre, pedir a kirintea que #12848 haga rebase y use copy-text; #12999 (altura mínima del panel de páginas, #12992) revisada y probada 2026-11-12, cambios pedidos (mínimo 76 en una constante + test)"
+    - "Externas pequeñas: #12899 cerrada; #12873 (búsqueda del swap) mergeada 2026-11-12 (2.21.0); #12996 (docs de variantes) aprobada 2026-11-12 (2.20.0); HSL: #12629 mergeada 2026-11-12; #12765 cerrada como duplicada; #12658 (portapapeles) revisada y probada 2026-11-12, cambios pedidos (rebase de los .po, test de on-copied que falla, bloquear doble clic); cuando entre, pedir a kirintea que #12848 haga rebase y use copy-text; #12999 (altura mínima del panel de páginas, #12992) revisada y probada 2026-11-12, cambios pedidos (mínimo 76 en una constante + test)"
     - "Externas con decisión de producto: #12764 (seleccionar siguiente capa), #12621 (modo compacto), #12198 (ocultar chrome del viewer, bloquea header del viewer en la épica DS), #12166 (atajo de exportar), #10170 (deep link a boards), #12921 (por qué no se puede desconectar una librería)"
     - "Grandes o de otros equipos, solo si sobra tiempo: #12720 (listas en texto v3), #12453 (panel de escala, luisddm), #12481/#12437 (tokenscript), #11959 (token-source al reimportar)"
   added: 2026-11-10
@@ -56,9 +56,9 @@
   added: 2026-11-12
 
 - title: "Volver a revisar #12671 y #12059 (los autores subieron cambios)"
-  status: todo
+  status: doing
   links: ["#12671", "#12059"]
-  note: "#12671 (luisddm): commits el 2026-11-12 10:40 tras los cambios pedidos el 11-11. #12059: commit el 2026-11-10 09:00, justo después de la revisión, sin comentario."
+  note: "#12671 aprobada 2026-11-12 (test + deps + keys por id). #12059: todo atendido; CI aprobado, falta que termine E2E; luego rebase + traducciones es y mergear."
   added: 2026-11-12
 
 - title: "Revisiones pendientes"
