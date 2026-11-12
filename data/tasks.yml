@@ -39,7 +39,7 @@
     - "Fixes del equipo: #12872 probada en local 2026-11-11 (OK, Eva comenta con el test); #12794 espera al autor (comentarios de pabloalba); #12928 ya mergeada"
     - "Externas pequeñas: #12899 cerrada; #12873 (búsqueda del swap) mergeada 2026-11-12 (2.21.0); #12996 (docs de variantes) aprobada 2026-11-12 (2.20.0); HSL: #12629 mergeada 2026-11-12; #12765 cerrada como duplicada; #12658 (portapapeles) revisada y probada 2026-11-12, cambios pedidos (rebase de los .po, test de on-copied que falla, bloquear doble clic); cuando entre, pedir a kirintea que #12848 haga rebase y use copy-text; #12999 (altura mínima del panel de páginas, #12992) revisada y probada 2026-11-12, cambios pedidos (mínimo 76 en una constante + test)"
     - "Externas con decisión de producto: #12764 (seleccionar siguiente capa), #12621 (modo compacto), #12198 (ocultar chrome del viewer, bloquea header del viewer en la épica DS), #12166 (atajo de exportar), #10170 (deep link a boards), #12921 (por qué no se puede desconectar una librería)"
-    - "Grandes o de otros equipos, solo si sobra tiempo: #12720 (listas en texto v3), #12453 (panel de escala, luisddm), #12481/#12437 (tokenscript), #11959 (token-source al reimportar)"
+    - "Grandes o de otros equipos, solo si sobra tiempo: #12720 (listas en texto v3, ya mergeada), #12453 (panel de escala, luisddm), #12481/#12437 (tokenscript). #11959 (token-source al reimportar) fuera: toca el almacenamiento del backend, que la coja otra persona (2026-11-12)"
   added: 2026-11-10
 
 - title: "#13002: el panel de páginas salta al pinchar una página oculta por el scroll"
