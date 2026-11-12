@@ -73,7 +73,7 @@
   status: waiting
   waiting: other
   links: ["#12847", "#12837"]
-  note: "Diseño (2026-11-10): activado por defecto si no penaliza el rendimiento; los avatares de los visores en el workspace están bien. Request changes publicado el 2026-11-10: visor wasm no se actualiza, rendimiento (recalcula todas las páginas), revn, CHANGES.md. 2026-11-11: el autor subió cambios (8e998f4ad6) pero dice que aún no los ha revisado él; segunda revisión hecha y guardada sin publicar en ws1 tmp/review-12847-round2.md (R1: 2 tests nuevos fallan; M1-M4). 2026-11-12: esperamos, porque el autor no la había revisado; si por la tarde no ha subido cambios ni comentado, publicar la segunda revisión."
+  note: "Diseño (2026-11-10): activado por defecto si no penaliza el rendimiento; los avatares de los visores en el workspace están bien. Request changes publicado el 2026-11-10: visor wasm no se actualiza, rendimiento (recalcula todas las páginas), revn, CHANGES.md. 2026-11-11: el autor subió cambios (8e998f4ad6) pero dice que aún no los ha revisado él; segunda revisión hecha y guardada sin publicar en ws1 tmp/review-12847-round2.md (R1: 2 tests nuevos fallan; M1-M4). 2026-11-12: segunda revisión publicada por la tarde, en tono suave (R1 tests que fallan, M1 cambios perdidos mientras carga, M2 tests de la suscripción, descripción). Esperamos al autor."
   added: 2026-11-10
 
 - title: "#11648: importar un archivo deja elegir dependencias de librería que no coinciden"
