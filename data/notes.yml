@@ -8,6 +8,7 @@
 
 
 
+
 13004:
   next: 'Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde.'
   waiting: review
@@ -15,8 +16,8 @@
   next: 'Relates #12134. Test e2e de anidadas hecho (1703cf46b4, falta push). Solo falta que diseño decida la selección mixta'
   waiting: design
 12528:
-  next: 'Aprobada por niwinz (2026-11-12). Tiene conflictos con staging: rebase y mergear'
-  waiting: me
+  next: Aprobada por niwinz (2026-11-12). Él se encarga del rebase y del merge
+  waiting: other
 12508:
   next: 'Base staging, milestone 2.20.0 (movida desde develop 2026-11-12). Diseño: esperamos'
   waiting: design
