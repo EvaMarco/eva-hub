@@ -14,41 +14,6 @@
 # need notes. Done tasks can stay a while, then be deleted.
 
 
-- title: '#12658 (portapapeles, diip3sh): cambios pedidos'
-  status: waiting
-  waiting: other
-  links:
-  - '#12658'
-  - '#12848'
-  - '#12648'
-  note: 'Revisada y probada 2026-11-12: rebase de los .po, test de on-copied que falla, bloquear doble clic. Cuando se mergee, pedir a kirintea que #12848 haga rebase y use copy-text.'
-  added: &id001 2026-11-12
-
-- title: '#12999 (altura mínima del panel de páginas, olivia-cruz): cambios pedidos'
-  status: waiting
-  waiting: other
-  links:
-  - '#12999'
-  - '#12992'
-  note: 'Revisada y probada 2026-11-12: mínimo 76 en una constante (título 44 + fila 32) y un test.'
-  added: *id001
-
-- title: '#12836 (menú contextual en varias líneas, Ankit-cs): cambios pedidos'
-  status: waiting
-  waiting: other
-  links:
-  - '#12836'
-  - '#12320'
-  note: '2026-11-11: el submenú se sale por la derecha (delta-x fijo en 250), formato del commit, capturas. El issue #12320 espera a diseño.'
-  added: *id001
-
-- title: '#10998 (selección robada tras mover, wi-fa): cambios pedidos'
-  status: waiting
-  waiting: other
-  links:
-  - '#10998'
-  note: '2026-11-10: clic perdido tras nudge y test Playwright. Sin cambios desde entonces.'
-  added: *id001
 
 - title: PRs externas que esperan decisión de producto
   status: waiting
@@ -61,7 +26,7 @@
   - '#10170'
   - '#12921'
   note: 'No las cerramos nosotras. #12198 bloquea el header del viewer en la épica DS.'
-  added: *id001
+  added: &id001 2026-11-12
 
 - title: 'Si sobra tiempo: revisar PRs grandes de otros equipos'
   status: todo
@@ -70,13 +35,6 @@
   - '#12481'
   - '#12437'
   note: '#12453 (panel de escala, luisddm), #12481 y #12437 (tokenscript).'
-  added: *id001
-
-- title: '#12059 (export previews): mergear con squash cuando pase el CI'
-  status: doing
-  links:
-  - '#12059'
-  note: Rebase sobre develop y traducciones es subidos (2ec4ad6005); CI aprobado, en marcha.
   added: *id001
 
 - title: Revisar los [:a] que hacen de botón (left_header, right_header, debug_shape_info, settings/profile)
@@ -94,15 +52,6 @@
   status: todo
   links:
   - https://gist.github.com/EvaMarco/ca87a70b62db4f53a32e55ffbbf7eda6
-  added: *id001
-
-- title: '#12941 (contar los cortes del bucle de render): esperando revisión'
-  status: waiting
-  waiting: review
-  links:
-  - '#12941'
-  - '#12580'
-  note: Base staging, 2.20.0. El fallo de CI «Bug 9927» no era nuestro. Cuando salga a producción, ver si los bucles siguen.
   added: *id001
 
 - title: '#12580: probar la pista de los plugins que ejecutan set-flag al abrir'
@@ -136,15 +85,6 @@
   done: 2026-11-11
   added: 2026-11-11
 
-- title: '#13002: el panel de páginas salta al pinchar una página oculta por el scroll'
-  status: waiting
-  waiting: review
-  links:
-  - '#13002'
-  - '#13004'
-  note: 'Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde.'
-  added: 2026-11-12
-
 - title: '#12059: añadir las 4 traducciones nuevas a es.po'
   status: done
   links:
@@ -153,15 +93,6 @@
   added: 2026-11-12
   done: 2026-11-12
 
-- title: '#12965 (share link al DS, luisddm): cambios pedidos'
-  status: waiting
-  waiting: other
-  links:
-  - '#12965'
-  - '#12966'
-  note: '2026-11-12: los cambios visuales son intencionados (confirmado por Luis). Comentario publicado: R1 foco de los diálogos y Escape en la confirmación de borrado, más los menores (aria-expanded + aria-pressed, z-index: 1, restos de SCSS, opciones sin memo, aria-controls, nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog* con Popover + Dialog de react-aria).'
-  added: 2026-11-12
-
 - title: '#12929: arrastrar al final de un flex invertido guarda el hijo una posición antes'
   status: done
   links:
@@ -169,32 +100,6 @@
   note: 'Bug del renderer wasm (apply_structure en render-wasm/src/shapes.rs interpreta el índice distinto que insert-at-index). Lo adopta el equipo de render (2026-11-10); nuestra parte está hecha (2026-11-12). Arreglo + 3 tests guardados en local: rama eva-fix-reverse-flex-drop-12929, commit af024f8d83, subida a GitHub sin PR.'
   added: 2026-11-10
   done: 2026-11-12
-
-- title: '#12528: review de niwinz atendida (migración 0036)'
-  status: waiting
-  waiting: review
-  links:
-  - '#12528'
-  - '#12343'
-  note: '2026-11-10: R1 (0036-fix-shape-children-ids), M1, M3, M4, M5, S1 en e017db0eee; rebase sobre staging, push, descripción actualizada y respuesta publicada. Fuera: M2 (notas mem) y S2 (savepoint por archivo, previo).'
-  added: 2026-11-10
-
-- title: '#12847 (visor en directo, PR externa): cambios pedidos'
-  status: waiting
-  waiting: other
-  links:
-  - '#12847'
-  - '#12837'
-  note: 'Diseño (2026-11-10): activado por defecto si no penaliza el rendimiento; los avatares de los visores en el workspace están bien. Request changes publicado el 2026-11-10: visor wasm no se actualiza, rendimiento (recalcula todas las páginas), revn, CHANGES.md. 2026-11-11: el autor subió cambios (8e998f4ad6) pero dice que aún no los ha revisado él; segunda revisión hecha y guardada sin publicar en ws1 tmp/review-12847-round2.md (R1: 2 tests nuevos fallan; M1-M4). 2026-11-12: segunda revisión publicada por la tarde, en tono suave (R1 tests que fallan, M1 cambios perdidos mientras carga, M2 tests de la suscripción, descripción). Esperamos al autor.'
-  added: 2026-11-10
-
-- title: '#11648: importar un archivo deja elegir dependencias de librería que no coinciden'
-  status: waiting
-  waiting: other
-  links:
-  - '#11648'
-  note: Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10).
-  added: 2026-11-10
 
 - title: Revisar los 6 posibles bugs encontrados con el MCP y abrir issues
   status: todo

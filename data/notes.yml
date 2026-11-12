@@ -6,42 +6,62 @@
 # A PR with no entry shows only what GitHub says. Entries for merged or
 # closed PRs are ignored; delete them whenever.
 
+
 13004:
-  next: "Closes #13002 (release blocker 2.20.0). Lista para revisión, asignada a luisddm; CI verde"
+  next: 'Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde.'
   waiting: review
 12643:
-  next: "Relates #12134. Test e2e de anidadas hecho (1703cf46b4, falta push). Solo falta que diseño decida la selección mixta"
+  next: 'Relates #12134. Test e2e de anidadas hecho (1703cf46b4, falta push). Solo falta que diseño decida la selección mixta'
   waiting: design
 12528:
-  next: "Respuestas a niwinz enviadas; esperando su revisión (#12343). niwinz de vacaciones"
+  next: '2026-11-10: R1 (0036-fix-shape-children-ids), M1, M3, M4, M5, S1 en e017db0eee; rebase sobre staging, push, descripción actualizada y respuesta publicada. Fuera: M2 (notas mem) y S2 (savepoint por archivo, previo).'
   waiting: review
 12508:
-  next: "Base staging, milestone 2.20.0 (movida desde develop 2026-11-12). Diseño: esperamos"
+  next: 'Base staging, milestone 2.20.0 (movida desde develop 2026-11-12). Diseño: esperamos'
   waiting: design
-# Issues assigned to me and PRs to review: "status" picks the board column
-# (todo, doing, waiting, review, done, hidden); "next" is the next step.
-# PRs to review without a status go to "Esperando" when the author has not
-# answered my last comment or review, and to "Por empezar" otherwise.
 12580:
   status: hidden
-  next: "Se sigue en la tarea de #12580"
+  next: 'Se sigue en la tarea de #12580'
 12134:
   status: hidden
-  next: "Se sigue en la PR #12643"
+  next: 'Se sigue en la PR #12643'
 12059:
-  next: "Revisar (contributor). Desbloquea exports en Design e Inspect (botones y selects)"
+  next: Rebase sobre develop y traducciones es subidos (2ec4ad6005); CI aprobado, en marcha.
+  status: doing
 11951:
-  next: "Esperando respuesta a mi comentario de la cursiva (2026-10-15); niwinz de vacaciones"
+  next: Esperando respuesta a mi comentario de la cursiva (2026-10-15); niwinz de vacaciones
   waiting: review
 10998:
-  next: "Recordatorio enviado a wi-fa (2026-10-29): issue, test y rebase; si no puede, la retomamos"
+  next: '2026-11-10: clic perdido tras nudge y test Playwright. Sin cambios desde entonces.'
   waiting: review
+  status: waiting
 12377:
   status: hidden
-  next: "Se sigue en la tarea del Grupo 2"
+  next: Se sigue en la tarea del Grupo 2
 12705:
-  next: "Draft (pestañas del equipo → links con href; fila 4 del doc de enlaces). Encima de #12676 (base su rama). Fila y QA en #12376"
+  next: 'Draft (pestañas del equipo → links con href; fila 4 del doc de enlaces). Encima de #12676 (base su rama). Fila y QA en #12376'
   waiting: me
 12708:
-  next: "Rebase sobre develop (conflictos en specs visuales) y ready + asignada a Luis (2026-11-12)"
+  next: Rebase sobre develop (conflictos en specs visuales) y ready + asignada a Luis (2026-11-12)
   waiting: review
+12658:
+  next: 'Revisada y probada 2026-11-12: rebase de los .po, test de on-copied que falla, bloquear doble clic. Cuando se mergee, pedir a kirintea que #12848 haga rebase y use copy-text.'
+  status: waiting
+12999:
+  next: 'Revisada y probada 2026-11-12: mínimo 76 en una constante (título 44 + fila 32) y un test.'
+  status: waiting
+12836:
+  next: '2026-11-11: el submenú se sale por la derecha (delta-x fijo en 250), formato del commit, capturas. El issue #12320 espera a diseño.'
+  status: waiting
+12941:
+  next: Base staging, 2.20.0. El fallo de CI «Bug 9927» no era nuestro. Cuando salga a producción, ver si los bucles siguen.
+  waiting: review
+12965:
+  next: '2026-11-12: los cambios visuales son intencionados (confirmado por Luis). Comentario publicado: R1 foco de los diálogos y Escape en la confirmación de borrado, más los menores (aria-expanded + aria-pressed, z-index: 1, restos de SCSS, opciones sin memo, aria-controls, nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog* con Popover + Dialog de react-aria).'
+  status: waiting
+12847:
+  next: 'Diseño (2026-11-10): activado por defecto si no penaliza el rendimiento; los avatares de los visores en el workspace están bien. Request changes publicado el 2026-11-10: visor wasm no se actualiza, rendimiento (recalcula todas las páginas), revn, CHANGES.md. 2026-11-11: el autor subió cambios (8e998f4ad6) pero dice que aún no los ha revisado él; segunda revisión hecha y guardada sin publicar en ws1 tmp/review-12847-round2.md (R1: 2 tests nuevos fallan; M1-M4). 2026-11-12: segunda revisión publicada por la tarde, en tono suave (R1 tests que fallan, M1 cambios perdidos mientras carga, M2 tests de la suscripción, descripción). Esperamos al autor.'
+  status: waiting
+11648:
+  next: Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10).
+  status: waiting
