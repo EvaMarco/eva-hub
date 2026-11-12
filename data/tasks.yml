@@ -23,11 +23,12 @@
   added: 2026-11-11
 
 - title: "Playwright: tema oscuro por defecto en los navegadores"
-  status: doing
+  status: waiting
+  waiting: review
   note: "Desde #12480 (28-10) un perfil sin tema sigue al sistema y Chrome headless da claro, así que los e2e corrían con la UI clara. Rama eva-playwright-dark-theme (develop), commit f37c6e3dc6: colorScheme dark en playwright.config.js. Suite default completa: 436 pasan, 3 del editor de texto fallan también sin el cambio (inestables). PR #12989 abierta 2026-11-11 (develop)."
   items:
     - "Hecho: colorScheme dark en la config; ningún spec del repo cambiaba el tema (email-verification lo fija con emulateMedia y se queda)"
-    - "PR #12989 abierta; esperando revisión"
+    - "PR #12989 (develop, 2.21.0) abierta, CI verde; sin asignar, la cogerá el equipo"
   added: 2026-11-11
 
 - title: "Revisar PRs de frontend (lista del 2026-11-10)"
