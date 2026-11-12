@@ -36,10 +36,17 @@
   items:
     - "Asignadas a mí: #12671 (hecha 2026-11-11, cambios pedidos) y #12836 (hecha 2026-11-11, cambios pedidos). #12865 (MCP, Alotor) aprobada 2026-11-11 y mergeada"
     - "Fixes del equipo: #12872 probada en local 2026-11-11 (OK, Eva comenta con el test); #12794 espera al autor (comentarios de pabloalba); #12928 ya mergeada"
-    - "Externas pequeñas: #12899 cerrada; #12873 (búsqueda del swap) probada 2026-11-11, OK, CI lanzado a mano; HSL: #12629 probada 2026-11-11 (e2e temporal + unit + prueba manual), OK, pedido rebase (conflicto en workspace_colors_test.cljs) para mergear tras la revisión; #12765 cerrada como duplicada; 2026-11-12: revisar #12658 (portapapeles, asignada a Eva y niwinz; solo copy-button) y luego coordinar con #12848 (borrador de kirintea, cubre todos los sitios de #12648; que haga rebase y reutilice copy-text)"
+    - "Externas pequeñas: #12899 cerrada; #12873 (búsqueda del swap) probada 2026-11-11, OK, CI lanzado a mano; HSL: #12629 mergeada 2026-11-12; #12765 cerrada como duplicada; #12658 (portapapeles) revisada y probada 2026-11-12, cambios pedidos (rebase de los .po, test de on-copied que falla, bloquear doble clic); cuando entre, pedir a kirintea que #12848 haga rebase y use copy-text; #12999 (altura mínima del panel de páginas, #12992) revisada y probada 2026-11-12, cambios pedidos (mínimo 76 en una constante + test)"
     - "Externas con decisión de producto: #12764 (seleccionar siguiente capa), #12621 (modo compacto), #12198 (ocultar chrome del viewer, bloquea header del viewer en la épica DS), #12166 (atajo de exportar), #10170 (deep link a boards), #12921 (por qué no se puede desconectar una librería)"
     - "Grandes o de otros equipos, solo si sobra tiempo: #12720 (listas en texto v3), #12453 (panel de escala, luisddm), #12481/#12437 (tokenscript), #11959 (token-source al reimportar)"
   added: 2026-11-10
+
+- title: "#13002: el panel de páginas salta al pinchar una página oculta por el scroll"
+  status: waiting
+  waiting: review
+  links: ["#13002", "#13004"]
+  note: "Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde."
+  added: 2026-11-12
 
 - title: "Revisiones pendientes"
   status: waiting
@@ -66,7 +73,7 @@
   status: waiting
   waiting: other
   links: ["#12847", "#12837"]
-  note: "Diseño (2026-11-10): activado por defecto si no penaliza el rendimiento; los avatares de los visores en el workspace están bien. Request changes publicado el 2026-11-10: visor wasm no se actualiza, rendimiento (recalcula todas las páginas), revn, CHANGES.md. 2026-11-11: el autor subió cambios (8e998f4ad6) pero dice que aún no los ha revisado él; segunda revisión hecha y guardada sin publicar en ws1 tmp/review-12847-round2.md (R1: 2 tests nuevos fallan; M1-M4). Mirarla el 2026-11-12."
+  note: "Diseño (2026-11-10): activado por defecto si no penaliza el rendimiento; los avatares de los visores en el workspace están bien. Request changes publicado el 2026-11-10: visor wasm no se actualiza, rendimiento (recalcula todas las páginas), revn, CHANGES.md. 2026-11-11: el autor subió cambios (8e998f4ad6) pero dice que aún no los ha revisado él; segunda revisión hecha y guardada sin publicar en ws1 tmp/review-12847-round2.md (R1: 2 tests nuevos fallan; M1-M4). 2026-11-12: esperamos, porque el autor no la había revisado; si por la tarde no ha subido cambios ni comentado, publicar la segunda revisión."
   added: 2026-11-10
 
 - title: "#11648: importar un archivo deja elegir dependencias de librería que no coinciden"

@@ -6,6 +6,9 @@
 # A PR with no entry shows only what GitHub says. Entries for merged or
 # closed PRs are ignored; delete them whenever.
 
+13004:
+  next: "Closes #13002 (release blocker 2.20.0). Lista para revisión, asignada a luisddm; CI verde"
+  waiting: review
 12643:
   next: "Relates #12134. Test e2e de anidadas hecho (1703cf46b4, falta push). Solo falta que diseño decida la selección mixta"
   waiting: design
