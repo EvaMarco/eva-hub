@@ -18,6 +18,7 @@
 
 
 
+
 - title: 'Si sobra tiempo: revisar PRs grandes de otros equipos'
   status: todo
   links:
@@ -157,3 +158,10 @@
   - '#12377'
   note: 'Blend mode: diseño acepta el hover callback en select* (2026-10-29), Task 5b sigue. Destino: propuesta de :strict en combobox* enviada al equipo del DS (2026-10-29), esperando respuesta; si no, apaño en interactions con :key.'
   added: 2026-10-27
+
+- title: 'Más adelante: componente DS de diálogo anclado (popover-dialog*)'
+  status: todo
+  links:
+  - '#12965'
+  note: 'El modal* del DS solo sale centrado. Para diálogos anclados a un botón (como el de compartir del visor): Popover + Dialog de react-aria, en su propia PR con story. Resolvería el foco y Escape de serie.'
+  added: 2026-11-12
