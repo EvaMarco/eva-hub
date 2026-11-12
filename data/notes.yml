@@ -61,8 +61,8 @@
   next: "Draft (pestañas del equipo → links con href; fila 4 del doc de enlaces). Encima de #12676 (base su rama). Fila y QA en #12376"
   waiting: me
 12708:
-  next: "Draft (filas 5 y 6). Diseño: ¿Go to login (y los Go back de login/registro) con button* del DS y :to, en vez de su aspecto de botón propio? Eva lo pregunta (2026-10-29). Idea en estudio, sin confirmar: componente link* del DS con variante default/button y variantes de botón en otra prop. #12709 mergeada: button* con :to ya sale sin type, listo para usarlo si diseño confirma"
-  waiting: design
+  next: "Rebase sobre develop (conflictos en specs visuales) y ready + asignada a Luis (2026-11-12)"
+  waiting: review
 12710:
   next: "Ready y asignada a Luis 2026-10-29 (fila 8 del doc: tarjetas de plantillas → button, ahora usables con teclado). Fila y QA en #12376"
   waiting: review
