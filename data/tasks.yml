@@ -50,15 +50,16 @@
   added: 2026-11-12
 
 - title: "#12059: añadir las 4 traducciones nuevas a es.po"
-  status: todo
+  status: done
   links: ["#12059"]
   note: "La PR (export previews, autor externo) solo añade las claves en en.po (en.po:7603-7617). No se pide al contributor. Plan (2026-11-12): CI aprobado y milestone 2.21.0; cuando el CI termine, rebase + commit con las traducciones es en su rama y mergear."
   added: 2026-11-12
+  done: 2026-11-12
 
 - title: "Volver a revisar #12671 y #12059 (los autores subieron cambios)"
   status: doing
   links: ["#12671", "#12059"]
-  note: "#12671 aprobada 2026-11-12 (test + deps + keys por id). #12059: todo atendido; CI aprobado, falta que termine E2E; luego rebase + traducciones es y mergear."
+  note: "#12671 aprobada y mergeada por Luis (2026-11-12). #12059: rebase + traducciones es subidos a su rama (2026-11-12; etiquetas: desplegable «Exportación mostrada», imagen «Resultado de la exportación»); CI aprobado, esperando resultado; luego mergear. El fallo E2E anterior (dashboard.spec.js:139) no era de la PR."
   added: 2026-11-12
 
 - title: "Revisiones pendientes"
