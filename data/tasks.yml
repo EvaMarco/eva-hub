@@ -16,18 +16,6 @@
 
 
 
-- title: PRs externas que esperan decisión de producto
-  status: waiting
-  waiting: other
-  links:
-  - '#12764'
-  - '#12621'
-  - '#12198'
-  - '#12166'
-  - '#10170'
-  - '#12921'
-  note: 'No las cerramos nosotras. #12198 bloquea el header del viewer en la épica DS.'
-  added: &id001 2026-11-12
 
 - title: 'Si sobra tiempo: revisar PRs grandes de otros equipos'
   status: todo
@@ -36,7 +24,7 @@
   - '#12481'
   - '#12437'
   note: '#12453 (panel de escala, luisddm), #12481 y #12437 (tokenscript).'
-  added: *id001
+  added: &id001 2026-11-12
 
 - title: Pasar la guía del refactor a docs del repo cuando deje de cambiar
   status: todo
