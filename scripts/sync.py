@@ -20,6 +20,8 @@ CONFIG = {
     "hub_repo": os.environ.get("GITHUB_REPOSITORY", "EvaMarco/eva-hub"),
     "epic": 12375,
     "merged_days": 14,
+    # The "Registro" tab lists every PR merged since this date.
+    "log_since": "2026-09-01",
 }
 
 
@@ -123,6 +125,45 @@ def merged_prs():
     prs = [{"number": p["number"], "title": p["title"], "url": p["url"],
             "mergedAt": p["mergedAt"]}
            for p in user_prs("MERGED", 100) if p["mergedAt"] >= since[:19]]
+    return sorted(prs, key=lambda p: p["mergedAt"], reverse=True)
+
+
+LOG_QUERY = """query($login: String!, $after: String) {
+  user(login: $login) {
+    pullRequests(states: MERGED, first: 100, after: $after,
+                 orderBy: {field: CREATED_AT, direction: DESC}) {
+      pageInfo { hasNextPage endCursor }
+      nodes { number title url mergedAt createdAt repository { nameWithOwner }
+              milestone { title } }
+    }
+  }
+}"""
+
+
+def log_prs():
+    """Every PR of the user merged since log_since, newest first.
+
+    Pages by creation date and stops at the first page whose PRs were all
+    created before log_since: a PR can only be merged after it is created.
+    """
+    since = CONFIG["log_since"]
+    prs, after = [], None
+    while True:
+        args = ["api", "graphql", "-f", f"query={LOG_QUERY}", "-F", f"login={CONFIG['user']}"]
+        if after:
+            args += ["-f", f"after={after}"]
+        page = gh(*args)["data"]["user"]["pullRequests"]
+        nodes = page["nodes"]
+        prs += [{"number": p["number"], "title": p["title"], "url": p["url"],
+                 "mergedAt": p["mergedAt"],
+                 "milestone": (p["milestone"] or {}).get("title")}
+                for p in nodes
+                if p["repository"]["nameWithOwner"] == CONFIG["repo"]
+                and p["mergedAt"] >= since]
+        if (not page["pageInfo"]["hasNextPage"]
+                or all(p["createdAt"] < since for p in nodes)):
+            break
+        after = page["pageInfo"]["endCursor"]
     return sorted(prs, key=lambda p: p["mergedAt"], reverse=True)
 
 
@@ -289,6 +330,7 @@ def main():
         "config": CONFIG,
         "open_prs": open_prs(),
         "merged_prs": merged_prs(),
+        "log_prs": log_prs(),
         "issues": assigned_issues(),
         "reviews": review_prs(),
         "epic": epic(),
@@ -300,7 +342,7 @@ def main():
     print(f"wrote {out.relative_to(ROOT)}: {len(data['open_prs'])} open PRs, "
           f"{len(data['issues'])} issues, {len(data['reviews'])} to review, "
           f"{sum(len(g['prs']) for g in data['epic']['groups'])} epic PRs, "
-          f"{len(data['ideas'])} ideas")
+          f"{len(data['ideas'])} ideas, {len(data['log_prs'])} PRs in the log")
 
 
 if __name__ == "__main__":

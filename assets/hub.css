@@ -210,3 +210,15 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 .w-author { border-color: var(--k-review); color: var(--k-review); }
 .turn-me { border-color: var(--k-review); color: var(--k-review); }
 .tag.fb { border-color: var(--k-review); color: var(--k-review); background: color-mix(in srgb, var(--k-review) 12%, transparent); font-weight: 500; }
+
+/* Registro: one card per month */
+.log-intro { margin: 0 0 12px; }
+.log { list-style: none; margin: 0; padding: 0; }
+.log li { display: grid; grid-template-columns: 3.2em 4.2em 1fr; gap: 8px; align-items: baseline;
+  padding: 6px 0; border-top: 1px solid var(--line); }
+.log li:first-child { border-top: 0; }
+.log-date { font-family: var(--mono); font-size: 0.85em; color: var(--muted); }
+.log .kind { font-size: 0.75em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+.log-merged .kind { color: var(--k-merged); }
+.log-task .kind { color: var(--k-task); }
+.log-text { min-width: 0; overflow-wrap: anywhere; }

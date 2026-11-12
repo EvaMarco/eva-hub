@@ -242,10 +242,47 @@ def task_card(t, repo):
 </li>"""
 
 
+MONTHS = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
+          "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+
+
+def log_view(prs, tasks, repo):
+    """The "Registro" tab: merged PRs and finished tasks, one card per month."""
+    entries = [(p["mergedAt"][:10], "merged",
+                f'<a href="{e(p["url"])}">#{p["number"]}</a> {e(strip_emoji(p["title"]))}'
+                + (f' <span class="muted">· {e(p["milestone"])}</span>' if p.get("milestone") else ""))
+               for p in prs]
+    entries += [(str(t["done"]), "task",
+                 e(t["title"]) + (" " + " ".join(link_ref(l, repo) for l in t.get("links") or [])
+                                  if t.get("links") else ""))
+                for t in tasks if t.get("done")]
+    entries.sort(key=lambda x: x[0], reverse=True)
+    months = {}
+    for entry in entries:
+        months.setdefault(entry[0][:7], []).append(entry)
+    cards = []
+    for month, items in months.items():
+        year, num = month.split("-")
+        n_prs = sum(1 for _, kind, _ in items if kind == "merged")
+        n_tasks = len(items) - n_prs
+        rows = "".join(
+            f'<li class="log-{kind}"><span class="log-date">{date[8:10]}/{date[5:7]}</span>'
+            f'<span class="kind">{"PR" if kind == "merged" else "Tarea"}</span>'
+            f'<span class="log-text">{text}</span></li>'
+            for date, kind, text in items)
+        cards.append(
+            f'<section class="card"><h2>{MONTHS[int(num) - 1].capitalize()} {year} '
+            f'<span class="muted">· {n_prs} PRs mergeadas, {n_tasks} tareas</span></h2>'
+            f'<ul class="log">{rows}</ul></section>')
+    total = sum(1 for e_ in entries if e_[1] == "merged")
+    return total, "".join(cards) or '<section class="card"><p class="muted">—</p></section>'
+
+
 def build():
     gh = json.loads((ROOT / "data" / "cache" / "github.json").read_text())
     notes = load_yaml("notes.yml", {})
     tasks = load_yaml("tasks.yml", [])
+    log = load_yaml("log.yml", [])
     estimates = load_yaml("epic.yml", {})
     # Zones of each group and their issue estimate (scripts/zones.py).
     zones_data = load_yaml("zones.yml", {})
@@ -422,6 +459,11 @@ def build():
     group_views = "".join(group_view(g) for g in ep["groups"])
     merged_total = all_count.get("merged", 0)
 
+    log_total, log_body = log_view(gh.get("log_prs", gh["merged_prs"]),
+                                   log + [t for t in tasks if t.get("status") == "done"], repo)
+    log_body = (f'<p class="muted log-intro">Lo hecho desde el {e(cfg.get("log_since", ""))}: '
+                f'PRs mergeadas y tareas terminadas, por meses.</p>' + log_body)
+
     new_idea = f"https://github.com/{hub}/issues/new"
 
     n_doing = len(columns["doing"])
@@ -443,6 +485,7 @@ def build():
       <a role="tab" href="#tablero">Tablero <b>{n_doing}</b></a>
       <a role="tab" href="#prs">PRs <b>{len(prs)}</b></a>
       <a role="tab" href="#epica">Épica DS <b>{merged_total}</b></a>
+      <a role="tab" href="#registro">Registro <b>{log_total}</b></a>
     </nav>
   </div>
 </header>
@@ -450,6 +493,7 @@ def build():
   <div class="view" id="v-tablero">{board_body}</div>
   <div class="view" id="v-prs">{prs_body}</div>
   <div class="view" id="v-epica">{epic_body}</div>
+  <div class="view" id="v-registro">{log_body}</div>
   {group_views}
 </main>
 <script>{JS}</script>
