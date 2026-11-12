@@ -62,11 +62,11 @@
   note: "#12671 aprobada y mergeada por Luis (2026-11-12). #12059: rebase + traducciones es subidos a su rama (2026-11-12; etiquetas: desplegable «Exportación mostrada», imagen «Resultado de la exportación»); CI verde (11/11), lista para mergear. El fallo E2E anterior (dashboard.spec.js:139) no era de la PR."
   added: 2026-11-12
 
-- title: "#12965 (share link al DS, luisddm): revisión hecha, falta publicar"
+- title: "#12965 (share link al DS, luisddm): cambios pedidos"
   status: waiting
   waiting: other
   links: ["#12965", "#12966"]
-  note: "Eva pregunta a Luis por privado si los cambios visuales son intencionados (sin separadores entre páginas, columna de etiquetas más ancha). También le comenta usar el modal del DS: hoy solo centrado; para anclado, nuevo componente DS (popover-dialog* con Popover + Dialog de react-aria, en su propia PR), que resolvería R1. Luego publicar: R1 foco del diálogo y Escape en la confirmación de borrado, más los menores (aria-expanded + aria-pressed, z-index: 1, restos de SCSS, nombre accesible del campo de URL)."
+  note: "2026-11-12: los cambios visuales son intencionados (confirmado por Luis). Comentario publicado: R1 foco de los diálogos y Escape en la confirmación de borrado, más los menores (aria-expanded + aria-pressed, z-index: 1, restos de SCSS, opciones sin memo, aria-controls, nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog* con Popover + Dialog de react-aria)."
   added: 2026-11-12
 
 - title: "Revisiones pendientes"
