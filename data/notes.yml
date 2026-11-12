@@ -11,6 +11,7 @@
 
 
 
+
 13004:
   next: 'Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde.'
   waiting: review
@@ -64,8 +65,8 @@
   next: '2026-11-12: los cambios visuales son intencionados (confirmado por Luis). Comentario publicado: R1 foco de los diálogos y Escape en la confirmación de borrado, más los menores (aria-expanded + aria-pressed, z-index: 1, restos de SCSS, opciones sin memo, aria-controls, nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog* con Popover + Dialog de react-aria).'
   status: waiting
 12847:
-  next: 'La llevamos nosotras (2026-11-12, dfelinto lo pidió). Rebase + R1 tests + M1 cambios al cargar + M2 tests subidos a su fork (3aef008988), probado con SVG y wasm, comentario publicado. Falta: CI y, antes de mergear, retocar la descripción (rendimiento, enlaces anónimos)'
-  status: doing
+  next: 'La llevamos nosotras (2026-11-12). Fixes subidos a su fork (3aef008988), probado con SVG y wasm, comentario publicado; Eva avisó al equipo para revisarla. Antes de mergear: retocar la descripción (rendimiento, enlaces anónimos)'
+  status: waiting
 11648:
   next: Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10).
   status: waiting
