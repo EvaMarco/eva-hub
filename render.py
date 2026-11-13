@@ -165,9 +165,15 @@ def feedback_tag(p):
     return '<span class="tag fb">Comentarios nuevos</span>' if p.get("new_comments") else ""
 
 
-def pr_card(p):
+def closes_tag(p, repo):
+    """Issues the PR closes: their own cards are hidden from the board."""
+    refs = ", ".join(link_ref(f"#{n}", repo) for n in p.get("closes") or [])
+    return f'<span class="tag">Cierra {refs}</span>' if refs else ""
+
+
+def pr_card(p, repo):
     note = p["note"] or {}
-    meta = " ".join(x for x in (feedback_tag(p), wait_tag(note.get("waiting")),
+    meta = " ".join(x for x in (closes_tag(p, repo), feedback_tag(p), wait_tag(note.get("waiting")),
                                 ci_tag(p["ci"]) if p["ci"] != "none" else "") if x)
     return f"""
 <li class="bcard k-pr">
@@ -178,12 +184,12 @@ def pr_card(p):
 </li>"""
 
 
-def merged_card(p):
+def merged_card(p, repo):
     return f"""
 <li class="bcard k-merged">
   <div class="bcard-head"><span class="kind">Mergeada</span> <a class="ref" href="{e(p['url'])}">#{p['number']}</a></div>
   <div class="bcard-title">{e(strip_emoji(p['title']))}</div>
-  <div class="bcard-meta"><span class="muted" data-date="{e(p['mergedAt'])}"></span></div>
+  <div class="bcard-meta">{closes_tag(p, repo)} <span class="muted" data-date="{e(p['mergedAt'])}"></span></div>
 </li>"""
 
 
@@ -337,19 +343,21 @@ def build():
         col = note_column(notes.get(r["number"]), "waiting" if r.get("turn") == "author" else "todo")
         if col != "hidden":
             columns[col].append(review_card(r, notes.get(r["number"])))
+    # An issue one of my PRs closes shows on that PR's card instead.
+    covered = {n for p in gh["open_prs"] + gh["merged_prs"] for n in p.get("closes") or []}
     for i in gh["issues"]:
         col = note_column(notes.get(i["number"]))
-        if col != "hidden":
+        if col != "hidden" and i["number"] not in covered:
             columns[col].append(issue_card(i, notes.get(i["number"])))
     for p in prs:
-        columns[pr_column(p)].append(pr_card(p))
+        columns[pr_column(p)].append(pr_card(p, repo))
     for t in tasks:
         col = task_column(t)
         if col != "done" or recent(t.get("done")):
             columns[col].append(task_card(t, repo))
     for p in gh["merged_prs"]:
         if recent(p["mergedAt"]):
-            columns["done"].append(merged_card(p))
+            columns["done"].append(merged_card(p, repo))
     for i in open_ideas:
         columns["ideas"].append(idea_card(i))
     legend = "".join(f'<span class="k-{k}"><i></i>{label}</span>'

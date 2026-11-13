@@ -1,5 +1,13 @@
 [
  {
+  "number": 12993,
+  "title": "cursors: scale canvas cursors with the OS cursor size preference",
+  "url": "https://github.com/penpot/penpot/pull/12993",
+  "first_review": "2026-11-12T17:07:15Z",
+  "outcome": "pending",
+  "merged_by_me": false
+ },
+ {
   "number": 12965,
   "title": ":recycle: Refactor the share link dialog to the design system",
   "url": "https://github.com/penpot/penpot/pull/12965",

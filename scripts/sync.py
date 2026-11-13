@@ -40,6 +40,7 @@ PR_FIELDS = """
   reviews(last: 50) { nodes { state author { login } } }
   assignees(first: 10) { nodes { login } }
   labels(first: 20) { nodes { name } }
+  closingIssuesReferences(first: 10) { nodes { number } }
   commits(last: 1) { nodes { commit { committedDate statusCheckRollup { state } } } }
   comments(last: 20) { nodes { author { login __typename } createdAt } }
   latestReviews: reviews(last: 20) { nodes { author { login __typename } submittedAt state body } }
@@ -95,6 +96,11 @@ def feedback(p, user):
     return {"open_threads": threads, "new_comments": new}
 
 
+def closes(p):
+    """Issues the PR closes, as GitHub links them."""
+    return [i["number"] for i in p["closingIssuesReferences"]["nodes"]]
+
+
 def open_prs():
     rows = []
     for p in user_prs("OPEN", 100):
@@ -114,6 +120,7 @@ def open_prs():
             "ci": CI_STATES.get((rollup or {}).get("state"), "none"),
             "updated": p["updatedAt"],
             "labels": [l["name"] for l in p["labels"]["nodes"]],
+            "closes": closes(p),
             **feedback(p, CONFIG["user"]),
         })
     return sorted(rows, key=lambda r: r["number"], reverse=True)
@@ -123,7 +130,7 @@ def merged_prs():
     since = (dt.datetime.now(dt.timezone.utc)
              - dt.timedelta(days=CONFIG["merged_days"])).isoformat()
     prs = [{"number": p["number"], "title": p["title"], "url": p["url"],
-            "mergedAt": p["mergedAt"]}
+            "mergedAt": p["mergedAt"], "closes": closes(p)}
            for p in user_prs("MERGED", 100) if p["mergedAt"] >= since[:19]]
     return sorted(prs, key=lambda p: p["mergedAt"], reverse=True)
 
