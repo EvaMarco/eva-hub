@@ -19,6 +19,15 @@
 
 
 
+- title: '#12945: revisar la cobertura de tests de tokens y las PRs que vayan saliendo'
+  status: doing
+  links:
+  - '#12945'
+  - '#12795'
+  - '#13034'
+  note: 'Issue de hirunatan (2.20.0). PRs de floscr: #12691 y #12781 mergeadas; abiertas #12795 (pill click / open sections) y #13034 (aplicar tokens a shapes). Revisar las nuevas que se enlacen.'
+  added: 2026-11-13
+
 - title: '#12794: test pedido por pabloalba en files_builder_test'
   status: todo
   links:
