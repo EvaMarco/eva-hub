@@ -20,9 +20,6 @@
 13048:
   next: 'Cierra #12429: una librería rota conectada se desconecta con toast en vez de romper el archivo. Escenarios A y C ya resueltos con #12426; el indicador del dashboard espera diseño. Base staging, 2.20.0, sin revisor'
   waiting: review
-13004:
-  next: 'Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde.'
-  waiting: review
 12643:
   next: 'Relates #12134. Test e2e de anidadas hecho (1703cf46b4, falta push). Solo falta que diseño decida la selección mixta'
   waiting: design
