@@ -19,6 +19,38 @@
 
 
 
+- title: '#12794: test pedido por pabloalba en files_builder_test'
+  status: todo
+  links:
+  - '#12794'
+  note: 'Para el lunes 16. Dos boards sin nombre (o dos shapes que limpian al mismo nombre) y el segundo queda «Board-1». No está en la PR (hirunatan, aprobada). Decidir si va en su rama o en otra PR.'
+  added: 2026-11-13
+
+- title: '#10710: preguntar a niwinz por las fuentes con apóstrofe'
+  status: waiting
+  waiting: other
+  links:
+  - '#10710'
+  note: 'Lunes 16. La whitelist es suya (seguridad, 67d9567971). Opciones: solo avisar en la UI antes de subir, o permitir apóstrofes y escapar el nombre en el CSS. Si seguimos: develop + 2.21.0.'
+  added: 2026-11-13
+
+- title: '#12501: Escape cierra el menú principal junto con su submenú'
+  status: waiting
+  waiting: design
+  links:
+  - '#12501'
+  note: 'Aparcada: falta definición de diseño porque cambia el comportamiento. Causa conocida (cada dropdown-menu* escucha keyup en el documento).'
+  added: 2026-11-13
+
+- title: '#11701 cerrada como duplicado de #11702'
+  status: done
+  links:
+  - '#11701'
+  - '#11702'
+  note: 'Ya arreglada en #11715 (2.19.0).'
+  added: 2026-11-13
+  done: 2026-11-13
+
 - title: 'Si sobra tiempo: revisar PRs grandes de otros equipos'
   status: todo
   links:
@@ -56,8 +88,9 @@
   note: 'Visto al intentar reproducir #12580.'
   added: *id001
 
-- title: 'Hiring: revisar CV pendiente'
+- title: 'Hiring: revisar un par de CVs'
   status: todo
+  note: 'Para el lunes 16.'
   added: 2026-11-11
 
 - title: 'Hiring: revisar 2 CVs'

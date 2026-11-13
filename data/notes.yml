@@ -14,6 +14,12 @@
 
 
 
+13038:
+  next: 'Cierra #12672 (swatch vacío) y #12788 (falta «Resolved value» al abrir un alias). Base staging, 2.20.0, sin revisor. Probado en local; 143 e2e de tokens en verde'
+  waiting: review
+13048:
+  next: 'Cierra #12429: una librería rota conectada se desconecta con toast en vez de romper el archivo. Escenarios A y C ya resueltos con #12426; el indicador del dashboard espera diseño. Base staging, 2.20.0, sin revisor'
+  waiting: review
 13004:
   next: 'Release blocker 2.20.0. No es regresión: pasa desde 2.6.0 (también en main). PR #13004 (base staging) lista para revisión 2026-11-12, asignada a luisddm, CI verde.'
   waiting: review
@@ -64,8 +70,8 @@
   next: 'Aprobada 2026-11-12 (foco, Escape y menores resueltos; sugerencia: nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog*)'
   status: done
 12847:
-  next: 'La llevamos nosotras (2026-11-12). Fixes subidos a su fork (3aef008988), probado con SVG y wasm, comentario publicado; Eva avisó al equipo para revisarla. Antes de mergear: retocar la descripción (rendimiento, enlaces anónimos)'
-  status: waiting
+  next: 'Pasa al equipo de performance (2026-11-13); ya no es nuestra'
+  status: hidden
 11648:
   next: Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10).
   status: waiting
