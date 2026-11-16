@@ -34,18 +34,19 @@
   - '#13081'
   - '#13082'
   - '#13083'
-  note: 'Creadas el 16-11. #13081 y #13082 parecen carreras entre propagaciones de StyleDictionary; mensaje a Florian para que confirme que no pasan con tokenscript. Falta adjuntar el archivo «PR 12437 - complex» (zip) en #13081 y #13082. #13083 (plugins) va aparte.'
+  note: 'Creadas el 16-11. #13081 y #13082 parecen carreras entre propagaciones de StyleDictionary; mensaje a Florian para que confirme que no pasan con tokenscript. Zip del archivo «PR 12437 - complex» adjuntado en las dos. Se quedan abiertas: volver a probarlas cuando tokenscript sustituya a StyleDictionary, que quita la asincronía. #13083 (plugins) va aparte.'
   added: 2026-11-16
 
 - title: '#12945: revisar la cobertura de tests de tokens y las PRs que vayan saliendo'
-  status: doing
+  status: waiting
+  waiting: other
   links:
   - '#12945'
   - '#12795'
   - '#13034'
   - '#13067'
   - '#12437'
-  note: 'Issue de hirunatan (2.20.0). PRs de floscr: #12691 y #12781 mergeadas. Revisadas el 16-11: #12795 (aprobada, M1 sugerencia), #13067 (aprobada, probada en local) y #12437 (tokenscript incremental: cambios pedidos M1-M3, probada con fuzz y archivo complejo). Falta #13034.'
+  note: 'Issue de hirunatan (2.20.0). PRs de floscr: #12691 y #12781 mergeadas. Revisadas el 16-11: #12795 (aprobada; Florian añadió la sugerencia M1), #13067 (aprobada, probada en local), #12437 (tokenscript incremental: cambios pedidos M1-M3, probada con fuzz y archivo complejo) y #13034 (aprobada pidiendo dos tests, M1 y M2; sin cambios de comportamiento, 13 mutaciones y 4 sobrevivieron). Esperando a Florian y a nuevas PRs.'
   added: 2026-11-13
 
 - title: '#12794: test pedido por pabloalba en files_builder_test'
