@@ -33,7 +33,8 @@
   - '#12945'
   - '#12795'
   - '#13034'
-  note: 'Issue de hirunatan (2.20.0). PRs de floscr: #12691 y #12781 mergeadas; abiertas #12795 (pill click / open sections) y #13034 (aplicar tokens a shapes). Revisar las nuevas que se enlacen.'
+  - '#13067'
+  note: 'Issue de hirunatan (2.20.0). PRs de floscr: #12691 y #12781 mergeadas; revisadas el 16-11 #12795 (aprobada, M1 sugerencia) y #13067 (aprobada, probada en local); falta #13034. Revisar las nuevas que se enlacen.'
   added: 2026-11-13
 
 - title: '#12794: test pedido por pabloalba en files_builder_test'
