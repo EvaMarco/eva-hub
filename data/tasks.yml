@@ -27,6 +27,14 @@
   added: 2026-11-16
   done: 2026-11-16
 
+- title: 'Tests de los atajos Mover izquierda/derecha cuando se mergee #13068'
+  status: todo
+  links:
+  - '#13068'
+  - '#13070'
+  note: 'Revisada y probada en local el 16-11 (aprobada). El test solo comprueba la tecla (:command). Añadir nosotros: que :fn mueva en su dirección (stub de move-selected y permisos) y que :tooltip sea la flecha correcta, en los mapas del workspace y del editor de paths; y lo mismo para move-fast-*.'
+  added: 2026-11-16
+
 - title: 'Bugs de propagación de tokens encontrados probando #12437'
   status: waiting
   waiting: other
