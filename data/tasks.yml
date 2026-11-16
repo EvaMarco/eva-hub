@@ -49,9 +49,11 @@
   added: 2026-11-13
 
 - title: '#12794: test pedido por pabloalba en files_builder_test'
-  status: todo
+  status: done
+  done: 2026-11-16
   links:
   - '#12794'
+  - '#13086'
   note: 'Para el lunes 16. Dos boards sin nombre (o dos shapes que limpian al mismo nombre) y el segundo queda «Board-1». No está en la PR (hirunatan, aprobada). Decidir si va en su rama o en otra PR.'
   added: 2026-11-13
 
