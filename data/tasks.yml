@@ -19,6 +19,14 @@
 
 
 
+- title: 'Revisión de seguridad del plugin penpot-tokenizer'
+  status: done
+  links:
+  - 'https://github.com/DannyKalin/penpot-tokenizer'
+  note: 'Commit 24d9e04. Sin código malicioso; solo toca los tokens locales y llama a Gemini. Riesgos: clave de Gemini en localStorage (dominio github.io compartido), código servido desde Pages sin control de versión, permisos content:* quizá de más.'
+  added: 2026-11-16
+  done: 2026-11-16
+
 - title: '#12945: revisar la cobertura de tests de tokens y las PRs que vayan saliendo'
   status: doing
   links:
