@@ -45,8 +45,8 @@
   next: Esperando respuesta a mi comentario de la cursiva (2026-10-15); niwinz de vacaciones
   waiting: review
 10998:
-  next: '2026-11-10: clic perdido tras nudge y test Playwright. Sin cambios desde entonces.'
-  waiting: review
+  next: 'Pedimos cambios el 10-11 (clic perdido tras nudge, test Playwright, issue, rebase). wi-fa contestó el 17-11: cambia a distancia del puntero, añade el test, abre la issue y hace rebase. Esperando sus cambios.'
+  waiting: other
   status: waiting
 12377:
   status: hidden
