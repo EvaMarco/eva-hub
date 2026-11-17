@@ -27,6 +27,14 @@
   added: 2026-11-16
   done: 2026-11-16
 
+- title: '#13015: copias con fill vuelven al ancho del main'
+  status: done
+  done: 2026-11-17
+  links:
+  - '#13015'
+  note: 'Pasada al equipo de render wasm. Causa: update-layout-positions con render-wasm/v1 usa apply-wasm-modifiers, que solo conoce la página actual; un sync que cambia copias de otras páginas no recalcula su layout. Pasa también en 2.19 con wasm. Arreglo propuesto (usar apply-modifiers con page-id si no es la página actual) + test en git stash de ws1 (rama eva-fix-fill-copy-layout-13015) y en un .patch del scratchpad.'
+  added: 2026-11-17
+
 - title: '#10710: fuentes con apóstrofo en el nombre no se suben'
   status: doing
   links:
