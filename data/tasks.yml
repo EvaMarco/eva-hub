@@ -27,6 +27,13 @@
   added: 2026-11-16
   done: 2026-11-16
 
+- title: '#13037: el aviso de restaurar no da la fecha de un autoguardado'
+  status: doing
+  links:
+  - '#13037'
+  note: 'Release blocker, 2.20.0. Causa: modal-wrapper pasa las props sin camelCase y el modal * leía createdAt; created-at llegaba como "created-at" → nil. Prop renombrada a date + test que renderiza el modal registrado. Commit eeccc1a157 en eva-fix-restore-notice-date-13037 (staging), probado en local con dos pestañas. Falta push y PR.'
+  added: 2026-11-17
+
 - title: 'Revisar los 6 posibles bugs del MCP (30-10)'
   status: done
   done: 2026-11-17
