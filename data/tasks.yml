@@ -28,18 +28,20 @@
   done: 2026-11-16
 
 - title: 'Issue: el error de addToken en la API de plugins muestra el mapa interno'
-  status: todo
+  status: done
+  done: 2026-11-17
   links:
+  - '#13113'
   - '#12437'
   note: 'Visto probando #12437 con el MCP (17-11). addToken con referencia rota lanza «Value not valid: [{:error/code ... :error/fn #object[Function] ...}]». Ya pasa en develop: (str errors) en plugins/tokens.cljs. Debería dar un mensaje legible.'
   added: 2026-11-17
 
 - title: 'Tests de los atajos Mover izquierda/derecha cuando se mergee #13068'
-  status: todo
+  status: doing
   links:
   - '#13068'
   - '#13070'
-  note: 'Mergeada el 17-11 (cierra #13070), ya se puede hacer. El test solo comprueba la tecla (:command). Añadir nosotros: que :fn mueva en su dirección (stub de move-selected y permisos) y que :tooltip sea la flecha correcta, en los mapas del workspace y del editor de paths; y lo mismo para move-fast-*.'
+  note: 'Commit 6702032a8d en eva-test-move-shortcuts (develop): 3 tests, 50 aserciones; sin el arreglo fallan 8. Falta push y PR. Mergeada el 17-11 (cierra #13070). El test solo comprueba la tecla (:command). Añadir nosotros: que :fn mueva en su dirección (stub de move-selected y permisos) y que :tooltip sea la flecha correcta, en los mapas del workspace y del editor de paths; y lo mismo para move-fast-*.'
   added: 2026-11-16
 
 - title: 'Bugs de propagación de tokens encontrados probando #12437'
