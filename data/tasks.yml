@@ -31,7 +31,8 @@
   status: doing
   links:
   - '#10710'
-  note: 'niwinz nos deja decidir si no afecta a la seguridad. Schema admite apóstrofos (recto y tipográfico); el @font-face escapa \\ y apóstrofo; el dashboard muestra el mensaje concreto. Tests common/frontend/backend + mutación. Commit 6e717b3105 en eva-fix-font-family-apostrophe-10710 (develop, 2.21.0), probado en local con una DejaVu renombrada. Falta push y PR.'
+  - '#13122'
+  note: 'niwinz nos deja decidir si no afecta a la seguridad. Schema admite apóstrofos (recto y tipográfico); el @font-face escapa \\ y apóstrofo; el dashboard muestra el mensaje concreto. Tests common/frontend/backend + mutación. Commit 6e717b3105 en eva-fix-font-family-apostrophe-10710 (develop, 2.21.0), probado en local con una DejaVu renombrada. PR #13122 abierta (develop, 2.21.0, Main, WG adoption), sin revisor.'
   added: 2026-11-17
 
 - title: '#13037: el aviso de restaurar no da la fecha de un autoguardado'
