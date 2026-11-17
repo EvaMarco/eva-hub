@@ -27,6 +27,14 @@
   added: 2026-11-16
   done: 2026-11-16
 
+- title: 'Revisar los 6 posibles bugs del MCP (30-10)'
+  status: done
+  done: 2026-11-17
+  links:
+  - '#13116'
+  note: 'Solo el 5 era bug: exportar la página (penpot.root mide 0,01) sale vacío → #13116. 1: celda ocupada mueve las siguientes (a propósito) pero al desbordar añade columna → probar en la UI. 2: components oculta variantes a propósito (falta doc). 3: openPage hay que esperarlo. 4: pestaña en segundo plano (#10323, #11885). 6: no se reproduce.'
+  added: 2026-11-17
+
 - title: 'Issue: el error de addToken en la API de plugins muestra el mapa interno'
   status: done
   done: 2026-11-17
