@@ -24,7 +24,7 @@
   next: 'Relates #12134. Test e2e de anidadas hecho (1703cf46b4, falta push). Solo falta que diseño decida la selección mixta'
   waiting: design
 12528:
-  next: Aprobada por niwinz (2026-11-12). Él se encarga del rebase y del merge
+  next: 'Aprobada por niwinz (2026-11-12). Rebasada por él el 17-11 con un commit suyo («Address second review»); él la mergea'
   waiting: other
 12508:
   next: 'Base staging, milestone 2.20.0 (movida desde develop 2026-11-12). Diseño: esperamos'
@@ -61,7 +61,7 @@
   next: '2026-11-11: el submenú se sale por la derecha (delta-x fijo en 250), formato del commit, capturas. El issue #12320 espera a diseño.'
   status: waiting
 12941:
-  next: Base staging, 2.20.0. El fallo de CI «Bug 9927» no era nuestro. Cuando salga a producción, ver si los bucles siguen.
+  next: 'Base staging, 2.20.0. 17-11: niwinz pidió no usar «!» en funciones nuevas; renombrada (e7990316d3), push y respuesta hechos. Esperando su aprobación. Cuando salga a producción, ver si los bucles siguen.'
   waiting: review
 12965:
   next: 'Aprobada 2026-11-12 (foco, Escape y menores resueltos; sugerencia: nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog*)'
@@ -72,6 +72,15 @@
 11648:
   next: Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10).
   status: waiting
+13064:
+  next: 'History y Escape (Pranav, externo, develop, 2.21.0). Probada en local 17-11; cambios pedidos: M1 Escape no cierra tras renombrar (foco en body), M2 tests (close-menu, menú de autoguardados); S1-S3 menores. Diseño: bien que History siga abierto al seleccionar. Rama local pr-13064-on-develop.'
+  status: waiting
+12437:
+  next: 'Florian hizo M1-M6 (17-11). M2 comprobado con mutación (falla sin without-token). API de plugins probada por nosotros con el MCP: todo bien. Esperando la revisión rápida de un compañero; luego aprobar con comentario de la prueba (vale «no qa»).'
+  status: waiting
+13067:
+  next: 'Aprobada 16-11; Florian añadió las dos sugerencias (set anidado y spec propia) el 17-11. Nada pendiente.'
+  status: done
 12993:
   next: 'Cambios pedidos 2026-11-12: sin width/height todos los cursores del canvas desaparecen (probado en Ubuntu con varios tamaños de cursor); no sigue el tamaño del sistema. Asignada a Eva y niwinz'
   status: waiting

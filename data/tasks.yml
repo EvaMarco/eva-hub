@@ -27,12 +27,19 @@
   added: 2026-11-16
   done: 2026-11-16
 
+- title: 'Issue: el error de addToken en la API de plugins muestra el mapa interno'
+  status: todo
+  links:
+  - '#12437'
+  note: 'Visto probando #12437 con el MCP (17-11). addToken con referencia rota lanza «Value not valid: [{:error/code ... :error/fn #object[Function] ...}]». Ya pasa en develop: (str errors) en plugins/tokens.cljs. Debería dar un mensaje legible.'
+  added: 2026-11-17
+
 - title: 'Tests de los atajos Mover izquierda/derecha cuando se mergee #13068'
   status: todo
   links:
   - '#13068'
   - '#13070'
-  note: 'Revisada y probada en local el 16-11 (aprobada). El test solo comprueba la tecla (:command). Añadir nosotros: que :fn mueva en su dirección (stub de move-selected y permisos) y que :tooltip sea la flecha correcta, en los mapas del workspace y del editor de paths; y lo mismo para move-fast-*.'
+  note: 'Mergeada el 17-11 (cierra #13070), ya se puede hacer. El test solo comprueba la tecla (:command). Añadir nosotros: que :fn mueva en su dirección (stub de move-selected y permisos) y que :tooltip sea la flecha correcta, en los mapas del workspace y del editor de paths; y lo mismo para move-fast-*.'
   added: 2026-11-16
 
 - title: 'Bugs de propagación de tokens encontrados probando #12437'
@@ -54,7 +61,7 @@
   - '#13034'
   - '#13067'
   - '#12437'
-  note: 'Issue de hirunatan (2.20.0). PRs de floscr: #12691 y #12781 mergeadas. Revisadas el 16-11: #12795 (aprobada; Florian añadió la sugerencia M1), #13067 (aprobada, probada en local), #12437 (tokenscript incremental: cambios pedidos M1-M3, probada con fuzz y archivo complejo) y #13034 (aprobada pidiendo dos tests, M1 y M2; sin cambios de comportamiento, 13 mutaciones y 4 sobrevivieron). Esperando a Florian y a nuevas PRs.'
+  note: 'Issue de hirunatan (2.20.0). PRs de floscr: #12691, #12781, #12795 y #13034 mergeadas (#13034 el 17-11, con los dos tests pedidos). #13067 aprobada, sugerencias hechas. #12437: todo resuelto, API de plugins probada con el MCP el 17-11; falta la revisión de un compañero y aprobar. Esperando nuevas PRs.'
   added: 2026-11-13
 
 - title: '#12794: test pedido por pabloalba en files_builder_test'
