@@ -72,6 +72,9 @@
 11648:
   next: Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10).
   status: waiting
+13115:
+  next: 'Tests de los atajos de mover (#13068), develop, 2.21.0, no issue required. Sin revisor asignado (17-11).'
+  waiting: review
 13064:
   next: 'History y Escape (Pranav, externo, develop, 2.21.0). Probada en local 17-11; cambios pedidos: M1 Escape no cierra tras renombrar (foco en body), M2 tests (close-menu, menú de autoguardados); S1-S3 menores. Diseño: bien que History siga abierto al seleccionar. Rama local pr-13064-on-develop.'
   status: waiting
