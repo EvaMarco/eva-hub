@@ -32,7 +32,7 @@
   links:
   - '#10710'
   - '#13122'
-  note: 'niwinz nos deja decidir si no afecta a la seguridad. Schema admite apóstrofos (recto y tipográfico); el @font-face escapa \\ y apóstrofo; el dashboard muestra el mensaje concreto. Tests common/frontend/backend + mutación. Commit 6e717b3105 en eva-fix-font-family-apostrophe-10710 (develop, 2.21.0), probado en local con una DejaVu renombrada. PR #13122 abierta (develop, 2.21.0, Main, WG adoption), sin revisor.'
+  note: 'niwinz nos deja decidir si no afecta a la seguridad. Schema admite apóstrofos (recto y tipográfico); el @font-face escapa \\ y apóstrofo; el dashboard muestra el mensaje concreto. Tests common/frontend/backend + mutación. Commit 6e717b3105 en eva-fix-font-family-apostrophe-10710 (develop, 2.21.0), probado en local con una DejaVu renombrada. PR #13122 abierta (develop, 2.21.0, Main, WG adoption), sin revisor. Issue asignada a mí.'
   added: 2026-11-17
 
 - title: '#13037: el aviso de restaurar no da la fecha de un autoguardado'
@@ -48,7 +48,7 @@
   done: 2026-11-17
   links:
   - '#13116'
-  note: 'Solo el 5 era bug: exportar la página (penpot.root mide 0,01) sale vacío → #13116. 1: celda ocupada mueve las siguientes (a propósito) pero al desbordar añade columna → probar en la UI. 2: components oculta variantes a propósito (falta doc). 3: openPage hay que esperarlo. 4: pestaña en segundo plano (#10323, #11885). 6: no se reproduce.'
+  note: 'Solo el 5 era bug: exportar la página (penpot.root mide 0,01) sale vacío → #13116 (2.21.0). 1: celda ocupada mueve las siguientes (a propósito) pero al desbordar añade columna → probar en la UI. 2: components oculta variantes a propósito (falta doc). 3: openPage hay que esperarlo. 4: pestaña en segundo plano (#10323, #11885). 6: no se reproduce.'
   added: 2026-11-17
 
 - title: 'Issue: el error de addToken en la API de plugins muestra el mapa interno'
@@ -57,7 +57,7 @@
   links:
   - '#13113'
   - '#12437'
-  note: 'Visto probando #12437 con el MCP (17-11). addToken con referencia rota lanza «Value not valid: [{:error/code ... :error/fn #object[Function] ...}]». Ya pasa en develop: (str errors) en plugins/tokens.cljs. Debería dar un mensaje legible.'
+  note: 'Visto probando #12437 con el MCP (17-11). addToken con referencia rota lanza «Value not valid: [{:error/code ... :error/fn #object[Function] ...}]». Ya pasa en develop: (str errors) en plugins/tokens.cljs. Debería dar un mensaje legible. Issue con milestone 2.21.0.'
   added: 2026-11-17
 
 - title: 'Tests de los atajos Mover izquierda/derecha cuando se mergee #13068'
