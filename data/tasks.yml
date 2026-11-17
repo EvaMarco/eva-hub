@@ -37,11 +37,13 @@
   added: 2026-11-17
 
 - title: 'Tests de los atajos Mover izquierda/derecha cuando se mergee #13068'
-  status: doing
+  status: done
+  done: 2026-11-17
   links:
+  - '#13115'
   - '#13068'
   - '#13070'
-  note: 'Commit 6702032a8d en eva-test-move-shortcuts (develop): 3 tests, 50 aserciones; sin el arreglo fallan 8. Falta push y PR. Mergeada el 17-11 (cierra #13070). El test solo comprueba la tecla (:command). Añadir nosotros: que :fn mueva en su dirección (stub de move-selected y permisos) y que :tooltip sea la flecha correcta, en los mapas del workspace y del editor de paths; y lo mismo para move-fast-*.'
+  note: 'PR #13115 (develop, 2.21.0, no issue required): 3 tests, 50 aserciones; sin el arreglo fallan 8. Esperando revisión. Mergeada el 17-11 (cierra #13070). El test solo comprueba la tecla (:command). Añadir nosotros: que :fn mueva en su dirección (stub de move-selected y permisos) y que :tooltip sea la flecha correcta, en los mapas del workspace y del editor de paths; y lo mismo para move-fast-*.'
   added: 2026-11-16
 
 - title: 'Bugs de propagación de tokens encontrados probando #12437'
