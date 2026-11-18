@@ -1,5 +1,29 @@
 [
  {
+  "number": 13064,
+  "title": ":bug: Close History menus with Escape before the panel",
+  "url": "https://github.com/penpot/penpot/pull/13064",
+  "first_review": "2026-11-17T12:01:02Z",
+  "outcome": "pending",
+  "merged_by_me": false
+ },
+ {
+  "number": 13067,
+  "title": ":bug: Fix clicking a set in the theme editor",
+  "url": "https://github.com/penpot/penpot/pull/13067",
+  "first_review": "2026-11-16T10:13:06Z",
+  "outcome": "approved",
+  "merged_by_me": true
+ },
+ {
+  "number": 12795,
+  "title": ":recycle: Extract the token group's pill click and open sections",
+  "url": "https://github.com/penpot/penpot/pull/12795",
+  "first_review": "2026-11-16T08:53:59Z",
+  "outcome": "approved",
+  "merged_by_me": true
+ },
+ {
   "number": 12993,
   "title": "cursors: scale canvas cursors with the OS cursor size preference",
   "url": "https://github.com/penpot/penpot/pull/12993",
