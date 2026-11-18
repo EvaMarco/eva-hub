@@ -11,6 +11,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -25,9 +26,20 @@ CONFIG = {
 }
 
 
-def gh(*args):
-    out = subprocess.run(["gh", *args], check=True, capture_output=True, text=True)
-    return json.loads(out.stdout) if out.stdout.strip() else None
+def gh(*args, tries=3):
+    """Run gh and parse its JSON output.
+
+    Retries with a short wait: heavy GraphQL queries sometimes time out on
+    GitHub's side (502/504) and pass on the next try.
+    """
+    for attempt in range(1, tries + 1):
+        out = subprocess.run(["gh", *args], capture_output=True, text=True)
+        if out.returncode == 0:
+            return json.loads(out.stdout) if out.stdout.strip() else None
+        print(f"gh failed (try {attempt}/{tries}): {out.stderr.strip()[:500]}", file=sys.stderr)
+        if attempt < tries:
+            time.sleep(10 * attempt)
+    out.check_returncode()
 
 
 # CI rollup state of a PR's last commit → ok | fail | running | none
@@ -244,7 +256,7 @@ def save_reviewed():
 
 REVIEW_QUERY = """query($owner: String!, $name: String!, $after: String) {
   repository(owner: $owner, name: $name) {
-    pullRequests(states: OPEN, first: 100, after: $after) {
+    pullRequests(states: OPEN, first: 50, after: $after) {
       pageInfo { hasNextPage endCursor }
       nodes {
         number title url isDraft updatedAt mergeable
