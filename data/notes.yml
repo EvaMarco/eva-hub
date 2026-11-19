@@ -105,3 +105,6 @@
 12995:
   next: 'pabloalba (auto-grow en copias, staging 2.20.0). Probada en local (WebGL) y aprobada 19-11. F1: con WebGL una fuente que falla puede guardar tamaños de reserva sin deshacer (aquí o en otra PR); F2 coste al salir de Inspect; F3 descripción.'
   status: done
+13057:
+  next: 'mgr-punith (externo; nombres largos en el modal de librerías, #12812). Código bien (además arregla la clase -legacy de #10293). Cambios pedidos 19-11: rebase sobre develop y commit/título con :bug:.'
+  status: waiting
