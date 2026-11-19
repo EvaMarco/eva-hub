@@ -14,24 +14,12 @@
 
 
 
-13120:
-  next: 'Cierra #13037 (release blocker): el aviso de restaurar no daba la fecha de un autoguardado. Prop created-at → date + test del modal. Base staging, 2.20.0, sin revisor'
-  waiting: review
 13122:
   next: 'Cierra #10710 (issue de mangledmonkey, asignada a mí): admite apóstrofos en el nombre de familia y escapa el @font-face. niwinz nos dejó decidir. Base develop, 2.21.0, sin revisor'
-  waiting: review
-13038:
-  next: 'Cierra #12672 (swatch vacío) y #12788 (falta «Resolved value» al abrir un alias). Base staging, 2.20.0, sin revisor. Probado en local; 143 e2e de tokens en verde'
-  waiting: review
-13048:
-  next: 'Cierra #12429: una librería rota conectada se desconecta con toast en vez de romper el archivo. Escenarios A y C ya resueltos con #12426; el indicador del dashboard espera diseño. Base staging, 2.20.0, sin revisor'
   waiting: review
 12643:
   next: 'Relates #12134. Test e2e de anidadas hecho (1703cf46b4, falta push). Solo falta que diseño decida la selección mixta'
   waiting: design
-12528:
-  next: 'Aprobada por niwinz (2026-11-12). Rebasada por él el 17-11 con un commit suyo («Address second review»); él la mergea'
-  waiting: other
 12508:
   next: 'Base staging, milestone 2.20.0 (movida desde develop 2026-11-12). Diseño: esperamos'
   waiting: design
@@ -67,7 +55,7 @@
   next: '2026-11-11: el submenú se sale por la derecha (delta-x fijo en 250), formato del commit, capturas. El issue #12320 espera a diseño.'
   status: waiting
 12941:
-  next: 'Base staging, 2.20.0. 17-11: niwinz pidió no usar «!» en funciones nuevas; renombrada (e7990316d3), push y respuesta hechos. Esperando su aprobación. Cuando salga a producción, ver si los bucles siguen.'
+  next: 'Base staging, 2.20.0. Rebasada 19-11, CI en verde. niwinz solo ha comentado: falta su aprobación. Cuando salga a producción, ver si los bucles siguen.'
   waiting: review
 12965:
   next: 'Aprobada 2026-11-12 (foco, Escape y menores resueltos; sugerencia: nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog*)'
@@ -78,9 +66,6 @@
 11648:
   next: Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10).
   status: waiting
-13115:
-  next: 'Tests de los atajos de mover (#13068), develop, 2.21.0, no issue required. Sin revisor asignado (17-11).'
-  waiting: review
 13064:
   next: 'History y Escape (Pranav, externo, develop, 2.21.0). Probada en local 17-11; cambios pedidos: M1 Escape no cierra tras renombrar (foco en body), M2 tests (close-menu, menú de autoguardados); S1-S3 menores. Diseño: bien que History siga abierto al seleccionar. Rama local pr-13064-on-develop.'
   status: waiting
@@ -92,4 +77,25 @@
   status: done
 12993:
   next: 'Cambios pedidos 2026-11-12: sin width/height todos los cursores del canvas desaparecen (probado en Ubuntu con varios tamaños de cursor); no sigue el tamaño del sistema. Asignada a Eva y niwinz'
+  status: waiting
+13086:
+  next: 'Aprobada por pabloalba (18-11; texto de la PR cambiado y respuesta hecha). Rebasada 19-11, CI en verde. Lista para mergear.'
+  waiting: other
+13138:
+  next: 'Cierra #12474: la página nueva se abre, se ve en la lista y empieza a renombrarse; despliega Pages si está plegado. Base develop, 2.21.0, CI en verde, sin revisor (preguntar antes de asignar).'
+  waiting: review
+13145:
+  next: 'Draft, cierra #12429 (rehace #13048, revertida): las librerías compartidas rotas siguen conectadas y salen con 0 en lista, modal, sidebar y publicar. Rebasada 19-11 sobre #12528 (capturas ampliadas a Throwable); falta force-push. Pair con niwinz 19-11.'
+  waiting: me
+11892:
+  next: 'niwinz, staging. Cambios pedidos 18-11: rebase (SSO), GET sin Origin, exports, MCP, tests, docs. Esperando su respuesta.'
+  status: waiting
+13147:
+  next: 'Alotor: plugins internos bloqueados. Mi duda del dominio era errónea (el plugin vive en la app y manage:delete solo manda a la papelera). Eva le avisó del milestone. Sin revisión publicada.'
+  status: waiting
+13087:
+  next: 'luisddm: edición en lote de colores. Probada en local y aprobada 18-11 (M1 y S1 menores).'
+  status: done
+13069:
+  next: 'luisddm: contenido ajustado bajo las reglas. Probada en local; cambios pedidos 18-11: M1 al abrir el fichero sigue bajo la regla (initialize-viewport), M4 tests.'
   status: waiting

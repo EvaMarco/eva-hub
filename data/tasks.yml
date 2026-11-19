@@ -19,6 +19,23 @@
 
 
 
+- title: 'Revisar PRs de compañeros sin asignar'
+  status: doing
+  note: 'Hechas 18-11: #11892, #13147, #13087, #13069.'
+  items:
+  - '#12675 y #12667 (alvorithm)'
+  - '#12995 (pabloalba)'
+  - '#13055 y #13135 (niwinz, backend)'
+  - '#12479 (belen-albeza)'
+  - '#11396 y #11410 (niwinz, agosto)'
+  added: 2026-11-18
+
+- title: 'Arreglar el sync del hub (fallo del workflow)'
+  status: done
+  note: 'gh() reintenta 3 veces y la consulta de revisiones pide 50 por página (3eec01c, 05d7cf0).'
+  added: 2026-11-18
+  done: 2026-11-18
+
 - title: 'Revisión de seguridad del plugin penpot-tokenizer'
   status: done
   links:

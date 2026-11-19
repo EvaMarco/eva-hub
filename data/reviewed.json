@@ -1,5 +1,37 @@
 [
  {
+  "number": 13069,
+  "title": ":bug: Keep fitted content clear of the rulers",
+  "url": "https://github.com/penpot/penpot/pull/13069",
+  "first_review": "2026-11-18T15:52:53Z",
+  "outcome": "pending",
+  "merged_by_me": false
+ },
+ {
+  "number": 13087,
+  "title": ":bug: Fix batch edit of colors in the selected colors menu",
+  "url": "https://github.com/penpot/penpot/pull/13087",
+  "first_review": "2026-11-18T15:39:20Z",
+  "outcome": "approved",
+  "merged_by_me": false
+ },
+ {
+  "number": 13147,
+  "title": ":bug: Fix problem with Penpot plugins being blocked",
+  "url": "https://github.com/penpot/penpot/pull/13147",
+  "first_review": "2026-11-18T15:22:23Z",
+  "outcome": "approved",
+  "merged_by_me": false
+ },
+ {
+  "number": 11892,
+  "title": ":sparkles: Honor trusted alternate origins for backend links and OIDC",
+  "url": "https://github.com/penpot/penpot/pull/11892",
+  "first_review": "2026-11-18T13:04:50Z",
+  "outcome": "pending",
+  "merged_by_me": false
+ },
+ {
   "number": 13064,
   "title": ":bug: Close History menus with Escape before the panel",
   "url": "https://github.com/penpot/penpot/pull/13064",
