@@ -96,3 +96,9 @@
 13069:
   next: 'luisddm: contenido ajustado bajo las reglas. Probada en local; cambios pedidos 18-11: M1 al abrir el fichero sigue bajo la regla (initialize-viewport), M4 tests.'
   status: waiting
+12675:
+  next: 'alvorithm (validación add-page sin id). Revisada 19-11: aprobar con F1-F3 menores (test en common, casos soft no prueban nada, milestone/squash). Eva preguntó por qué no tiene milestone y sigue en backlog; esperar su respuesta antes de publicar.'
+  status: waiting
+12667:
+  next: 'alvorithm (safe.directory). Sin milestone y en backlog; Eva preguntó si está lista. Esperar antes de revisar.'
+  status: waiting
