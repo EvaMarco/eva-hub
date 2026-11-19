@@ -21,11 +21,12 @@
 
 - title: 'Release blockers del botón Invite people desactivado (#13171, #13173)'
   status: waiting
-  waiting: design
+  waiting: review
   links:
+  - '#13193'
   - '#13171'
   - '#13173'
-  note: 'Rama eva-fix-disabled-invite-button (staging, 2.20.0). #13173 en commit 91b3ee01b7, sin push. #13171: el primario desactivado en tema claro no se lee (fallo del DS, _buttons.scss); Eva lo habla con diseño. Con el color, commit y una sola PR.'
+  note: 'PR #13193 a staging (2.20.0): centrado + texto del primario desactivado en tema claro con --color-accent-tertiary (decisión de diseño). Falta subir la imagen.'
   added: 2026-11-19
 
 - title: 'Recordar: ¿niwinz cierra #10587 y #10601? (semana del 23-11)'
