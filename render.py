@@ -316,6 +316,65 @@ def log_view(prs, tasks, repo):
     return total, "".join(cards) or '<section class="card"><p class="muted">—</p></section>'
 
 
+CLOSE_DAYS = 30
+VERDICT = {"APPROVED": "Aprobada", "CHANGES_REQUESTED": "Cambios pedidos",
+           "COMMENTED": "Comentada", None: "Sin revisar"}
+
+
+def days_since(iso, now):
+    if not iso:
+        return None
+    return (now - dt.datetime.fromisoformat(iso.replace("Z", "+00:00"))).days
+
+
+def review_status(r, now):
+    """What a PR the user reviews needs: (sort key, status label, css, days)."""
+    turn = r.get("turn", "first")
+    if r.get("verdict") == "APPROVED":
+        if turn == "me":
+            return (2, "Novedades tras aprobar", "rv-me", days_since(r.get("last_author"), now))
+        return (4, "Aprobada, falta mergear", "rv-wait", days_since(r.get("last_mine"), now))
+    if turn == "author":
+        days = days_since(r.get("last_mine"), now)
+        stale = (r.get("verdict") == "CHANGES_REQUESTED"
+                 and (days_since(r.get("changes_at"), now) or 0) >= CLOSE_DAYS)
+        if stale:
+            return (0, f"Sin respuesta en más de {CLOSE_DAYS} días: cerrar", "rv-close", days)
+        if r.get("verdict") == "CHANGES_REQUESTED" and days >= CLOSE_DAYS - 7:
+            return (2, "Sin respuesta, cerca del mes", "rv-warn", days)
+        return (3, "Esperando al autor", "rv-wait", days)
+    if turn == "me":
+        return (1, "Ha contestado: te toca", "rv-me", days_since(r.get("last_author"), now))
+    return (1, "Sin revisar todavía", "rv-me", days_since(r.get("updated"), now))
+
+
+def review_view(reviews, notes, now):
+    """The "Revisiones" tab: PRs assigned to the user for review, whether the
+    author answered, and how long they have waited."""
+    rows = sorted(((review_status(r, now), r) for r in reviews),
+                  key=lambda x: (x[0][0], -(x[0][3] or 0)))
+    body = "".join(f"""
+<tr>
+  <td class="num"><a href="{e(r['url'])}">#{r['number']}</a></td>
+  <td class="title">{e(strip_emoji(r['title']))}<br><span class="muted">{e(r['author'] or '?')}</span></td>
+  <td>{e(VERDICT.get(r.get('verdict'), '—'))}</td>
+  <td><span class="tag {css}">{e(label)}</span></td>
+  <td class="narrow">{'—' if days is None else ('hoy' if days == 0 else f'{days} d')}</td>
+  <td class="next">{e((notes.get(r['number']) or notes.get(str(r['number'])) or {}).get('next', ''))}</td>
+</tr>""" for (_, label, css, days), r in rows)
+    n_close = sum(1 for (k, *_), _ in rows if k == 0)
+    n_me = sum(1 for (k, *_), _ in rows if k == 1)
+    return n_me + n_close, f"""
+<p class="muted log-intro">PRs de otras personas asignadas a ti o con tu revisión pedida.
+Si pediste cambios y el autor no ha hecho nada en {CLOSE_DAYS} días, se cierra.</p>
+<section class="card"><h2>Revisiones ({len(rows)}) · te tocan {n_me} · para cerrar {n_close}</h2>
+<div class="tablebox"><table class="reviews">
+  <thead><tr><th>PR</th><th>Título / autor</th><th>Mi revisión</th><th>Estado</th>
+  <th class="narrow">Esperando</th><th>Nota</th></tr></thead>
+  <tbody>{body}</tbody>
+</table></div></section>"""
+
+
 def build():
     gh = json.loads((ROOT / "data" / "cache" / "github.json").read_text())
     notes = load_yaml("notes.yml", {})
@@ -506,6 +565,8 @@ def build():
     log_body = (f'<p class="muted log-intro">Lo hecho desde el {e(cfg.get("log_since", ""))}: '
                 f'PRs mergeadas y tareas terminadas, por meses.</p>' + log_body)
 
+    rv_count, reviews_body = review_view(gh["reviews"], notes, dt.datetime.now(dt.timezone.utc))
+
     new_idea = f"https://github.com/{hub}/issues/new"
 
     n_doing = len(columns["doing"])
@@ -526,6 +587,7 @@ def build():
     <nav role="tablist">
       <a role="tab" href="#tablero">Tablero <b>{n_doing}</b></a>
       <a role="tab" href="#prs">PRs <b>{len(prs)}</b></a>
+      <a role="tab" href="#revisiones">Revisiones <b>{rv_count}</b></a>
       <a role="tab" href="#epica">Épica DS <b>{merged_total}</b></a>
       <a role="tab" href="#registro">Registro <b>{log_total}</b></a>
     </nav>
@@ -534,6 +596,7 @@ def build():
 <main>
   <div class="view" id="v-tablero">{board_body}</div>
   <div class="view" id="v-prs">{prs_body}</div>
+  <div class="view" id="v-revisiones">{reviews_body}</div>
   <div class="view" id="v-epica">{epic_body}</div>
   <div class="view" id="v-registro">{log_body}</div>
   {group_views}

@@ -265,7 +265,7 @@ REVIEW_QUERY = """query($owner: String!, $name: String!, $after: String) {
         reviewRequests(first: 10) { nodes { requestedReviewer { ... on User { login } } } }
         commits(last: 1) { nodes { commit { committedDate statusCheckRollup { state } } } }
         comments(last: 20) { nodes { author { login } createdAt } }
-        reviews(last: 20) { nodes { author { login } submittedAt } }
+        reviews(last: 20) { nodes { author { login } submittedAt state } }
       }
     }
   }
@@ -291,6 +291,33 @@ def review_turn(p, user, author):
     if not mine:
         return "first"
     return "author" if max(mine) > max(theirs, default="") else "me"
+
+
+def review_activity(p, user, author):
+    """Dates of the user's and the author's last activity on a PR, and the
+    state of the user's last review that approved or asked for changes.
+
+    `changes_at` is when the user last asked for changes, while that is
+    still their verdict; the close-after-a-month policy counts from it.
+    """
+    mine, theirs, verdict, changes_at = [], [], None, None
+    for c in p["comments"]["nodes"]:
+        who = (c["author"] or {}).get("login")
+        (mine if who == user else theirs if who == author else []).append(c["createdAt"])
+    for r in p["reviews"]["nodes"]:
+        who = (r["author"] or {}).get("login")
+        if not r["submittedAt"]:
+            continue
+        (mine if who == user else theirs if who == author else []).append(r["submittedAt"])
+        if who == user and r["state"] in ("APPROVED", "CHANGES_REQUESTED"):
+            verdict = r["state"]
+            changes_at = r["submittedAt"] if r["state"] == "CHANGES_REQUESTED" else None
+    if p["commits"]["nodes"]:
+        theirs.append(p["commits"]["nodes"][0]["commit"]["committedDate"])
+    if verdict is None and mine:
+        verdict = "COMMENTED"
+    return {"last_mine": max(mine, default=None), "last_author": max(theirs, default=None),
+            "verdict": verdict, "changes_at": changes_at}
 
 
 def review_prs():
@@ -319,6 +346,7 @@ def review_prs():
                 "requested": user in requested, "updated": p["updatedAt"],
                 "turn": review_turn(p, user, author),
                 "ci": CI_STATES.get((rollup or {}).get("state"), "none"),
+                **review_activity(p, user, author),
             })
         if not page["pageInfo"]["hasNextPage"]:
             break

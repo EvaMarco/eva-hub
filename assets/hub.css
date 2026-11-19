@@ -235,3 +235,10 @@ ol.groups .gname .num { font-family: var(--mono); font-size: 12px; font-weight: 
 .reviewed td, .reviewed tfoot th { text-align: right; font-variant-numeric: tabular-nums; }
 .reviewed thead th:not(:first-child) { text-align: right; }
 .reviewed tfoot th, .reviewed tfoot td { font-weight: 600; border-top: 2px solid var(--line); }
+
+/* Revisiones tab */
+.rv-me { border-color: var(--k-review); color: var(--k-review); }
+.rv-wait { color: var(--muted); }
+.rv-warn { border-color: var(--warn); color: var(--warn); }
+.rv-close { border-color: var(--bad); color: var(--bad); font-weight: 600; }
+table.reviews td.title .muted { font-size: 12px; }
