@@ -33,8 +33,7 @@
   next: Esperando respuesta a mi comentario de la cursiva (2026-10-15); niwinz de vacaciones
   waiting: review
 10998:
-  next: 'Pedimos cambios el 10-11 (clic perdido tras nudge, test Playwright, issue, rebase). wi-fa contestó el 17-11: cambia a distancia del puntero, añade el test, abre la issue y hace rebase. Esperando sus cambios.'
-  waiting: other
+  next: 'wi-fa. Pedimos cambios el 10-11 (clic perdido tras nudge, test Playwright, issue, rebase). 19-11: dice que sigue trabajando, pero aún no ha hecho los cambios. Esperando.'
   status: waiting
 12377:
   status: hidden
@@ -70,7 +69,7 @@
   next: 'History y Escape (Pranav, externo, develop, 2.21.0). Probada en local 17-11; cambios pedidos: M1 Escape no cierra tras renombrar (foco en body), M2 tests (close-menu, menú de autoguardados); S1-S3 menores. Diseño: bien que History siga abierto al seleccionar. Rama local pr-13064-on-develop.'
   status: waiting
 12437:
-  next: 'Florian hizo M1-M6 (17-11). M2 comprobado con mutación (falla sin without-token). API de plugins probada por nosotros con el MCP: todo bien. Esperando la revisión rápida de un compañero; luego aprobar con comentario de la prueba (vale «no qa»).'
+  next: 'floscr. Eva pidió a Andrés una revisión cruzada (19-11); esperando su revisión antes de aprobar.'
   status: waiting
 13067:
   next: 'Aprobada 16-11; Florian añadió las dos sugerencias (set anidado y spec propia) el 17-11. Nada pendiente.'
