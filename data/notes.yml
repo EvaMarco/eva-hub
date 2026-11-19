@@ -108,3 +108,9 @@
 13057:
   next: 'mgr-punith (externo; nombres largos en el modal de librerías, #12812). Código bien (además arregla la clase -legacy de #10293). Cambios pedidos 19-11: rebase sobre develop y commit/título con :bug:.'
   status: waiting
+13157:
+  next: 'OowhitecatoO (externo; idioma chino del navegador, #13161). Aprobada 19-11, asignada a Eva, CI aprobado.'
+  status: done
+13158:
+  next: 'OowhitecatoO (externo; locales de fecha, #13162). Probada en local y aprobada 19-11, asignada a Eva, CI aprobado; milestone de la issue puesto.'
+  status: done
