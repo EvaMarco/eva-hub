@@ -259,7 +259,7 @@ REVIEW_QUERY = """query($owner: String!, $name: String!, $after: String) {
     pullRequests(states: OPEN, first: 50, after: $after) {
       pageInfo { hasNextPage endCursor }
       nodes {
-        number title url isDraft updatedAt mergeable
+        number title url isDraft updatedAt mergeable headRefOid
         author { login }
         assignees(first: 10) { nodes { login } }
         reviewRequests(first: 10) { nodes { requestedReviewer { ... on User { login } } } }
@@ -320,6 +320,13 @@ def review_activity(p, user, author):
             "verdict": verdict, "changes_at": changes_at}
 
 
+def ci_waiting_approval(sha):
+    """Workflow runs of a commit that wait for a maintainer to approve them,
+    as happens on every push of a first-time contributor."""
+    data = gh("api", f"repos/{CONFIG['repo']}/actions/runs?head_sha={sha}&status=action_required&per_page=50")
+    return (data or {}).get("total_count", 0)
+
+
 def review_prs():
     """Open PRs by someone else where the user is an assignee or a requested reviewer.
 
@@ -347,6 +354,7 @@ def review_prs():
                 "turn": review_turn(p, user, author),
                 "ci": CI_STATES.get((rollup or {}).get("state"), "none"),
                 **review_activity(p, user, author),
+                "ci_approval": ci_waiting_approval(p["headRefOid"]),
             })
         if not page["pageInfo"]["hasNextPage"]:
             break

@@ -330,6 +330,8 @@ def days_since(iso, now):
 def review_status(r, now):
     """What a PR the user reviews needs: (sort key, status label, css, days)."""
     turn = r.get("turn", "first")
+    if r.get("ci_approval"):
+        return (0, "CI esperando tu aprobación", "rv-warn", days_since(r.get("updated"), now))
     if r.get("verdict") == "APPROVED":
         if turn == "me":
             return (2, "Novedades tras aprobar", "rv-me", days_since(r.get("last_author"), now))
@@ -362,12 +364,14 @@ def review_view(reviews, notes, now):
   <td class="narrow">{'—' if days is None else ('hoy' if days == 0 else f'{days} d')}</td>
   <td class="next">{e((notes.get(r['number']) or notes.get(str(r['number'])) or {}).get('next', ''))}</td>
 </tr>""" for (_, label, css, days), r in rows)
-    n_close = sum(1 for (k, *_), _ in rows if k == 0)
+    n_close = sum(1 for (k, _, css, _), _ in rows if k == 0 and css == "rv-close")
+    n_ci = sum(1 for (k, _, css, _), _ in rows if k == 0 and css == "rv-warn")
     n_me = sum(1 for (k, *_), _ in rows if k == 1)
-    return n_me + n_close, f"""
+    return n_me + n_close + n_ci, f"""
 <p class="muted log-intro">PRs de otras personas asignadas a ti o con tu revisión pedida.
-Si pediste cambios y el autor no ha hecho nada en {CLOSE_DAYS} días, se cierra.</p>
-<section class="card"><h2>Revisiones ({len(rows)}) · te tocan {n_me} · para cerrar {n_close}</h2>
+Si pediste cambios y el autor no ha hecho nada en {CLOSE_DAYS} días, se cierra.
+El CI de quien contribuye por primera vez espera aprobación en cada push.</p>
+<section class="card"><h2>Revisiones ({len(rows)}) · te tocan {n_me} · CI por aprobar {n_ci} · para cerrar {n_close}</h2>
 <div class="tablebox"><table class="reviews">
   <thead><tr><th>PR</th><th>Título / autor</th><th>Mi revisión</th><th>Estado</th>
   <th class="narrow">Esperando</th><th>Nota</th></tr></thead>
