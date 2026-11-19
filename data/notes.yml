@@ -102,3 +102,6 @@
 12667:
   next: 'alvorithm (safe.directory). Sin milestone y en backlog; Eva preguntó si está lista. Esperar antes de revisar.'
   status: waiting
+12995:
+  next: 'pabloalba (auto-grow en copias, staging 2.20.0). Probada en local (WebGL) y aprobada 19-11. F1: con WebGL una fuente que falla puede guardar tamaños de reserva sin deshacer (aquí o en otra PR); F2 coste al salir de Inspect; F3 descripción.'
+  status: done
