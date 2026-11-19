@@ -1,5 +1,61 @@
 [
  {
+  "number": 12166,
+  "title": ":sparkles: Add a shortcut to export the selected object",
+  "url": "https://github.com/penpot/penpot/pull/12166",
+  "first_review": "2026-11-19T12:12:40Z",
+  "outcome": "pending",
+  "merged_by_me": false
+ },
+ {
+  "number": 12921,
+  "title": ":sparkles: Explain why a library cannot be disconnected in its modal",
+  "url": "https://github.com/penpot/penpot/pull/12921",
+  "first_review": "2026-11-19T12:12:38Z",
+  "outcome": "pending",
+  "merged_by_me": false
+ },
+ {
+  "number": 10170,
+  "title": ":sparkles: Copy stable deep link to selected boards from context menu",
+  "url": "https://github.com/penpot/penpot/pull/10170",
+  "first_review": "2026-11-19T10:23:25Z",
+  "outcome": "approved",
+  "merged_by_me": false
+ },
+ {
+  "number": 13158,
+  "title": ":bug: Fix missing date locales and stale dates after switching language",
+  "url": "https://github.com/penpot/penpot/pull/13158",
+  "first_review": "2026-11-19T09:48:33Z",
+  "outcome": "approved",
+  "merged_by_me": false
+ },
+ {
+  "number": 13157,
+  "title": ":bug: Fix Chinese browser language autodetection",
+  "url": "https://github.com/penpot/penpot/pull/13157",
+  "first_review": "2026-11-19T09:38:13Z",
+  "outcome": "approved",
+  "merged_by_me": false
+ },
+ {
+  "number": 13057,
+  "title": ":bug: Wrap long connected library names",
+  "url": "https://github.com/penpot/penpot/pull/13057",
+  "first_review": "2026-11-19T09:33:05Z",
+  "outcome": "pending",
+  "merged_by_me": false
+ },
+ {
+  "number": 12995,
+  "title": ":bug: Keep auto-grow text boxes sizing on component copies",
+  "url": "https://github.com/penpot/penpot/pull/12995",
+  "first_review": "2026-11-19T09:16:17Z",
+  "outcome": "approved",
+  "merged_by_me": false
+ },
+ {
   "number": 13069,
   "title": ":bug: Keep fitted content clear of the rulers",
   "url": "https://github.com/penpot/penpot/pull/13069",

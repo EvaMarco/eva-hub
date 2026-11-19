@@ -37,6 +37,17 @@
   - '#11396 y #11410 (niwinz, agosto)'
   added: 2026-11-18
 
+- title: 'Revisar PRs externas asignadas a niwinz'
+  status: doing
+  note: '19-11: aprobadas #13157, #13158, #10170; cambios pedidos #13057, #12921, #12166; cerradas #11185 (duplicado de #11624) y #12621 (sin issue). Todas asignadas a Eva, milestone 2.21.0, etiquetas community contribution + WG adoption.'
+  items:
+  - '#12198: grabar vídeo para diseño y confirmar icono (rama local tmp-test-12198)'
+  - '#12514 (girafic, asa del modal de plugins; enseñar captura a diseño)'
+  - '#12525 (J21NIANYI, exportar desde plugins)'
+  - '#12764 (rokbot, orden de capa siguiente; confirmar con producto)'
+  - 'Backend/seguridad para niwinz: #9292, #11619, #12626, #12844, #12926, #12268'
+  added: 2026-11-19
+
 - title: 'Arreglar el sync del hub (fallo del workflow)'
   status: done
   note: 'gh() reintenta 3 veces y la consulta de revisiones pide 50 por página (3eec01c, 05d7cf0).'
