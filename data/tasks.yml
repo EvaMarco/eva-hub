@@ -19,6 +19,15 @@
 
 
 
+- title: 'Recordar: ¿niwinz cierra #10587 y #10601? (semana del 23-11)'
+  status: waiting
+  waiting: other
+  links:
+  - '#10587'
+  - '#10601'
+  note: 'Las dos sobran por #11624. Comentario dejado en ambas el 19-11; #11185 ya cerrada como duplicado. Si no contesta, preguntarle en persona.'
+  added: 2026-11-19
+
 - title: 'Revisar PRs de compañeros sin asignar'
   status: doing
   note: 'Hechas: #11892, #13147, #13087, #13069 (18-11); #12995 (19-11). #12675 y #12667 esperan al autor.'
