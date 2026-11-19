@@ -117,3 +117,6 @@
 10170:
   next: 'filipsajdak (externo; enlace estable a tableros, #4584). Probada en local sobre develop y aprobada 19-11, asignada a Eva, milestone 2.21.0. Pedido rebase (744 commits atrás, CI de octubre); aprobar CI cuando lo suba.'
   status: waiting
+11185:
+  next: '0xTHAC0 (externo). Cerrada 19-11 como duplicado de #11624 (ya quitó las llamadas por fichero); Rejected en Main. Pendiente: niwinz decide #10587 y #10601 (sobran por lo mismo).'
+  status: hidden
