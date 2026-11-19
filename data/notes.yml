@@ -124,8 +124,9 @@
   next: 'pvrt (externo; modo compacto). Cerrada 19-11 y Rejected: sin issue ni imágenes; que siga el procedimiento (issue + diseño).'
   status: hidden
 12921:
-  next: 'filipsajdak (externo; por qué no se puede desconectar una librería). Cambios pedidos 19-11: tooltip "Connected through X. To remove it, disconnect Y." con nombres en foreground primary.'
+  next: 'filipsajdak (externo; por qué no se puede desconectar una librería). Hizo los cambios de diseño; mergeamos develop (conflicto en runner.cljs), probada en local y aprobada 19-11, CI aprobado. Mergear cuando esté en verde.'
   status: waiting
+  waiting: ci
 12166:
   next: 'makesomethingshit (externo; atajo exportar). Cambios pedidos 19-11: Ctrl+E choca con Chromium, otro atajo.'
   status: waiting

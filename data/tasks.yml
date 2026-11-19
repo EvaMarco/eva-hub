@@ -49,7 +49,7 @@
 
 - title: 'Revisar PRs externas asignadas a niwinz'
   status: doing
-  note: '19-11: mergeadas #13157, #13158, #13057; #10170 re-aprobada tras commit nuevo (CI corriendo); cambios pedidos #12921, #12166; cerradas #11185 (duplicado de #11624) y #12621 (sin issue). Todas asignadas a Eva, milestone 2.21.0, etiquetas community contribution + WG adoption.'
+  note: '19-11: mergeadas #13157, #13158, #13057; #10170 re-aprobada tras commit nuevo (CI corriendo); #12921 aprobada tras merge de develop (CI corriendo); cambios pedidos #12166; cerradas #11185 (duplicado de #11624) y #12621 (sin issue). Todas asignadas a Eva, milestone 2.21.0, etiquetas community contribution + WG adoption.'
   items:
   - '#12198: grabar vídeo para diseño y confirmar icono (rama local tmp-test-12198)'
   - '#12514 (girafic, asa del modal de plugins; enseñar captura a diseño)'
