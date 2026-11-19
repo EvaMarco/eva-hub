@@ -78,11 +78,8 @@
 12993:
   next: 'Cambios pedidos 2026-11-12: sin width/height todos los cursores del canvas desaparecen (probado en Ubuntu con varios tamaños de cursor); no sigue el tamaño del sistema. Asignada a Eva y niwinz'
   status: waiting
-13086:
-  next: 'Aprobada por pabloalba (18-11; texto de la PR cambiado y respuesta hecha). Rebasada 19-11, CI en verde. Lista para mergear.'
-  waiting: other
 13138:
-  next: 'Cierra #12474: la página nueva se abre, se ve en la lista y empieza a renombrarse; despliega Pages si está plegado. Base develop, 2.21.0, CI en verde, sin revisor (preguntar antes de asignar).'
+  next: 'Cierra #12474: la página nueva se abre, se ve en la lista y empieza a renombrarse; despliega Pages si está plegado. Base develop, 2.21.0, CI en verde. Los compañeros la cogen según disponibilidad.'
   waiting: review
 13145:
   next: 'Draft, cierra #12429 (rehace #13048, revertida): las librerías compartidas rotas siguen conectadas y salen con 0 en lista, modal, sidebar y publicar. Rebasada 19-11 sobre #12528 (capturas ampliadas a Throwable); falta force-push. Pair con niwinz 19-11.'
