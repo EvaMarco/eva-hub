@@ -45,7 +45,7 @@
   next: Rebase sobre develop (conflictos en specs visuales) y ready + asignada a Luis (2026-11-12)
   waiting: review
 12658:
-  next: 'Revisada y probada 2026-11-12: rebase de los .po, test de on-copied que falla, bloquear doble clic. Cuando se mergee, pedir a kirintea que #12848 haga rebase y use copy-text.'
+  next: 'diip3sh. Cambios pedidos 12-11 (rebase de los .po, test de on-copied, bloquear doble clic) + 19-11 abrir issue y enlazarla (CI la exige). Milestone 2.21.0. Cuando se mergee, pedir a kirintea que #12848 haga rebase y use copy-text.'
   status: waiting
 12999:
   next: 'Revisada y probada 2026-11-12: mínimo 76 en una constante (título 44 + fila 32) y un test.'
