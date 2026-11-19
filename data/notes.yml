@@ -90,7 +90,7 @@
   next: 'Alotor: plugins internos bloqueados. Mi duda del dominio era errónea (el plugin vive en la app y manage:delete solo manda a la papelera). Eva le avisó del milestone. Sin revisión publicada.'
   status: waiting
 13087:
-  next: 'luisddm: edición en lote de colores. Probada en local y aprobada 18-11 (M1 y S1 menores).'
+  next: 'luisddm: edición en lote de colores. Aprobada 18-11; checks Require relanzados 19-11, todo en verde. Luis de vacaciones: la mergea él (puede aplicar o no M1/S1).'
   status: done
 13069:
   next: 'luisddm: contenido ajustado bajo las reglas. Probada en local; cambios pedidos 18-11: M1 al abrir el fichero sigue bajo la regla (initialize-viewport), M4 tests.'
@@ -102,20 +102,21 @@
   next: 'alvorithm (safe.directory). Sin milestone y en backlog; Eva preguntó si está lista. Esperar antes de revisar.'
   status: waiting
 12995:
-  next: 'pabloalba (auto-grow en copias, staging 2.20.0). Probada en local (WebGL) y aprobada 19-11. F1: con WebGL una fuente que falla puede guardar tamaños de reserva sin deshacer (aquí o en otra PR); F2 coste al salir de Inspect; F3 descripción.'
+  next: 'pabloalba (auto-grow en copias, staging 2.20.0). Aprobada 19-11 (F1-F3). El CI falla en sus tests nuevos: clear-thumbnail sin aridad 4 tras cambios en staging. Le toca a Pablo; la mergea él.'
   status: done
 13057:
-  next: 'mgr-punith (externo; nombres largos en el modal de librerías, #12812). Hizo rebase y :bug:; aprobada y CI aprobado 19-11.'
+  next: 'mgr-punith (externo; nombres largos en el modal de librerías, #12812). Aprobada y mergeada 19-11.'
   status: done
 13157:
-  next: 'OowhitecatoO (externo; idioma chino del navegador, #13161). Aprobada 19-11, asignada a Eva, CI aprobado.'
+  next: 'OowhitecatoO (externo; idioma chino del navegador, #13161). Aprobada y mergeada 19-11.'
   status: done
 13158:
-  next: 'OowhitecatoO (externo; locales de fecha, #13162). Probada en local y aprobada 19-11, asignada a Eva, CI aprobado; milestone de la issue puesto.'
+  next: 'OowhitecatoO (externo; locales de fecha, #13162). Aprobada y mergeada 19-11.'
   status: done
 10170:
-  next: 'filipsajdak (externo; enlace estable a tableros, #4584). Probada en local sobre develop y aprobada 19-11, asignada a Eva, milestone 2.21.0. Pedido rebase (744 commits atrás, CI de octubre); aprobar CI cuando lo suba.'
+  next: 'filipsajdak (externo; enlace estable a tableros, #4584/#13184). Nuevo commit :recycle: (selected-board-ids) probado en local y re-aprobado 19-11; CI aprobado y corriendo. Mergear cuando esté en verde.'
   status: waiting
+  waiting: ci
 11185:
   next: '0xTHAC0 (externo). Cerrada 19-11 como duplicado de #11624 (ya quitó las llamadas por fichero); Rejected en Main. Pendiente: niwinz decide #10587 y #10601 (sobran por lo mismo).'
   status: hidden
