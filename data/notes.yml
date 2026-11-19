@@ -120,3 +120,15 @@
 11185:
   next: '0xTHAC0 (externo). Cerrada 19-11 como duplicado de #11624 (ya quitó las llamadas por fichero); Rejected en Main. Pendiente: niwinz decide #10587 y #10601 (sobran por lo mismo).'
   status: hidden
+12621:
+  next: 'pvrt (externo; modo compacto). Cerrada 19-11 y Rejected: sin issue ni imágenes; que siga el procedimiento (issue + diseño).'
+  status: hidden
+12921:
+  next: 'filipsajdak (externo; por qué no se puede desconectar una librería). Cambios pedidos 19-11: tooltip "Connected through X. To remove it, disconnect Y." con nombres en foreground primary.'
+  status: waiting
+12166:
+  next: 'makesomethingshit (externo; atajo exportar). Cambios pedidos 19-11: Ctrl+E choca con Chromium, otro atajo.'
+  status: waiting
+12198:
+  next: 'WEBERRUSS-Studio (externo; ocultar interfaz del visor). Probada en local (rama tmp-test-12198). Pendiente: vídeo para diseño y confirmar icono (i/expand coincide con el de fullscreen). Luego pedir rebase + icon-button* + estilos DS.'
+  waiting: me
