@@ -19,6 +19,14 @@
 
 
 
+- title: 'Revisar #13210 (floscr): tests de los helpers de tokens'
+  status: todo
+  links:
+  - '#13210'
+  - '#12945'
+  note: 'develop, 2.21.0. Otro PR de tests de tokens de la serie de #12945.'
+  added: 2026-11-20
+
 - title: 'Release blockers del botón Invite people desactivado (#13171, #13173)'
   status: waiting
   waiting: review

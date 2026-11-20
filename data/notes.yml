@@ -84,8 +84,8 @@
   next: 'Draft, cierra #12429 (rehace #13048, revertida): las librerías compartidas rotas siguen conectadas y salen con 0 en lista, modal, sidebar y publicar. Rebasada 19-11 sobre #12528 (capturas ampliadas a Throwable); falta force-push. Pair con niwinz 19-11.'
   waiting: me
 11892:
-  next: 'niwinz, staging. Cambios pedidos 18-11: rebase (SSO), GET sin Origin, exports, MCP, tests, docs. Esperando su respuesta.'
-  status: waiting
+  next: 'niwinz, staging. Nos pidió una nueva revisión el 20-11 (head f6a14b7413). Comprobar los cambios pedidos el 18-11: rebase (SSO), GET sin Origin, exports, MCP, tests, docs.'
+  status: todo
 13147:
   next: 'Alotor: plugins internos bloqueados. Mi duda del dominio era errónea (el plugin vive en la app y manage:delete solo manda a la papelera). Eva le avisó del milestone. Sin revisión publicada.'
   status: waiting
