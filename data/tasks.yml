@@ -25,7 +25,7 @@
   - '#13210'
   - '#13215'
   - '#12945'
-  note: 'develop. #13210 tests de los helpers de tokens; #13215 tests de aplicar tokens de dimensión y espaciado. Serie de #12945. Revisión empezada el 20-11.'
+  note: 'develop. Probadas en local el 20-11 (todo pasa). #13210: cambios pedidos (F2 tests que dan por bueno el fallo de update-tokens-group; F1, F3). #13215: falta publicar (F1 test de apply-spacing-token-separated). Pendiente: issue del fallo de update-tokens-group.'
   added: 2026-11-20
 
 - title: 'Release blockers del botón Invite people desactivado (#13171, #13173)'
