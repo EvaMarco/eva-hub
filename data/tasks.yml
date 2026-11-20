@@ -19,6 +19,22 @@
 
 
 
+- title: 'Empezar a revisar errores con la herramienta de error reports'
+  status: todo
+  links:
+  - 'https://debugging.penpot.dev/'
+  note: 'MCP error-report-tool añadido el 20-11 (reiniciar sesión para usarlo). Pasos: bootstrap, analizar una clase de error, enlazar issue/PR, marcar como arreglado.'
+  added: 2026-11-20
+
+- title: '#9369: theme.addSet/removeSet en la API de plugins'
+  status: done
+  done: 2026-11-20
+  links:
+  - '#9369'
+  - '#10503'
+  note: 'Ya estaba arreglada desde 2.17.0 (#9488 entró en #10503 sin enlazar la issue). Probada con el MCP en develop y cerrada con comentario.'
+  added: 2026-11-20
+
 - title: 'Revisar #13210 y #13215 (floscr): tests de tokens'
   status: doing
   links:
@@ -151,7 +167,7 @@
   - '#13034'
   - '#13067'
   - '#12437'
-  note: 'Issue de hirunatan (2.20.0). PRs de floscr: #12691, #12781, #12795 y #13034 mergeadas (#13034 el 17-11, con los dos tests pedidos). #13067 aprobada, sugerencias hechas. #12437: todo resuelto, API de plugins probada con el MCP el 17-11; falta la revisión de un compañero y aprobar. Esperando nuevas PRs.'
+  note: 'Issue de hirunatan (2.20.0). PRs de floscr: #12691, #12781, #12795 y #13034 mergeadas (#13034 el 17-11, con los dos tests pedidos). #13067 aprobada, sugerencias hechas. #12437 mergeada por nosotros el 20-11 (follow-up #13226). #13210 cambios pedidos y #13215 comentada el 20-11 (issue #13222 del rename de grupos). Esperando nuevas PRs.'
   added: 2026-11-13
 
 - title: '#12794: test pedido por pabloalba en files_builder_test'

@@ -54,7 +54,7 @@
   next: '2026-11-11: el submenú se sale por la derecha (delta-x fijo en 250), formato del commit, capturas. El issue #12320 espera a diseño.'
   status: waiting
 12941:
-  next: 'Base staging, 2.20.0. Rebasada 19-11, CI en verde. niwinz solo ha comentado: falta su aprobación. Cuando salga a producción, ver si los bucles siguen.'
+  next: 'Base staging, 2.20.0. CI en verde; etiqueta no issue required puesta el 20-11 (solo Relates to #12580) y comentario de relación en #12580. Falta la aprobación de niwinz. Cuando salga a producción, ver si los bucles siguen.'
   waiting: review
 12965:
   next: 'Aprobada 2026-11-12 (foco, Escape y menores resueltos; sugerencia: nombre del campo de URL). Idea para más adelante: componente DS anclado (popover-dialog*)'
@@ -69,8 +69,8 @@
   next: 'History y Escape (Pranav, externo, develop, 2.21.0). Probada en local 17-11; cambios pedidos: M1 Escape no cierra tras renombrar (foco en body), M2 tests (close-menu, menú de autoguardados); S1-S3 menores. Diseño: bien que History siga abierto al seleccionar. Rama local pr-13064-on-develop.'
   status: waiting
 12437:
-  next: 'floscr. Eva pidió a Andrés una revisión cruzada (19-11); esperando su revisión antes de aprobar.'
-  status: waiting
+  next: 'floscr (externo: la mergeamos nosotros). Aprobada tras el visto bueno de hirunatan, milestone cambiado a 2.21.0, checks obligatorios relanzados y mergeada el 20-11. Follow-up: #13226 (get-active-token-sets duplica get-active-sets).'
+  status: done
 13067:
   next: 'Aprobada 16-11; Florian añadió las dos sugerencias (set anidado y spec propia) el 17-11. Nada pendiente.'
   status: done
