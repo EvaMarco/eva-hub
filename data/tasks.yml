@@ -25,7 +25,7 @@
   - '#13210'
   - '#13215'
   - '#12945'
-  note: 'develop. Probadas en local el 20-11 (todo pasa). #13210: cambios pedidos (F2 tests que dan por bueno el fallo de update-tokens-group; F1, F3). #13215: falta publicar (F1 test de apply-spacing-token-separated). Pendiente: issue del fallo de update-tokens-group.'
+  note: 'develop. Probadas en local el 20-11 (todo pasa). #13210: cambios pedidos (F2 tests que dan por bueno el fallo de update-tokens-group; F1, F3). #13215: comentada (F1 test de apply-spacing-token-separated). Issue #13222 creada (rename de grupo pisa tokens), 2.21.0.'
   added: 2026-11-20
 
 - title: 'Release blockers del botón Invite people desactivado (#13171, #13173)'
