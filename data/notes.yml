@@ -88,8 +88,8 @@
   next: 'niwinz, staging. 2ª revisión 20-11: pabloalba revisó a la vez (F1 CORS, F2 docs, F3-F5). Respondimos en sus hilos: subpath (bug, no solo docs) y mensaje del commit 530574a0c5. M6 y S4 no se vuelven a pedir. Falta rebase (conflictos con staging). Esperando a niwinz.'
   status: waiting
 12960:
-  next: 'pabloalba, staging, urgente. Revisada y probada a mano en ws1 el 20-11 (funciona; deshacer OK). Cambios pedidos: F1 (la migración 0038 conserva la variante de abajo, este PR la de arriba) y F2 (changelog de plugins). Esperando a pabloalba.'
-  status: waiting
+  next: 'pabloalba, staging, urgente. F1 (orden de la migración 0038) y F2 (changelog de plugins) corregidos en 62b4b0a17b; aprobada el 20-11. La mergea pabloalba cuando acabe el CI.'
+  status: done
 13147:
   next: 'Alotor: plugins internos bloqueados. Mi duda del dominio era errónea (el plugin vive en la app y manage:delete solo manda a la papelera). Eva le avisó del milestone. Sin revisión publicada.'
   status: waiting
