@@ -19,6 +19,21 @@
 
 
 
+- title: 'Abrir la PR de #13223 (tooltip en nombres de librería cortados)'
+  status: todo
+  links:
+  - '#13223'
+  note: 'Commit 2d9d27e69b en eva-13223-library-name-tooltip (develop, 2.21.0), sin push. Componente truncated-text* + tests. Pendiente decidir si tokens_source.cljs pasa a usarlo (mismo patrón con el fallo del observer).'
+  added: 2026-11-20
+
+- title: 'Revisar #12941 (loops throttle): informes perdidos si se recarga antes de 5 s'
+  status: todo
+  links:
+  - '#12941'
+  - '#12580'
+  note: 'El informe espera 5 s tras el primer disparo para contar los trips; si el usuario recarga o cierra en esos 5 s, el informe no se envía. Comprobarlo y decidir si mandarlo al descargar la página (beforeunload/pagehide) o antes.'
+  added: 2026-11-20
+
 - title: 'Empezar a revisar errores con la herramienta de error reports'
   status: todo
   links:
