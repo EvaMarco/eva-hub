@@ -81,8 +81,9 @@
   next: 'Cierra #12474: la página nueva se abre, se ve en la lista y empieza a renombrarse; despliega Pages si está plegado. Base develop, 2.21.0, CI en verde. Los compañeros la cogen según disponibilidad.'
   waiting: review
 13145:
-  next: 'Draft, cierra #12429 (rehace #13048, revertida): las librerías compartidas rotas siguen conectadas y salen con 0 en lista, modal, sidebar y publicar. Rebasada 19-11 sobre #12528 (capturas ampliadas a Throwable); falta force-push. Pair con niwinz 19-11.'
-  waiting: me
+  next: 'Draft, cierra #12429 (rehace #13048, revertida): las librerías compartidas rotas siguen conectadas y salen con 0 en lista, modal, sidebar y publicar. Rebasada 19-11 sobre #12528 (capturas ampliadas a Throwable); falta force-push. Reunión con niwinz pendiente, sin fecha (20-11).'
+  status: waiting
+  waiting: other
 11892:
   next: 'niwinz, staging. 2ª revisión 20-11: pabloalba revisó a la vez (F1 CORS, F2 docs, F3-F5). Respondimos en sus hilos: subpath (bug, no solo docs) y mensaje del commit 530574a0c5. M6 y S4 no se vuelven a pedir. Falta rebase (conflictos con staging). Esperando a niwinz.'
   status: waiting
