@@ -134,9 +134,12 @@
 12198:
   next: 'WEBERRUSS-Studio (externo; ocultar interfaz del visor). Diseño da el OK (icono ojo) el 23-11. Request changes 23-11: rebase sobre develop (header ya en DS, #12523) + icon-button*. Esperando al autor.'
   status: waiting
-13200:
-  next: 'myfunnyandy (product owner; Copy link en el dashboard). Revisada 23-11: request changes F1 (solo en.po/es.po, revertir 37 .po), F3 (tests: viewer, selección múltiple, Unpin, team-id). Menores F4 (viewer sin menú de proyecto), F5 (toast de error sin timeout). F2 descartado (él decide el alcance). Hablado con él por chat el 23-11. Esperando sus cambios.'
-  status: waiting
 13237:
   next: 'Mía (#13223, tooltip en nombres de librería cortados). Abierta 23-11, develop, 2.21.0. Capturas añadidas al cuerpo. Esperando revisión.'
   waiting: review
+13169:
+  next: 'Alotor (file.features + isWasmRenderer para plugins/MCP), staging 2.20.0. Aprobada 23-11 con F1 (prefijo CHANGELOG) y F2 (ejemplo con null). QA y staging hablados con él. La mergea él.'
+  status: waiting
+13200:
+  next: 'myfunnyandy. Cambios hechos (solo en/es.po, tests, toast, viewers en sidebar). Pendiente: aprobar.'
+  waiting: me
