@@ -81,7 +81,7 @@
   next: 'Cierra #12474: la página nueva se abre, se ve en la lista y empieza a renombrarse; despliega Pages si está plegado. Base develop, 2.21.0, CI en verde. Los compañeros la cogen según disponibilidad.'
   waiting: review
 13145:
-  next: 'Draft, cierra #12429 (rehace #13048, revertida): las librerías compartidas rotas siguen conectadas y salen con 0 en lista, modal, sidebar y publicar. Rebasada 19-11 sobre #12528 (capturas ampliadas a Throwable); falta force-push. Reunión con niwinz pendiente, sin fecha (20-11).'
+  next: 'Draft, cierra #12429 (rehace #13048): librerías compartidas rotas siguen conectadas y salen con 0. Rebasada 23-11 sobre staging (conflictos en runner.cljs y rpc_file_test.clj resueltos, tests OK); falta force-push. Revisión con niwinz el 24-11.'
   status: waiting
   waiting: other
 11892:
@@ -97,8 +97,8 @@
   next: 'luisddm: edición en lote de colores. Aprobada 18-11; checks Require relanzados 19-11, todo en verde. Luis de vacaciones: la mergea él (puede aplicar o no M1/S1).'
   status: done
 13069:
-  next: 'luisddm: contenido ajustado bajo las reglas. Probada en local; cambios pedidos 18-11: M1 al abrir el fichero sigue bajo la regla (initialize-viewport), M4 tests.'
-  status: waiting
+  next: 'luisddm: contenido ajustado bajo las reglas. M1 y M4 resueltos; aprobada 23-11. Falla Integration Tests (4) por la captura de BUG 13822 (la apertura de página mueve el contenido): le pedí actualizarla. La mergea él.'
+  status: done
 12675:
   next: 'alvorithm (validación add-page sin id). Revisada 19-11: aprobar con F1-F3 menores (test en common, casos soft no prueban nada, milestone/squash). Eva preguntó por qué no tiene milestone y sigue en backlog; esperar su respuesta antes de publicar.'
   status: waiting
@@ -144,11 +144,17 @@
   next: 'myfunnyandy. Cambios hechos (solo en/es.po, tests, toast, viewers en sidebar). Pendiente: aprobar.'
   waiting: me
 13251:
-  next: 'Mía (#13250, guide size y font size de tipografía fuera de límites; causa de #12463). Abierta 23-11, staging, 2.20.0. Esperando revisión.'
+  next: 'Mía (#13250, guide size y font size de tipografía fuera de límites; causa de #12463). Abierta 23-11, staging, 2.20.0. Rebasada 23-11 (Validate public PR desactivado en el repo). Esperando revisión.'
   waiting: review
 13253:
-  next: 'Mía (#13252, editor de texto v1 guarda text-decoration nil; causa de #12463). Abierta 23-11, staging, 2.20.0. Esperando revisión.'
+  next: 'Mía (#13252, editor de texto v1 guarda text-decoration nil; causa de #12463). Abierta 23-11, staging, 2.20.0. Rebasada 23-11 (Validate public PR desactivado en el repo). Esperando revisión.'
   waiting: review
 13256:
-  next: 'Mía (#13255, grid con columna 0fr + ancho auto da NaN; causa de #12463). Common + render-wasm. Abierta 23-11, staging, 2.20.0. Esperando revisión.'
+  next: 'Mía (#13255, grid con columna 0fr + ancho auto da NaN; causa de #12463). Abierta 23-11, staging, 2.20.0. Rebasada 23-11 (Validate public PR desactivado en el repo). Esperando revisión.'
+  waiting: review
+13242:
+  next: 'floscr (externo, develop, 2.21.0): seguimiento de #13210 (F1-F3 resueltos, solo tests). Aprobada 23-11 + etiqueta no issue required. Falta rebase (Update branch > rebase desde la web; mi token no tiene scope workflow) y mergear nosotras con CI en verde.'
+  waiting: me
+13262:
+  next: 'Mía (#13261, deshacer con el selector de color del trazo abierto deja un degradado vacío; causa de #12463). Reproducido en ws1 (con WebGL Internal Error). Abierta 23-11, staging, 2.20.0. Esperando revisión.'
   waiting: review

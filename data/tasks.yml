@@ -20,12 +20,13 @@
 
 
 - title: 'Tarde 23-11: revisiones pendientes'
-  status: todo
+  status: done
+  done: 2026-11-23
   links:
   - '#13069'
   - '#13242'
   - '#13185'
-  note: '1) #13069 luisddm (develop, 2.21.0): ha subido cambios 23-11 12:18, comprobar M1 (initialize-viewport sin min-screen-padding) y M4 (tests). 2) #13242 floscr (develop, sin milestone): PR de seguimiento de #13210 (F1-F3); poner milestone 2.21.0; recordar que la mergeamos nosotras. 3) Si da tiempo: #13185 pabloalba (staging, 2.20.0): swapped children en switch/undo de variante anidada. Además: resultado del análisis del texto con y=-1.99E13 (#12463).'
+  note: '1) #13069 luisddm (develop, 2.21.0): ha subido cambios 23-11 12:18, comprobar M1 (initialize-viewport sin min-screen-padding) y M4 (tests). 2) #13242 floscr (develop, sin milestone): PR de seguimiento de #13210 (F1-F3); poner milestone 2.21.0; recordar que la mergeamos nosotras. 3) Si da tiempo: #13185 pabloalba (staging, 2.20.0): swapped children en switch/undo de variante anidada. Además: resultado del análisis del texto con y=-1.99E13 (#12463). Resultado: #13069 aprobada (falta actualizar captura BUG 13822, la mergea Luis); #13242 aprobada + etiqueta no issue required, falta rebase desde la web y mergear con CI verde; #13185 ya mergeada por Alotor.'
   added: 2026-11-23
 
 - title: 'Abrir la PR de #13223 (tooltip en nombres de librería cortados)'
