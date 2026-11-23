@@ -330,7 +330,9 @@ def days_since(iso, now):
 def review_status(r, now):
     """What a PR the user reviews needs: (sort key, status label, css, days)."""
     turn = r.get("turn", "first")
-    if r.get("ci_approval"):
+    # While the author owes changes, the CI of their old push does not matter:
+    # their next push is the one to approve.
+    if r.get("ci_approval") and turn != "author":
         return (0, "CI esperando tu aprobación", "rv-warn", days_since(r.get("updated"), now))
     if r.get("verdict") == "APPROVED":
         if turn == "me":

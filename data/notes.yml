@@ -97,7 +97,7 @@
   next: 'luisddm: edición en lote de colores. Aprobada 18-11; checks Require relanzados 19-11, todo en verde. Luis de vacaciones: la mergea él (puede aplicar o no M1/S1).'
   status: done
 13069:
-  next: 'luisddm: contenido ajustado bajo las reglas. M1 y M4 resueltos; aprobada 23-11. Falla Integration Tests (4) por la captura de BUG 13822 (la apertura de página mueve el contenido): le pedí actualizarla. La mergea él.'
+  next: 'luisddm: contenido ajustado bajo las reglas. M1 y M4 resueltos; aprobada 23-11. Ya actualizó la captura de BUG 13822 (solo cambia el png); CI en marcha. La mergea él.'
   status: done
 12675:
   next: 'alvorithm (validación add-page sin id). Revisada 19-11: aprobar con F1-F3 menores (test en common, casos soft no prueban nada, milestone/squash). Eva preguntó por qué no tiene milestone y sigue en backlog; esperar su respuesta antes de publicar.'
