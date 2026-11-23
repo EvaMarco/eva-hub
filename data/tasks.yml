@@ -19,6 +19,13 @@
 
 
 
+- title: '#12463 invalid shape: causas pendientes'
+  status: todo
+  links:
+  - '#12463'
+  note: 'Hechas 23-11: #13251, #13253, #13256, #13262, #13264, #13266 (todas staging, 2.20.0). Pendientes: 1) clientes API con :set sin decodificar (backend, el grupo más grande; hablarlo con niwinz); 2) texto y=-1.99E13 (aparcado, falta el fichero); 3) paths con transform-inverse desbordado (1 informe; transforms.cljc:350). Descartado: FR :min 0. Fuera: constraints :fixed. Tras los merges: marcar clases en la herramienta de errores y mover issues a Product review.'
+  added: 2026-11-23
+
 - title: 'Tarde 23-11: revisiones pendientes'
   status: done
   done: 2026-11-23
