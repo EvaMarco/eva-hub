@@ -143,3 +143,6 @@
 13200:
   next: 'myfunnyandy. Cambios hechos (solo en/es.po, tests, toast, viewers en sidebar). Pendiente: aprobar.'
   waiting: me
+13251:
+  next: 'Mía (#13250, guide size y font size de tipografía fuera de límites; causa de #12463). Abierta 23-11, staging, 2.20.0. Esperando revisión.'
+  waiting: review
