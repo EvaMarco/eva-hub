@@ -33,7 +33,7 @@
   next: Esperando respuesta a mi comentario de la cursiva (2026-10-15); niwinz de vacaciones
   waiting: review
 10998:
-  next: 'wi-fa. Pedimos cambios el 10-11 (clic perdido tras nudge, test Playwright, issue, rebase). 19-11: dice que sigue trabajando, pero aún no ha hecho los cambios. Esperando.'
+  next: 'wi-fa. 23-11 2ª revisión: E1-E3, issue (#13231) y rebase resueltos. Pedido F1 (test Playwright estable: esperas, comprobar el reorden, que falle en develop), F2 (comentario «dont», umbral 10 compartido), F3 (fixture minificado). CI aprobado. Esperando al autor.'
   status: waiting
 12377:
   status: hidden
@@ -131,9 +131,12 @@
   next: 'filipsajdak (externo; por qué no se puede desconectar una librería). Hizo los cambios de diseño; mergeamos develop (conflicto en runner.cljs), probada en local y aprobada 19-11, CI aprobado. Mergear cuando esté en verde.'
   status: waiting
   waiting: ci
-12166:
-  next: 'makesomethingshit (externo; atajo exportar). Cambios pedidos 19-11: Ctrl+E choca con Chromium, otro atajo.'
-  status: waiting
 12198:
   next: 'WEBERRUSS-Studio (externo; ocultar interfaz del visor). Probada en local (rama tmp-test-12198). Pendiente: vídeo para diseño y confirmar icono (i/expand coincide con el de fullscreen). Luego pedir rebase + icon-button* + estilos DS.'
   waiting: me
+13200:
+  next: 'myfunnyandy (product owner; Copy link en el dashboard). Revisada 23-11: request changes F1 (solo en.po/es.po, revertir 37 .po), F3 (tests: viewer, selección múltiple, Unpin, team-id). Menores F4 (viewer sin menú de proyecto), F5 (toast de error sin timeout). F2 descartado (él decide el alcance). Comentario preparado, falta publicarlo.'
+  waiting: me
+13237:
+  next: 'Mía (#13223, tooltip en nombres de librería cortados). Abierta 23-11, develop, 2.21.0. Capturas sacadas (modal Libraries + Assets), añadirlas al cuerpo. Esperando revisión.'
+  waiting: review

@@ -20,10 +20,12 @@
 
 
 - title: 'Abrir la PR de #13223 (tooltip en nombres de librería cortados)'
-  status: todo
+  status: done
+  done: 2026-11-23
   links:
   - '#13223'
-  note: 'Commit 2d9d27e69b en eva-13223-library-name-tooltip (develop, 2.21.0), sin push. Componente truncated-text* + tests. Pendiente decidir si tokens_source.cljs pasa a usarlo (mismo patrón con el fallo del observer).'
+  - '#13237'
+  note: 'PR #13237 abierta el 23-11 tras rebase (fe761bbb83). Commit en eva-13223-library-name-tooltip (develop, 2.21.0). Componente truncated-text* + tests. Pendiente decidir si tokens_source.cljs pasa a usarlo (mismo patrón con el fallo del observer).'
   added: 2026-11-20
 
 - title: 'Revisar #12941 (loops throttle): informes perdidos si se recarga antes de 5 s'
@@ -50,13 +52,23 @@
   note: 'Ya estaba arreglada desde 2.17.0 (#9488 entró en #10503 sin enlazar la issue). Probada con el MCP en develop y cerrada con comentario.'
   added: 2026-11-20
 
+- title: 'PR de seguimiento de #13210 (floscr): F1-F3 de los tests de tokens'
+  status: waiting
+  waiting: floscr
+  links:
+  - '#13210'
+  - '#12945'
+  note: 'Pedida por chat el 23-11 (mergeé #13210 por error). F2: renombrar los dos casos de update-tokens-group a pertenencia al grupo; F1 tr-stub en tests de mensajes; F3 sizing/opacity/rotation en shape-type->attributes.'
+  added: 2026-11-23
+
 - title: 'Revisar #13210 y #13215 (floscr): tests de tokens'
-  status: doing
+  status: done
+  done: 2026-11-23
   links:
   - '#13210'
   - '#13215'
   - '#12945'
-  note: 'develop. Probadas en local el 20-11 (todo pasa). #13210: cambios pedidos (F2 tests que dan por bueno el fallo de update-tokens-group; F1, F3). #13215: comentada (F1 test de apply-spacing-token-separated). Issue #13222 creada (rename de grupo pisa tokens), 2.21.0.'
+  note: 'develop. Probadas en local el 20-11 (todo pasa). #13210: cambios pedidos (F2 tests que dan por bueno el fallo de update-tokens-group; F1, F3). #13215: comentada (F1 test de apply-spacing-token-separated). Issue #13222 creada (rename de grupo pisa tokens), 2.21.0. 23-11: #13215 mergeada tras rebase; #13210 mergeada por error sin los cambios → pedida a floscr una PR de seguimiento (F1-F3). El fallo de update-tokens-group no se arregla: floscr lo resolverá con tokenscript (renombrar nodo del grafo); #13222 sigue cerrada.'
   added: 2026-11-20
 
 - title: 'Release blockers del botón Invite people desactivado (#13171, #13173)'
