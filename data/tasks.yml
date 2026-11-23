@@ -29,11 +29,12 @@
   added: 2026-11-20
 
 - title: 'Revisar #12941 (loops throttle): informes perdidos si se recarga antes de 5 s'
-  status: todo
+  status: waiting
+  waiting: Alotor
   links:
   - '#12941'
   - '#12580'
-  note: 'El informe espera 5 s tras el primer disparo para contar los trips; si el usuario recarga o cierra en esos 5 s, el informe no se envía. Comprobarlo y decidir si mandarlo al descargar la página (beforeunload/pagehide) o antes.'
+  note: 'Revisado 23-11: el hueco es real. Ventana de pérdida ~7 s (5 s de observación + debounce de 2 s del buffer de auditoría, event.cljs:432; fetch sin keepalive ni sendBeacon, sin pagehide). Antes de la PR ya se perdía en ~2 s. Propuesta: dejarlo en la PR (opción 1), una línea en la descripción y un issue aparte para que los eventos de auditoría sobrevivan a recargar o cerrar (keepalive/sendBeacon + pagehide). Esperando a ver si Alotor lo ve al revisar.'
   added: 2026-11-20
 
 - title: 'Empezar a revisar errores con la herramienta de error reports'
