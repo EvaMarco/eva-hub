@@ -241,8 +241,6 @@ def reviewed_prs():
         if not page["pageInfo"]["hasNextPage"]:
             break
         after = page["pageInfo"]["endCursor"]
-    seen = {p["number"] for p in prs}
-    prs += [p for p in extra_reviewed() if p["number"] not in seen]
     return sorted(prs, key=lambda p: p["first_review"], reverse=True)
 
 
@@ -279,13 +277,24 @@ def extra_reviewed():
 
 
 def save_reviewed():
-    """Writes data/reviewed.json, unless the search came back empty."""
+    """Writes data/reviewed.json. When the search comes back empty (the
+    Actions token), it keeps the saved list; the PRs listed by hand are
+    added on top either way, never in place of the rest."""
     out = ROOT / "data" / "reviewed.json"
     try:
         prs = reviewed_prs()
     except subprocess.CalledProcessError:
         prs = []
+    if not prs and out.exists():
+        prs = json.loads(out.read_text())
+    try:
+        extra = extra_reviewed()
+    except subprocess.CalledProcessError:
+        extra = []
+    seen = {p["number"] for p in prs}
+    prs += [p for p in extra if p["number"] not in seen]
     if prs:
+        prs.sort(key=lambda p: p["first_review"], reverse=True)
         out.write_text(json.dumps(prs, ensure_ascii=False, indent=1) + "\n")
     return len(prs)
 
