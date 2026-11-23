@@ -149,3 +149,6 @@
 13253:
   next: 'Mía (#13252, editor de texto v1 guarda text-decoration nil; causa de #12463). Abierta 23-11, staging, 2.20.0. Esperando revisión.'
   waiting: review
+13256:
+  next: 'Mía (#13255, grid con columna 0fr + ancho auto da NaN; causa de #12463). Common + render-wasm. Abierta 23-11, staging, 2.20.0. Esperando revisión.'
+  waiting: review
