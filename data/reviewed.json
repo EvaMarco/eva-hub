@@ -1,10 +1,74 @@
 [
  {
+  "number": 13242,
+  "title": ":wrench: Tighten the token helper tests after review",
+  "url": "https://github.com/penpot/penpot/pull/13242",
+  "first_review": "2026-11-23T15:23:10Z",
+  "outcome": "approved",
+  "merged_by_me": false
+ },
+ {
+  "number": 13169,
+  "title": ":sparkles: Expose the file features and active renderer to plugins",
+  "url": "https://github.com/penpot/penpot/pull/13169",
+  "first_review": "2026-11-23T11:31:09Z",
+  "outcome": "approved",
+  "merged_by_me": false
+ },
+ {
+  "number": 13200,
+  "title": ":sparkles: Add Copy link to the file and project menus in the dashboard",
+  "url": "https://github.com/penpot/penpot/pull/13200",
+  "first_review": "2026-11-23T10:50:19Z",
+  "outcome": "approved",
+  "merged_by_me": false
+ },
+ {
+  "number": 12198,
+  "title": ":sparkles: Hide the viewer chrome for an unobstructed viewport",
+  "url": "https://github.com/penpot/penpot/pull/12198",
+  "first_review": "2026-11-23T10:21:15Z",
+  "outcome": "pending",
+  "merged_by_me": false
+ },
+ {
+  "number": 12960,
+  "title": ":bug: Repair variant property set when removing a property",
+  "url": "https://github.com/penpot/penpot/pull/12960",
+  "first_review": "2026-11-20T13:12:24Z",
+  "outcome": "approved",
+  "merged_by_me": false
+ },
+ {
+  "number": 12437,
+  "title": ":zap: Resolve tokens incrementally with tokenscript",
+  "url": "https://github.com/penpot/penpot/pull/12437",
+  "first_review": "2026-11-20T12:44:57Z",
+  "outcome": "approved",
+  "merged_by_me": true
+ },
+ {
+  "number": 13210,
+  "title": ":wrench: Add tests for token helpers",
+  "url": "https://github.com/penpot/penpot/pull/13210",
+  "first_review": "2026-11-20T11:16:38Z",
+  "outcome": "approved",
+  "merged_by_me": true
+ },
+ {
+  "number": 13215,
+  "title": ":wrench: Test applying dimension and spacing tokens",
+  "url": "https://github.com/penpot/penpot/pull/13215",
+  "first_review": "2026-11-20T11:15:45Z",
+  "outcome": "approved",
+  "merged_by_me": true
+ },
+ {
   "number": 12166,
   "title": ":sparkles: Add a shortcut to export the selected object",
   "url": "https://github.com/penpot/penpot/pull/12166",
   "first_review": "2026-11-19T12:12:40Z",
-  "outcome": "pending",
+  "outcome": "rejected",
   "merged_by_me": false
  },
  {
@@ -12,8 +76,8 @@
   "title": ":sparkles: Explain why a library cannot be disconnected in its modal",
   "url": "https://github.com/penpot/penpot/pull/12921",
   "first_review": "2026-11-19T12:12:38Z",
-  "outcome": "pending",
-  "merged_by_me": false
+  "outcome": "approved",
+  "merged_by_me": true
  },
  {
   "number": 10170,
@@ -21,7 +85,7 @@
   "url": "https://github.com/penpot/penpot/pull/10170",
   "first_review": "2026-11-19T10:23:25Z",
   "outcome": "approved",
-  "merged_by_me": false
+  "merged_by_me": true
  },
  {
   "number": 13158,
@@ -29,7 +93,7 @@
   "url": "https://github.com/penpot/penpot/pull/13158",
   "first_review": "2026-11-19T09:48:33Z",
   "outcome": "approved",
-  "merged_by_me": false
+  "merged_by_me": true
  },
  {
   "number": 13157,
@@ -37,7 +101,7 @@
   "url": "https://github.com/penpot/penpot/pull/13157",
   "first_review": "2026-11-19T09:38:13Z",
   "outcome": "approved",
-  "merged_by_me": false
+  "merged_by_me": true
  },
  {
   "number": 13057,
@@ -45,7 +109,7 @@
   "url": "https://github.com/penpot/penpot/pull/13057",
   "first_review": "2026-11-19T09:33:05Z",
   "outcome": "approved",
-  "merged_by_me": false
+  "merged_by_me": true
  },
  {
   "number": 12995,
@@ -60,7 +124,7 @@
   "title": ":bug: Keep fitted content clear of the rulers",
   "url": "https://github.com/penpot/penpot/pull/13069",
   "first_review": "2026-11-18T15:52:53Z",
-  "outcome": "pending",
+  "outcome": "approved",
   "merged_by_me": false
  },
  {
@@ -94,6 +158,14 @@
   "first_review": "2026-11-17T12:01:02Z",
   "outcome": "pending",
   "merged_by_me": false
+ },
+ {
+  "number": 13034,
+  "title": ":recycle: Extract and test how tokens are applied to shapes",
+  "url": "https://github.com/penpot/penpot/pull/13034",
+  "first_review": "2026-11-16T15:52:19Z",
+  "outcome": "approved",
+  "merged_by_me": true
  },
  {
   "number": 13067,
@@ -201,7 +273,7 @@
  },
  {
   "number": 10998,
-  "title": ":bug: Fix selection stolen by trailing click after a move drag",
+  "title": ":bug: Fix selection jumping to another shape after a move drag",
   "url": "https://github.com/penpot/penpot/pull/10998",
   "first_review": "2026-11-10T09:20:51Z",
   "outcome": "pending",

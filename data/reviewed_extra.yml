@@ -1,0 +1,4 @@
+# Other people's PRs I reviewed with plain comments, not a GitHub review,
+# so `reviewed-by:` misses them. scripts/sync.py adds them to reviewed.json.
+- 13034
+- 13215

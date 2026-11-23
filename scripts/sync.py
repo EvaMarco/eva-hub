@@ -14,6 +14,8 @@ import sys
 import time
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = {
     "user": os.environ.get("HUB_USER", "EvaMarco"),
@@ -239,7 +241,41 @@ def reviewed_prs():
         if not page["pageInfo"]["hasNextPage"]:
             break
         after = page["pageInfo"]["endCursor"]
+    seen = {p["number"] for p in prs}
+    prs += [p for p in extra_reviewed() if p["number"] not in seen]
     return sorted(prs, key=lambda p: p["first_review"], reverse=True)
+
+
+EXTRA_QUERY = """query($owner: String!, $name: String!, $number: Int!) {
+  repository(owner: $owner, name: $name) {
+    pullRequest(number: $number) {
+      number title url state mergedBy { login }
+      comments(first: 100) { nodes { author { login } createdAt } }
+    }
+  }
+}"""
+
+
+def extra_reviewed():
+    """PRs reviewed through plain comments instead of a GitHub review, listed
+    by hand in data/reviewed_extra.yml: `reviewed-by:` does not find them.
+    The first review is my first comment; merged counts as approved."""
+    path = ROOT / "data" / "reviewed_extra.yml"
+    numbers = (yaml.safe_load(path.read_text()) if path.exists() else None) or []
+    owner, name = CONFIG["repo"].split("/")
+    out = []
+    for n in numbers:
+        p = gh("api", "graphql", "-f", f"query={EXTRA_QUERY}", "-F", f"owner={owner}",
+               "-F", f"name={name}", "-F", f"number={n}")["data"]["repository"]["pullRequest"]
+        mine = [c["createdAt"] for c in p["comments"]["nodes"]
+                if (c["author"] or {}).get("login") == CONFIG["user"]]
+        if not mine:
+            continue
+        outcome = {"MERGED": "approved", "OPEN": "pending"}.get(p["state"], "commented")
+        out.append({"number": p["number"], "title": p["title"], "url": p["url"],
+                    "first_review": min(mine), "outcome": outcome,
+                    "merged_by_me": (p["mergedBy"] or {}).get("login") == CONFIG["user"]})
+    return out
 
 
 def save_reviewed():
