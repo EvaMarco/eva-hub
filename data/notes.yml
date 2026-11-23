@@ -132,8 +132,8 @@
   status: waiting
   waiting: ci
 12198:
-  next: 'WEBERRUSS-Studio (externo; ocultar interfaz del visor). Probada en local (rama tmp-test-12198). Pendiente: vídeo para diseño y confirmar icono (i/expand coincide con el de fullscreen). Luego pedir rebase + icon-button* + estilos DS.'
-  waiting: me
+  next: 'WEBERRUSS-Studio (externo; ocultar interfaz del visor). Diseño da el OK (icono ojo) el 23-11. Request changes 23-11: rebase sobre develop (header ya en DS, #12523) + icon-button*. Esperando al autor.'
+  status: waiting
 13200:
   next: 'myfunnyandy (product owner; Copy link en el dashboard). Revisada 23-11: request changes F1 (solo en.po/es.po, revertir 37 .po), F3 (tests: viewer, selección múltiple, Unpin, team-id). Menores F4 (viewer sin menú de proyecto), F5 (toast de error sin timeout). F2 descartado (él decide el alcance). Hablado con él por chat el 23-11. Esperando sus cambios.'
   status: waiting
