@@ -85,8 +85,8 @@
   status: waiting
   waiting: other
 11892:
-  next: 'niwinz, staging. 23-11: rebase + 2 arreglos del export (bien). Sin tocar lo del 20-11 ni contestar: P-F1 CORS (High), N2 subpath (Medium), P-F3, S1/P-F4, P-F5, N3. Decidido esperar.'
-  status: waiting
+  next: 'niwinz, staging. 24-11: aprobada (F1–F5 y N2 resueltos). Detalle menor enviado a niwinz por chat: el test nginx-entrypoint no corre en CI. La mergea él.'
+  status: done
 12960:
   next: 'pabloalba, staging, urgente. F1 (orden de la migración 0038) y F2 (changelog de plugins) corregidos en 62b4b0a17b; aprobada el 20-11. La mergea pabloalba cuando acabe el CI.'
   status: done
