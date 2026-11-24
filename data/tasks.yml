@@ -110,11 +110,12 @@
 
 - title: 'Revisar PRs de compañeros sin asignar'
   status: doing
-  note: 'Hechas: #11892, #13147, #13087, #13069 (18-11); #12995 (19-11). #12675 y #12667 esperan al autor.'
+  note: 'Hechas: #11892 (aprobada 24-11), #13147, #13087, #13069 (18-11); #12995 (19-11). #12675 mergeada. #13055 (hirunatan) y #11396 (pabloalba) ya tienen revisor.'
   items:
-  - '#13055 y #13135 (niwinz, backend)'
+  - '#13135 (niwinz, backend, staging)'
   - '#12479 (belen-albeza)'
-  - '#11396 y #11410 (niwinz, agosto)'
+  - '#11410 (niwinz; develop con milestone 2.20.0)'
+  - '#12667 (alvorithm, sin milestone)'
   added: 2026-11-18
 
 - title: 'Revisar PRs externas asignadas a niwinz'
