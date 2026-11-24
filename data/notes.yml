@@ -159,8 +159,8 @@
   next: 'Mía (#13261, deshacer con el selector de color del trazo abierto deja un degradado vacío; causa de #12463, 8+ informes). Abierta 23-11, staging, 2.20.0. Esperando revisión.'
   waiting: review
 13264:
-  next: 'Mía (#13263, cambiar estilo de un trazo que no existe crea un trazo sin color; booleanos; causa de #12463). Abierta 23-11, staging, 2.20.0. Esperando revisión.'
-  waiting: review
+  next: 'Mía (#13263, trazo sin color en booleanos; causa de #12463). Mergeada 24-11 (271f5af784) tras arreglar la causa (:strokes en bool). Falta pasar #13263 a Product review.'
+  status: done
 13266:
   next: 'Mía (#13265, poner un lado de padding en un layout sin padding guarda {:p1 N}; plugins/API; causa de #12463). Abierta 23-11, staging, 2.20.0. Esperando revisión.'
   waiting: review
