@@ -176,3 +176,6 @@
 13294:
   next: 'Mía (DS botones #12376): X e iconos del aviso de progreso del dashboard (variante action) + :bug: el aviso salía sin texto. Draft, develop, 2.21.0, fila y comentario de QA. Falta la captura, marcarla ready y asignar revisor.'
   waiting: me
+13300:
+  next: 'Mía (DS selects #12377): select de modo del colorpicker (Solid / Gradient / Image) a select*. Draft, develop, 2.21.0, fila y comentario de QA en #12377. Falta la captura, marcarla ready y asignar revisor.'
+  waiting: me
