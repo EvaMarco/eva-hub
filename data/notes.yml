@@ -171,20 +171,20 @@
   next: 'Mía (DS botones #12376): toggles Clip content / Show in view mode y candado de Measures. Draft, develop, 2.21.0, captura subida, fila y comentario de QA. Falta marcarla ready y asignar revisor.'
   waiting: me
 13284:
-  next: 'Mía (DS botones #12376): «Go to Personal Projects» del diálogo de pedir acceso a button* secondary. Draft, develop, 2.21.0, captura subida, fila y comentario de QA. Falta marcarla ready y asignar revisor.'
+  next: 'Mía (DS botones #12376): «Go to Personal Projects» del diálogo de pedir acceso a button* secondary. Draft, develop, 2.21.0, fila y comentario de QA. El cuerpo no tiene la captura (24-11): subirla. Falta marcarla ready y asignar revisor.'
   waiting: me
 13294:
-  next: 'Mía (DS botones #12376): X e iconos del aviso de progreso del dashboard (variante action) + :bug: el aviso salía sin texto. Draft, develop, 2.21.0, fila y comentario de QA. Falta la captura, marcarla ready y asignar revisor.'
+  next: 'Mía (DS botones #12376): X e iconos del aviso de progreso del dashboard (variante action) + :bug: el aviso salía sin texto. Draft, develop, 2.21.0, fila y comentario de QA. Captura subida. Falta marcarla ready y asignar revisor.'
   waiting: me
 13300:
-  next: 'Mía (DS selects #12377): select de modo del colorpicker (Solid / Gradient / Image) a select*. Draft, develop, 2.21.0, fila y comentario de QA en #12377. Falta la captura, marcarla ready y asignar revisor.'
+  next: 'Mía (DS selects #12377): select de modo del colorpicker (Solid / Gradient / Image) a select*. Draft, develop, 2.21.0, fila y comentario de QA en #12377. Captura subida. Falta marcarla ready y asignar revisor.'
   waiting: me
 13305:
-  next: 'Mía (DS selects #12377): tipo de sombra (Drop / Inner shadow) a select*. Draft, develop, 2.21.0, fila y comentario de QA en #12377. Falta la captura, marcarla ready y asignar revisor.'
+  next: 'Mía (DS selects #12377): tipo de sombra (Drop / Inner shadow) a select*. Draft, develop, 2.21.0, fila y comentario de QA en #12377. Captura subida. Falta marcarla ready y asignar revisor.'
   waiting: me
 13308:
-  next: 'Mía (DS selects #12377): selects horizontal y vertical de Constraints a select*. Draft, develop, 2.21.0, fila y comentario de QA en #12377. Falta la captura, marcarla ready y asignar revisor.'
+  next: 'Mía (DS selects #12377): selects horizontal y vertical de Constraints a select*. Draft, develop, 2.21.0, fila y comentario de QA en #12377. Captura subida. Falta marcarla ready y asignar revisor.'
   waiting: me
 13311:
-  next: 'Mía (DS selects #12377): variante de fuente a select* (+ fixture con variantes válidas de Rufina). Draft, develop, 2.21.0, fila y comentario de QA en #12377. Falta la captura, marcarla ready y asignar revisor.'
+  next: 'Mía (DS selects #12377): variante de fuente a select* (+ fixture con variantes válidas de Rufina). Draft, develop, 2.21.0, fila y comentario de QA en #12377. Captura subida. Falta marcarla ready y asignar revisor.'
   waiting: me
