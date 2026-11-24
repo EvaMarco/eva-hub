@@ -364,6 +364,9 @@
   links:
   - '#12376'
   note: 'Último paso: borrar %button-* y los iconos viejos sin uso, y revisar los componentes compartidos. Antes: mergear los PRs abiertos, las áreas bloqueadas (measures #9139, exports #12059, viewer header #12198) y los grupos de checkboxes, inputs y selects (2026-10-29: 21 SCSS con %button-*, 25 cljs con iconos legacy).'
+  items:
+  - '24-11: repaso de los botones raw que quedan en develop. Las áreas del grupo están hechas: 67 PRs mergeadas y 4 en draft (#13275, #13278, #13284, #13294). Lo que queda raw se queda a propósito (botones con aspecto de enlace, segmentos, filas o tarjetas) o va con otro grupo.'
+  - 'SCSS pendiente: static.scss (px fijos, selectores sin clase, .login-container comentado) y measures.scss (dropdown de presets → selects; inputs → inputs).'
   added: 2026-10-27
 
 - title: 'Grupo 2 de la épica DS: selects (#12377)'
@@ -378,6 +381,7 @@
   - 'Lección: el select* no tiene nombre accesible; en los tests, getByRole("combobox").filter({ hasText }).'
   - 'Blend mode: seguimos con un hover callback en select* (provisional, Task 5b).'
   - 'Destino de interacciones: espera un modo de combobox* que filtre y solo acepte opciones.'
+  - '24-11: se retoma tras el lote de botones. Siguiente: select de modo del colorpicker (Color / Gradient / Image, colorpicker.cljs:423), luego tipo de sombra (shadow_row).'
   added: 2026-10-27
 
 - title: Pedir a diseño/DS lo que falta para los selects

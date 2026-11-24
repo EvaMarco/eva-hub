@@ -164,3 +164,15 @@
 13266:
   next: 'Mía (#13265, poner un lado de padding en un layout sin padding guarda {:p1 N}; plugins/API; causa de #12463). Abierta 23-11, staging, 2.20.0. Esperando revisión.'
   waiting: review
+13275:
+  next: 'Mía (DS botones #12376): botón Export del menú de exportación. Draft, develop, 2.21.0, captura subida, fila y comentario de QA en #12376. Falta marcarla ready y asignar revisor.'
+  waiting: me
+13278:
+  next: 'Mía (DS botones #12376): toggles Clip content / Show in view mode y candado de Measures. Draft, develop, 2.21.0, captura subida, fila y comentario de QA. Falta marcarla ready y asignar revisor.'
+  waiting: me
+13284:
+  next: 'Mía (DS botones #12376): «Go to Personal Projects» del diálogo de pedir acceso a button* secondary. Draft, develop, 2.21.0, captura subida, fila y comentario de QA. Falta marcarla ready y asignar revisor.'
+  waiting: me
+13294:
+  next: 'Mía (DS botones #12376): X e iconos del aviso de progreso del dashboard (variante action) + :bug: el aviso salía sin texto. Draft, develop, 2.21.0, fila y comentario de QA. Falta la captura, marcarla ready y asignar revisor.'
+  waiting: me
