@@ -381,7 +381,7 @@
   - 'Lección: el select* no tiene nombre accesible; en los tests, getByRole("combobox").filter({ hasText }).'
   - 'Blend mode: seguimos con un hover callback en select* (provisional, Task 5b).'
   - 'Destino de interacciones: espera un modo de combobox* que filtre y solo acepte opciones.'
-  - '24-11: se retoma tras el lote de botones. Select de modo del colorpicker en draft (#13300); con eso el colorpicker queda hecho. Siguiente: tipo de sombra (shadow_row).'
+  - '24-11: se retoma tras el lote de botones. Select de modo del colorpicker en draft (#13300); con eso el colorpicker queda hecho. Tipo de sombra en draft (#13305). Siguiente: constraints (dos selects).'
   added: 2026-10-27
 
 - title: Pedir a diseño/DS lo que falta para los selects
