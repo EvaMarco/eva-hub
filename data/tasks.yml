@@ -19,6 +19,13 @@
 
 
 
+- title: 'Mañana 25-11: revisar la PR de Pablo y ver si me asignan más'
+  status: todo
+  links:
+  - '#12961'
+  note: '#12961 pabloalba: validar y reparar las propiedades de variante como conjunto (staging, 2.20.0, asignada a mí, sin revisiones). Después mirar si me han asignado más PRs. Pablo abrió también #13314, #13296 y #13290 (sin asignar; dos en draft).'
+  added: 2026-11-24
+
 - title: '#12463 invalid shape: causas pendientes'
   status: todo
   links:
