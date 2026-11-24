@@ -23,7 +23,7 @@
   status: todo
   links:
   - '#12463'
-  note: 'Hechas 23-11: #13251, #13253, #13256, #13262, #13264, #13266 (todas staging, 2.20.0). Pendientes: 1) clientes API con :set sin decodificar (backend, el grupo más grande; hablarlo con niwinz); 2) texto y=-1.99E13 (aparcado, falta el fichero); 3) paths con transform-inverse desbordado (1 informe; transforms.cljc:350). Descartado: FR :min 0. Fuera: constraints :fixed. Tras los merges: marcar clases en la herramienta de errores y mover issues a Product review.'
+  note: 'PRs: #13251 (3ª ronda resuelta 24-11, esperando a Pablo), #13256 y #13313 (imagen en texto desde Selected colors, 24-11) en revisión; #13253, #13262, #13264 y #13266 mergeadas 24-11 (pasar #13252, #13261, #13263 y #13265 a Product review). Revisados 60 informes de la clase 19 (24-11). Pendientes: 1) clientes API con :set sin decodificar (backend; hablarlo con niwinz); 2) NaN en boards flex (~9 informes, modificadores wasm); 3) coordenadas desbordadas (5e9-7e11) en textos auto-width/:fill al sincronizar componentes o tipografías, rect en grid y boards; 4) un informe cada uno: bool sin :bool-type (copia), grupo con contenido de path (plugin), path SVG con transform-inverse desbordado. Aparcado: texto y=-1.99E13. Tras los merges: marcar clases en la herramienta de errores.'
   added: 2026-11-23
 
 - title: 'Tarde 23-11: revisiones pendientes'

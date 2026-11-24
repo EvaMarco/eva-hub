@@ -135,8 +135,8 @@
   next: 'WEBERRUSS-Studio (externo; ocultar interfaz del visor). Diseño da el OK (icono ojo) el 23-11. Request changes 23-11: rebase sobre develop (header ya en DS, #12523) + icon-button*. Esperando al autor.'
   status: waiting
 13237:
-  next: 'Mía (#13223, tooltip en nombres de librería cortados). Abierta 23-11, develop, 2.21.0. Capturas añadidas al cuerpo. Esperando revisión.'
-  waiting: review
+  next: 'Mía (#13223, tooltip en nombres de librería cortados). Mergeada 24-11 (aprobada por hirunatan). Falta pasar #13223 a Product review.'
+  status: done
 13169:
   next: 'Alotor (file.features + isWasmRenderer para plugins/MCP), staging 2.20.0. Aprobada 23-11 con F1 (prefijo CHANGELOG) y F2 (ejemplo con null). QA y staging hablados con él. La mergea él.'
   status: waiting
@@ -144,11 +144,11 @@
   next: 'myfunnyandy. Cambios hechos (solo en/es.po, tests, toast, viewers en sidebar). Pendiente: aprobar.'
   waiting: me
 13251:
-  next: 'Mía (#13250, guide size y font size de tipografía fuera de límites; causa de #12463). Abierta 23-11, staging, 2.20.0. Rebasada 23-11 (Validate public PR desactivado en el repo). Esperando revisión.'
+  next: 'Mía (#13250, guide size y font size fuera de límites; causa de #12463). staging, 2.20.0. 3ª ronda de pabloalba resuelta 24-11 (1a1b7a84af): Tab/Esc ya no guardan el valor recortado y el font size mixto ya no guarda 0 (metido aquí, sin issue nueva); test de Auto con :is-nillable. Cuerpo actualizado y respuestas publicadas. Esperando a Pablo.'
   waiting: review
 13253:
-  next: 'Mía (#13252, editor de texto v1 guarda text-decoration nil; causa de #12463, ~33 informes). Abierta 23-11, staging, 2.20.0. Rebasada; Frontend Tests falló por un test de persistencia inestable, relanzado. Esperando revisión.'
-  waiting: review
+  next: 'Mía (#13252, editor de texto v1 guarda text-decoration nil; causa de #12463). Mergeada 24-11 (915d405a9c, aprobada por hirunatan). Revisados 60 informes: los 20 de text-decoration nil vienen todos del editor v1. Falta pasar #13252 a Product review.'
+  status: done
 13256:
   next: 'Mía (#13255, grid con columna 0fr + ancho auto da NaN; causa de #12463). Abierta 23-11, staging, 2.20.0. Rebasada 23-11 (Validate public PR desactivado en el repo). Esperando revisión.'
   waiting: review
@@ -156,14 +156,14 @@
   next: 'floscr (externo, develop, 2.21.0): seguimiento de #13210 (F1-F3 resueltos, solo tests). Aprobada 23-11 + etiqueta no issue required. Falta rebase (Update branch > rebase desde la web; mi token no tiene scope workflow) y mergear nosotras con CI en verde.'
   waiting: me
 13262:
-  next: 'Mía (#13261, deshacer con el selector de color del trazo abierto deja un degradado vacío; causa de #12463, 8+ informes). Abierta 23-11, staging, 2.20.0. Esperando revisión.'
-  waiting: review
+  next: 'Mía (#13261, degradado vacío en el trazo; causa de #12463). Mergeada 24-11 (aprobada por hirunatan). Falta pasar #13261 a Product review.'
+  status: done
 13264:
   next: 'Mía (#13263, trazo sin color en booleanos; causa de #12463). Mergeada 24-11 (271f5af784) tras arreglar la causa (:strokes en bool). Falta pasar #13263 a Product review.'
   status: done
 13266:
-  next: 'Mía (#13265, poner un lado de padding en un layout sin padding guarda {:p1 N}; plugins/API; causa de #12463). Abierta 23-11, staging, 2.20.0. Esperando revisión.'
-  waiting: review
+  next: 'Mía (#13265, padding parcial {:p1 N}; causa de #12463). Mergeada 24-11 (aprobada por luisddm). Falta pasar #13265 a Product review.'
+  status: done
 13275:
   next: 'Mía (DS botones #12376): botón Export del menú de exportación. Draft, develop, 2.21.0, captura subida, fila y comentario de QA en #12376. Falta marcarla ready y asignar revisor.'
   waiting: me
@@ -188,3 +188,9 @@
 13311:
   next: 'Mía (DS selects #12377): variante de fuente a select* (+ fixture con variantes válidas de Rufina). Draft, develop, 2.21.0, fila y comentario de QA en #12377. Captura subida. Falta marcarla ready y asignar revisor.'
   waiting: me
+13309:
+  next: 'Mía (#13303, atajos de opacidad sin tecla por defecto; se pueden asignar en Shortcuts). Abierta 24-11, develop, 2.21.0, WG adoption. Esperando revisión.'
+  waiting: review
+13313:
+  next: 'Mía (#13312, sub-issue de #12463): Selected colors con imagen en un texto guardaba un fill solo con opacidad. Abierta 24-11, staging, 2.20.0, WG adoption, sin revisor. Esperando revisión.'
+  waiting: review
