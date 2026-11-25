@@ -192,7 +192,7 @@
   next: 'Mía (#13303, atajos de opacidad sin tecla por defecto). develop, 2.21.0. 25-11: guía de usuario actualizada (06647ea1e4) y rebasada sobre develop para el CI. Esperando revisión.'
   waiting: review
 13313:
-  next: 'Mía (#13312, Selected colors con imagen en texto). Mergeada 25-11. Falta pasar #13312 a Product review.'
+  next: 'Mía (#13312, Selected colors con imagen en texto). Mergeada 25-11; #13312 en Product review.'
   status: done
 12961:
   next: 'pabloalba (validar y reparar propiedades de variante). Revisada 25-11: aprobada con dos comentarios. La mergea él.'
@@ -201,16 +201,16 @@
   next: 'Mía: test de padding de tokens de dimensión que tenía develop en rojo. Mergeada 25-11 (aprobada por luisddm).'
   status: done
 13325:
-  next: 'Mía (#13324, transform-inverse desbordado al aplastar un path lejos del origen; causa de #12463). Mergeada 25-11 (aprobada por pabloalba). Nota de Pablo sobre rotaciones añadida a #13326. Falta pasar #13324 a Product review.'
+  next: 'Mía (#13324, transform-inverse desbordado al aplastar un path lejos del origen; causa de #12463). Mergeada 25-11 (aprobada por pabloalba); #13324 en Product review. Nota de Pablo sobre rotaciones añadida a #13326.'
   status: done
 13334:
-  next: 'Mía (#13327, pegar SVG antiguo con atributos inválidos). Mergeada 25-11 (aprobada por niwinz). Falta pasar #13327 a Product review.'
+  next: 'Mía (#13327, pegar SVG antiguo con atributos inválidos). Mergeada 25-11 (aprobada por niwinz); #13327 en Product review.'
   status: done
 13337:
   next: 'Mía (#13336, copia de un booleano pierde :bool-type cuando el main pasa a grupo; causa de #12463). staging, 2.20.0, WG adoption. Rebasada 25-11 (ed646f64f3). Esperando revisión.'
   waiting: review
 13354:
-  next: 'Mía (#13341, Natacha: actualizar Foundations en App falla con invalid shape). Causa: tablero con puntos planos (altura 0) rompe el layout flex de sus hijos. staging, 2.20.0, WG adoption. Revisión propia aprobada (2 rondas). Esperando revisión.'
+  next: 'Mía (#13341, Natacha: actualizar Foundations en App falla con invalid shape). Causa: formas con puntos planos (altura o ancho 0) rompen el layout flex. Ampliada a todas las formas salvo path/bool/group (también textos planos de producción). staging, 2.20.0, WG adoption. Revisión propia aprobada (3 rondas). Esperando revisión.'
   waiting: review
 13236:
   next: 'Alotor (tokens lazy). Revisión publicada 25-11: cambios pedidos (F1–F4 bloqueantes: CI en rojo, resync, ignore-tree, nombres con !). Esperando al autor.'

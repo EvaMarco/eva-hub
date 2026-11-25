@@ -40,7 +40,7 @@
   status: todo
   links:
   - '#12463'
-  note: 'PRs 25-11: #13325 (transform-inverse) y #13313 mergeadas → pasar #13324 y #13312 a Product review; #13337 (bool sin :bool-type) y #13354 (#13341, tablero plano rompe el layout al sincronizar librería) en revisión; #13251 y #13256 siguen en revisión. NaN en boards flex: 19 de 24 informes ya arreglados en 2.20 (f807e749db, #12763). Pendientes: 1) clientes API con :set sin decodificar (backend, con niwinz); 2) textos :fill a ~5E9 tras sincronizar (11 informes; posible misma familia que #13341); 3) fill-color "hsla(...)" en position-data (5, un usuario); 4) padding -1.1E-13 (2); 5) flex en JVM lanza NPE ((* gap nil) en init-layout-lines). Reparación de datos guardados: en espera (la herramienta pierde el explain). Aparcado: texto y=-1.99E13.'
+  note: 'PRs: #13337 (bool sin :bool-type) y #13354 (#13341, formas planas rompen el layout) en revisión; #13251 y #13256 también. Mergeadas 25-11: #13325 y #13313 (issues ya en Product review). NaN en boards flex: 19 de 24 ya arreglados en 2.20 (#12763). Mañana 26-11: probar a mano el grupo B (textos auto-width con :fill a ~5E9 tras sincronizar o cambiar tipografía; hipótesis en apply-modifiers* o commit-resize-text). Otros pendientes: :set sin decodificar de la API (con niwinz), hsla en position-data (5, un usuario), padding -1.1E-13 (2), rect de grid con x ~5E9 (3, wasm), flex en JVM lanza NPE ((* gap nil)). Reparación de datos guardados: en espera.'
   added: 2026-11-23
 
 - title: 'Tarde 23-11: revisiones pendientes'
