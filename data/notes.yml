@@ -78,7 +78,7 @@
   next: 'Cambios pedidos 2026-11-12: sin width/height todos los cursores del canvas desaparecen (probado en Ubuntu con varios tamaños de cursor); no sigue el tamaño del sistema. Asignada a Eva y niwinz'
   status: waiting
 13138:
-  next: 'Cierra #12474: la página nueva se abre, se ve en la lista y empieza a renombrarse; despliega Pages si está plegado. Base develop, 2.21.0, CI en verde. Los compañeros la cogen según disponibilidad.'
+  next: 'Cierra #12474 (página nueva se abre y empieza a renombrarse). develop, 2.21.0. Comentarios de luisddm resueltos 25-11 (8ec847092e; rename sin cambios no hace nada, add-page → create-page-and-focus), respuestas publicadas, rebasada. Frontend Tests cae por el fallo intermitente de la miniatura (getComputedStyle): relanzado. Esperando a Luis.'
   waiting: review
 13145:
   next: 'Draft, cierra #12429 (rehace #13048): librerías compartidas rotas siguen conectadas y salen con 0. Rebasada 23-11 sobre staging (conflictos en runner.cljs y rpc_file_test.clj resueltos, tests OK); falta force-push. Revisión con niwinz el 24-11.'
@@ -150,7 +150,7 @@
   next: 'Mía (#13252, editor de texto v1 guarda text-decoration nil; causa de #12463). Mergeada 24-11 (915d405a9c, aprobada por hirunatan). Revisados 60 informes: los 20 de text-decoration nil vienen todos del editor v1. Falta pasar #13252 a Product review.'
   status: done
 13256:
-  next: 'Mía (#13255, grid con columna 0fr + ancho auto da NaN; causa de #12463). Abierta 23-11, staging, 2.20.0. Rebasada 23-11 (Validate public PR desactivado en el repo). Esperando revisión.'
+  next: 'Mía (#13255, grid con columna 0fr + ancho auto da NaN; causa de #12463). staging, 2.20.0. CI en verde salvo un Integration Tests viejo de otra ejecución. Esperando revisión.'
   waiting: review
 13242:
   next: 'floscr (externo, develop, 2.21.0): seguimiento de #13210 (F1-F3 resueltos, solo tests). Aprobada 23-11 + etiqueta no issue required. Falta rebase (Update branch > rebase desde la web; mi token no tiene scope workflow) y mergear nosotras con CI en verde.'
@@ -165,14 +165,14 @@
   next: 'Mía (#13265, padding parcial {:p1 N}; causa de #12463). Mergeada 24-11 (aprobada por luisddm). Falta pasar #13265 a Product review.'
   status: done
 13275:
-  next: 'Mía (DS botones #12376): botón Export del menú de exportación. Draft, develop, 2.21.0, captura subida, fila y comentario de QA en #12376. Falta marcarla ready y asignar revisor.'
-  waiting: me
+  next: 'Mía (DS botones #12376): botón Export del menú de exportación. Ready 25-11, asignada a luisddm. Esperando revisión.'
+  waiting: review
 13278:
-  next: 'Mía (DS botones #12376): toggles Clip content / Show in view mode y candado de Measures. Draft, develop, 2.21.0, captura subida, fila y comentario de QA. Falta marcarla ready y asignar revisor.'
-  waiting: me
+  next: 'Mía (DS botones #12376): toggles Clip content / Show in view mode y candado de Measures. Ready 25-11, asignada a luisddm, CI en verde. Esperando revisión.'
+  waiting: review
 13284:
-  next: 'Mía (DS botones #12376): «Go to Personal Projects» del diálogo de pedir acceso a button* secondary. Draft, develop, 2.21.0, fila y comentario de QA. El cuerpo no tiene la captura (24-11): subirla. Falta marcarla ready y asignar revisor.'
-  waiting: me
+  next: 'Mía (DS botones #12376): «Go to Personal Projects» del diálogo de pedir acceso a button* secondary. Captura regenerada y subida 25-11. Ready, asignada a luisddm. Esperando revisión.'
+  waiting: review
 13294:
   next: 'Mía (DS botones #12376): X e iconos del aviso de progreso del dashboard (variante action) + :bug: el aviso salía sin texto. Draft, develop, 2.21.0, fila y comentario de QA. Captura subida. Falta marcarla ready y asignar revisor.'
   waiting: me
@@ -189,8 +189,32 @@
   next: 'Mía (DS selects #12377): variante de fuente a select* (+ fixture con variantes válidas de Rufina). Draft, develop, 2.21.0, fila y comentario de QA en #12377. Captura subida. Falta marcarla ready y asignar revisor.'
   waiting: me
 13309:
-  next: 'Mía (#13303, atajos de opacidad sin tecla por defecto; se pueden asignar en Shortcuts). Abierta 24-11, develop, 2.21.0, WG adoption. Esperando revisión.'
+  next: 'Mía (#13303, atajos de opacidad sin tecla por defecto). develop, 2.21.0. 25-11: guía de usuario actualizada (06647ea1e4) y rebasada sobre develop para el CI. Esperando revisión.'
   waiting: review
 13313:
-  next: 'Mía (#13312, sub-issue de #12463): Selected colors con imagen en un texto guardaba un fill solo con opacidad. Abierta 24-11, staging, 2.20.0, WG adoption, sin revisor. Esperando revisión.'
+  next: 'Mía (#13312, Selected colors con imagen en texto). Mergeada 25-11. Falta pasar #13312 a Product review.'
+  status: done
+12961:
+  next: 'pabloalba (validar y reparar propiedades de variante). Revisada 25-11: aprobada con dos comentarios. La mergea él.'
+  status: done
+13321:
+  next: 'Mía: test de padding de tokens de dimensión que tenía develop en rojo. Mergeada 25-11 (aprobada por luisddm).'
+  status: done
+13325:
+  next: 'Mía (#13324, transform-inverse desbordado al aplastar un path lejos del origen; causa de #12463). Mergeada 25-11 (aprobada por pabloalba). Nota de Pablo sobre rotaciones añadida a #13326. Falta pasar #13324 a Product review.'
+  status: done
+13334:
+  next: 'Mía (#13327, pegar SVG antiguo con atributos inválidos). Mergeada 25-11 (aprobada por niwinz). Falta pasar #13327 a Product review.'
+  status: done
+13337:
+  next: 'Mía (#13336, copia de un booleano pierde :bool-type cuando el main pasa a grupo; causa de #12463). staging, 2.20.0, WG adoption. Rebasada 25-11 (ed646f64f3). Esperando revisión.'
   waiting: review
+13354:
+  next: 'Mía (#13341, Natacha: actualizar Foundations en App falla con invalid shape). Causa: tablero con puntos planos (altura 0) rompe el layout flex de sus hijos. staging, 2.20.0, WG adoption. Revisión propia aprobada (2 rondas). Esperando revisión.'
+  waiting: review
+13236:
+  next: 'Alotor (tokens lazy). Revisión publicada 25-11: cambios pedidos (F1–F4 bloqueantes: CI en rojo, resync, ignore-tree, nombres con !). Esperando al autor.'
+  status: waiting
+13290:
+  next: 'pabloalba, asignada a mí. Falta milestone (pedido a Pablo). Pendiente de revisar.'
+  waiting: me
