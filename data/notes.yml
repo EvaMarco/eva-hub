@@ -189,8 +189,8 @@
   next: 'Mía (DS #12376/#12377): variante de fuente. Ready 26-11, asignada a luisddm. Esperando revisión.'
   waiting: review
 13309:
-  next: 'Mía (#13303, atajos de opacidad sin tecla por defecto). develop, 2.21.0. 25-11: guía de usuario actualizada (06647ea1e4) y rebasada sobre develop para el CI. Esperando revisión.'
-  waiting: review
+  next: 'Mía (#13303, atajos de opacidad sin tecla por defecto). Mergeada 26-11. Falta pasar #13303 a Product review.'
+  status: done
 13313:
   next: 'Mía (#13312, Selected colors con imagen en texto). Mergeada 25-11; #13312 en Product review.'
   status: done
@@ -207,10 +207,10 @@
   next: 'Mía (#13327, pegar SVG antiguo con atributos inválidos). Mergeada 25-11 (aprobada por niwinz); #13327 en Product review.'
   status: done
 13337:
-  next: 'Mía (#13336, copia de booleano pierde :bool-type). staging, 2.20.0. Review del bot sin bloqueos; cuerpo corregido 26-11 (qué tests fallan en staging). Esperando revisión.'
-  waiting: review
+  next: 'Mía (#13336). Aprobada por niwinz y pabloalba, mergeada 26-11. Falta pasar #13336 a Product review.'
+  status: done
 13354:
-  next: 'Mía (#13341, formas con puntos planos rompen el layout flex). staging, 2.20.0. CI relanzado 26-11 (fallo de instalación de canvas, no del código). Esperando revisión.'
+  next: 'Mía (#13341, formas con puntos planos rompen el layout flex). staging, 2.20.0. CI en verde tras relanzarlo 26-11. Esperando revisión.'
   waiting: review
 13236:
   next: 'Alotor (tokens lazy). Revisión publicada 25-11: cambios pedidos (F1–F4 bloqueantes: CI en rojo, resync, ignore-tree, nombres con !). Esperando al autor.'
