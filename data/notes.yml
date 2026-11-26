@@ -15,7 +15,7 @@
 
 
 13122:
-  next: 'Cierra #10710 (issue de mangledmonkey, asignada a mí): admite apóstrofos en el nombre de familia y escapa el @font-face. niwinz nos dejó decidir. Base develop, 2.21.0, sin revisor'
+  next: 'Cierra #10710: apóstrofos en el nombre de familia. F1 (tests) y F2 (Upload all ya no pierde fuentes) resueltos 26-11 (d20686af3c) y respondidos; conflicto con develop resuelto (4716419b2e). Common Tests en rojo por develop roto (repair_test desde a0bbafaf12), no por la PR. Avisado Luis.'
   waiting: review
 12643:
   next: 'Relates #12134. Test e2e de anidadas hecho (1703cf46b4, falta push). Solo falta que diseño decida la selección mixta'
@@ -78,8 +78,8 @@
   next: 'Cambios pedidos 2026-11-12: sin width/height todos los cursores del canvas desaparecen (probado en Ubuntu con varios tamaños de cursor); no sigue el tamaño del sistema. Asignada a Eva y niwinz'
   status: waiting
 13138:
-  next: 'Cierra #12474 (página nueva se abre y empieza a renombrarse). develop, 2.21.0. Comentarios de luisddm resueltos 25-11 (8ec847092e; rename sin cambios no hace nada, add-page → create-page-and-focus), respuestas publicadas, rebasada. Frontend Tests cae por el fallo intermitente de la miniatura (getComputedStyle): relanzado. Esperando a Luis.'
-  waiting: review
+  next: 'Mía (#12474, foco en página nueva). Aprobada por luisddm y mergeada 26-11; #12474 en Product review.'
+  status: done
 13145:
   next: 'Draft, cierra #12429 (rehace #13048): librerías compartidas rotas siguen conectadas y salen con 0. Rebasada 23-11 sobre staging (conflictos en runner.cljs y rpc_file_test.clj resueltos, tests OK); falta force-push. Revisión con niwinz el 24-11.'
   status: waiting
@@ -144,14 +144,14 @@
   next: 'myfunnyandy. Cambios hechos (solo en/es.po, tests, toast, viewers en sidebar). Pendiente: aprobar.'
   waiting: me
 13251:
-  next: 'Mía (#13250, guide size y font size fuera de límites; causa de #12463). staging, 2.20.0. 3ª ronda de pabloalba resuelta 24-11 (1a1b7a84af): Tab/Esc ya no guardan el valor recortado y el font size mixto ya no guarda 0 (metido aquí, sin issue nueva); test de Auto con :is-nillable. Cuerpo actualizado y respuestas publicadas. Esperando a Pablo.'
-  waiting: review
+  next: 'Mía (#13250). Aprobada por pabloalba y mergeada 26-11; #13250 en Product review.'
+  status: done
 13253:
   next: 'Mía (#13252, editor de texto v1 guarda text-decoration nil; causa de #12463). Mergeada 24-11 (915d405a9c, aprobada por hirunatan). Revisados 60 informes: los 20 de text-decoration nil vienen todos del editor v1. Falta pasar #13252 a Product review.'
   status: done
 13256:
-  next: 'Mía (#13255, grid con columna 0fr + ancho auto da NaN; causa de #12463). staging, 2.20.0. CI en verde salvo un Integration Tests viejo de otra ejecución. Esperando revisión.'
-  waiting: review
+  next: 'Mía (#13255). Mergeada 26-11; #13255 en Product review.'
+  status: done
 13242:
   next: 'floscr (externo, develop, 2.21.0): seguimiento de #13210 (F1-F3 resueltos, solo tests). Aprobada 23-11 + etiqueta no issue required. Falta rebase (Update branch > rebase desde la web; mi token no tiene scope workflow) y mergear nosotras con CI en verde.'
   waiting: me
@@ -165,29 +165,29 @@
   next: 'Mía (#13265, padding parcial {:p1 N}; causa de #12463). Mergeada 24-11 (aprobada por luisddm). Falta pasar #13265 a Product review.'
   status: done
 13275:
-  next: 'Mía (DS botones #12376): botón Export del menú de exportación. Ready 25-11, asignada a luisddm. Esperando revisión.'
-  waiting: review
+  next: 'Mía (DS botones #12376): botón Export del menú de exportación. Aprobada por luisddm y mergeada 26-11.'
+  status: done
 13278:
-  next: 'Mía (DS botones #12376): toggles Clip content / Show in view mode y candado de Measures. Ready 25-11, asignada a luisddm, CI en verde. Esperando revisión.'
-  waiting: review
+  next: 'Mía (DS botones #12376): toggles de Measures. Aprobada por luisddm y mergeada 26-11.'
+  status: done
 13284:
-  next: 'Mía (DS botones #12376): «Go to Personal Projects» del diálogo de pedir acceso a button* secondary. Captura regenerada y subida 25-11. Ready, asignada a luisddm. Esperando revisión.'
-  waiting: review
+  next: 'Mía (DS botones #12376): botón del diálogo de pedir acceso. Aprobada por luisddm y mergeada 26-11.'
+  status: done
 13294:
-  next: 'Mía (DS botones #12376): X e iconos del aviso de progreso del dashboard (variante action) + :bug: el aviso salía sin texto. Draft, develop, 2.21.0, fila y comentario de QA. Captura subida. Falta marcarla ready y asignar revisor.'
-  waiting: me
+  next: 'Mía (DS #12376/#12377): X e iconos del aviso de progreso del dashboard. Ready 26-11, asignada a luisddm. Esperando revisión.'
+  waiting: review
 13300:
-  next: 'Mía (DS selects #12377): select de modo del colorpicker (Solid / Gradient / Image) a select*. Draft, develop, 2.21.0, fila y comentario de QA en #12377. Captura subida. Falta marcarla ready y asignar revisor.'
-  waiting: me
+  next: 'Mía (DS #12376/#12377): select de modo del colorpicker. Ready 26-11, asignada a luisddm. Esperando revisión.'
+  waiting: review
 13305:
-  next: 'Mía (DS selects #12377): tipo de sombra (Drop / Inner shadow) a select*. Draft, develop, 2.21.0, fila y comentario de QA en #12377. Captura subida. Falta marcarla ready y asignar revisor.'
-  waiting: me
+  next: 'Mía (DS #12376/#12377): tipo de sombra. Ready 26-11, asignada a luisddm. Esperando revisión.'
+  waiting: review
 13308:
-  next: 'Mía (DS selects #12377): selects horizontal y vertical de Constraints a select*. Draft, develop, 2.21.0, fila y comentario de QA en #12377. Captura subida. Falta marcarla ready y asignar revisor.'
-  waiting: me
+  next: 'Mía (DS #12376/#12377): selects de Constraints. Ready 26-11, asignada a luisddm. Esperando revisión.'
+  waiting: review
 13311:
-  next: 'Mía (DS selects #12377): variante de fuente a select* (+ fixture con variantes válidas de Rufina). Draft, develop, 2.21.0, fila y comentario de QA en #12377. Captura subida. Falta marcarla ready y asignar revisor.'
-  waiting: me
+  next: 'Mía (DS #12376/#12377): variante de fuente. Ready 26-11, asignada a luisddm. Esperando revisión.'
+  waiting: review
 13309:
   next: 'Mía (#13303, atajos de opacidad sin tecla por defecto). develop, 2.21.0. 25-11: guía de usuario actualizada (06647ea1e4) y rebasada sobre develop para el CI. Esperando revisión.'
   waiting: review
@@ -207,14 +207,20 @@
   next: 'Mía (#13327, pegar SVG antiguo con atributos inválidos). Mergeada 25-11 (aprobada por niwinz); #13327 en Product review.'
   status: done
 13337:
-  next: 'Mía (#13336, copia de un booleano pierde :bool-type cuando el main pasa a grupo; causa de #12463). staging, 2.20.0, WG adoption. Rebasada 25-11 (ed646f64f3). Esperando revisión.'
+  next: 'Mía (#13336, copia de booleano pierde :bool-type). staging, 2.20.0. Review del bot sin bloqueos; cuerpo corregido 26-11 (qué tests fallan en staging). Esperando revisión.'
   waiting: review
 13354:
-  next: 'Mía (#13341, Natacha: actualizar Foundations en App falla con invalid shape). Causa: formas con puntos planos (altura o ancho 0) rompen el layout flex. Ampliada a todas las formas salvo path/bool/group (también textos planos de producción). staging, 2.20.0, WG adoption. Revisión propia aprobada (3 rondas). Esperando revisión.'
+  next: 'Mía (#13341, formas con puntos planos rompen el layout flex). staging, 2.20.0. CI relanzado 26-11 (fallo de instalación de canvas, no del código). Esperando revisión.'
   waiting: review
 13236:
   next: 'Alotor (tokens lazy). Revisión publicada 25-11: cambios pedidos (F1–F4 bloqueantes: CI en rojo, resync, ignore-tree, nombres con !). Esperando al autor.'
   status: waiting
 13290:
-  next: 'pabloalba, asignada a mí. Falta milestone (pedido a Pablo). Pendiente de revisar.'
-  waiting: me
+  next: 'pabloalba (reparar mains perdidos). Cambios pedidos 25-11 (F1 :ref-shape-not-found, F2 cuerpo, F3 test). Esperando a Pablo.'
+  status: waiting
+13351:
+  next: 'pabloalba (SVG subidos fuera de los boards de variantes, #13338). Revisada 26-11 sin hallazgos y aprobada. La mergea él.'
+  status: done
+13371:
+  next: 'Mía (#13369, el panel de diseño rompe si borran el path que editas; clase 34 de la herramienta de errores). staging, 2.20.0. Revisión propia: F2 renombrado (130c9f0097), F1 a #13372 (2.21). Esperando revisión.'
+  waiting: review
