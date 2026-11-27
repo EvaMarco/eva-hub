@@ -50,7 +50,7 @@
   links:
   - '#13369'
   - '#13371'
-  note: 'Clase 68 (módulos JS de builds distintas tras un deploy; texto pasado al equipo). Clase 85 (callbacks del plugin MCP tras cerrarse; probablemente arreglado en 2.20). Clase 34 A: #13369 / PR #13371. Falta clase 34 B (diálogo de importar, update-entry-status) y después la 29.'
+  note: 'Clase 68 (módulos JS de builds distintas tras un deploy): la lleva niwinz desde el 27-11. Clase 85 (callbacks del plugin MCP tras cerrarse; probablemente arreglado en 2.20). Clase 34 A: #13369 / PR #13371. Falta clase 34 B (diálogo de importar, update-entry-status) y después la 29.'
   added: 2026-11-26
 
 - title: 'Diseño eligió la opción B para el editor de tipografías (#13367)'
