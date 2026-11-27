@@ -28,11 +28,12 @@
   added: 2026-11-26
 
 - title: 'develop en rojo: repair_test falla desde el merge a0bbafaf12'
-  status: waiting
-  waiting: other
+  status: done
+  done: 2026-11-27
   links:
   - '#13122'
-  note: '21/59 tests de common/files/repair_test fallan desde el merge staging → develop del 25-11 (Alejandro). Los dos padres pasan por separado. Mensaje enviado al equipo. Afecta al CI de las PRs contra develop.'
+  - '#13374'
+  note: '21/59 tests de common/files/repair_test fallan desde el merge staging → develop del 25-11 (Alejandro). Los dos padres pasan por separado. Mensaje enviado al equipo. Afecta al CI de las PRs contra develop. Arreglado con #13374 (mergeada 27-11).'
   added: 2026-11-26
 
 - title: '#13366: texto auto-width con Fill ignorado por wasm'

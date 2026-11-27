@@ -15,7 +15,7 @@
 
 
 13122:
-  next: 'Cierra #10710: apóstrofos en el nombre de familia. F1 (tests) y F2 (Upload all ya no pierde fuentes) resueltos 26-11 (d20686af3c) y respondidos; conflicto con develop resuelto (4716419b2e). Common Tests en rojo por develop roto (repair_test desde a0bbafaf12), no por la PR. Avisado Luis.'
+  next: 'Cierra #10710: apóstrofos en el nombre de familia. F1 y F2 resueltos 26-11. Rebasada sobre develop 27-11 (sin merges; conflicto en runner.cljs resuelto): todo el CI en verde. Esperando la revisión de Luis.'
   waiting: review
 12643:
   next: 'Relates #12134. Test e2e de anidadas hecho (1703cf46b4, falta push). Solo falta que diseño decida la selección mixta'
@@ -66,8 +66,8 @@
   next: Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10).
   status: waiting
 13064:
-  next: 'History y Escape (Pranav, externo, develop, 2.21.0). Probada en local 17-11; cambios pedidos: M1 Escape no cierra tras renombrar (foco en body), M2 tests (close-menu, menú de autoguardados); S1-S3 menores. Diseño: bien que History siga abierto al seleccionar. Rama local pr-13064-on-develop.'
-  status: waiting
+  next: 'History y Escape (Pranav, externo, develop, 2.21.0). Cambios pedidos 17-11 (M1 foco tras renombrar, M2 tests). Pranav respondió 24-11 con commits nuevos: toca 2ª revisión (va después de las del equipo).'
+  waiting: me
 12437:
   next: 'floscr (externo: la mergeamos nosotros). Aprobada tras el visto bueno de hirunatan, milestone cambiado a 2.21.0, checks obligatorios relanzados y mergeada el 20-11. Follow-up: #13226 (get-active-token-sets duplica get-active-sets).'
   status: done
@@ -174,20 +174,20 @@
   next: 'Mía (DS botones #12376): botón del diálogo de pedir acceso. Aprobada por luisddm y mergeada 26-11.'
   status: done
 13294:
-  next: 'Mía (DS #12376/#12377): X e iconos del aviso de progreso del dashboard. Ready 26-11, asignada a luisddm. Esperando revisión.'
-  waiting: review
+  next: 'Mía (DS #12376/#12377): X e iconos del aviso de progreso del dashboard. Aprobada por luisddm y mergeada 27-11.'
+  status: done
 13300:
-  next: 'Mía (DS #12376/#12377): select de modo del colorpicker. Ready 26-11, asignada a luisddm. Esperando revisión.'
-  waiting: review
+  next: 'Mía (DS #12376/#12377): select de modo del colorpicker. Aprobada por luisddm; conflicto en el spec visual. Rebase cuando se mergee #13305 (mismo conflicto: bloque antes de Shortcuts panel).'
+  waiting: me
 13305:
-  next: 'Mía (DS #12376/#12377): tipo de sombra. Ready 26-11, asignada a luisddm. Esperando revisión.'
-  waiting: review
+  next: 'Mía (DS #12376/#12377): tipo de sombra. Aprobada por luisddm; rebasada sobre develop 27-11 tras mergear #13308 y subida (67aaa9537c). CI en marcha; mergear en verde.'
+  waiting: ci
 13308:
-  next: 'Mía (DS #12376/#12377): selects de Constraints. Ready 26-11, asignada a luisddm. Esperando revisión.'
-  waiting: review
+  next: 'Mía (DS #12376/#12377): selects de Constraints. Aprobada por luisddm y mergeada 27-11.'
+  status: done
 13311:
-  next: 'Mía (DS #12376/#12377): variante de fuente. Ready 26-11, asignada a luisddm. Esperando revisión.'
-  waiting: review
+  next: 'Mía (DS #12376/#12377): variante de fuente. Aprobada por luisddm y mergeada 27-11.'
+  status: done
 13309:
   next: 'Mía (#13303, atajos de opacidad sin tecla por defecto). Mergeada 26-11. Falta pasar #13303 a Product review.'
   status: done
@@ -213,14 +213,23 @@
   next: 'Mía (#13341, formas con puntos planos rompen el layout flex). staging, 2.20.0. CI en verde tras relanzarlo 26-11. Esperando revisión.'
   waiting: review
 13236:
-  next: 'Alotor (tokens lazy). Revisión publicada 25-11: cambios pedidos (F1–F4 bloqueantes: CI en rojo, resync, ignore-tree, nombres con !). Esperando al autor.'
+  next: 'Alotor (tokens lazy). 2ª revisión 27-11: F1–F9 resueltos; cambios pedidos solo por F10 (tres helpers de test con !), F11 y F12 opcionales. Common Tests rojo por develop (#13374). Esperando al autor.'
   status: waiting
 13290:
-  next: 'pabloalba (reparar mains perdidos). Cambios pedidos 25-11 (F1 :ref-shape-not-found, F2 cuerpo, F3 test). Esperando a Pablo.'
-  status: waiting
+  next: 'pabloalba (reparar mains perdidos). 2ª revisión 27-11: F1–F3 resueltos, aprobada. La mergea él.'
+  status: done
 13351:
-  next: 'pabloalba (SVG subidos fuera de los boards de variantes, #13338). Revisada 26-11 sin hallazgos y aprobada. La mergea él.'
+  next: 'pabloalba (SVG subidos fuera de los boards de variantes, #13338). Aprobada 26-11; el commit enmendado después solo añade el caso del tablero que falta en su padre, con test. Sigue aprobada. La mergea él.'
   status: done
 13371:
   next: 'Mía (#13369, el panel de diseño rompe si borran el path que editas; clase 34 de la herramienta de errores). staging, 2.20.0. Revisión propia: F2 renombrado (130c9f0097), F1 a #13372 (2.21). Esperando revisión.'
+  waiting: review
+13135:
+  next: 'niwinz (clave secreta explícita y claves en archivo), staging 2.20.0. 2ª revisión 27-11: F1–F3 resueltos, aprobada con F4 opcional (párrafo de la guía de actualización). La mergea él.'
+  status: done
+13374:
+  next: 'Mía: develop en rojo (repair_test tras el merge a0bbafaf12). Mergeada 27-11.'
+  status: done
+13394:
+  next: 'Mía (#13391, botones de tamaño sin marcar en boards flex nuevos e hijos; también selección mixta). develop, 2.21.0, WG adoption. Dos revisiones propias (aprobada). Falta adjuntar capturas; CI en marcha; esperando revisión.'
   waiting: review
