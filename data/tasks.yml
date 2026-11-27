@@ -46,11 +46,12 @@
   added: 2026-11-26
 
 - title: 'Herramienta de errores: clases analizadas 26-11'
-  status: doing
+  status: waiting
+  waiting: design
   links:
   - '#13369'
   - '#13371'
-  note: 'Clase 68 (módulos JS de builds distintas tras un deploy): la lleva niwinz desde el 27-11. Clase 85 (callbacks del plugin MCP tras cerrarse; probablemente arreglado en 2.20). Clase 34 A: #13369 / PR #13371. Falta clase 34 B (diálogo de importar, update-entry-status) y después la 29.'
+  note: 'Clase 68 (módulos JS de builds distintas tras un deploy): la lleva niwinz desde el 27-11. Clase 85 (callbacks del plugin MCP tras cerrarse; probablemente arreglado en 2.20). Clase 34 A: #13369 / PR #13371. Clase 34 B (27-11): 2 informes de 2.19; mensaje final {:libraries-resolution {}} cae en una fila de error sin file-id → case sin default. En 2.20 no falla, pero el archivo inválido mezclado con válidos desaparece sin avisar. Pregunta enviada a diseño (mostrar error y continuar / bloquear); esperando respuesta para arreglar en staging. Después, la 29.'
   added: 2026-11-26
 
 - title: 'Diseño eligió la opción B para el editor de tipografías (#13367)'
