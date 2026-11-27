@@ -337,14 +337,16 @@
   added: *id001
 
 - title: 'Abrir issue: un texto creado en un board flex se queda en 40×12'
-  status: todo
+  status: done
+  done: 2026-11-27
   links:
   - '#12580'
-  note: 'Visto al intentar reproducir #12580.'
+  note: 'Visto al intentar reproducir #12580. Lo lleva el equipo de render (27-11).'
   added: *id001
 
 - title: 'Hiring: revisar un par de CVs'
-  status: todo
+  status: done
+  done: 2026-11-27
   note: 'Para el lunes 16.'
   added: 2026-11-11
 

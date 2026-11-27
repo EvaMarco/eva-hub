@@ -153,8 +153,8 @@
   next: 'Mía (#13255). Mergeada 26-11; #13255 en Product review.'
   status: done
 13242:
-  next: 'floscr (externo, develop, 2.21.0): seguimiento de #13210 (F1-F3 resueltos, solo tests). Aprobada 23-11 + etiqueta no issue required. Falta rebase (Update branch > rebase desde la web; mi token no tiene scope workflow) y mergear nosotras con CI en verde.'
-  waiting: me
+  next: 'floscr (externo, develop, 2.21.0): seguimiento de #13210 (solo tests). Aprobada 23-11, rebasada y mergeada 27-11.'
+  status: done
 13262:
   next: 'Mía (#13261, degradado vacío en el trazo; causa de #12463). Mergeada 24-11 (aprobada por hirunatan). Falta pasar #13261 a Product review.'
   status: done
@@ -231,5 +231,5 @@
   next: 'Mía: develop en rojo (repair_test tras el merge a0bbafaf12). Mergeada 27-11.'
   status: done
 13394:
-  next: 'Mía (#13391, botones de tamaño sin marcar en boards flex nuevos e hijos; también selección mixta). develop, 2.21.0, WG adoption. Dos revisiones propias (aprobada). Falta adjuntar capturas; CI en marcha; esperando revisión.'
+  next: 'Mía (#13391, botones de tamaño sin marcar en boards flex nuevos e hijos; también selección mixta). develop, 2.21.0, WG adoption. Dos revisiones propias (aprobada). Capturas adjuntadas; esperando revisión.'
   waiting: review
