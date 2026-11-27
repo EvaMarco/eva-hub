@@ -66,8 +66,9 @@
   next: Asignada, milestone 2.21.0. Pendiente de una reunión (2026-11-10).
   status: waiting
 13064:
-  next: 'History y Escape (Pranav, externo, develop, 2.21.0). Cambios pedidos 17-11 (M1 foco tras renombrar, M2 tests). Pranav respondió 24-11 con commits nuevos: toca 2ª revisión (va después de las del equipo).'
-  waiting: me
+  next: 'History y Escape (Pranav, externo, develop, 2.21.0). 2ª revisión 27-11: M1, M2 y S1–S3 resueltos (F1 opcional: selector "button" suelto). M1 probado en local, pasos 1–7 OK. Aprobada 27-11 y rebasada; falta aprobar el CI del nuevo head (Approve and run workflows) y mergear con squash en verde. Luego #12500 a Product review.'
+  status: waiting
+  waiting: ci
 12437:
   next: 'floscr (externo: la mergeamos nosotros). Aprobada tras el visto bueno de hirunatan, milestone cambiado a 2.21.0, checks obligatorios relanzados y mergeada el 20-11. Follow-up: #13226 (get-active-token-sets duplica get-active-sets).'
   status: done
